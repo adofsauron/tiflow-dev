@@ -26,8 +26,8 @@ import (
 // NewCmd creates the root command.
 func NewCmd() *cobra.Command {
 	return &cobra.Command{
-		Use:   "tiflow",
-		Short: "tiflow",
+		Use:   "sdbflow",
+		Short: "sdbflow",
 		Long:  `dataflow engine`,
 		CompletionOptions: cobra.CompletionOptions{
 			DisableDefaultCmd: true,
