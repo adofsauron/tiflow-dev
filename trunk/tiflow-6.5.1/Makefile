@@ -84,33 +84,35 @@ TICDC_DOCKER_DEPLOYMENTS_DIR := deployments/ticdc/docker-compose/
 # the files included in recursive invocations of make
 MAKE_FILES = $(shell find . \( -name 'Makefile' -o -name '*.mk' \) -print)
 
-RELEASE_VERSION =
-ifeq ($(RELEASE_VERSION),)
-	RELEASE_VERSION := v6.5.0-master
-	release_version_regex := ^v[0-9]\..*$$
-	release_branch_regex := "^release-[0-9]\.[0-9].*$$|^HEAD$$|^.*/*tags/v[0-9]\.[0-9]\..*$$"
-	ifneq ($(shell git rev-parse --abbrev-ref HEAD | grep -E $(release_branch_regex)),)
-		# If we are in release branch, try to use tag version.
-		ifneq ($(shell git describe --tags --dirty | grep -E $(release_version_regex)),)
-			RELEASE_VERSION := $(shell git describe --tags --dirty)
-		endif
-	else ifneq ($(shell git status --porcelain),)
-		# Add -dirty if the working tree is dirty for non release branch.
-		RELEASE_VERSION := $(RELEASE_VERSION)-dirty
-	endif
-endif
+# RELEASE_VERSION =
+# ifeq ($(RELEASE_VERSION),)
+# 	RELEASE_VERSION := v6.5.0-master
+# 	release_version_regex := ^v[0-9]\..*$$
+# 	release_branch_regex := "^release-[0-9]\.[0-9].*$$|^HEAD$$|^.*/*tags/v[0-9]\.[0-9]\..*$$"
+# 	ifneq ($(shell git rev-parse --abbrev-ref HEAD | grep -E $(release_branch_regex)),)
+# 		# If we are in release branch, try to use tag version.
+# 		ifneq ($(shell git describe --tags --dirty | grep -E $(release_version_regex)),)
+# 			RELEASE_VERSION := $(shell git describe --tags --dirty)
+# 		endif
+# 	else ifneq ($(shell git status --porcelain),)
+# 		# Add -dirty if the working tree is dirty for non release branch.
+# 		RELEASE_VERSION := $(RELEASE_VERSION)-dirty
+# 	endif
+# endif
 
-BUILDTS := $(shell date -u '+%Y-%m-%d %H:%M:%S')
-GITHASH := $(shell git rev-parse HEAD)
-GITBRANCH := $(shell git rev-parse --abbrev-ref HEAD)
-GOVERSION := $(shell go version)
+# BUILDTS := $(shell date -u '+%Y-%m-%d %H:%M:%S')
+# GITHASH := $(shell git rev-parse HEAD)
+# GITBRANCH := $(shell git rev-parse --abbrev-ref HEAD)
+# GOVERSION := $(shell go version)
 
 # Version LDFLAGS.
-LDFLAGS += -X "$(CDC_PKG)/pkg/version.ReleaseVersion=$(RELEASE_VERSION)"
-LDFLAGS += -X "$(CDC_PKG)/pkg/version.BuildTS=$(BUILDTS)"
-LDFLAGS += -X "$(CDC_PKG)/pkg/version.GitHash=$(GITHASH)"
-LDFLAGS += -X "$(CDC_PKG)/pkg/version.GitBranch=$(GITBRANCH)"
-LDFLAGS += -X "$(CDC_PKG)/pkg/version.GoVersion=$(GOVERSION)"
+# LDFLAGS += -X "$(CDC_PKG)/pkg/version.ReleaseVersion=$(RELEASE_VERSION)"
+# LDFLAGS += -X "$(CDC_PKG)/pkg/version.BuildTS=$(BUILDTS)"
+# LDFLAGS += -X "$(CDC_PKG)/pkg/version.GitHash=$(GITHASH)"
+# LDFLAGS += -X "$(CDC_PKG)/pkg/version.GitBranch=$(GITBRANCH)"
+# LDFLAGS += -X "$(CDC_PKG)/pkg/version.GoVersion=$(GOVERSION)"
+
+LDFLAGS :=
 
 include tools/Makefile
 include Makefile.engine
