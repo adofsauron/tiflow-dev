@@ -27,7 +27,7 @@ const (
 	checkMemberInterval = 10 * time.Second
 )
 
-// checkMembersReadyLoop checks whether all DM-master and DM-worker members have been ready.
+// checkMembersReadyLoop checks whether all DM-master and SDM-worker members have been ready.
 // NOTE: in this chaos case, we ensure 3 DM-master and 3 DM-worker started.
 func checkMembersReadyLoop(ctx context.Context, cli pb.MasterClient, masterCount, workerCount int) (err error) {
 	for i := 0; i < checkMemberTimes; i++ {
