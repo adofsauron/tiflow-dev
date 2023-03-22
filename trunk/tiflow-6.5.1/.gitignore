@@ -29,7 +29,7 @@ bin
 .DS_Store
 .devcontainer
 .vscode
-# vendor
+vendor
 .python-version
 
 cscope.*
