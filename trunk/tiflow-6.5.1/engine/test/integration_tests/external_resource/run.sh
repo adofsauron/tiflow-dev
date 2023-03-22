@@ -17,9 +17,9 @@ function run() {
 	export ENGINE_S3_SECRET_KEY=engineSecret
 	export ENGINE_S3_ENDPOINT="http://127.0.0.1:9000/"
 
-	CGO_ENABLED=0 go test -timeout 300s -cover -count 1 -v -run ^TestIntegrationS3 github.com/pingcap/tiflow/engine/pkg/externalresource/internal/s3
+	CGO_ENABLED=0 go test -timeout 300s -cover -count 1 -v -run ^TestIntegrationS3 sdbflow/engine/pkg/externalresource/internal/s3
 
-	CGO_ENABLED=0 go test -timeout 600s -cover -count 1 -v -run ^TestIntegrationBroker github.com/pingcap/tiflow/engine/pkg/externalresource/broker
+	CGO_ENABLED=0 go test -timeout 600s -cover -count 1 -v -run ^TestIntegrationBroker sdbflow/engine/pkg/externalresource/broker
 
 	echo -e "\ncheck external storage integration tests result..."
 	if cat $OUT_DIR/engine_it.log | grep "SKIP:"; then

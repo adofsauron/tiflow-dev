@@ -19,7 +19,7 @@ import (
 	"math"
 	"strings"
 
-	"github.com/pingcap/tiflow/pkg/regionspan"
+	"sdbflow/pkg/regionspan"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

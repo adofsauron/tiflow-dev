@@ -14,7 +14,7 @@
 package runtime
 
 import (
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/metadata"
+	"sdbflow/engine/jobmaster/dm/metadata"
 )
 
 // TaskStatus defines the running task status.

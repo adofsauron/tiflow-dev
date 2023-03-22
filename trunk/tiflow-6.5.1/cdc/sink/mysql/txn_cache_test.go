@@ -19,7 +19,7 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 	"github.com/stretchr/testify/require"
 )
 

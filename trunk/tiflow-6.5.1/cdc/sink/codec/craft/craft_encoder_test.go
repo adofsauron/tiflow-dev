@@ -18,11 +18,11 @@ import (
 	"testing"
 
 	"github.com/pingcap/tidb/parser/mysql"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec"
-	"github.com/pingcap/tiflow/cdc/sink/codec/common"
-	"github.com/pingcap/tiflow/cdc/sink/codec/internal"
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec"
+	"sdbflow/cdc/sink/codec/common"
+	"sdbflow/cdc/sink/codec/internal"
+	"sdbflow/pkg/config"
 	"github.com/stretchr/testify/require"
 )
 

@@ -18,8 +18,8 @@ import (
 
 	. "github.com/pingcap/check"
 	"github.com/pingcap/tidb/dumpling/export"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/config"
+	"sdbflow/dm/pkg/log"
 	"go.uber.org/atomic"
 )
 

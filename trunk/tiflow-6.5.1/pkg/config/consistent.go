@@ -17,8 +17,8 @@ import (
 	"fmt"
 
 	"github.com/pingcap/tidb/br/pkg/storage"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/redo"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/redo"
 )
 
 const (

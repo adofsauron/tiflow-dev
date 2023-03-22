@@ -17,13 +17,13 @@ import (
 	"context"
 
 	"github.com/pingcap/errors"
-	v2 "github.com/pingcap/tiflow/cdc/api/v2"
-	"github.com/pingcap/tiflow/cdc/model"
-	apiv1client "github.com/pingcap/tiflow/pkg/api/v1"
-	apiv2client "github.com/pingcap/tiflow/pkg/api/v2"
-	"github.com/pingcap/tiflow/pkg/cmd/factory"
-	"github.com/pingcap/tiflow/pkg/cmd/util"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	v2 "sdbflow/cdc/api/v2"
+	"sdbflow/cdc/model"
+	apiv1client "sdbflow/pkg/api/v1"
+	apiv2client "sdbflow/pkg/api/v2"
+	"sdbflow/pkg/cmd/factory"
+	"sdbflow/pkg/cmd/util"
+	cerror "sdbflow/pkg/errors"
 	"github.com/spf13/cobra"
 )
 

@@ -19,11 +19,11 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/memquota"
-	"github.com/pingcap/tiflow/cdc/processor/sourcemanager"
-	"github.com/pingcap/tiflow/cdc/processor/sourcemanager/engine"
-	"github.com/pingcap/tiflow/cdc/redo"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/memquota"
+	"sdbflow/cdc/processor/sourcemanager"
+	"sdbflow/cdc/processor/sourcemanager/engine"
+	"sdbflow/cdc/redo"
 	"github.com/tikv/client-go/v2/oracle"
 	"go.uber.org/zap"
 )

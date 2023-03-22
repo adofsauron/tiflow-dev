@@ -23,8 +23,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/pkg/actor/message"
-	"github.com/pingcap/tiflow/pkg/leakutil"
+	"sdbflow/pkg/actor/message"
+	"sdbflow/pkg/leakutil"
 	dto "github.com/prometheus/client_model/go"
 	"github.com/stretchr/testify/require"
 )
@@ -678,7 +678,7 @@ func TestSendAfterMailboxClosed(t *testing.T) {
 }
 
 // Run the benchmark
-// go test -benchmem -run='^$' -bench '^(BenchmarkActorSendReceive)$' github.com/pingcap/tiflow/pkg/actor
+// go test -benchmem -run='^$' -bench '^(BenchmarkActorSendReceive)$' sdbflow/pkg/actor
 func BenchmarkActorSendReceive(b *testing.B) {
 	ctx := context.Background()
 	sys, router := makeTestSystem[any](b.Name())
@@ -718,7 +718,7 @@ func BenchmarkActorSendReceive(b *testing.B) {
 }
 
 // Run the benchmark
-// go test -benchmem -run='^$' -bench '^(BenchmarkPollActor)$' github.com/pingcap/tiflow/pkg/actor
+// go test -benchmem -run='^$' -bench '^(BenchmarkPollActor)$' sdbflow/pkg/actor
 func BenchmarkPollActor(b *testing.B) {
 	ctx := context.Background()
 	sys, router := makeTestSystem[any](b.Name())

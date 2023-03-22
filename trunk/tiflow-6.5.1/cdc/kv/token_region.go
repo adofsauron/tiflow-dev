@@ -19,8 +19,8 @@ import (
 	"time"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/contextutil"
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/contextutil"
+	"sdbflow/cdc/model"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

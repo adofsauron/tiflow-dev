@@ -136,7 +136,7 @@ function test_owner_cleanup_stale_tasks() {
 # test some retryable error meeting in the campaign owner loop
 function test_owner_retryable_error() {
 	echo "run test case test_owner_retryable_error"
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/cdc/capture/capture-campaign-compacted-error=1*return(true)'
+	export GO_FAILPOINTS='sdbflow/cdc/capture/capture-campaign-compacted-error=1*return(true)'
 	# start a capture server
 	run_cdc_server --workdir $WORK_DIR --binary $CDC_BINARY --logsuffix test_owner_retryable_error.server1
 	# ensure the server become the owner
@@ -145,7 +145,7 @@ function test_owner_retryable_error() {
 	owner_id=$($CDC_BINARY cli capture list 2>&1 | awk -F '"' '/\"id/{print $4}')
 	echo "owner pid:" $owner_pid
 	echo "owner id" $owner_id
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/cdc/owner/owner-run-with-error=1*return(true);github.com/pingcap/tiflow/cdc/capture/capture-resign-failed=1*return(true)'
+	export GO_FAILPOINTS='sdbflow/cdc/owner/owner-run-with-error=1*return(true);sdbflow/cdc/capture/capture-resign-failed=1*return(true)'
 	# run another server
 	run_cdc_server --workdir $WORK_DIR --binary $CDC_BINARY --logsuffix test_owner_retryable_error.server2 --addr "127.0.0.1:8301"
 	ensure $MAX_RETRIES "$CDC_BINARY cli capture list 2>&1 | grep -v \"$owner_id\" | grep id"
@@ -167,7 +167,7 @@ function test_owner_retryable_error() {
 }
 function test_gap_between_watch_capture() {
 	echo "run test case test_gap_between_watch_capture"
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/cdc/owner/sleep-in-owner-tick=1*sleep(6000)'
+	export GO_FAILPOINTS='sdbflow/cdc/owner/sleep-in-owner-tick=1*sleep(6000)'
 	# start a capture server
 	run_cdc_server --workdir $WORK_DIR --binary $CDC_BINARY --logsuffix test_gap_between_watch_capture.server1
 	# ensure the server become the owner

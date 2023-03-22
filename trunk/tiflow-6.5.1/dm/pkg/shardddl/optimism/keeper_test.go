@@ -20,9 +20,9 @@ import (
 	"github.com/pingcap/tidb/parser"
 	"github.com/pingcap/tidb/parser/model"
 	"github.com/pingcap/tidb/util/mock"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/config"
+	"sdbflow/dm/pkg/conn"
+	"sdbflow/dm/pkg/terror"
 	"go.etcd.io/etcd/tests/v3/integration"
 )
 

@@ -19,8 +19,8 @@ import (
 
 	"github.com/pingcap/check"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/terror"
 )
 
 func TestSuite(t *testing.T) {

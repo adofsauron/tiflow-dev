@@ -17,11 +17,11 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/pingcap/tiflow/dm/pb"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/metadata"
-	"github.com/pingcap/tiflow/engine/pkg/p2p"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/dm/pb"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/jobmaster/dm/metadata"
+	"sdbflow/engine/pkg/p2p"
+	"sdbflow/pkg/errors"
 )
 
 // Defines topics here

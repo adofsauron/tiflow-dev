@@ -34,12 +34,12 @@ import (
 	. "github.com/pingcap/check"
 	"github.com/pingcap/errors"
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/event"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/reader"
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/binlog/event"
+	"sdbflow/dm/pkg/binlog/reader"
+	"sdbflow/dm/pkg/gtid"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 var parseFileTimeout = 10 * time.Second
@@ -56,11 +56,11 @@ func (t *testReaderSuite) SetUpSuite(c *C) {
 	t.lastPos = 0
 	t.lastGTID, err = gtid.ParserGTID(gmysql.MySQLFlavor, "ba8f633f-1f15-11eb-b1c7-0242ac110002:1")
 	c.Assert(err, IsNil)
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/relay/SetHeartbeatInterval", "return(10000)"), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/relay/SetHeartbeatInterval", "return(10000)"), IsNil)
 }
 
 func (t *testReaderSuite) TearDownSuite(c *C) {
-	c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/relay/SetHeartbeatInterval"), IsNil)
+	c.Assert(failpoint.Disable("sdbflow/dm/relay/SetHeartbeatInterval"), IsNil)
 }
 
 func newBinlogReaderForTest(logger log.Logger, cfg *BinlogReaderConfig, notify bool, uuid string) *BinlogReader {

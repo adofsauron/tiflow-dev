@@ -21,14 +21,14 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
 	tidbkv "github.com/pingcap/tidb/kv"
-	"github.com/pingcap/tiflow/cdc/contextutil"
-	"github.com/pingcap/tiflow/cdc/kv"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/puller/frontier"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/pdutil"
-	"github.com/pingcap/tiflow/pkg/regionspan"
-	"github.com/pingcap/tiflow/pkg/txnutil"
+	"sdbflow/cdc/contextutil"
+	"sdbflow/cdc/kv"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/puller/frontier"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/pdutil"
+	"sdbflow/pkg/regionspan"
+	"sdbflow/pkg/txnutil"
 	"github.com/tikv/client-go/v2/oracle"
 	"github.com/tikv/client-go/v2/tikv"
 	pd "github.com/tikv/pd/client"
@@ -166,7 +166,7 @@ func (p *pullerImpl) Run(ctx context.Context) error {
 		metricsTicker := time.NewTicker(15 * time.Second)
 		defer metricsTicker.Stop()
 		output := func(raw *model.RawKVEntry) error {
-			// even after https://github.com/pingcap/tiflow/pull/2038, kv client
+			// even after https://sdbflow/pull/2038, kv client
 			// could still miss region change notification, which leads to resolved
 			// ts update missing in puller, however resolved ts fallback here can
 			// be ignored since no late data is received and the guarantee of

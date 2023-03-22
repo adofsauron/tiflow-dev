@@ -21,9 +21,9 @@ import (
 
 	"github.com/golang/mock/gomock"
 	perrors "github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/engine/pkg/rpcutil"
-	"github.com/pingcap/tiflow/engine/pkg/rpcutil/mock"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/pkg/rpcutil"
+	"sdbflow/engine/pkg/rpcutil/mock"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/genproto/googleapis/rpc/errdetails"
 	"google.golang.org/grpc"

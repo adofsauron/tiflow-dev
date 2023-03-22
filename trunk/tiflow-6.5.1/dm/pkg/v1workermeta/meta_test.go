@@ -18,9 +18,9 @@ import (
 	"testing"
 
 	. "github.com/pingcap/check"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/config"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/terror"
 	"github.com/syndtr/goleveldb/leveldb"
 )
 

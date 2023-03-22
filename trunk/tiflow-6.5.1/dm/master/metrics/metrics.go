@@ -18,7 +18,7 @@ import (
 	"time"
 
 	cpu "github.com/pingcap/tidb-tools/pkg/utils"
-	"github.com/pingcap/tiflow/engine/pkg/promutil"
+	"sdbflow/engine/pkg/promutil"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

@@ -18,9 +18,9 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/pingcap/tiflow/engine/pkg/dbutil"
-	"github.com/pingcap/tiflow/engine/pkg/meta/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/pkg/dbutil"
+	"sdbflow/engine/pkg/meta/model"
+	"sdbflow/pkg/errors"
 )
 
 // NewClientConnImpl return a new clientConnImpl

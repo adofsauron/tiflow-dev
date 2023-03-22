@@ -20,8 +20,8 @@ import (
 	"github.com/pingcap/tidb/parser"
 	timodel "github.com/pingcap/tidb/parser/model"
 	tifilter "github.com/pingcap/tidb/util/filter"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 )
 

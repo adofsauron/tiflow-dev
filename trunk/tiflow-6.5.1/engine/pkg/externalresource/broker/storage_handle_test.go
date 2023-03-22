@@ -17,12 +17,12 @@ import (
 	"context"
 	"testing"
 
-	pb "github.com/pingcap/tiflow/engine/enginepb"
-	"github.com/pingcap/tiflow/engine/pkg/externalresource/internal"
-	"github.com/pingcap/tiflow/engine/pkg/externalresource/internal/local"
-	"github.com/pingcap/tiflow/engine/pkg/externalresource/manager"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
-	"github.com/pingcap/tiflow/engine/pkg/tenant"
+	pb "sdbflow/engine/enginepb"
+	"sdbflow/engine/pkg/externalresource/internal"
+	"sdbflow/engine/pkg/externalresource/internal/local"
+	"sdbflow/engine/pkg/externalresource/manager"
+	resModel "sdbflow/engine/pkg/externalresource/model"
+	"sdbflow/engine/pkg/tenant"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 )

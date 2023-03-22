@@ -19,9 +19,9 @@ import (
 	"net/url"
 
 	brStorage "github.com/pingcap/tidb/br/pkg/storage"
-	"github.com/pingcap/tiflow/engine/pkg/externalresource/internal"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/engine/pkg/externalresource/internal"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/util"
 )
 
 // ExternalStorageFactory represents a factory used to create

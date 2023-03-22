@@ -19,7 +19,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/pkg/actor/message"
+	"sdbflow/pkg/actor/message"
 	"github.com/stretchr/testify/require"
 )
 

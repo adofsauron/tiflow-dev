@@ -16,8 +16,8 @@ package internal
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/tablepb"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/tablepb"
 )
 
 // TableExecutor is an abstraction for "Processor".

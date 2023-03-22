@@ -23,10 +23,10 @@ import (
 
 	. "github.com/pingcap/check"
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/dm/pkg/etcdutil"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/etcdutil"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 	"github.com/tikv/pd/pkg/utils/tempurl"
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.etcd.io/etcd/server/v3/embed"
@@ -109,9 +109,9 @@ func testElection2After1(t *testElectionSuite, c *C, normalExit bool) {
 	ctx1, cancel1 := context.WithCancel(context.Background())
 	defer cancel1()
 	if !normalExit {
-		c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/pkg/election/mockCampaignLoopExitedAbnormally", `return()`), IsNil)
+		c.Assert(failpoint.Enable("sdbflow/dm/pkg/election/mockCampaignLoopExitedAbnormally", `return()`), IsNil)
 		//nolint:errcheck
-		defer failpoint.Disable("github.com/pingcap/tiflow/dm/pkg/election/mockCampaignLoopExitedAbnormally")
+		defer failpoint.Disable("sdbflow/dm/pkg/election/mockCampaignLoopExitedAbnormally")
 	}
 	e1, err := NewElection(ctx1, cli, sessionTTL, key, ID1, addr1, t.notifyBlockTime)
 	c.Assert(err, IsNil)
@@ -130,7 +130,7 @@ func testElection2After1(t *testElectionSuite, c *C, normalExit bool) {
 	c.Assert(leaderID, Equals, e1.ID())
 	c.Assert(leaderAddr, Equals, addr1)
 	if !normalExit {
-		c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/pkg/election/mockCampaignLoopExitedAbnormally"), IsNil)
+		c.Assert(failpoint.Disable("sdbflow/dm/pkg/election/mockCampaignLoopExitedAbnormally"), IsNil)
 	}
 
 	// start e2

@@ -17,8 +17,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/scheduler/schedulepb"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/scheduler/schedulepb"
 )
 
 func benchmarkHeartbeatResponse(b *testing.B, bench func(b *testing.B, a *agent)) {

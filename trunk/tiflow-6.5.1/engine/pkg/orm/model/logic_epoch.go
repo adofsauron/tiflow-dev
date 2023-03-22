@@ -17,7 +17,7 @@ import (
 	"context"
 
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/errors"
 	"go.uber.org/atomic"
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"

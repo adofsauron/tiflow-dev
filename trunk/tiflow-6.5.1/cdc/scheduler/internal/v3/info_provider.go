@@ -14,8 +14,8 @@
 package v3
 
 import (
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/scheduler/internal"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/scheduler/internal"
 )
 
 var _ internal.InfoProvider = (*coordinator)(nil)

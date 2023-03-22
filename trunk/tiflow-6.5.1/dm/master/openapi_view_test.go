@@ -30,17 +30,17 @@ import (
 	"github.com/deepmap/oapi-codegen/pkg/testutil"
 	"github.com/golang/mock/gomock"
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/dm/checker"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/openapi"
-	"github.com/pingcap/tiflow/dm/openapi/fixtures"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pbmock"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/checker"
+	"sdbflow/dm/config"
+	"sdbflow/dm/openapi"
+	"sdbflow/dm/openapi/fixtures"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pbmock"
+	"sdbflow/dm/pkg/conn"
+	"sdbflow/dm/pkg/ha"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 	"github.com/tikv/pd/pkg/utils/tempurl"
@@ -163,15 +163,15 @@ func (s *OpenAPIViewSuite) SetupSuite() {
 func (s *OpenAPIViewSuite) SetupTest() {
 	checker.CheckSyncConfigFunc = mockCheckSyncConfig
 	CheckAndAdjustSourceConfigFunc = checkAndNoAdjustSourceConfigMock
-	s.NoError(failpoint.Enable("github.com/pingcap/tiflow/dm/master/MockSkipAdjustTargetDB", `return(true)`))
-	s.NoError(failpoint.Enable("github.com/pingcap/tiflow/dm/master/MockSkipRemoveMetaData", `return(true)`))
+	s.NoError(failpoint.Enable("sdbflow/dm/master/MockSkipAdjustTargetDB", `return(true)`))
+	s.NoError(failpoint.Enable("sdbflow/dm/master/MockSkipRemoveMetaData", `return(true)`))
 }
 
 func (s *OpenAPIViewSuite) TearDownTest() {
 	checker.CheckSyncConfigFunc = checker.CheckSyncConfig
 	CheckAndAdjustSourceConfigFunc = checkAndAdjustSourceConfig
-	s.NoError(failpoint.Disable("github.com/pingcap/tiflow/dm/master/MockSkipAdjustTargetDB"))
-	s.NoError(failpoint.Disable("github.com/pingcap/tiflow/dm/master/MockSkipRemoveMetaData"))
+	s.NoError(failpoint.Disable("sdbflow/dm/master/MockSkipAdjustTargetDB"))
+	s.NoError(failpoint.Disable("sdbflow/dm/master/MockSkipRemoveMetaData"))
 }
 
 func (s *OpenAPIViewSuite) TestClusterAPI() {
@@ -431,11 +431,11 @@ func (s *OpenAPIViewSuite) TestReverseRequestToHttpsLeader() {
 	s.Equal(0, resultListSource2.Total)
 
 	// without tls, list source not from leader will be 502
-	s.NoError(failpoint.Enable("github.com/pingcap/tiflow/dm/master/MockNotSetTls", `return()`))
+	s.NoError(failpoint.Enable("sdbflow/dm/master/MockNotSetTls", `return()`))
 	result, err = HTTPTestWithTestResponseRecorder(testutil.NewRequest().Get(baseURL), s2.openapiHandles)
 	s.NoError(err)
 	s.Equal(http.StatusBadGateway, result.Code())
-	s.NoError(failpoint.Disable("github.com/pingcap/tiflow/dm/master/MockNotSetTls"))
+	s.NoError(failpoint.Disable("sdbflow/dm/master/MockNotSetTls"))
 }
 
 // httptest.ResponseRecorder is not http.CloseNotifier, will panic when test reverse proxy.
@@ -1012,7 +1012,7 @@ func (s *OpenAPIViewSuite) TestTaskAPI() {
 	s.Equal(task1FromHTTP.Name, task.Name)
 
 	// update a task
-	s.NoError(failpoint.Enable("github.com/pingcap/tiflow/dm/master/scheduler/operateCheckSubtasksCanUpdate", `return("success")`))
+	s.NoError(failpoint.Enable("sdbflow/dm/master/scheduler/operateCheckSubtasksCanUpdate", `return("success")`))
 	clone := task
 	batch := 1000
 	clone.SourceConfig.IncrMigrateConf.ReplBatch = &batch
@@ -1022,7 +1022,7 @@ func (s *OpenAPIViewSuite) TestTaskAPI() {
 	var updateResp openapi.OperateTaskResponse
 	s.NoError(result.UnmarshalBodyToObject(&updateResp))
 	s.EqualValues(updateResp.Task.SourceConfig.IncrMigrateConf.ReplBatch, clone.SourceConfig.IncrMigrateConf.ReplBatch)
-	s.NoError(failpoint.Disable("github.com/pingcap/tiflow/dm/master/scheduler/operateCheckSubtasksCanUpdate"))
+	s.NoError(failpoint.Disable("sdbflow/dm/master/scheduler/operateCheckSubtasksCanUpdate"))
 
 	// list tasks
 	result = testutil.NewRequest().Get(taskURL).GoWithHTTPHandler(s.T(), s1.openapiHandles)

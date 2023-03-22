@@ -18,10 +18,10 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/engine/pkg/notifier"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/logutil"
+	"sdbflow/engine/model"
+	"sdbflow/engine/pkg/notifier"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/logutil"
 	"go.uber.org/zap"
 )
 

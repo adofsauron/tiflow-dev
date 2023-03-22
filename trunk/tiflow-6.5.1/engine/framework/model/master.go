@@ -18,11 +18,11 @@ import (
 	"encoding/json"
 	"reflect"
 
-	ormModel "github.com/pingcap/tiflow/engine/pkg/orm/model"
-	"github.com/pingcap/tiflow/engine/pkg/p2p"
-	"github.com/pingcap/tiflow/engine/pkg/tenant"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/label"
+	ormModel "sdbflow/engine/pkg/orm/model"
+	"sdbflow/engine/pkg/p2p"
+	"sdbflow/engine/pkg/tenant"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/label"
 	"gorm.io/gorm"
 )
 

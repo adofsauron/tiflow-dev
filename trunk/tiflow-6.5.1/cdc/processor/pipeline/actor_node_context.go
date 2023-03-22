@@ -18,11 +18,11 @@ import (
 	"sync/atomic"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/pkg/actor"
-	"github.com/pingcap/tiflow/pkg/actor/message"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/context"
-	pmessage "github.com/pingcap/tiflow/pkg/pipeline/message"
+	"sdbflow/pkg/actor"
+	"sdbflow/pkg/actor/message"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/context"
+	pmessage "sdbflow/pkg/pipeline/message"
 	"go.uber.org/zap"
 )
 

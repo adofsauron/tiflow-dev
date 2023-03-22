@@ -17,7 +17,7 @@ import (
 	"encoding/json"
 	"math/rand"
 
-	"github.com/pingcap/tiflow/dm/openapi"
+	"sdbflow/dm/openapi"
 )
 
 var (

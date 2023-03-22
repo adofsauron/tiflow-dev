@@ -16,8 +16,8 @@ package causality
 import (
 	"sync"
 
-	"github.com/pingcap/tiflow/pkg/causality/internal"
-	"github.com/pingcap/tiflow/pkg/chann"
+	"sdbflow/pkg/causality/internal"
+	"sdbflow/pkg/chann"
 	"go.uber.org/atomic"
 )
 

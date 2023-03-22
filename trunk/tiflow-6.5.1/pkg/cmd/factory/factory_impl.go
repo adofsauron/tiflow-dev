@@ -20,14 +20,14 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	apiv1client "github.com/pingcap/tiflow/pkg/api/v1"
-	apiv2client "github.com/pingcap/tiflow/pkg/api/v2"
-	cmdconetxt "github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/cmd/util"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/security"
-	"github.com/pingcap/tiflow/pkg/version"
+	apiv1client "sdbflow/pkg/api/v1"
+	apiv2client "sdbflow/pkg/api/v2"
+	cmdconetxt "sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/cmd/util"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/security"
+	"sdbflow/pkg/version"
 	pd "github.com/tikv/pd/client"
 	etcdlogutil "go.etcd.io/etcd/client/pkg/v3/logutil"
 	clientv3 "go.etcd.io/etcd/client/v3"
@@ -117,7 +117,7 @@ func (f *factoryImpl) EtcdClient() (*etcd.CDCEtcdClientImpl, error) {
 		LogConfig:   &logConfig,
 		DialTimeout: 30 * time.Second,
 		// TODO(hi-rustin): add gRPC metrics to Options.
-		// See also: https://github.com/pingcap/tiflow/pull/2341#discussion_r673018537.
+		// See also: https://sdbflow/pull/2341#discussion_r673018537.
 		DialOptions: []grpc.DialOption{
 			grpcTLSOption,
 			grpc.WithBlock(),
@@ -173,7 +173,7 @@ func (f factoryImpl) PdClient() (pd.Client, error) {
 		ctx, pdEndpoints, credential.PDSecurityOption(),
 		pd.WithMaxErrorRetry(maxGetPDClientRetryTimes),
 		// TODO(hi-rustin): add gRPC metrics to Options.
-		// See also: https://github.com/pingcap/tiflow/pull/2341#discussion_r673032407.
+		// See also: https://sdbflow/pull/2341#discussion_r673032407.
 		pd.WithGRPCDialOptions(
 			grpcTLSOption,
 			grpc.WithBlock(),

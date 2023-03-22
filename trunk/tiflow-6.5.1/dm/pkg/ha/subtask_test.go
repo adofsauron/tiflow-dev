@@ -17,7 +17,7 @@ import (
 	"context"
 
 	. "github.com/pingcap/check"
-	"github.com/pingcap/tiflow/dm/config"
+	"sdbflow/dm/config"
 )
 
 func (t *testForEtcd) TestSubTaskEtcd(c *C) {

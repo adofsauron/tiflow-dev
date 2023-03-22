@@ -16,7 +16,7 @@ package sorter
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 )
 
 // Stats of a sorter.

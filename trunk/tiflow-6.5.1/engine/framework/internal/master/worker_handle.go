@@ -17,9 +17,9 @@ import (
 	"context"
 
 	"github.com/pingcap/log"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/engine/pkg/p2p"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/model"
+	"sdbflow/engine/pkg/p2p"
 	"go.uber.org/zap"
 )
 

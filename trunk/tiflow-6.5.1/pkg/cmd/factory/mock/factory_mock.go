@@ -9,10 +9,10 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	v1 "github.com/pingcap/tiflow/pkg/api/v1"
-	v2 "github.com/pingcap/tiflow/pkg/api/v2"
-	etcd "github.com/pingcap/tiflow/pkg/etcd"
-	security "github.com/pingcap/tiflow/pkg/security"
+	v1 "sdbflow/pkg/api/v1"
+	v2 "sdbflow/pkg/api/v2"
+	etcd "sdbflow/pkg/etcd"
+	security "sdbflow/pkg/security"
 	pd "github.com/tikv/pd/client"
 	grpc "google.golang.org/grpc"
 )

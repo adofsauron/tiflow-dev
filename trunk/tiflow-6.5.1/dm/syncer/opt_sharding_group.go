@@ -17,10 +17,10 @@ import (
 	"sync"
 
 	"github.com/pingcap/tidb/util/filter"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/config"
+	"sdbflow/dm/pkg/binlog"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/utils"
 	"go.uber.org/zap"
 )
 

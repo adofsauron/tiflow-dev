@@ -17,8 +17,8 @@ import (
 	"regexp"
 	"testing"
 
-	metaMock "github.com/pingcap/tiflow/engine/pkg/meta/mock"
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
+	metaMock "sdbflow/engine/pkg/meta/mock"
+	metaModel "sdbflow/engine/pkg/meta/model"
 	"github.com/stretchr/testify/require"
 )
 

@@ -22,8 +22,8 @@ import (
 	"github.com/DATA-DOG/go-sqlmock"
 	"github.com/go-sql-driver/mysql"
 	tmysql "github.com/pingcap/tidb/parser/mysql"
-	metaMock "github.com/pingcap/tiflow/engine/pkg/meta/mock"
-	"github.com/pingcap/tiflow/pkg/errors"
+	metaMock "sdbflow/engine/pkg/meta/mock"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 )
 

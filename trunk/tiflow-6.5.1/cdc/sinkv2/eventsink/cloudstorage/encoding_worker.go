@@ -18,8 +18,8 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec"
 	"go.uber.org/zap"
 	"golang.org/x/sync/errgroup"
 )

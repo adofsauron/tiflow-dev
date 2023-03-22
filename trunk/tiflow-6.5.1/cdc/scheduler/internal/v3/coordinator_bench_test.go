@@ -20,13 +20,13 @@ import (
 	"testing"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/tablepb"
-	"github.com/pingcap/tiflow/cdc/scheduler/internal/v3/member"
-	"github.com/pingcap/tiflow/cdc/scheduler/internal/v3/replication"
-	"github.com/pingcap/tiflow/cdc/scheduler/internal/v3/transport"
-	"github.com/pingcap/tiflow/cdc/scheduler/schedulepb"
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/tablepb"
+	"sdbflow/cdc/scheduler/internal/v3/member"
+	"sdbflow/cdc/scheduler/internal/v3/replication"
+	"sdbflow/cdc/scheduler/internal/v3/transport"
+	"sdbflow/cdc/scheduler/schedulepb"
+	"sdbflow/pkg/config"
 	"go.uber.org/zap/zapcore"
 )
 

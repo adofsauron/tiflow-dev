@@ -21,8 +21,8 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/pkg/config/outdated"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/config/outdated"
+	cerror "sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

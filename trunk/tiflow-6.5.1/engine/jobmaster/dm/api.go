@@ -19,12 +19,12 @@ import (
 	"sync"
 	"time"
 
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/config"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/metadata"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/runtime"
-	dmpkg "github.com/pingcap/tiflow/engine/pkg/dm"
-	"github.com/pingcap/tiflow/pkg/errors"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/jobmaster/dm/config"
+	"sdbflow/engine/jobmaster/dm/metadata"
+	"sdbflow/engine/jobmaster/dm/runtime"
+	dmpkg "sdbflow/engine/pkg/dm"
+	"sdbflow/pkg/errors"
 )
 
 // TaskStatus represents status of a task

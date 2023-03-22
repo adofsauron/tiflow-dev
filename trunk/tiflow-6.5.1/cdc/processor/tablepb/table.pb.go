@@ -7,7 +7,7 @@ import (
 	fmt "fmt"
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
-	github_com_pingcap_tiflow_cdc_model "github.com/pingcap/tiflow/cdc/model"
+	github_com_pingcap_tiflow_cdc_model "sdbflow/cdc/model"
 	io "io"
 	math "math"
 	math_bits "math/bits"
@@ -76,7 +76,7 @@ func (TableState) EnumDescriptor() ([]byte, []int) {
 // Span is a full extent of key space from an inclusive start_key to
 // an exclusive end_key.
 type Span struct {
-	TableID  github_com_pingcap_tiflow_cdc_model.TableID `protobuf:"varint,1,opt,name=table_id,json=tableId,proto3,casttype=github.com/pingcap/tiflow/cdc/model.TableID" json:"table_id,omitempty"`
+	TableID  github_com_pingcap_tiflow_cdc_model.TableID `protobuf:"varint,1,opt,name=table_id,json=tableId,proto3,casttype=sdbflow/cdc/model.TableID" json:"table_id,omitempty"`
 	StartKey Key                                         `protobuf:"bytes,2,opt,name=start_key,json=startKey,proto3,casttype=Key" json:"start_key,omitempty"`
 	EndKey   Key                                         `protobuf:"bytes,3,opt,name=end_key,json=endKey,proto3,casttype=Key" json:"end_key,omitempty"`
 }
@@ -114,8 +114,8 @@ func (m *Span) XXX_DiscardUnknown() {
 var xxx_messageInfo_Span proto.InternalMessageInfo
 
 type Checkpoint struct {
-	CheckpointTs github_com_pingcap_tiflow_cdc_model.Ts `protobuf:"varint,1,opt,name=checkpoint_ts,json=checkpointTs,proto3,casttype=github.com/pingcap/tiflow/cdc/model.Ts" json:"checkpoint_ts,omitempty"`
-	ResolvedTs   github_com_pingcap_tiflow_cdc_model.Ts `protobuf:"varint,2,opt,name=resolved_ts,json=resolvedTs,proto3,casttype=github.com/pingcap/tiflow/cdc/model.Ts" json:"resolved_ts,omitempty"`
+	CheckpointTs github_com_pingcap_tiflow_cdc_model.Ts `protobuf:"varint,1,opt,name=checkpoint_ts,json=checkpointTs,proto3,casttype=sdbflow/cdc/model.Ts" json:"checkpoint_ts,omitempty"`
+	ResolvedTs   github_com_pingcap_tiflow_cdc_model.Ts `protobuf:"varint,2,opt,name=resolved_ts,json=resolvedTs,proto3,casttype=sdbflow/cdc/model.Ts" json:"resolved_ts,omitempty"`
 }
 
 func (m *Checkpoint) Reset()         { *m = Checkpoint{} }
@@ -170,11 +170,11 @@ type Stats struct {
 	// Number of captured regions.
 	RegionCount uint64 `protobuf:"varint,1,opt,name=region_count,json=regionCount,proto3" json:"region_count,omitempty"`
 	// The current timestamp from the table's point of view.
-	CurrentTs github_com_pingcap_tiflow_cdc_model.Ts `protobuf:"varint,2,opt,name=current_ts,json=currentTs,proto3,casttype=github.com/pingcap/tiflow/cdc/model.Ts" json:"current_ts,omitempty"`
+	CurrentTs github_com_pingcap_tiflow_cdc_model.Ts `protobuf:"varint,2,opt,name=current_ts,json=currentTs,proto3,casttype=sdbflow/cdc/model.Ts" json:"current_ts,omitempty"`
 	// Checkponits at each stage.
 	StageCheckpoints map[string]Checkpoint `protobuf:"bytes,3,rep,name=stage_checkpoints,json=stageCheckpoints,proto3" json:"stage_checkpoints" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	// The barrier timestamp of the table.
-	BarrierTs github_com_pingcap_tiflow_cdc_model.Ts `protobuf:"varint,4,opt,name=barrier_ts,json=barrierTs,proto3,casttype=github.com/pingcap/tiflow/cdc/model.Ts" json:"barrier_ts,omitempty"`
+	BarrierTs github_com_pingcap_tiflow_cdc_model.Ts `protobuf:"varint,4,opt,name=barrier_ts,json=barrierTs,proto3,casttype=sdbflow/cdc/model.Ts" json:"barrier_ts,omitempty"`
 }
 
 func (m *Stats) Reset()         { *m = Stats{} }
@@ -240,7 +240,7 @@ func (m *Stats) GetBarrierTs() github_com_pingcap_tiflow_cdc_model.Ts {
 
 // TableStatus is the running status of a table.
 type TableStatus struct {
-	TableID    github_com_pingcap_tiflow_cdc_model.TableID `protobuf:"varint,1,opt,name=table_id,json=tableId,proto3,casttype=github.com/pingcap/tiflow/cdc/model.TableID" json:"table_id,omitempty"`
+	TableID    github_com_pingcap_tiflow_cdc_model.TableID `protobuf:"varint,1,opt,name=table_id,json=tableId,proto3,casttype=sdbflow/cdc/model.TableID" json:"table_id,omitempty"`
 	State      TableState                                  `protobuf:"varint,2,opt,name=state,proto3,enum=pingcap.tiflow.cdc.processor.tablepb.TableState" json:"state,omitempty"`
 	Checkpoint Checkpoint                                  `protobuf:"bytes,3,opt,name=checkpoint,proto3" json:"checkpoint"`
 	Stats      Stats                                       `protobuf:"bytes,4,opt,name=stats,proto3" json:"stats"`

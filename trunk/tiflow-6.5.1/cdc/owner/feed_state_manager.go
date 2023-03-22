@@ -19,9 +19,9 @@ import (
 	"github.com/cenkalti/backoff/v4"
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/orchestrator"
+	"sdbflow/cdc/model"
+	cerrors "sdbflow/pkg/errors"
+	"sdbflow/pkg/orchestrator"
 	"go.uber.org/zap"
 )
 

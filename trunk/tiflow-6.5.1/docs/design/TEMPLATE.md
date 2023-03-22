@@ -1,8 +1,8 @@
 # TiCDC Design Documents
 
 - Author(s): [Author Name](http://github.com/your-github-id), [Co-Author Name](http://github.com/your-github-id), ...
-- Discussion PR: https://github.com/pingcap/tiflow/pull/XXX
-- Tracking Issue: https://github.com/pingcap/tiflow/issues/XXX
+- Discussion PR: https://sdbflow/pull/XXX
+- Tracking Issue: https://sdbflow/issues/XXX
 
 ## Table of Contents
 

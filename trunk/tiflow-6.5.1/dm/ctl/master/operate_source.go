@@ -19,11 +19,11 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/config"
+	"sdbflow/dm/ctl/common"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 )

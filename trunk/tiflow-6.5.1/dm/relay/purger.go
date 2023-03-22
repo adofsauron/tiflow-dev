@@ -19,12 +19,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/streamer"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/config"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/streamer"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 )

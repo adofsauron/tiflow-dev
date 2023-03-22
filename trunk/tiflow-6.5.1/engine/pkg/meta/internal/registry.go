@@ -17,11 +17,11 @@ import (
 	"sync"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/pkg/meta/internal/etcdkv"
-	"github.com/pingcap/tiflow/engine/pkg/meta/internal/mockkv"
-	"github.com/pingcap/tiflow/engine/pkg/meta/internal/sqlkv"
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/pkg/meta/internal/etcdkv"
+	"sdbflow/engine/pkg/meta/internal/mockkv"
+	"sdbflow/engine/pkg/meta/internal/sqlkv"
+	metaModel "sdbflow/engine/pkg/meta/model"
+	"sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

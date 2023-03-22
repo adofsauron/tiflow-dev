@@ -13,7 +13,7 @@
 
 syntax = "proto3";
 package pingcap.tiflow.cdc.scheduler.schedulepb;
-option go_package = "github.com/pingcap/tiflow/cdc/scheduler/schedulepb";
+option go_package = "sdbflow/cdc/scheduler/schedulepb";
 
 import "gogoproto/gogo.proto";
 import "processor/tablepb/table.proto";
@@ -22,7 +22,7 @@ option(gogoproto.goproto_enum_prefix_all) = false;
 
 message AddTableRequest {
     int64 table_id = 1 [
-        (gogoproto.casttype) = "github.com/pingcap/tiflow/cdc/model.TableID",
+        (gogoproto.casttype) = "sdbflow/cdc/model.TableID",
         (gogoproto.customname) = "TableID"
     ];
     bool is_secondary = 2;
@@ -31,7 +31,7 @@ message AddTableRequest {
 
 message RemoveTableRequest {
     int64 table_id = 1 [
-        (gogoproto.casttype) = "github.com/pingcap/tiflow/cdc/model.TableID",
+        (gogoproto.casttype) = "sdbflow/cdc/model.TableID",
         (gogoproto.customname) = "TableID"
     ];
 }
@@ -62,7 +62,7 @@ message DispatchTableResponse {
 
 message Heartbeat {
     repeated int64 table_ids = 1 [
-        (gogoproto.casttype) = "github.com/pingcap/tiflow/cdc/model.TableID",
+        (gogoproto.casttype) = "sdbflow/cdc/model.TableID",
         (gogoproto.customname) = "TableIDs"
     ];
     bool is_stopping = 2;
@@ -74,7 +74,7 @@ message Heartbeat {
 
 message HeartbeatResponse {
     repeated processor.tablepb.TableStatus tables = 1 [(gogoproto.nullable) = false];
-    int32 liveness = 2 [(gogoproto.casttype) = "github.com/pingcap/tiflow/cdc/model.Liveness"];
+    int32 liveness = 2 [(gogoproto.casttype) = "sdbflow/cdc/model.Liveness"];
 }
 
 enum MessageType {
@@ -98,8 +98,8 @@ message Message {
     }
     Header header = 1;
     MessageType msg_type = 2;
-    string from = 3 [(gogoproto.casttype) = "github.com/pingcap/tiflow/cdc/model.CaptureID"];
-    string to = 4 [(gogoproto.casttype) = "github.com/pingcap/tiflow/cdc/model.CaptureID"];
+    string from = 3 [(gogoproto.casttype) = "sdbflow/cdc/model.CaptureID"];
+    string to = 4 [(gogoproto.casttype) = "sdbflow/cdc/model.CaptureID"];
     DispatchTableRequest dispatch_table_request = 5;
     DispatchTableResponse dispatch_table_response = 6;
     Heartbeat heartbeat = 7;

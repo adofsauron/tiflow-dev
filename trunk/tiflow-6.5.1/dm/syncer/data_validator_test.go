@@ -28,19 +28,19 @@ import (
 	"github.com/pingcap/tidb/util/filter"
 	regexprrouter "github.com/pingcap/tidb/util/regexpr-router"
 	router "github.com/pingcap/tidb/util/table-router"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/event"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/retry"
-	"github.com/pingcap/tiflow/dm/pkg/schema"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/syncer/binlogstream"
-	"github.com/pingcap/tiflow/dm/syncer/dbconn"
+	"sdbflow/dm/config"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/binlog/event"
+	"sdbflow/dm/pkg/conn"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/gtid"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/retry"
+	"sdbflow/dm/pkg/schema"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/syncer/binlogstream"
+	"sdbflow/dm/syncer/dbconn"
 	"github.com/stretchr/testify/require"
 )
 
@@ -94,9 +94,9 @@ func genSubtaskConfig(t *testing.T) *config.SubTaskConfig {
 }
 
 func TestValidatorStartStopAndInitialize(t *testing.T) {
-	require.Nil(t, failpoint.Enable("github.com/pingcap/tiflow/dm/syncer/ValidatorMockUpstreamTZ", `return()`))
+	require.Nil(t, failpoint.Enable("sdbflow/dm/syncer/ValidatorMockUpstreamTZ", `return()`))
 	defer func() {
-		require.Nil(t, failpoint.Disable("github.com/pingcap/tiflow/dm/syncer/ValidatorMockUpstreamTZ"))
+		require.Nil(t, failpoint.Disable("sdbflow/dm/syncer/ValidatorMockUpstreamTZ"))
 	}()
 	cfg := genSubtaskConfig(t)
 	syncerObj := NewSyncer(cfg, nil, nil)
@@ -147,9 +147,9 @@ func TestValidatorStartStopAndInitialize(t *testing.T) {
 }
 
 func TestValidatorFillResult(t *testing.T) {
-	require.Nil(t, failpoint.Enable("github.com/pingcap/tiflow/dm/syncer/ValidatorMockUpstreamTZ", `return()`))
+	require.Nil(t, failpoint.Enable("sdbflow/dm/syncer/ValidatorMockUpstreamTZ", `return()`))
 	defer func() {
-		require.Nil(t, failpoint.Disable("github.com/pingcap/tiflow/dm/syncer/ValidatorMockUpstreamTZ"))
+		require.Nil(t, failpoint.Disable("sdbflow/dm/syncer/ValidatorMockUpstreamTZ"))
 	}()
 	cfg := genSubtaskConfig(t)
 	syncerObj := NewSyncer(cfg, nil, nil)
@@ -173,9 +173,9 @@ func TestValidatorFillResult(t *testing.T) {
 }
 
 func TestValidatorErrorProcessRoutine(t *testing.T) {
-	require.Nil(t, failpoint.Enable("github.com/pingcap/tiflow/dm/syncer/ValidatorMockUpstreamTZ", `return()`))
+	require.Nil(t, failpoint.Enable("sdbflow/dm/syncer/ValidatorMockUpstreamTZ", `return()`))
 	defer func() {
-		require.Nil(t, failpoint.Disable("github.com/pingcap/tiflow/dm/syncer/ValidatorMockUpstreamTZ"))
+		require.Nil(t, failpoint.Disable("sdbflow/dm/syncer/ValidatorMockUpstreamTZ"))
 	}()
 	cfg := genSubtaskConfig(t)
 	syncerObj := NewSyncer(cfg, nil, nil)
@@ -198,9 +198,9 @@ func TestValidatorErrorProcessRoutine(t *testing.T) {
 }
 
 func TestValidatorDeadLock(t *testing.T) {
-	require.NoError(t, failpoint.Enable("github.com/pingcap/tiflow/dm/syncer/ValidatorMockUpstreamTZ", `return()`))
+	require.NoError(t, failpoint.Enable("sdbflow/dm/syncer/ValidatorMockUpstreamTZ", `return()`))
 	defer func() {
-		require.NoError(t, failpoint.Disable("github.com/pingcap/tiflow/dm/syncer/ValidatorMockUpstreamTZ"))
+		require.NoError(t, failpoint.Disable("sdbflow/dm/syncer/ValidatorMockUpstreamTZ"))
 	}()
 	cfg := genSubtaskConfig(t)
 	syncerObj := NewSyncer(cfg, nil, nil)
@@ -249,9 +249,9 @@ func (c *mockedCheckPointForValidator) FlushedGlobalPoint() binlog.Location {
 }
 
 func TestValidatorWaitSyncerSynced(t *testing.T) {
-	require.Nil(t, failpoint.Enable("github.com/pingcap/tiflow/dm/syncer/ValidatorMockUpstreamTZ", `return()`))
+	require.Nil(t, failpoint.Enable("sdbflow/dm/syncer/ValidatorMockUpstreamTZ", `return()`))
 	defer func() {
-		require.Nil(t, failpoint.Disable("github.com/pingcap/tiflow/dm/syncer/ValidatorMockUpstreamTZ"))
+		require.Nil(t, failpoint.Disable("sdbflow/dm/syncer/ValidatorMockUpstreamTZ"))
 	}()
 	cfg := genSubtaskConfig(t)
 	syncerObj := NewSyncer(cfg, nil, nil)
@@ -293,9 +293,9 @@ func TestValidatorWaitSyncerSynced(t *testing.T) {
 }
 
 func TestValidatorWaitSyncerRunning(t *testing.T) {
-	require.Nil(t, failpoint.Enable("github.com/pingcap/tiflow/dm/syncer/ValidatorMockUpstreamTZ", `return()`))
+	require.Nil(t, failpoint.Enable("sdbflow/dm/syncer/ValidatorMockUpstreamTZ", `return()`))
 	defer func() {
-		require.Nil(t, failpoint.Disable("github.com/pingcap/tiflow/dm/syncer/ValidatorMockUpstreamTZ"))
+		require.Nil(t, failpoint.Disable("sdbflow/dm/syncer/ValidatorMockUpstreamTZ"))
 	}()
 	cfg := genSubtaskConfig(t)
 	syncerObj := NewSyncer(cfg, nil, nil)
@@ -508,9 +508,9 @@ func TestValidatorDoValidate(t *testing.T) {
 	mockStreamer, err := mockStreamerProducer.GenerateStreamFrom(binlog.MustZeroLocation(mysql.MySQLFlavor))
 	require.NoError(t, err)
 
-	require.Nil(t, failpoint.Enable("github.com/pingcap/tiflow/dm/syncer/ValidatorMockUpstreamTZ", `return()`))
+	require.Nil(t, failpoint.Enable("sdbflow/dm/syncer/ValidatorMockUpstreamTZ", `return()`))
 	defer func() {
-		require.Nil(t, failpoint.Disable("github.com/pingcap/tiflow/dm/syncer/ValidatorMockUpstreamTZ"))
+		require.Nil(t, failpoint.Disable("sdbflow/dm/syncer/ValidatorMockUpstreamTZ"))
 	}()
 	validator := NewContinuousDataValidator(cfg, syncerObj, false)
 	validator.validateInterval = 10 * time.Minute // we don't want worker start validate
@@ -645,9 +645,9 @@ func TestValidatorGetValidationStatus(t *testing.T) {
 }
 
 func TestValidatorGetValidationError(t *testing.T) {
-	require.Nil(t, failpoint.Enable("github.com/pingcap/tiflow/dm/syncer/MockValidationQuery", `return(true)`))
+	require.Nil(t, failpoint.Enable("sdbflow/dm/syncer/MockValidationQuery", `return(true)`))
 	defer func() {
-		require.Nil(t, failpoint.Disable("github.com/pingcap/tiflow/dm/syncer/MockValidationQuery"))
+		require.Nil(t, failpoint.Disable("sdbflow/dm/syncer/MockValidationQuery"))
 	}()
 	db, dbMock, err := sqlmock.New()
 	require.Equal(t, log.InitLogger(&log.Config{}), nil)
@@ -722,9 +722,9 @@ func TestValidatorGetValidationError(t *testing.T) {
 }
 
 func TestValidatorOperateValidationError(t *testing.T) {
-	require.Nil(t, failpoint.Enable("github.com/pingcap/tiflow/dm/syncer/MockValidationQuery", `return(true)`))
+	require.Nil(t, failpoint.Enable("sdbflow/dm/syncer/MockValidationQuery", `return(true)`))
 	defer func() {
-		require.Nil(t, failpoint.Disable("github.com/pingcap/tiflow/dm/syncer/MockValidationQuery"))
+		require.Nil(t, failpoint.Disable("sdbflow/dm/syncer/MockValidationQuery"))
 	}()
 	var err error
 	db, dbMock, err := sqlmock.New()

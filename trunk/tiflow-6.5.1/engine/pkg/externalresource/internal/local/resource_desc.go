@@ -18,8 +18,8 @@ import (
 	"path/filepath"
 
 	brStorage "github.com/pingcap/tidb/br/pkg/storage"
-	"github.com/pingcap/tiflow/engine/pkg/externalresource/internal"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
+	"sdbflow/engine/pkg/externalresource/internal"
+	resModel "sdbflow/engine/pkg/externalresource/model"
 )
 
 var _ internal.ResourceDescriptor = (*resourceDescriptor)(nil)

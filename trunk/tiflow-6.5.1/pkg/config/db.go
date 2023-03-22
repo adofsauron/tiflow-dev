@@ -13,7 +13,7 @@
 
 package config
 
-import "github.com/pingcap/tiflow/pkg/errors"
+import "sdbflow/pkg/errors"
 
 // DBConfig represents db sorter config.
 type DBConfig struct {

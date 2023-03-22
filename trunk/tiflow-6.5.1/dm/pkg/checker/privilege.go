@@ -27,8 +27,8 @@ import (
 	"github.com/pingcap/tidb/util/dbutil"
 	"github.com/pingcap/tidb/util/filter"
 	"github.com/pingcap/tidb/util/stringutil"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/pkg/container/sortmap"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/pkg/container/sortmap"
 	"go.uber.org/zap"
 )
 

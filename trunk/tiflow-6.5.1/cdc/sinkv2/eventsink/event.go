@@ -14,8 +14,8 @@
 package eventsink
 
 import (
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sinkv2/tablesink/state"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sinkv2/tablesink/state"
 )
 
 // TableEvent is the interface for events which can be written to sink by TableSink.

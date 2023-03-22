@@ -16,9 +16,9 @@ package broker
 import (
 	"context"
 
-	pb "github.com/pingcap/tiflow/engine/enginepb"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
-	"github.com/pingcap/tiflow/engine/pkg/tenant"
+	pb "sdbflow/engine/enginepb"
+	resModel "sdbflow/engine/pkg/externalresource/model"
+	"sdbflow/engine/pkg/tenant"
 )
 
 // A Broker is created and maintained by the executor

@@ -19,8 +19,8 @@ import (
 
 	"github.com/DATA-DOG/go-sqlmock"
 	gmysql "github.com/go-mysql-org/go-mysql/mysql"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
 	"github.com/stretchr/testify/require"
 )
 

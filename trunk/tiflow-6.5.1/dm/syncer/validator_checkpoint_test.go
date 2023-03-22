@@ -27,13 +27,13 @@ import (
 	"github.com/pingcap/tidb/util/filter"
 	regexprrouter "github.com/pingcap/tidb/util/regexpr-router"
 	router "github.com/pingcap/tidb/util/table-router"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/retry"
-	"github.com/pingcap/tiflow/dm/pkg/schema"
-	"github.com/pingcap/tiflow/dm/syncer/dbconn"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/conn"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/retry"
+	"sdbflow/dm/pkg/schema"
+	"sdbflow/dm/syncer/dbconn"
 	"github.com/stretchr/testify/require"
 )
 
@@ -99,9 +99,9 @@ func TestValidatorCheckpointPersist(t *testing.T) {
 	require.NoError(t, err)
 	require.NoError(t, syncerObj.schemaTracker.Exec(context.Background(), schemaName, stmt))
 
-	require.Nil(t, failpoint.Enable("github.com/pingcap/tiflow/dm/syncer/ValidatorMockUpstreamTZ", `return()`))
+	require.Nil(t, failpoint.Enable("sdbflow/dm/syncer/ValidatorMockUpstreamTZ", `return()`))
 	defer func() {
-		require.Nil(t, failpoint.Disable("github.com/pingcap/tiflow/dm/syncer/ValidatorMockUpstreamTZ"))
+		require.Nil(t, failpoint.Disable("sdbflow/dm/syncer/ValidatorMockUpstreamTZ"))
 	}()
 	validator := NewContinuousDataValidator(cfg, syncerObj, false)
 	validator.validateInterval = 10 * time.Minute // we don't want worker start validate

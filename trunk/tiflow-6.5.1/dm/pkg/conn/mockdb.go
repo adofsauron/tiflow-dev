@@ -29,7 +29,7 @@ import (
 	"github.com/pingcap/tidb/server"
 	"github.com/pingcap/tidb/session"
 	"github.com/pingcap/tidb/store/mockstore"
-	"github.com/pingcap/tiflow/dm/config"
+	"sdbflow/dm/config"
 	"github.com/tikv/client-go/v2/testutils"
 )
 

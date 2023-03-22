@@ -15,8 +15,8 @@ package v2
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/pingcap/tiflow/cdc/api/middleware"
-	"github.com/pingcap/tiflow/cdc/capture"
+	"sdbflow/cdc/api/middleware"
+	"sdbflow/cdc/capture"
 )
 
 // OpenAPIV2 provides CDC v2 APIs

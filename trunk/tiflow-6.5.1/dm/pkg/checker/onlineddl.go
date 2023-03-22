@@ -19,7 +19,7 @@ import (
 
 	"github.com/pingcap/tidb/util/dbutil"
 	"github.com/pingcap/tidb/util/filter"
-	onlineddl "github.com/pingcap/tiflow/dm/syncer/online-ddl-tools"
+	onlineddl "sdbflow/dm/syncer/online-ddl-tools"
 )
 
 type OnlineDDLChecker struct {

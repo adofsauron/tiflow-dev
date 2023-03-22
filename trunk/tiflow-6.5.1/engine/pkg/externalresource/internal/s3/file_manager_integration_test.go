@@ -19,9 +19,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/engine/pkg/externalresource/internal"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/pkg/externalresource/internal"
+	resModel "sdbflow/engine/pkg/externalresource/model"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 )
 

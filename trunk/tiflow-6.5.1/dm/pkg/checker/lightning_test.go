@@ -18,7 +18,7 @@ import (
 	"testing"
 
 	"github.com/pingcap/tidb/br/pkg/lightning/restore"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 )
 

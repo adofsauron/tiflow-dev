@@ -20,11 +20,11 @@ import (
 	"time"
 
 	"github.com/golang/mock/gomock"
-	pb "github.com/pingcap/tiflow/engine/enginepb"
-	"github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/engine/pkg/orm/mock"
-	ormModel "github.com/pingcap/tiflow/engine/pkg/orm/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	pb "sdbflow/engine/enginepb"
+	"sdbflow/engine/model"
+	"sdbflow/engine/pkg/orm/mock"
+	ormModel "sdbflow/engine/pkg/orm/model"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 )
 

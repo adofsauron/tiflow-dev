@@ -19,8 +19,8 @@ import (
 	"strings"
 	"sync"
 
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	metaModel "sdbflow/engine/pkg/meta/model"
+	"sdbflow/pkg/errors"
 )
 
 // simple_mockclient is a simple mock kvclient using map to simulate db backend

@@ -13,7 +13,7 @@
 
 package config
 
-import "github.com/pingcap/tiflow/pkg/errors"
+import "sdbflow/pkg/errors"
 
 // KVClientConfig represents config for kv client
 type KVClientConfig struct {

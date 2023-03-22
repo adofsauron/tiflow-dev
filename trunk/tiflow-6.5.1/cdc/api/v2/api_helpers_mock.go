@@ -10,10 +10,10 @@ import (
 
 	gomock "github.com/golang/mock/gomock"
 	kv "github.com/pingcap/tidb/kv"
-	model "github.com/pingcap/tiflow/cdc/model"
-	owner "github.com/pingcap/tiflow/cdc/owner"
-	config "github.com/pingcap/tiflow/pkg/config"
-	security "github.com/pingcap/tiflow/pkg/security"
+	model "sdbflow/cdc/model"
+	owner "sdbflow/cdc/owner"
+	config "sdbflow/pkg/config"
+	security "sdbflow/pkg/security"
 	client "github.com/tikv/pd/client"
 )
 

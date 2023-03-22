@@ -17,10 +17,10 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/checker"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/config"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/checker"
+	"sdbflow/dm/pkg/terror"
 )
 
 var (

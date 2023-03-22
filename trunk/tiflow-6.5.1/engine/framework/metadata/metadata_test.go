@@ -17,8 +17,8 @@ import (
 	"context"
 	"testing"
 
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	pkgOrm "github.com/pingcap/tiflow/engine/pkg/orm"
+	frameModel "sdbflow/engine/framework/model"
+	pkgOrm "sdbflow/engine/pkg/orm"
 	"github.com/stretchr/testify/require"
 )
 

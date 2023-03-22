@@ -16,8 +16,8 @@ package codec
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec/common"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec/common"
 )
 
 const (

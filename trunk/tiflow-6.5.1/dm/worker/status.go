@@ -18,9 +18,9 @@ import (
 	"sort"
 
 	"github.com/gogo/protobuf/jsonpb"
-	"github.com/pingcap/tiflow/dm/common"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
+	"sdbflow/dm/common"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/binlog"
 	"go.uber.org/zap"
 )
 

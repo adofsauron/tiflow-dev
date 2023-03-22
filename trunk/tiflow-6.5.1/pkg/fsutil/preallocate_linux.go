@@ -20,7 +20,7 @@ import (
 	"os"
 	"syscall"
 
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	cerror "sdbflow/pkg/errors"
 	"golang.org/x/sys/unix"
 )
 

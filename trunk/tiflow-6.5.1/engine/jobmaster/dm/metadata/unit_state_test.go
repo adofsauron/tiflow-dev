@@ -18,7 +18,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/pingcap/tiflow/engine/pkg/meta/mock"
+	"sdbflow/engine/pkg/meta/mock"
 	"github.com/stretchr/testify/require"
 )
 

@@ -24,11 +24,11 @@ import (
 
 	"github.com/cockroachdb/pebble"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/sourcemanager/engine"
-	"github.com/pingcap/tiflow/cdc/processor/sourcemanager/engine/pebble/encoding"
-	metrics "github.com/pingcap/tiflow/cdc/sorter/db"
-	"github.com/pingcap/tiflow/pkg/chann"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/sourcemanager/engine"
+	"sdbflow/cdc/processor/sourcemanager/engine/pebble/encoding"
+	metrics "sdbflow/cdc/sorter/db"
+	"sdbflow/pkg/chann"
 	"github.com/prometheus/client_golang/prometheus"
 	"go.uber.org/zap"
 )

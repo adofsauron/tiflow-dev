@@ -17,7 +17,7 @@ import (
 	"context"
 	"path/filepath"
 
-	dmchaos "github.com/pingcap/tiflow/engine/chaos/cases/dm"
+	dmchaos "sdbflow/engine/chaos/cases/dm"
 	"golang.org/x/sync/errgroup"
 )
 

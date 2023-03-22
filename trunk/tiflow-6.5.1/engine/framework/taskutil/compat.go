@@ -14,7 +14,7 @@
 package taskutil
 
 import (
-	"github.com/pingcap/tiflow/engine/framework/internal/eventloop"
+	"sdbflow/engine/framework/internal/eventloop"
 )
 
 // Wrapper is a compatibility layer to use current

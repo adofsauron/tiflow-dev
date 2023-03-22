@@ -17,17 +17,17 @@ import (
 	"context"
 	"strings"
 
-	"github.com/pingcap/tiflow/cdc/sink/mq/producer/kafka"
-	"github.com/pingcap/tiflow/cdc/sinkv2/ddlsink"
-	"github.com/pingcap/tiflow/cdc/sinkv2/ddlsink/blackhole"
-	"github.com/pingcap/tiflow/cdc/sinkv2/ddlsink/cloudstorage"
-	"github.com/pingcap/tiflow/cdc/sinkv2/ddlsink/mq"
-	"github.com/pingcap/tiflow/cdc/sinkv2/ddlsink/mq/ddlproducer"
-	"github.com/pingcap/tiflow/cdc/sinkv2/ddlsink/mysql"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/sink"
-	pmysql "github.com/pingcap/tiflow/pkg/sink/mysql"
+	"sdbflow/cdc/sink/mq/producer/kafka"
+	"sdbflow/cdc/sinkv2/ddlsink"
+	"sdbflow/cdc/sinkv2/ddlsink/blackhole"
+	"sdbflow/cdc/sinkv2/ddlsink/cloudstorage"
+	"sdbflow/cdc/sinkv2/ddlsink/mq"
+	"sdbflow/cdc/sinkv2/ddlsink/mq/ddlproducer"
+	"sdbflow/cdc/sinkv2/ddlsink/mysql"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/sink"
+	pmysql "sdbflow/pkg/sink/mysql"
 )
 
 // New creates a new ddlsink.DDLEventSink by schema.

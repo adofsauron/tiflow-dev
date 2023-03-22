@@ -25,8 +25,8 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/logutil"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/logutil"
 	"go.uber.org/zap"
 )
 

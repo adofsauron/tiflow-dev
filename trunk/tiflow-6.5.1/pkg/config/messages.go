@@ -16,8 +16,8 @@ package config
 import (
 	"time"
 
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/p2p"
+	cerrors "sdbflow/pkg/errors"
+	"sdbflow/pkg/p2p"
 )
 
 const defaultMaxRecvMsgSize = 256 * 1024 * 1024 // 256MB

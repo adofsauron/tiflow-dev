@@ -16,9 +16,9 @@ package client
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/engine/enginepb"
-	"github.com/pingcap/tiflow/engine/pkg/client/internal"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/enginepb"
+	"sdbflow/engine/pkg/client/internal"
+	"sdbflow/pkg/errors"
 )
 
 // ResourceManagerClient is a client to the service ResourceManager, which

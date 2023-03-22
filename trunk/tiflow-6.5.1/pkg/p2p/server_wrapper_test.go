@@ -25,7 +25,7 @@ import (
 	"github.com/phayes/freeport"
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/proto/p2p"
+	"sdbflow/proto/p2p"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"
@@ -159,10 +159,10 @@ func TestServerWrapperDelayed(t *testing.T) {
 	client, closeClient := newClient()
 	defer closeClient()
 
-	err := failpoint.Enable("github.com/pingcap/tiflow/pkg/p2p/ServerWrapperSendMessageDelay", "pause")
+	err := failpoint.Enable("sdbflow/pkg/p2p/ServerWrapperSendMessageDelay", "pause")
 	require.NoError(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/pkg/p2p/ServerWrapperSendMessageDelay")
+		_ = failpoint.Disable("sdbflow/pkg/p2p/ServerWrapperSendMessageDelay")
 	}()
 
 	innerServer := &mockGrpcService{t: t}
@@ -185,7 +185,7 @@ func TestServerWrapperDelayed(t *testing.T) {
 
 	serverWrapper.Reset(nil)
 
-	_ = failpoint.Disable("github.com/pingcap/tiflow/pkg/p2p/ServerWrapperSendMessageDelay")
+	_ = failpoint.Disable("sdbflow/pkg/p2p/ServerWrapperSendMessageDelay")
 
 	// It is enough for this test case to finish without panicking.
 }

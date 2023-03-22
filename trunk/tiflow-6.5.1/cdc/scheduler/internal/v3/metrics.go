@@ -14,9 +14,9 @@
 package v3
 
 import (
-	"github.com/pingcap/tiflow/cdc/scheduler/internal/v3/member"
-	"github.com/pingcap/tiflow/cdc/scheduler/internal/v3/replication"
-	"github.com/pingcap/tiflow/cdc/scheduler/internal/v3/scheduler"
+	"sdbflow/cdc/scheduler/internal/v3/member"
+	"sdbflow/cdc/scheduler/internal/v3/replication"
+	"sdbflow/cdc/scheduler/internal/v3/scheduler"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

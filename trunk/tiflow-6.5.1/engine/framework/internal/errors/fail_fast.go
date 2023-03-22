@@ -13,7 +13,7 @@
 package errors
 
 import (
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/errors"
 )
 
 // FailFastError is used internally in the framework to

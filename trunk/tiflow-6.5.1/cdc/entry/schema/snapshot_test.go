@@ -18,7 +18,7 @@ import (
 	"testing"
 
 	timodel "github.com/pingcap/tidb/parser/model"
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 	"github.com/stretchr/testify/require"
 )
 

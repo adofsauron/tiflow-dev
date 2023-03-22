@@ -27,8 +27,8 @@ import (
 	"github.com/pingcap/log"
 	"github.com/pingcap/tidb/parser/charset"
 	tmysql "github.com/pingcap/tidb/parser/mysql"
-	dmutils "github.com/pingcap/tiflow/dm/pkg/utils"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	dmutils "sdbflow/dm/pkg/utils"
+	cerror "sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

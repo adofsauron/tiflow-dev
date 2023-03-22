@@ -15,7 +15,7 @@ package encoding
 
 import (
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 )
 
 // SerializerDeserializer is the interface encodes and decodes model.PolymorphicEvent.

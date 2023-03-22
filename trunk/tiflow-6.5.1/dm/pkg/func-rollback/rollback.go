@@ -16,7 +16,7 @@ package rollback
 import (
 	"sync"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/pkg/log"
 	"go.uber.org/zap"
 )
 

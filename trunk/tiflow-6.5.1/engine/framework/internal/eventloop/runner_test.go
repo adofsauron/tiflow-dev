@@ -19,8 +19,8 @@ import (
 	"testing"
 	"time"
 
-	runtime "github.com/pingcap/tiflow/engine/executor/worker"
-	"github.com/pingcap/tiflow/pkg/errors"
+	runtime "sdbflow/engine/executor/worker"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/atomic"

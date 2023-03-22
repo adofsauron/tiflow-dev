@@ -16,10 +16,10 @@ package entry
 import (
 	"github.com/pingcap/errors"
 	tidbkv "github.com/pingcap/tidb/kv"
-	"github.com/pingcap/tiflow/cdc/entry/schema"
-	"github.com/pingcap/tiflow/cdc/kv"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/filter"
+	"sdbflow/cdc/entry/schema"
+	"sdbflow/cdc/kv"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/filter"
 )
 
 // VerifyTables catalog tables specified by ReplicaConfig into
@@ -47,7 +47,7 @@ func VerifyTables(
 			return
 		}
 		// Sequence is not supported yet, TiCDC needs to filter all sequence tables.
-		// See https://github.com/pingcap/tiflow/issues/4559
+		// See https://sdbflow/issues/4559
 		if tableInfo.IsSequence() {
 			return
 		}

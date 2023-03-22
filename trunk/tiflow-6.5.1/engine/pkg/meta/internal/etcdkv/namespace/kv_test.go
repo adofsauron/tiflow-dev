@@ -18,8 +18,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/engine/pkg/meta/mock"
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
+	"sdbflow/engine/pkg/meta/mock"
+	metaModel "sdbflow/engine/pkg/meta/model"
 	"github.com/stretchr/testify/require"
 )
 

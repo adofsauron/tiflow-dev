@@ -18,8 +18,8 @@ import (
 	"testing"
 
 	"github.com/gogo/protobuf/proto"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/tablepb"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/tablepb"
 )
 
 func benchmarkMessageHeartbeatResponse(

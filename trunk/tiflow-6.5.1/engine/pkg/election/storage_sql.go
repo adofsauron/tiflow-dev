@@ -19,7 +19,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/errors"
 )
 
 const (

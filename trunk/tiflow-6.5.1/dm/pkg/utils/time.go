@@ -19,7 +19,7 @@ import (
 
 	"github.com/pingcap/tidb/types"
 	"github.com/pingcap/tidb/util/dbutil"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/terror"
 )
 
 const (

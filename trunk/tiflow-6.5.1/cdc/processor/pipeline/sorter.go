@@ -21,19 +21,19 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/entry"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/tablepb"
-	"github.com/pingcap/tiflow/cdc/sorter"
-	"github.com/pingcap/tiflow/cdc/sorter/db"
-	"github.com/pingcap/tiflow/cdc/sorter/unified"
-	"github.com/pingcap/tiflow/pkg/actor"
-	"github.com/pingcap/tiflow/pkg/actor/message"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/pipeline"
-	pmessage "github.com/pingcap/tiflow/pkg/pipeline/message"
-	"github.com/pingcap/tiflow/pkg/retry"
+	"sdbflow/cdc/entry"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/tablepb"
+	"sdbflow/cdc/sorter"
+	"sdbflow/cdc/sorter/db"
+	"sdbflow/cdc/sorter/unified"
+	"sdbflow/pkg/actor"
+	"sdbflow/pkg/actor/message"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/pipeline"
+	pmessage "sdbflow/pkg/pipeline/message"
+	"sdbflow/pkg/retry"
 	"github.com/tikv/client-go/v2/oracle"
 	pd "github.com/tikv/pd/client"
 	"go.uber.org/zap"
@@ -160,7 +160,7 @@ func createSorter(ctx pipeline.NodeContext, tableName string, tableID model.Tabl
 			return levelSorter, nil
 		}
 		// Sorter dir has been set and checked when server starts.
-		// See https://github.com/pingcap/tiflow/blob/9dad09/cdc/server.go#L275
+		// See https://sdbflow/blob/9dad09/cdc/server.go#L275
 		sortDir := config.GetGlobalServerConfig().Sorter.SortDir
 		unifiedSorter, err := unified.NewUnifiedSorter(sortDir, ctx.ChangefeedVars().ID, tableName, tableID)
 		if err != nil {

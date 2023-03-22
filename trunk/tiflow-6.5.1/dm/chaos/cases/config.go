@@ -17,7 +17,7 @@ import (
 	"flag"
 	"time"
 
-	config2 "github.com/pingcap/tiflow/dm/config"
+	config2 "sdbflow/dm/config"
 )
 
 // config is used to run chaos tests.

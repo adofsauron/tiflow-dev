@@ -22,14 +22,14 @@ import (
 	"time"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/tablepb"
-	"github.com/pingcap/tiflow/pkg/config"
-	cdcContext "github.com/pingcap/tiflow/pkg/context"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/orchestrator"
-	"github.com/pingcap/tiflow/pkg/upstream"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/tablepb"
+	"sdbflow/pkg/config"
+	cdcContext "sdbflow/pkg/context"
+	cerrors "sdbflow/pkg/errors"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/orchestrator"
+	"sdbflow/pkg/upstream"
 	"github.com/stretchr/testify/require"
 )
 

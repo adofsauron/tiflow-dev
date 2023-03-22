@@ -23,8 +23,8 @@ import (
 	"time"
 
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/pkg/security"
-	"github.com/pingcap/tiflow/proto/p2p"
+	"sdbflow/pkg/security"
+	"sdbflow/proto/p2p"
 	"github.com/stretchr/testify/require"
 	"github.com/tikv/pd/pkg/utils/tempurl"
 	"google.golang.org/grpc"
@@ -269,10 +269,10 @@ func TestMessageRouterClientFailure(t *testing.T) {
 
 	// FIXME remove the failpoint test, and use a mock client instead
 	// But we should make MessageClient an interface first.
-	err := failpoint.Enable("github.com/pingcap/tiflow/pkg/p2p/InjectClientPermanentFailure", "return(true)")
+	err := failpoint.Enable("sdbflow/pkg/p2p/InjectClientPermanentFailure", "return(true)")
 	require.NoError(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/pkg/p2p/InjectClientPermanentFailure")
+		_ = failpoint.Disable("sdbflow/pkg/p2p/InjectClientPermanentFailure")
 	}()
 
 	client := suite.messageRouter.GetClient("server-1")

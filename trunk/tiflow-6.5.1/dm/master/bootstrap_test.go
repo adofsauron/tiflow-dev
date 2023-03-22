@@ -24,12 +24,12 @@ import (
 	"github.com/golang/mock/gomock"
 	. "github.com/pingcap/check"
 	filter "github.com/pingcap/tidb-tools/pkg/binlog-filter"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pbmock"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/config"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pbmock"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
 )
 
 func (t *testMaster) TestCollectSourceConfigFilesV1Import(c *C) {

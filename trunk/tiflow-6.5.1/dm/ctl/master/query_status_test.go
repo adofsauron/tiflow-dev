@@ -18,7 +18,7 @@ import (
 	"testing"
 
 	"github.com/pingcap/check"
-	"github.com/pingcap/tiflow/dm/pb"
+	"sdbflow/dm/pb"
 )
 
 func TestCtlMaster(t *testing.T) {

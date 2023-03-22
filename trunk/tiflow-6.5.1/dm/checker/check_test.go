@@ -22,10 +22,10 @@ import (
 	gmysql "github.com/go-sql-driver/mysql"
 	"github.com/pingcap/tidb/parser/mysql"
 	router "github.com/pingcap/tidb/util/table-router"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	"github.com/pingcap/tiflow/dm/pkg/cputil"
+	"sdbflow/dm/config"
+	"sdbflow/dm/ctl/common"
+	"sdbflow/dm/pkg/conn"
+	"sdbflow/dm/pkg/cputil"
 	"github.com/stretchr/testify/require"
 )
 

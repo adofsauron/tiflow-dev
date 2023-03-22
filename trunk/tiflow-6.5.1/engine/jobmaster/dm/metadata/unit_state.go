@@ -19,11 +19,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pingcap/tiflow/dm/pb"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/pkg/adapter"
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/dm/pb"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/pkg/adapter"
+	metaModel "sdbflow/engine/pkg/meta/model"
+	"sdbflow/pkg/errors"
 )
 
 // UnitState represents the state of units.

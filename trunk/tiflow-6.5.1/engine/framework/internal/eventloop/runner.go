@@ -19,9 +19,9 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	frameErrors "github.com/pingcap/tiflow/engine/framework/internal/errors"
-	"github.com/pingcap/tiflow/engine/pkg/clock"
-	"github.com/pingcap/tiflow/pkg/errors"
+	frameErrors "sdbflow/engine/framework/internal/errors"
+	"sdbflow/engine/pkg/clock"
+	"sdbflow/pkg/errors"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 )

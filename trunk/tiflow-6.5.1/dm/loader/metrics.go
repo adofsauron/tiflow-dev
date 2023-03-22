@@ -14,7 +14,7 @@
 package loader
 
 import (
-	"github.com/pingcap/tiflow/engine/pkg/promutil"
+	"sdbflow/engine/pkg/promutil"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

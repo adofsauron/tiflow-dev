@@ -16,8 +16,8 @@ package promutil
 import (
 	"testing"
 
-	engineModel "github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/engine/pkg/tenant"
+	engineModel "sdbflow/engine/model"
+	"sdbflow/engine/pkg/tenant"
 	"github.com/prometheus/client_golang/prometheus"
 	dto "github.com/prometheus/client_model/go"
 	"github.com/stretchr/testify/require"

@@ -19,7 +19,7 @@ import (
 	"os"
 	"path"
 
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/utils"
 )
 
 // Security config.
@@ -84,7 +84,7 @@ func (s *Security) LoadTLSContent() error {
 // DumpTLSContent dump tls certs data to file.
 // if user specified the path for certs but the cert doesn't exist or user didn't specify the path for certs
 // dump certs to dm-worker folder and change the cert path.
-// see more here https://github.com/pingcap/tiflow/pull/3260#discussion_r749052994
+// see more here https://sdbflow/pull/3260#discussion_r749052994
 func (s *Security) DumpTLSContent(baseDirPath string) error {
 	isSSLCANotExist := s.SSLCA == "" || !utils.IsFileExists(s.SSLCA)
 	isSSLCertNotExist := s.SSLCert == "" || !utils.IsFileExists(s.SSLCert)

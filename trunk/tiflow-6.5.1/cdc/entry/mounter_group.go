@@ -18,8 +18,8 @@ import (
 	"time"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/filter"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/filter"
 	"golang.org/x/sync/errgroup"
 )
 

@@ -22,7 +22,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/pkg/config"
 	"github.com/spf13/cobra"
 	"github.com/stretchr/testify/require"
 )

@@ -22,8 +22,8 @@ import (
 
 	. "github.com/pingcap/check"
 	"github.com/pingcap/tidb/util/dbutil"
-	"github.com/pingcap/tiflow/dm/common"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/common"
+	"sdbflow/dm/pkg/utils"
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.etcd.io/etcd/tests/v3/integration"
 )

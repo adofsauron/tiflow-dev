@@ -13,7 +13,7 @@ function run() {
 	start_engine_cluster $CONFIG
 	wait_mysql_online.sh --host 127.0.0.1 --port 3306
 	wait_mysql_online.sh --host 127.0.0.1 --port 4000
-	CGO_ENABLED=0 go test -count=1 -v -run ^TestDMJob$ github.com/pingcap/tiflow/engine/test/e2e
+	CGO_ENABLED=0 go test -count=1 -v -run ^TestDMJob$ sdbflow/engine/test/e2e
 }
 
 trap "stop_engine_cluster $WORK_DIR $CONFIG" EXIT

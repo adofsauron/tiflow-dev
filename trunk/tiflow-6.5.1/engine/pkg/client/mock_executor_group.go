@@ -18,8 +18,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/model"
+	"sdbflow/pkg/errors"
 )
 
 // MockExecutorGroup is a stub implementation for ExecutorGroup.

@@ -19,9 +19,9 @@ package namespace
 import (
 	"context"
 
-	etcdImplModel "github.com/pingcap/tiflow/engine/pkg/meta/internal/etcdkv/model"
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	etcdImplModel "sdbflow/engine/pkg/meta/internal/etcdkv/model"
+	metaModel "sdbflow/engine/pkg/meta/model"
+	"sdbflow/pkg/errors"
 )
 
 type prefixError struct {

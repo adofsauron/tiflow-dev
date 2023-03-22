@@ -16,7 +16,7 @@ package sinkmanager
 import (
 	"testing"
 
-	"github.com/pingcap/tiflow/cdc/processor/sourcemanager/engine"
+	"sdbflow/cdc/processor/sourcemanager/engine"
 	"github.com/stretchr/testify/require"
 )
 

@@ -22,8 +22,8 @@ import (
 
 	. "github.com/pingcap/check"
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
 	"github.com/stretchr/testify/require"
 	"github.com/tikv/pd/pkg/utils/tempurl"
 	"go.etcd.io/etcd/api/v3/etcdserverpb"
@@ -237,9 +237,9 @@ func (t *testEtcdUtilSuite) TestDoOpsInOneTxnWithRetry(c *C) {
 	c.Assert(resp.Responses, HasLen, 2)
 
 	// enable failpoint
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/pkg/etcdutil/ErrNoSpace", `3*return()`), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/pkg/etcdutil/ErrNoSpace", `3*return()`), IsNil)
 	//nolint:errcheck
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/pkg/etcdutil/ErrNoSpace")
+	defer failpoint.Disable("sdbflow/dm/pkg/etcdutil/ErrNoSpace")
 
 	// put again
 	resp, rev2, err = DoTxnWithRepeatable(cli, FullOpFunc([]clientv3.Cmp{clientv3util.KeyMissing(key1), clientv3util.KeyMissing(key2)}, []clientv3.Op{

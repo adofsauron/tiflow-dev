@@ -25,10 +25,10 @@ import (
 	"github.com/pingcap/tidb/parser/mysql"
 	"github.com/pingcap/tidb/types"
 	"github.com/pingcap/tidb/util/rowcodec"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec/common"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec/common"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
 )
 
 // a csv row should at least contain operation-type, table-name, schema-name and one table column
@@ -373,7 +373,7 @@ func rowChangeColumns2CSVColumns(cols []*model.Column, colInfos []rowcodec.ColIn
 	var csvColumns []any
 	for i, column := range cols {
 		// column could be nil in a condition described in
-		// https://github.com/pingcap/tiflow/issues/6198#issuecomment-1191132951
+		// https://sdbflow/issues/6198#issuecomment-1191132951
 		if column == nil {
 			continue
 		}

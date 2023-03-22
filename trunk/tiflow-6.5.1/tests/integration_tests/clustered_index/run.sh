@@ -45,7 +45,7 @@ function run() {
 }
 
 # kafka is not supported yet.
-# ref to issue: https://github.com/pingcap/tiflow/issues/3421
+# ref to issue: https://sdbflow/issues/3421
 if [ "$SINK_TYPE" = "kafka" ]; then
 	echo "[$(date)] <<<<<< skip test case $TEST_NAME for kafka! >>>>>>"
 	exit 0

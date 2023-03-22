@@ -17,7 +17,7 @@
 package model
 
 import (
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/errors"
 )
 
 type opType int

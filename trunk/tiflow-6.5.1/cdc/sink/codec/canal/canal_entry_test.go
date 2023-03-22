@@ -19,9 +19,9 @@ import (
 	"github.com/golang/protobuf/proto"
 	mm "github.com/pingcap/tidb/parser/model"
 	"github.com/pingcap/tidb/parser/mysql"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec/internal"
-	canal "github.com/pingcap/tiflow/proto/canal"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec/internal"
+	canal "sdbflow/proto/canal"
 	"github.com/stretchr/testify/require"
 	"golang.org/x/text/encoding/charmap"
 )

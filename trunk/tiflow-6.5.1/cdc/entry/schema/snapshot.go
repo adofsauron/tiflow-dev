@@ -29,8 +29,8 @@ import (
 	timodel "github.com/pingcap/tidb/parser/model"
 	"github.com/pingcap/tidb/parser/mysql"
 	"github.com/pingcap/tidb/session"
-	"github.com/pingcap/tiflow/cdc/model"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	cerror "sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 
@@ -863,7 +863,7 @@ func (s *snapshot) doCreateTable(tbInfo *model.TableInfo, currentTs uint64) {
 	if ineligible {
 		// Sequence is not supported yet, and always ineligible.
 		// Skip Warn to avoid confusion.
-		// See https://github.com/pingcap/tiflow/issues/4559
+		// See https://sdbflow/issues/4559
 		if !tbInfo.IsSequence() {
 			log.Warn("this table is ineligible to replicate",
 				zap.String("tableName", tbInfo.Name.O), zap.Int64("tableID", tbInfo.ID))

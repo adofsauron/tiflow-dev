@@ -57,16 +57,16 @@ GOBUILDNOVENDOR  := CGO_ENABLED=0 $(GO) build $(BUILD_FLAG) -trimpath
 GOTEST   := CGO_ENABLED=1 $(GO) test -p $(P) --race --tags=intest
 GOTESTNORACE := CGO_ENABLED=1 $(GO) test -p $(P)
 
-CDC_PKG := github.com/pingcap/tiflow
-DM_PKG := github.com/pingcap/tiflow/dm
-ENGINE_PKG := github.com/pingcap/tiflow/engine
+CDC_PKG := sdbflow
+DM_PKG := sdbflow/dm
+ENGINE_PKG := sdbflow/engine
 PACKAGE_LIST := go list ./... | grep -vE 'vendor|proto|tiflow/tests|integration|testing_utils|pb|pbmock|tiflow/bin'
-PACKAGE_LIST_WITHOUT_DM_ENGINE := $(PACKAGE_LIST) | grep -vE 'github.com/pingcap/tiflow/cmd|github.com/pingcap/tiflow/dm|github.com/pingcap/tiflow/engine'
-DM_PACKAGE_LIST := go list github.com/pingcap/tiflow/dm/... | grep -vE 'pb|pbmock'
+PACKAGE_LIST_WITHOUT_DM_ENGINE := $(PACKAGE_LIST) | grep -vE 'sdbflow/cmd|sdbflow/dm|sdbflow/engine'
+DM_PACKAGE_LIST := go list sdbflow/dm/... | grep -vE 'pb|pbmock'
 PACKAGES := $$($(PACKAGE_LIST))
 PACKAGES_TICDC := $$($(PACKAGE_LIST_WITHOUT_DM_ENGINE))
 DM_PACKAGES := $$($(DM_PACKAGE_LIST))
-ENGINE_PACKAGE_LIST := go list github.com/pingcap/tiflow/engine/... | grep -vE 'pb|proto|engine/test/e2e'
+ENGINE_PACKAGE_LIST := go list sdbflow/engine/... | grep -vE 'pb|proto|engine/test/e2e'
 ENGINE_PACKAGES := $$($(ENGINE_PACKAGE_LIST))
 FILES := $$(find . -name '*.go' -type f | grep -vE 'vendor|kv_gen|proto|pb\.go|pb\.gw\.go')
 TEST_FILES := $$(find . -name '*_test.go' -type f | grep -vE 'vendor|kv_gen|integration|testing_utils')
@@ -202,8 +202,8 @@ check_third_party_binary:
 integration_test_build: check_failpoint_ctl
 	$(FAILPOINT_ENABLE)
 	$(GOTEST) -ldflags '$(LDFLAGS)' -c -cover -covermode=atomic \
-		-coverpkg=github.com/pingcap/tiflow/... \
-		-o bin/cdc.test github.com/pingcap/tiflow/cmd/cdc \
+		-coverpkg=sdbflow/... \
+		-o bin/cdc.test sdbflow/cmd/cdc \
 	|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/cdc ./cmd/cdc/main.go \
 	|| { $(FAILPOINT_DISABLE); exit 1; }
@@ -393,7 +393,7 @@ endef
 dm_unit_test: check_failpoint_ctl
 	$(call run_dm_unit_test,$(DM_PACKAGES))
 
-# run unit test for the specified pkg only, like `make dm_unit_test_pkg PKG=github.com/pingcap/tiflow/dm/master`
+# run unit test for the specified pkg only, like `make dm_unit_test_pkg PKG=sdbflow/dm/master`
 dm_unit_test_pkg: check_failpoint_ctl
 	$(call run_dm_unit_test,$(PKG))
 
@@ -411,20 +411,20 @@ dm_unit_test_in_verify_ci: check_failpoint_ctl tools/bin/gotestsum tools/bin/goc
 dm_integration_test_build: check_failpoint_ctl
 	$(FAILPOINT_ENABLE)
 	$(GOTEST) -ldflags '$(LDFLAGS)' -c -cover -covermode=atomic \
-		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/sdm-worker.test github.com/pingcap/tiflow/cmd/sdm-worker \
+		-coverpkg=sdbflow/dm/... \
+		-o bin/sdm-worker.test sdbflow/cmd/sdm-worker \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(GOTEST) -ldflags '$(LDFLAGS)' -c -cover -covermode=atomic \
-		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/sdm-master.test github.com/pingcap/tiflow/cmd/sdm-master \
+		-coverpkg=sdbflow/dm/... \
+		-o bin/sdm-master.test sdbflow/cmd/sdm-master \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(GOTESTNORACE) -ldflags '$(LDFLAGS)' -c -cover -covermode=count \
-		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/sdmctl.test github.com/pingcap/tiflow/cmd/sdm-ctl \
+		-coverpkg=sdbflow/dm/... \
+		-o bin/sdmctl.test sdbflow/cmd/sdm-ctl \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(GOTEST) -ldflags '$(LDFLAGS)' -c -cover -covermode=atomic \
-		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/sdm-syncer.test github.com/pingcap/tiflow/cmd/sdm-syncer \
+		-coverpkg=sdbflow/dm/... \
+		-o bin/sdm-syncer.test sdbflow/cmd/sdm-syncer \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(FAILPOINT_DISABLE)
 	./dm/tests/prepare_tools.sh
@@ -432,8 +432,8 @@ dm_integration_test_build: check_failpoint_ctl
 dm_integration_test_build_worker: check_failpoint_ctl
 	$(FAILPOINT_ENABLE)
 	$(GOTEST) -ldflags '$(LDFLAGS)' -c -cover -covermode=atomic \
-		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/sdm-worker.test github.com/pingcap/tiflow/cmd/sdm-worker \
+		-coverpkg=sdbflow/dm/... \
+		-o bin/sdm-worker.test sdbflow/cmd/sdm-worker \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(FAILPOINT_DISABLE)
 	./dm/tests/prepare_tools.sh
@@ -441,8 +441,8 @@ dm_integration_test_build_worker: check_failpoint_ctl
 dm_integration_test_build_master: check_failpoint_ctl
 	$(FAILPOINT_ENABLE)
 	$(GOTEST) -ldflags '$(LDFLAGS)' -c -cover -covermode=atomic \
-		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/sdm-master.test github.com/pingcap/tiflow/cmd/sdm-master \
+		-coverpkg=sdbflow/dm/... \
+		-o bin/sdm-master.test sdbflow/cmd/sdm-master \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(FAILPOINT_DISABLE)
 	./dm/tests/prepare_tools.sh
@@ -450,8 +450,8 @@ dm_integration_test_build_master: check_failpoint_ctl
 dm_integration_test_build_ctl: check_failpoint_ctl
 	$(FAILPOINT_ENABLE)
 	$(GOTESTNORACE) -ldflags '$(LDFLAGS)' -c -cover -covermode=count \
-		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/sdmctl.test github.com/pingcap/tiflow/cmd/sdm-ctl \
+		-coverpkg=sdbflow/dm/... \
+		-o bin/sdmctl.test sdbflow/cmd/sdm-ctl \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(FAILPOINT_DISABLE)
 	./dm/tests/prepare_tools.sh

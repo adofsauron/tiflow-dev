@@ -18,7 +18,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/pkg/log"
 	"github.com/stretchr/testify/suite"
 )
 

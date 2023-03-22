@@ -18,8 +18,8 @@ import (
 	"sync/atomic"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/metrics"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/metrics"
 	"go.uber.org/zap"
 )
 

@@ -16,8 +16,8 @@ package worker
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/engine/executor/worker/internal"
-	"github.com/pingcap/tiflow/engine/pkg/clock"
+	"sdbflow/engine/executor/worker/internal"
+	"sdbflow/engine/pkg/clock"
 )
 
 type runtimeInfoKeyType int

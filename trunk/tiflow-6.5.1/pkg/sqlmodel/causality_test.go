@@ -17,7 +17,7 @@ import (
 	"sync"
 	"testing"
 
-	cdcmodel "github.com/pingcap/tiflow/cdc/model"
+	cdcmodel "sdbflow/cdc/model"
 	"github.com/stretchr/testify/require"
 )
 

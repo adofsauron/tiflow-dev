@@ -16,8 +16,8 @@ package servermaster
 import (
 	"testing"
 
-	"github.com/pingcap/tiflow/engine/framework"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
+	"sdbflow/engine/framework"
+	frameModel "sdbflow/engine/framework/model"
 	"github.com/stretchr/testify/require"
 )
 

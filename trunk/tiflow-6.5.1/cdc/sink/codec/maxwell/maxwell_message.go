@@ -18,9 +18,9 @@ import (
 
 	model2 "github.com/pingcap/tidb/parser/model"
 	"github.com/pingcap/tidb/parser/mysql"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec/internal"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec/internal"
+	cerror "sdbflow/pkg/errors"
 	"github.com/tikv/pd/pkg/utils/tsoutil"
 )
 

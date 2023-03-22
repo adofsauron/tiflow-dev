@@ -22,19 +22,19 @@ import (
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
 	timodel "github.com/pingcap/tidb/parser/model"
-	"github.com/pingcap/tiflow/cdc/contextutil"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/puller"
-	"github.com/pingcap/tiflow/cdc/redo"
-	"github.com/pingcap/tiflow/cdc/scheduler"
-	"github.com/pingcap/tiflow/pkg/config"
-	cdcContext "github.com/pingcap/tiflow/pkg/context"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/orchestrator"
-	"github.com/pingcap/tiflow/pkg/pdutil"
-	redoCfg "github.com/pingcap/tiflow/pkg/redo"
-	"github.com/pingcap/tiflow/pkg/txnutil/gc"
-	"github.com/pingcap/tiflow/pkg/upstream"
+	"sdbflow/cdc/contextutil"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/puller"
+	"sdbflow/cdc/redo"
+	"sdbflow/cdc/scheduler"
+	"sdbflow/pkg/config"
+	cdcContext "sdbflow/pkg/context"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/orchestrator"
+	"sdbflow/pkg/pdutil"
+	redoCfg "sdbflow/pkg/redo"
+	"sdbflow/pkg/txnutil/gc"
+	"sdbflow/pkg/upstream"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/tikv/client-go/v2/oracle"
 	"go.uber.org/zap"
@@ -494,7 +494,7 @@ LOOP:
 
 	// we must clean cached ddl and tables in changefeed initialization
 	// otherwise, the changefeed will loss tables that are needed to be replicated
-	// ref: https://github.com/pingcap/tiflow/issues/7682
+	// ref: https://sdbflow/issues/7682
 	c.ddlEventCache = nil
 	c.currentTables = nil
 

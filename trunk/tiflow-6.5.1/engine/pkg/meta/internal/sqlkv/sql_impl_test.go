@@ -27,9 +27,9 @@ import (
 	"github.com/VividCortex/mysqlerr"
 	"github.com/go-sql-driver/mysql"
 	"github.com/pingcap/log"
-	sqlkvModel "github.com/pingcap/tiflow/engine/pkg/meta/internal/sqlkv/model"
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	sqlkvModel "sdbflow/engine/pkg/meta/internal/sqlkv/model"
+	metaModel "sdbflow/engine/pkg/meta/model"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap/zapcore"
 )

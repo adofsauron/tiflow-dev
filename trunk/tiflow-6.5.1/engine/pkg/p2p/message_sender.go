@@ -17,9 +17,9 @@ import (
 	"context"
 	"time"
 
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/p2p"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/p2p"
+	"sdbflow/pkg/security"
 )
 
 // MessageSender is used to send a message of a given topic to a given node.

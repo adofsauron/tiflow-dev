@@ -19,9 +19,9 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/retry"
+	"sdbflow/cdc/model"
+	cerrors "sdbflow/pkg/errors"
+	"sdbflow/pkg/retry"
 	pd "github.com/tikv/pd/client"
 	"go.uber.org/zap"
 )

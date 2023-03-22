@@ -13,7 +13,7 @@
 
 package message
 
-import "github.com/pingcap/tiflow/cdc/model"
+import "sdbflow/cdc/model"
 
 // Type is the type of Message
 type Type int

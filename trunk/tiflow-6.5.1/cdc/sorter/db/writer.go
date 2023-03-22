@@ -18,11 +18,11 @@ import (
 	"sync/atomic"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/sorter"
-	"github.com/pingcap/tiflow/cdc/sorter/db/message"
-	"github.com/pingcap/tiflow/cdc/sorter/encoding"
-	"github.com/pingcap/tiflow/pkg/actor"
-	actormsg "github.com/pingcap/tiflow/pkg/actor/message"
+	"sdbflow/cdc/sorter"
+	"sdbflow/cdc/sorter/db/message"
+	"sdbflow/cdc/sorter/encoding"
+	"sdbflow/pkg/actor"
+	actormsg "sdbflow/pkg/actor/message"
 	"github.com/prometheus/client_golang/prometheus"
 	"go.uber.org/zap"
 )

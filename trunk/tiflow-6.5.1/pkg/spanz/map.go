@@ -18,7 +18,7 @@ import (
 
 	"github.com/google/btree"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/processor/tablepb"
+	"sdbflow/cdc/processor/tablepb"
 	"go.uber.org/zap"
 )
 

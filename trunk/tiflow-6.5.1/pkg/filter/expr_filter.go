@@ -26,10 +26,10 @@ import (
 	"github.com/pingcap/tidb/types"
 	"github.com/pingcap/tidb/util/chunk"
 	tfilter "github.com/pingcap/tidb/util/table-filter"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

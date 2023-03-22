@@ -25,8 +25,8 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/security"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/security"
 	"go.uber.org/zap"
 )
 

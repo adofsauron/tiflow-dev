@@ -18,8 +18,8 @@ import (
 	"testing"
 
 	"github.com/golang/mock/gomock"
-	"github.com/pingcap/tiflow/engine/pkg/client"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
+	"sdbflow/engine/pkg/client"
+	resModel "sdbflow/engine/pkg/externalresource/model"
 	"github.com/stretchr/testify/require"
 )
 

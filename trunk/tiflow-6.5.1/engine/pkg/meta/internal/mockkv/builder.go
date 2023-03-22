@@ -14,9 +14,9 @@
 package mockkv
 
 import (
-	metaMock "github.com/pingcap/tiflow/engine/pkg/meta/mock"
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	metaMock "sdbflow/engine/pkg/meta/mock"
+	metaModel "sdbflow/engine/pkg/meta/model"
+	"sdbflow/pkg/errors"
 )
 
 // ClientBuilderImpl is the mock kvclient builder

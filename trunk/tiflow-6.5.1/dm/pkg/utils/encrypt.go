@@ -16,8 +16,8 @@ package utils
 import (
 	"encoding/base64"
 
-	"github.com/pingcap/tiflow/dm/pkg/encrypt"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/encrypt"
+	"sdbflow/dm/pkg/terror"
 )
 
 // Encrypt tries to encrypt plaintext to base64 encoded ciphertext.

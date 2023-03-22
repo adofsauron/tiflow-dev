@@ -24,9 +24,9 @@ import (
 	"github.com/BurntSushi/toml"
 	"github.com/google/shlex"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/config"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/utils"
 	"github.com/spf13/pflag"
 	"go.uber.org/zap"
 )

@@ -22,7 +22,7 @@ import (
 	"time"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/pkg/security"
 )
 
 // Client wraps an HTTP client and support TLS requests.

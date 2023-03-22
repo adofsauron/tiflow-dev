@@ -22,8 +22,8 @@ import (
 	"github.com/go-mysql-org/go-mysql/replication"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/common"
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
+	"sdbflow/dm/pkg/binlog/common"
+	"sdbflow/dm/pkg/gtid"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 )
@@ -42,19 +42,19 @@ type testTCPReaderSuite struct {
 }
 
 func (t *testTCPReaderSuite) SetupSuite() {
-	require.Nil(t.T(), failpoint.Enable("github.com/pingcap/tiflow/dm/pkg/binlog/reader/MockTCPReaderStartSyncByPos", "return(true)"))
-	require.Nil(t.T(), failpoint.Enable("github.com/pingcap/tiflow/dm/pkg/binlog/reader/MockTCPReaderStartSyncByGTID", "return(true)"))
-	require.Nil(t.T(), failpoint.Enable("github.com/pingcap/tiflow/dm/pkg/binlog/reader/MockTCPReaderClose", "return(true)"))
-	require.Nil(t.T(), failpoint.Enable("github.com/pingcap/tiflow/dm/pkg/binlog/reader/MockTCPReaderGetEvent", "return(true)"))
-	require.Nil(t.T(), failpoint.Enable("github.com/pingcap/tiflow/dm/pkg/binlog/reader/MockTCPReaderStatus", "return(true)"))
+	require.Nil(t.T(), failpoint.Enable("sdbflow/dm/pkg/binlog/reader/MockTCPReaderStartSyncByPos", "return(true)"))
+	require.Nil(t.T(), failpoint.Enable("sdbflow/dm/pkg/binlog/reader/MockTCPReaderStartSyncByGTID", "return(true)"))
+	require.Nil(t.T(), failpoint.Enable("sdbflow/dm/pkg/binlog/reader/MockTCPReaderClose", "return(true)"))
+	require.Nil(t.T(), failpoint.Enable("sdbflow/dm/pkg/binlog/reader/MockTCPReaderGetEvent", "return(true)"))
+	require.Nil(t.T(), failpoint.Enable("sdbflow/dm/pkg/binlog/reader/MockTCPReaderStatus", "return(true)"))
 }
 
 func (t *testTCPReaderSuite) TearDownSuite() {
-	require.Nil(t.T(), failpoint.Disable("github.com/pingcap/tiflow/dm/pkg/binlog/reader/MockTCPReaderStartSyncByPos"))
-	require.Nil(t.T(), failpoint.Disable("github.com/pingcap/tiflow/dm/pkg/binlog/reader/MockTCPReaderStartSyncByGTID"))
-	require.Nil(t.T(), failpoint.Disable("github.com/pingcap/tiflow/dm/pkg/binlog/reader/MockTCPReaderClose"))
-	require.Nil(t.T(), failpoint.Disable("github.com/pingcap/tiflow/dm/pkg/binlog/reader/MockTCPReaderGetEvent"))
-	require.Nil(t.T(), failpoint.Disable("github.com/pingcap/tiflow/dm/pkg/binlog/reader/MockTCPReaderStatus"))
+	require.Nil(t.T(), failpoint.Disable("sdbflow/dm/pkg/binlog/reader/MockTCPReaderStartSyncByPos"))
+	require.Nil(t.T(), failpoint.Disable("sdbflow/dm/pkg/binlog/reader/MockTCPReaderStartSyncByGTID"))
+	require.Nil(t.T(), failpoint.Disable("sdbflow/dm/pkg/binlog/reader/MockTCPReaderClose"))
+	require.Nil(t.T(), failpoint.Disable("sdbflow/dm/pkg/binlog/reader/MockTCPReaderGetEvent"))
+	require.Nil(t.T(), failpoint.Disable("sdbflow/dm/pkg/binlog/reader/MockTCPReaderStatus"))
 }
 
 func (t *testTCPReaderSuite) TestSyncPos() {

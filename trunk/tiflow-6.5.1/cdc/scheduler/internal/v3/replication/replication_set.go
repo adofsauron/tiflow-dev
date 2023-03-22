@@ -19,10 +19,10 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/tablepb"
-	"github.com/pingcap/tiflow/cdc/scheduler/schedulepb"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/tablepb"
+	"sdbflow/cdc/scheduler/schedulepb"
+	cerror "sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

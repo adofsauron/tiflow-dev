@@ -16,11 +16,11 @@ package registry
 import (
 	"testing"
 
-	"github.com/pingcap/tiflow/engine/framework"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	dcontext "github.com/pingcap/tiflow/engine/pkg/context"
-	pkgOrm "github.com/pingcap/tiflow/engine/pkg/orm"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/framework"
+	frameModel "sdbflow/engine/framework/model"
+	dcontext "sdbflow/engine/pkg/context"
+	pkgOrm "sdbflow/engine/pkg/orm"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 )
 

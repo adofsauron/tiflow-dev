@@ -19,13 +19,13 @@ import (
 	"testing"
 	"time"
 
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/engine/pkg/externalresource/internal"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
-	"github.com/pingcap/tiflow/engine/pkg/notifier"
-	pkgOrm "github.com/pingcap/tiflow/engine/pkg/orm"
-	"github.com/pingcap/tiflow/pkg/errors"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/model"
+	"sdbflow/engine/pkg/externalresource/internal"
+	resModel "sdbflow/engine/pkg/externalresource/model"
+	"sdbflow/engine/pkg/notifier"
+	pkgOrm "sdbflow/engine/pkg/orm"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 )
 

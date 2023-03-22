@@ -22,10 +22,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/redo/writer"
-	"github.com/pingcap/tiflow/pkg/redo"
-	"github.com/pingcap/tiflow/pkg/uuid"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/redo/writer"
+	"sdbflow/pkg/redo"
+	"sdbflow/pkg/uuid"
 	"github.com/stretchr/testify/require"
 	"golang.org/x/net/context"
 )

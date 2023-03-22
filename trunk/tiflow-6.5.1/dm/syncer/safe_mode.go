@@ -17,10 +17,10 @@ import (
 	"time"
 
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/unit"
+	"sdbflow/dm/pkg/binlog"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/unit"
 	"go.uber.org/zap"
 )
 

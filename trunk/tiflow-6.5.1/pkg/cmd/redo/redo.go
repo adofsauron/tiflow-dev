@@ -14,8 +14,8 @@
 package redo
 
 import (
-	"github.com/pingcap/tiflow/pkg/cmd/util"
-	"github.com/pingcap/tiflow/pkg/logutil"
+	"sdbflow/pkg/cmd/util"
+	"sdbflow/pkg/logutil"
 	"github.com/spf13/cobra"
 )
 

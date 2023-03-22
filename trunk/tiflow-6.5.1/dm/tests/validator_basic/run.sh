@@ -228,7 +228,7 @@ function run_standalone() {
 
 	echo "--> check we can catch inconsistent rows: full mode"
 	# skip incremental rows with id <= 5
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/dm/syncer/SkipDML=return(5)'
+	export GO_FAILPOINTS='sdbflow/dm/syncer/SkipDML=return(5)'
 	cp $cur/conf/dm-task-standalone.yaml.bak $cur/conf/dm-task-standalone.yaml
 	prepare_for_standalone_test
 	run_sql_file $cur/data/db1.increment.sql $MYSQL_HOST1 $MYSQL_PORT1 $MYSQL_PASSWORD1
@@ -247,7 +247,7 @@ function run_standalone() {
 
 	echo "--> check we can catch inconsistent rows: fast mode"
 	# skip incremental rows with id <= 5
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/dm/syncer/SkipDML=return(5)'
+	export GO_FAILPOINTS='sdbflow/dm/syncer/SkipDML=return(5)'
 	cp $cur/conf/dm-task-standalone.yaml.bak $cur/conf/dm-task-standalone.yaml
 	sed -i 's/    mode: full/    mode: fast/' $cur/conf/dm-task-standalone.yaml
 	prepare_for_standalone_test
@@ -273,7 +273,7 @@ function run_standalone() {
 	check_contains "count(*): 3"
 
 	echo "--> check validator panic and we can catch it"
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/dm/syncer/ValidatorPanic=panic("validator panic")'
+	export GO_FAILPOINTS='sdbflow/dm/syncer/ValidatorPanic=panic("validator panic")'
 	cp $cur/conf/dm-task-standalone.yaml.bak $cur/conf/dm-task-standalone.yaml
 	prepare_for_standalone_test
 	run_sql_file $cur/data/db1.increment.sql $MYSQL_HOST1 $MYSQL_PORT1 $MYSQL_PASSWORD1
@@ -283,7 +283,7 @@ function run_standalone() {
 
 	echo "--> check validator worker panic and we can catch it"
 	# panic 1 times
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/dm/syncer/ValidatorWorkerPanic=1*panic("validator worker panic")'
+	export GO_FAILPOINTS='sdbflow/dm/syncer/ValidatorWorkerPanic=1*panic("validator worker panic")'
 	cp $cur/conf/dm-task-standalone.yaml.bak $cur/conf/dm-task-standalone.yaml
 	prepare_for_standalone_test
 	run_sql_file $cur/data/db1.increment.sql $MYSQL_HOST1 $MYSQL_PORT1 $MYSQL_PASSWORD1
@@ -307,7 +307,7 @@ function run_standalone() {
 
 	echo "--> check validator stop when pending row size too large"
 	# skip incremental rows with id <= 5
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/dm/syncer/SkipDML=return(5)'
+	export GO_FAILPOINTS='sdbflow/dm/syncer/SkipDML=return(5)'
 	cp $cur/conf/dm-task-standalone.yaml.bak $cur/conf/dm-task-standalone.yaml
 	sed -i 's/row-error-delay: .*$/row-error-delay: 30m/' $cur/conf/dm-task-standalone.yaml
 	sed -i 's/max-pending-row-size: .*$/max-pending-row-size: 20/' $cur/conf/dm-task-standalone.yaml
@@ -326,7 +326,7 @@ function run_standalone() {
 
 	echo "--> check validator stop when pending row count too many"
 	# skip incremental rows with id <= 5
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/dm/syncer/SkipDML=return(5)'
+	export GO_FAILPOINTS='sdbflow/dm/syncer/SkipDML=return(5)'
 	cp $cur/conf/dm-task-standalone.yaml.bak $cur/conf/dm-task-standalone.yaml
 	sed -i 's/row-error-delay: .*$/row-error-delay: 30m/' $cur/conf/dm-task-standalone.yaml
 	sed -i 's/max-pending-row-count: .*$/max-pending-row-count: 2/' $cur/conf/dm-task-standalone.yaml
@@ -530,7 +530,7 @@ function stopped_validator_fail_over() {
 
 	echo "--> stopped validator fail over"
 	# skip incremental rows with c1 <= 1
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/dm/syncer/SkipDML=return(1)'
+	export GO_FAILPOINTS='sdbflow/dm/syncer/SkipDML=return(1)'
 	prepare_for_standalone_test
 	run_sql_source1 "create table $db_name.t2(c1 int primary key, c2 int)"
 	run_sql_source1 "insert into $db_name.t2 values(1, 1), (2, 2), (3, 3)"
@@ -652,7 +652,7 @@ function test_data_filter() {
 function test_validation_syncer_stopped() {
 	echo "--> validate when syncer is stopped"
 	insertCnt=5
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/syncer/mockValidatorDelay=return(2)"
+	export GO_FAILPOINTS="sdbflow/dm/syncer/mockValidatorDelay=return(2)"
 	prepare_for_standalone_test
 	run_sql_source1 "create table validator_basic.test(a int primary key, b int)"
 	run_sql_source1 "insert into validator_basic.test values(0, 0)"

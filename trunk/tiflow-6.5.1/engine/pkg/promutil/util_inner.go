@@ -16,9 +16,9 @@ package promutil
 import (
 	"net/http"
 
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	engineModel "github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/engine/pkg/tenant"
+	frameModel "sdbflow/engine/framework/model"
+	engineModel "sdbflow/engine/model"
+	"sdbflow/engine/pkg/tenant"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )

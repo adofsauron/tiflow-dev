@@ -20,9 +20,9 @@ import (
 	"os"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/enginepb"
-	cmdcontext "github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/enginepb"
+	cmdcontext "sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/errors"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 )

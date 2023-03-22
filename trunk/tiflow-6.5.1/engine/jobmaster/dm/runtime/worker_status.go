@@ -18,9 +18,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/pingcap/tiflow/engine/framework"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/framework"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/pkg/errors"
 )
 
 // HeartbeatInterval is heartbeat interval for checking worker stage

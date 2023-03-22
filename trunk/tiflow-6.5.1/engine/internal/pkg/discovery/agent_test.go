@@ -21,8 +21,8 @@ import (
 	"time"
 
 	"github.com/golang/mock/gomock"
-	pb "github.com/pingcap/tiflow/engine/enginepb"
-	pkgClient "github.com/pingcap/tiflow/engine/pkg/client"
+	pb "sdbflow/engine/enginepb"
+	pkgClient "sdbflow/engine/pkg/client"
 	"github.com/stretchr/testify/require"
 )
 

@@ -17,9 +17,9 @@ import (
 	"context"
 	"math/rand"
 
-	"github.com/pingcap/tiflow/engine/model"
-	schedModel "github.com/pingcap/tiflow/engine/servermaster/scheduler/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/model"
+	schedModel "sdbflow/engine/servermaster/scheduler/model"
+	"sdbflow/pkg/errors"
 )
 
 // Scheduler is a full set of scheduling management, containing capacity provider,

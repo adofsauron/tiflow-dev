@@ -19,11 +19,11 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec/builder"
-	"github.com/pingcap/tiflow/cdc/sinkv2/eventsink"
-	"github.com/pingcap/tiflow/cdc/sinkv2/util"
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec/builder"
+	"sdbflow/cdc/sinkv2/eventsink"
+	"sdbflow/cdc/sinkv2/util"
+	"sdbflow/pkg/config"
 	"github.com/stretchr/testify/require"
 )
 

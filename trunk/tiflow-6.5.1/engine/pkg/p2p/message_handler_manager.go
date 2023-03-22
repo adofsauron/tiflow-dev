@@ -19,7 +19,7 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/errors"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 )

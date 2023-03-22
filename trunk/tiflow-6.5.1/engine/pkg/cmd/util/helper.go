@@ -20,7 +20,7 @@ import (
 	"syscall"
 
 	"github.com/pingcap/log"
-	cmdconetxt "github.com/pingcap/tiflow/pkg/cmd/context"
+	cmdconetxt "sdbflow/pkg/cmd/context"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 )

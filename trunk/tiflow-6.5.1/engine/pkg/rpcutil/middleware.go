@@ -21,7 +21,7 @@ import (
 
 	perrors "github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/errors"
 	"go.uber.org/zap"
 	"golang.org/x/time/rate"
 	"google.golang.org/genproto/googleapis/rpc/errdetails"

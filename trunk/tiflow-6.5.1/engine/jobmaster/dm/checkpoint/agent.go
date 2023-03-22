@@ -20,14 +20,14 @@ import (
 
 	"github.com/coreos/go-semver/semver"
 	"github.com/pingcap/tidb-tools/pkg/dbutil"
-	dmconfig "github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	"github.com/pingcap/tiflow/dm/pkg/cputil"
-	"github.com/pingcap/tiflow/engine/framework"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/bootstrap"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/config"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/metadata"
+	dmconfig "sdbflow/dm/config"
+	"sdbflow/dm/pkg/conn"
+	"sdbflow/dm/pkg/cputil"
+	"sdbflow/engine/framework"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/jobmaster/dm/bootstrap"
+	"sdbflow/engine/jobmaster/dm/config"
+	"sdbflow/engine/jobmaster/dm/metadata"
 	"go.uber.org/zap"
 )
 

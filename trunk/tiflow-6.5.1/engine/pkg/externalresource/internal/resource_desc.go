@@ -17,7 +17,7 @@ import (
 	"context"
 
 	brStorage "github.com/pingcap/tidb/br/pkg/storage"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
+	resModel "sdbflow/engine/pkg/externalresource/model"
 )
 
 // ResourceDescriptor is an object used internally by the broker

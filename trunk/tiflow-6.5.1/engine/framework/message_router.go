@@ -17,10 +17,10 @@ import (
 	"context"
 
 	"github.com/pingcap/log"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/pkg/p2p"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/workerpool"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/pkg/p2p"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/workerpool"
 	"go.uber.org/zap"
 )
 

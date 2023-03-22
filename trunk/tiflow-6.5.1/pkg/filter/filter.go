@@ -16,8 +16,8 @@ package filter
 import (
 	timodel "github.com/pingcap/tidb/parser/model"
 	tfilter "github.com/pingcap/tidb/util/table-filter"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/config"
 )
 
 // allowDDLList is a list of DDL types that can be applied to cdc's schema storage.

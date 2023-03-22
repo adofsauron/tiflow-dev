@@ -17,7 +17,7 @@ import (
 	"context"
 
 	"github.com/pingcap/tidb/util/filter"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/utils"
 	"go.uber.org/zap"
 )
 

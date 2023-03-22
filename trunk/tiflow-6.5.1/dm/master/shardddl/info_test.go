@@ -16,7 +16,7 @@ package shardddl
 import (
 	"testing"
 
-	"github.com/pingcap/tiflow/dm/pkg/shardddl/pessimism"
+	"sdbflow/dm/pkg/shardddl/pessimism"
 	"github.com/stretchr/testify/require"
 )
 

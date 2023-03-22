@@ -23,8 +23,8 @@ import (
 	"time"
 
 	"github.com/pingcap/tidb/br/pkg/storage"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/util"
 )
 
 var (

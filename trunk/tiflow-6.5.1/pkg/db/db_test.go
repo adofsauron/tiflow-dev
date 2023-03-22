@@ -24,7 +24,7 @@ import (
 	"time"
 
 	"github.com/cockroachdb/pebble"
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/pkg/config"
 	"github.com/stretchr/testify/require"
 )
 
@@ -169,7 +169,7 @@ func TestPebbleMetrics(t *testing.T) {
 
 // goos: linux
 // goarch: amd64
-// pkg: github.com/pingcap/tiflow/pkg/db
+// pkg: sdbflow/pkg/db
 // cpu: Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz
 // BenchmarkNext/pebble/next_1_event(s)-40                  4241365               284.0 ns/op             0 B/op          0 allocs/op
 // BenchmarkNext/pebble/next_4_event(s)-40                  1844215               683.1 ns/op             0 B/op          0 allocs/op

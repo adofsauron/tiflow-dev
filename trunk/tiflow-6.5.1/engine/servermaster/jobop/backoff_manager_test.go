@@ -16,7 +16,7 @@ package jobop
 import (
 	"testing"
 
-	"github.com/pingcap/tiflow/engine/pkg/clock"
+	"sdbflow/engine/pkg/clock"
 	"github.com/stretchr/testify/require"
 )
 

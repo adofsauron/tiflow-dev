@@ -16,7 +16,7 @@ package config
 import (
 	"time"
 
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	cerror "sdbflow/pkg/errors"
 )
 
 // SchedulerConfig configs TiCDC scheduler.

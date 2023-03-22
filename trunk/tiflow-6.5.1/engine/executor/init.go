@@ -16,11 +16,11 @@ package executor
 import (
 	"sync"
 
-	cvstask "github.com/pingcap/tiflow/engine/executor/cvs"
-	dmtask "github.com/pingcap/tiflow/engine/executor/dm"
-	"github.com/pingcap/tiflow/engine/framework/fake"
-	cvs "github.com/pingcap/tiflow/engine/jobmaster/cvsjob"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm"
+	cvstask "sdbflow/engine/executor/cvs"
+	dmtask "sdbflow/engine/executor/dm"
+	"sdbflow/engine/framework/fake"
+	cvs "sdbflow/engine/jobmaster/cvsjob"
+	"sdbflow/engine/jobmaster/dm"
 )
 
 // registerWorkerOnce guards calling registerWorkers.

@@ -19,9 +19,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/engine/pkg/notifier"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/model"
+	"sdbflow/engine/pkg/notifier"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/atomic"

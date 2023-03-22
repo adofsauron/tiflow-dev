@@ -13,7 +13,7 @@
 
 syntax = "proto3";
 package pingcap.tiflow.cdc.processor.tablepb;
-option go_package = "github.com/pingcap/tiflow/cdc/processor/tablepb";
+option go_package = "sdbflow/cdc/processor/tablepb";
 
 import "gogoproto/gogo.proto";
 
@@ -27,7 +27,7 @@ message Span {
     option(gogoproto.goproto_getters) = false;
 
     int64 table_id = 1 [
-        (gogoproto.casttype) = "github.com/pingcap/tiflow/cdc/model.TableID",
+        (gogoproto.casttype) = "sdbflow/cdc/model.TableID",
         (gogoproto.customname) = "TableID"
     ];
     bytes start_key = 2 [(gogoproto.casttype) = "Key"];
@@ -54,8 +54,8 @@ enum TableState {
 }
 
 message Checkpoint {
-    uint64 checkpoint_ts = 1 [(gogoproto.casttype) = "github.com/pingcap/tiflow/cdc/model.Ts"];
-    uint64 resolved_ts = 2 [(gogoproto.casttype) = "github.com/pingcap/tiflow/cdc/model.Ts"];
+    uint64 checkpoint_ts = 1 [(gogoproto.casttype) = "sdbflow/cdc/model.Ts"];
+    uint64 resolved_ts = 2 [(gogoproto.casttype) = "sdbflow/cdc/model.Ts"];
 }
 
 // Stats holds a statistic for a table.
@@ -63,17 +63,17 @@ message Stats {
     // Number of captured regions.
     uint64 region_count = 1;
     // The current timestamp from the table's point of view.
-    uint64 current_ts = 2 [(gogoproto.casttype) = "github.com/pingcap/tiflow/cdc/model.Ts"];
+    uint64 current_ts = 2 [(gogoproto.casttype) = "sdbflow/cdc/model.Ts"];
     // Checkponits at each stage.
     map<string, Checkpoint> stage_checkpoints = 3 [(gogoproto.nullable) = false];
     // The barrier timestamp of the table.
-    uint64 barrier_ts = 4 [(gogoproto.casttype) = "github.com/pingcap/tiflow/cdc/model.Ts"];
+    uint64 barrier_ts = 4 [(gogoproto.casttype) = "sdbflow/cdc/model.Ts"];
 }
 
 // TableStatus is the running status of a table.
 message TableStatus {
     int64 table_id = 1 [
-        (gogoproto.casttype) = "github.com/pingcap/tiflow/cdc/model.TableID",
+        (gogoproto.casttype) = "sdbflow/cdc/model.TableID",
         (gogoproto.customname) = "TableID"
     ];
     TableState state = 2;

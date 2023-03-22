@@ -22,10 +22,10 @@ import (
 	"github.com/DATA-DOG/go-sqlmock"
 	"github.com/go-sql-driver/mysql"
 	"github.com/phayes/freeport"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/redo/common"
-	"github.com/pingcap/tiflow/cdc/redo/reader"
-	"github.com/pingcap/tiflow/cdc/sinkv2/eventsink/txn"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/redo/common"
+	"sdbflow/cdc/redo/reader"
+	"sdbflow/cdc/sinkv2/eventsink/txn"
 	"github.com/stretchr/testify/require"
 )
 

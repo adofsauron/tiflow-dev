@@ -17,7 +17,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/errors"
 )
 
 const (

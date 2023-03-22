@@ -14,9 +14,9 @@
 package metrics
 
 import (
-	"github.com/pingcap/tiflow/cdc/sinkv2/metrics/cloudstorage"
-	"github.com/pingcap/tiflow/cdc/sinkv2/metrics/mq"
-	"github.com/pingcap/tiflow/cdc/sinkv2/metrics/txn"
+	"sdbflow/cdc/sinkv2/metrics/cloudstorage"
+	"sdbflow/cdc/sinkv2/metrics/mq"
+	"sdbflow/cdc/sinkv2/metrics/txn"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

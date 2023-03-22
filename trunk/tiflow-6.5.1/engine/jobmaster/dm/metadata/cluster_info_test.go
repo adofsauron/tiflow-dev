@@ -18,8 +18,8 @@ import (
 	"testing"
 
 	"github.com/coreos/go-semver/semver"
-	"github.com/pingcap/tiflow/engine/pkg/adapter"
-	"github.com/pingcap/tiflow/engine/pkg/meta/mock"
+	"sdbflow/engine/pkg/adapter"
+	"sdbflow/engine/pkg/meta/mock"
 	"github.com/stretchr/testify/require"
 )
 

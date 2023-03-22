@@ -22,9 +22,9 @@ import (
 	"time"
 
 	toolutils "github.com/pingcap/tidb-tools/pkg/utils"
-	"github.com/pingcap/tiflow/dm/pkg/etcdutil"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/etcdutil"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
 	"go.etcd.io/etcd/server/v3/embed"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"

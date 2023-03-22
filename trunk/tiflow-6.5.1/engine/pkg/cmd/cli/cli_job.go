@@ -18,9 +18,9 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/enginepb"
-	"github.com/pingcap/tiflow/engine/pkg/tenant"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/enginepb"
+	"sdbflow/engine/pkg/tenant"
+	"sdbflow/pkg/errors"
 	"github.com/spf13/cobra"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"

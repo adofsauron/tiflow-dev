@@ -22,12 +22,12 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/contextutil"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/redo/writer"
-	"github.com/pingcap/tiflow/pkg/chann"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/redo"
+	"sdbflow/cdc/contextutil"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/redo/writer"
+	"sdbflow/pkg/chann"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/redo"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"
 )

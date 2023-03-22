@@ -16,8 +16,8 @@ package sinkmanager
 import (
 	"time"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/sourcemanager/engine"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/sourcemanager/engine"
 )
 
 const (

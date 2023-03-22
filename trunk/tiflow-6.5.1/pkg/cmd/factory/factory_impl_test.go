@@ -19,12 +19,12 @@ import (
 
 	"github.com/golang/mock/gomock"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
-	apiv1client "github.com/pingcap/tiflow/pkg/api/v1"
-	"github.com/pingcap/tiflow/pkg/api/v1/mock"
-	cmdcontext "github.com/pingcap/tiflow/pkg/cmd/context"
-	mock_factory "github.com/pingcap/tiflow/pkg/cmd/factory/mock"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/cdc/model"
+	apiv1client "sdbflow/pkg/api/v1"
+	"sdbflow/pkg/api/v1/mock"
+	cmdcontext "sdbflow/pkg/cmd/context"
+	mock_factory "sdbflow/pkg/cmd/factory/mock"
+	"sdbflow/pkg/security"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
 )

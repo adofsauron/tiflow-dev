@@ -16,9 +16,9 @@ package redo
 import (
 	"net/url"
 
-	"github.com/pingcap/tiflow/pkg/applier"
-	cmdcontext "github.com/pingcap/tiflow/pkg/cmd/context"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/applier"
+	cmdcontext "sdbflow/pkg/cmd/context"
+	cerror "sdbflow/pkg/errors"
 	"github.com/spf13/cobra"
 )
 

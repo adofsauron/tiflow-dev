@@ -14,9 +14,9 @@
 package etcdkv
 
 import (
-	"github.com/pingcap/tiflow/engine/pkg/meta/internal/etcdkv/namespace"
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/pkg/meta/internal/etcdkv/namespace"
+	metaModel "sdbflow/engine/pkg/meta/model"
+	"sdbflow/pkg/errors"
 	clientv3 "go.etcd.io/etcd/client/v3"
 )
 

@@ -21,10 +21,10 @@ import (
 
 	"github.com/golang/mock/gomock"
 	"github.com/pingcap/errors"
-	v2 "github.com/pingcap/tiflow/cdc/api/v2"
-	"github.com/pingcap/tiflow/cdc/model"
-	mock_v1 "github.com/pingcap/tiflow/pkg/api/v1/mock"
-	mock_v2 "github.com/pingcap/tiflow/pkg/api/v2/mock"
+	v2 "sdbflow/cdc/api/v2"
+	"sdbflow/cdc/model"
+	mock_v1 "sdbflow/pkg/api/v1/mock"
+	mock_v2 "sdbflow/pkg/api/v2/mock"
 	"github.com/stretchr/testify/require"
 )
 

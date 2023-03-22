@@ -20,7 +20,7 @@ import (
 
 	"github.com/pingcap/log"
 	"github.com/pingcap/tidb/parser/mysql"
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 	"go.uber.org/zap"
 	"golang.org/x/text/encoding/charmap"
 )

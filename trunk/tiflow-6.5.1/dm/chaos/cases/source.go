@@ -21,8 +21,8 @@ import (
 	"strings"
 	"time"
 
-	config2 "github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pb"
+	config2 "sdbflow/dm/config"
+	"sdbflow/dm/pb"
 )
 
 // createSources does `operate-source create` operation for two sources.

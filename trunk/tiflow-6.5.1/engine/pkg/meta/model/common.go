@@ -16,8 +16,8 @@ package model
 import (
 	"fmt"
 
-	"github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/engine/pkg/tenant"
+	"sdbflow/engine/model"
+	"sdbflow/engine/pkg/tenant"
 )
 
 type (

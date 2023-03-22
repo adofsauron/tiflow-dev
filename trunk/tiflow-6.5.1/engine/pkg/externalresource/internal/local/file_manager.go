@@ -20,12 +20,12 @@ import (
 	"sync"
 
 	"github.com/pingcap/log"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/engine/pkg/externalresource/internal"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/fsutil"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/model"
+	"sdbflow/engine/pkg/externalresource/internal"
+	resModel "sdbflow/engine/pkg/externalresource/model"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/fsutil"
 	"go.uber.org/zap"
 )
 

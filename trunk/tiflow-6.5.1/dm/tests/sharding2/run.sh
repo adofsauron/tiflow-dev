@@ -61,7 +61,7 @@ function run() {
 	check_port_offline $WORKER1_PORT 20
 	check_port_offline $WORKER2_PORT 20
 
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/dm/syncer/ExitAfterDDLBeforeFlush=return(true)'
+	export GO_FAILPOINTS='sdbflow/dm/syncer/ExitAfterDDLBeforeFlush=return(true)'
 
 	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
@@ -75,7 +75,7 @@ function run() {
 	check_port_offline $WORKER2_PORT 20
 
 	# mock recover relay writer
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/dm/relay/MockRecoverRelayWriter=return(true)'
+	export GO_FAILPOINTS='sdbflow/dm/relay/MockRecoverRelayWriter=return(true)'
 
 	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT

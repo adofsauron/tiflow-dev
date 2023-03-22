@@ -20,14 +20,14 @@ import (
 	"github.com/go-mysql-org/go-mysql/mysql"
 	. "github.com/pingcap/check"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	pkgstreamer "github.com/pingcap/tiflow/dm/pkg/streamer"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/relay"
-	"github.com/pingcap/tiflow/dm/unit"
+	"sdbflow/dm/config"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/log"
+	pkgstreamer "sdbflow/dm/pkg/streamer"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/relay"
+	"sdbflow/dm/unit"
 )
 
 type testRelay struct{}

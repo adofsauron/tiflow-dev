@@ -14,9 +14,9 @@
 package processor
 
 import (
-	"github.com/pingcap/tiflow/cdc/processor/memquota"
-	"github.com/pingcap/tiflow/cdc/processor/pipeline"
-	"github.com/pingcap/tiflow/cdc/processor/sinkmanager"
+	"sdbflow/cdc/processor/memquota"
+	"sdbflow/cdc/processor/pipeline"
+	"sdbflow/cdc/processor/sinkmanager"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

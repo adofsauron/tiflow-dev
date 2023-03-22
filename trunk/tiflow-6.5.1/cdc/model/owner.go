@@ -19,7 +19,7 @@ import (
 
 	"github.com/pingcap/errors"
 	timodel "github.com/pingcap/tidb/parser/model"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	cerror "sdbflow/pkg/errors"
 )
 
 // AdminJobType represents for admin job type, both used in owner and processor

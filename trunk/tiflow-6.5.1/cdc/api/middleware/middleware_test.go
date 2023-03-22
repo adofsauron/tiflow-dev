@@ -20,7 +20,7 @@ import (
 	"testing"
 
 	"github.com/gin-gonic/gin"
-	"github.com/pingcap/tiflow/cdc/capture"
+	"sdbflow/cdc/capture"
 	"github.com/stretchr/testify/require"
 )
 

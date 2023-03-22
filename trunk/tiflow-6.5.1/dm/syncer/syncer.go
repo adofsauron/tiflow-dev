@@ -41,34 +41,34 @@ import (
 	"github.com/pingcap/tidb/util/filter"
 	regexprrouter "github.com/pingcap/tidb/util/regexpr-router"
 	router "github.com/pingcap/tidb/util/table-router"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/event"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/reader"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	fr "github.com/pingcap/tiflow/dm/pkg/func-rollback"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	parserpkg "github.com/pingcap/tiflow/dm/pkg/parser"
-	"github.com/pingcap/tiflow/dm/pkg/schema"
-	"github.com/pingcap/tiflow/dm/pkg/shardddl/optimism"
-	"github.com/pingcap/tiflow/dm/pkg/shardddl/pessimism"
-	"github.com/pingcap/tiflow/dm/pkg/storage"
-	"github.com/pingcap/tiflow/dm/pkg/streamer"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/relay"
-	"github.com/pingcap/tiflow/dm/syncer/binlogstream"
-	"github.com/pingcap/tiflow/dm/syncer/dbconn"
-	"github.com/pingcap/tiflow/dm/syncer/metrics"
-	onlineddl "github.com/pingcap/tiflow/dm/syncer/online-ddl-tools"
-	sm "github.com/pingcap/tiflow/dm/syncer/safe-mode"
-	"github.com/pingcap/tiflow/dm/syncer/shardddl"
-	"github.com/pingcap/tiflow/dm/unit"
-	"github.com/pingcap/tiflow/pkg/errorutil"
-	"github.com/pingcap/tiflow/pkg/sqlmodel"
+	"sdbflow/dm/config"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/binlog/event"
+	"sdbflow/dm/pkg/binlog/reader"
+	"sdbflow/dm/pkg/conn"
+	tcontext "sdbflow/dm/pkg/context"
+	fr "sdbflow/dm/pkg/func-rollback"
+	"sdbflow/dm/pkg/ha"
+	"sdbflow/dm/pkg/log"
+	parserpkg "sdbflow/dm/pkg/parser"
+	"sdbflow/dm/pkg/schema"
+	"sdbflow/dm/pkg/shardddl/optimism"
+	"sdbflow/dm/pkg/shardddl/pessimism"
+	"sdbflow/dm/pkg/storage"
+	"sdbflow/dm/pkg/streamer"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/relay"
+	"sdbflow/dm/syncer/binlogstream"
+	"sdbflow/dm/syncer/dbconn"
+	"sdbflow/dm/syncer/metrics"
+	onlineddl "sdbflow/dm/syncer/online-ddl-tools"
+	sm "sdbflow/dm/syncer/safe-mode"
+	"sdbflow/dm/syncer/shardddl"
+	"sdbflow/dm/unit"
+	"sdbflow/pkg/errorutil"
+	"sdbflow/pkg/sqlmodel"
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
@@ -2048,7 +2048,7 @@ func (s *Syncer) Run(ctx context.Context) (err error) {
 					// TODO: This will cause a potential performance issue. If we have multiple tables not resolved after a huge amount of binlogs but resolved in a short time,
 					//   	current implementation will cause syncer to redirect and replay the binlogs in this segment several times. One possible solution is to
 					//      interrupt current resync once syncer meets a new redirect operation, force other tables to be resolved together in the interrupted shardingResync.
-					//      If we want to do this, we also need to remove the target table check at https://github.com/pingcap/tiflow/blob/af849add84bf26feb2628d3e1e4344830b915fd9/dm/syncer/syncer.go#L2489
+					//      If we want to do this, we also need to remove the target table check at https://sdbflow/blob/af849add84bf26feb2628d3e1e4344830b915fd9/dm/syncer/syncer.go#L2489
 					endLocation := &endLocation
 					if shardingReSync != nil {
 						endLocation = &shardingReSync.latestLocation
@@ -2354,7 +2354,7 @@ func (s *Syncer) Run(ctx context.Context) (err error) {
 }
 
 func (s *Syncer) initSafeModeExitTS(firstBinlogTS int64) error {
-	// see more in https://github.com/pingcap/tiflow/pull/4601#discussion_r814446628
+	// see more in https://sdbflow/pull/4601#discussion_r814446628
 	duration, err := time.ParseDuration(s.cliArgs.SafeModeDuration)
 	if err != nil {
 		return err

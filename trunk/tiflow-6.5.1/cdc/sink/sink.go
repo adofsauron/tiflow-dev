@@ -18,11 +18,11 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/mq"
-	"github.com/pingcap/tiflow/cdc/sink/mysql"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/mq"
+	"sdbflow/cdc/sink/mysql"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
 )
 
 // Sink is an abstraction for anything that a changefeed may emit into.
@@ -30,7 +30,7 @@ type Sink interface {
 	// AddTable adds the table to MySQLSink or MQSink,
 	// which is currently responsible for cleaning up
 	// the residual values of the table in Sink.
-	// See: https://github.com/pingcap/tiflow/issues/4464#issuecomment-1085385382.
+	// See: https://sdbflow/issues/4464#issuecomment-1085385382.
 	//
 	// NOTICE: Only MySQLSink and MQSink implement it.
 	// AddTable is thread-safe.

@@ -19,8 +19,8 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/model"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/model"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 )

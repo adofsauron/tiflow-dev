@@ -23,9 +23,9 @@ import (
 
 	"github.com/DATA-DOG/go-sqlmock"
 	"github.com/phayes/freeport"
-	"github.com/pingcap/tiflow/dm/config"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/config"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/utils"
 	"github.com/stretchr/testify/require"
 )
 

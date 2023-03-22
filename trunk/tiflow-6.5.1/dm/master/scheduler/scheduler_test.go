@@ -22,12 +22,12 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/master/workerrpc"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/config"
+	"sdbflow/dm/master/workerrpc"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/ha"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 	v3rpc "go.etcd.io/etcd/api/v3/v3rpc/rpctypes"
@@ -1295,45 +1295,45 @@ func (t *testSchedulerSuite) TestTransferSource() {
 	// now we have (worker1, nil) (worker2, source2) (worker3, source3) (worker4, source1)
 
 	// test fail halfway won't left old worker unbound
-	require.NoError(t.T(), failpoint.Enable("github.com/pingcap/tiflow/dm/master/scheduler/failToReplaceSourceBound", `return()`))
+	require.NoError(t.T(), failpoint.Enable("sdbflow/dm/master/scheduler/failToReplaceSourceBound", `return()`))
 	require.Error(t.T(), s.TransferSource(ctx, sourceID1, workerName1))
 	require.Equal(t.T(), worker4, s.bounds[sourceID1])
 	require.Equal(t.T(), WorkerFree, worker1.Stage())
-	require.NoError(t.T(), failpoint.Disable("github.com/pingcap/tiflow/dm/master/scheduler/failToReplaceSourceBound"))
+	require.NoError(t.T(), failpoint.Disable("sdbflow/dm/master/scheduler/failToReplaceSourceBound"))
 
 	// set running tasks
 	s.expectSubTaskStages.Store("test", map[string]ha.Stage{sourceID1: {Expect: pb.Stage_Running}})
 
 	// test can't transfer when running tasks not in sync unit
-	require.NoError(t.T(), failpoint.Enable("github.com/pingcap/tiflow/dm/master/scheduler/operateWorkerQueryStatus", `return("notInSyncUnit")`))
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/master/scheduler/operateWorkerQueryStatus") //nolint:errcheck
+	require.NoError(t.T(), failpoint.Enable("sdbflow/dm/master/scheduler/operateWorkerQueryStatus", `return("notInSyncUnit")`))
+	defer failpoint.Disable("sdbflow/dm/master/scheduler/operateWorkerQueryStatus") //nolint:errcheck
 	require.True(t.T(), terror.ErrSchedulerRequireRunningTaskInSyncUnit.Equal(s.TransferSource(ctx, sourceID1, workerName1)))
-	require.NoError(t.T(), failpoint.Disable("github.com/pingcap/tiflow/dm/master/scheduler/operateWorkerQueryStatus"))
+	require.NoError(t.T(), failpoint.Disable("sdbflow/dm/master/scheduler/operateWorkerQueryStatus"))
 
 	// test can't transfer when query status met error
-	require.NoError(t.T(), failpoint.Enable("github.com/pingcap/tiflow/dm/master/scheduler/operateWorkerQueryStatus", `return("error")`))
+	require.NoError(t.T(), failpoint.Enable("sdbflow/dm/master/scheduler/operateWorkerQueryStatus", `return("error")`))
 	require.Contains(t.T(), s.TransferSource(ctx, sourceID1, workerName1).Error(), "failed to query worker")
-	require.NoError(t.T(), failpoint.Disable("github.com/pingcap/tiflow/dm/master/scheduler/operateWorkerQueryStatus"))
+	require.NoError(t.T(), failpoint.Disable("sdbflow/dm/master/scheduler/operateWorkerQueryStatus"))
 
 	// test can transfer when all running task is in sync unit
-	require.NoError(t.T(), failpoint.Enable("github.com/pingcap/tiflow/dm/master/scheduler/skipBatchOperateTaskOnWorkerSleep", `return()`))
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/master/scheduler/skipBatchOperateTaskOnWorkerSleep") //nolint:errcheck
-	require.NoError(t.T(), failpoint.Enable("github.com/pingcap/tiflow/dm/master/scheduler/operateWorkerQueryStatus", `return("allTaskIsPaused")`))
+	require.NoError(t.T(), failpoint.Enable("sdbflow/dm/master/scheduler/skipBatchOperateTaskOnWorkerSleep", `return()`))
+	defer failpoint.Disable("sdbflow/dm/master/scheduler/skipBatchOperateTaskOnWorkerSleep") //nolint:errcheck
+	require.NoError(t.T(), failpoint.Enable("sdbflow/dm/master/scheduler/operateWorkerQueryStatus", `return("allTaskIsPaused")`))
 
 	// we only retry 10 times, open a failpoint to make need retry more than 10 times, so this transfer will fail
-	require.NoError(t.T(), failpoint.Enable("github.com/pingcap/tiflow/dm/master/scheduler/batchOperateTaskOnWorkerMustRetry", `return(11)`))
+	require.NoError(t.T(), failpoint.Enable("sdbflow/dm/master/scheduler/batchOperateTaskOnWorkerMustRetry", `return(11)`))
 	require.True(t.T(), terror.ErrSchedulerPauseTaskForTransferSource.Equal(s.TransferSource(ctx, sourceID1, workerName1)))
-	require.NoError(t.T(), failpoint.Disable("github.com/pingcap/tiflow/dm/master/scheduler/batchOperateTaskOnWorkerMustRetry"))
+	require.NoError(t.T(), failpoint.Disable("sdbflow/dm/master/scheduler/batchOperateTaskOnWorkerMustRetry"))
 
 	// now we can transfer successfully after 2 times retry
 	s.expectSubTaskStages.Store("test", map[string]ha.Stage{sourceID1: {Expect: pb.Stage_Running}})
-	require.NoError(t.T(), failpoint.Enable("github.com/pingcap/tiflow/dm/master/scheduler/batchOperateTaskOnWorkerMustRetry", `return(2)`))
+	require.NoError(t.T(), failpoint.Enable("sdbflow/dm/master/scheduler/batchOperateTaskOnWorkerMustRetry", `return(2)`))
 	require.NoError(t.T(), s.TransferSource(ctx, sourceID1, workerName1))
-	require.NoError(t.T(), failpoint.Disable("github.com/pingcap/tiflow/dm/master/scheduler/batchOperateTaskOnWorkerMustRetry"))
+	require.NoError(t.T(), failpoint.Disable("sdbflow/dm/master/scheduler/batchOperateTaskOnWorkerMustRetry"))
 	require.Equal(t.T(), worker1, s.bounds[sourceID1])
 	require.Equal(t.T(), WorkerBound, worker1.Stage())
-	require.NoError(t.T(), failpoint.Disable("github.com/pingcap/tiflow/dm/master/scheduler/operateWorkerQueryStatus"))
-	require.NoError(t.T(), failpoint.Disable("github.com/pingcap/tiflow/dm/master/scheduler/skipBatchOperateTaskOnWorkerSleep"))
+	require.NoError(t.T(), failpoint.Disable("sdbflow/dm/master/scheduler/operateWorkerQueryStatus"))
+	require.NoError(t.T(), failpoint.Disable("sdbflow/dm/master/scheduler/skipBatchOperateTaskOnWorkerSleep"))
 }
 
 func (t *testSchedulerSuite) TestStartStopRelay() {
@@ -1564,12 +1564,12 @@ func (t *testSchedulerSuite) TestCloseAllWorkers() {
 		require.NoError(t.T(), err)
 	}
 
-	require.NoError(t.T(), failpoint.Enable("github.com/pingcap/tiflow/dm/master/scheduler/failToRecoverWorkersBounds", "return"))
+	require.NoError(t.T(), failpoint.Enable("sdbflow/dm/master/scheduler/failToRecoverWorkersBounds", "return"))
 	// Test closed when fail to start
 	require.Errorf(t.T(), s.Start(ctx, t.etcdTestCli), "failToRecoverWorkersBounds")
 	require.Len(t.T(), s.workers, 3)
 	checkAllWorkersClosed(t.T(), s, true)
-	require.NoError(t.T(), failpoint.Disable("github.com/pingcap/tiflow/dm/master/scheduler/failToRecoverWorkersBounds"))
+	require.NoError(t.T(), failpoint.Disable("sdbflow/dm/master/scheduler/failToRecoverWorkersBounds"))
 
 	s.workers = map[string]*Worker{}
 	require.NoError(t.T(), s.Start(ctx, t.etcdTestCli))
@@ -2098,20 +2098,20 @@ func (t *testSchedulerSuite) TestUpdateSubTasksAndSourceCfg() {
 	t.NoError(s.StopRelay(sourceID1, []string{workerName1}))
 
 	// can't updated when worker rpc error
-	t.NoError(failpoint.Enable("github.com/pingcap/tiflow/dm/master/scheduler/operateCheckSubtasksCanUpdate", `return("error")`))
+	t.NoError(failpoint.Enable("sdbflow/dm/master/scheduler/operateCheckSubtasksCanUpdate", `return("error")`))
 	t.Regexp("query error", s.UpdateSubTasks(ctx, subtaskCfg1))
-	t.NoError(failpoint.Disable("github.com/pingcap/tiflow/dm/master/scheduler/operateCheckSubtasksCanUpdate"))
+	t.NoError(failpoint.Disable("sdbflow/dm/master/scheduler/operateCheckSubtasksCanUpdate"))
 
 	// can't updated when worker rpc check not pass
-	t.NoError(failpoint.Enable("github.com/pingcap/tiflow/dm/master/scheduler/operateCheckSubtasksCanUpdate", `return("failed")`))
+	t.NoError(failpoint.Enable("sdbflow/dm/master/scheduler/operateCheckSubtasksCanUpdate", `return("failed")`))
 	t.True(terror.ErrSchedulerSubTaskCfgUpdate.Equal(s.UpdateSubTasks(ctx, subtaskCfg1)))
-	t.NoError(failpoint.Disable("github.com/pingcap/tiflow/dm/master/scheduler/operateCheckSubtasksCanUpdate"))
+	t.NoError(failpoint.Disable("sdbflow/dm/master/scheduler/operateCheckSubtasksCanUpdate"))
 
 	// update success
 	subtaskCfg1.Batch = 1000
-	t.NoError(failpoint.Enable("github.com/pingcap/tiflow/dm/master/scheduler/operateCheckSubtasksCanUpdate", `return("success")`))
+	t.NoError(failpoint.Enable("sdbflow/dm/master/scheduler/operateCheckSubtasksCanUpdate", `return("success")`))
 	t.NoError(s.UpdateSubTasks(ctx, subtaskCfg1))
-	t.NoError(failpoint.Disable("github.com/pingcap/tiflow/dm/master/scheduler/operateCheckSubtasksCanUpdate"))
+	t.NoError(failpoint.Disable("sdbflow/dm/master/scheduler/operateCheckSubtasksCanUpdate"))
 	t.Equal(s.getSubTaskCfgByTaskSource(taskName1, sourceID1).Batch, subtaskCfg1.Batch)
 
 	sourceCfg1.MetaDir = "new meta"

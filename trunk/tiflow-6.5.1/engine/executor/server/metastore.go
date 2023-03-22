@@ -18,11 +18,11 @@ import (
 	"encoding/json"
 
 	"github.com/pingcap/log"
-	pb "github.com/pingcap/tiflow/engine/enginepb"
-	"github.com/pingcap/tiflow/engine/pkg/client"
-	"github.com/pingcap/tiflow/engine/pkg/meta"
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	pb "sdbflow/engine/enginepb"
+	"sdbflow/engine/pkg/client"
+	"sdbflow/engine/pkg/meta"
+	metaModel "sdbflow/engine/pkg/meta/model"
+	"sdbflow/pkg/errors"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 )

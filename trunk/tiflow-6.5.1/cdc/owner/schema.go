@@ -19,13 +19,13 @@ import (
 	tidbkv "github.com/pingcap/tidb/kv"
 	timeta "github.com/pingcap/tidb/meta"
 	timodel "github.com/pingcap/tidb/parser/model"
-	"github.com/pingcap/tiflow/cdc/entry/schema"
-	"github.com/pingcap/tiflow/cdc/kv"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/filter"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/entry/schema"
+	"sdbflow/cdc/kv"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/filter"
+	"sdbflow/pkg/util"
 	"github.com/prometheus/client_golang/prometheus"
 	"go.uber.org/zap"
 )
@@ -268,7 +268,7 @@ func (s *schemaWrap4Owner) shouldIgnoreTable(t *model.TableInfo) bool {
 	if !t.IsEligible(s.config.ForceReplicate) {
 		// Sequence is not supported yet, and always ineligible.
 		// Skip Warn to avoid confusion.
-		// See https://github.com/pingcap/tiflow/issues/4559
+		// See https://sdbflow/issues/4559
 		if !t.IsSequence() {
 			log.Warn("skip ineligible table",
 				zap.String("namespace", s.id.Namespace),

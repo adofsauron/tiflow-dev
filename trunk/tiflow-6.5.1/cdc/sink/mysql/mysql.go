@@ -31,17 +31,17 @@ import (
 	"github.com/pingcap/log"
 	"github.com/pingcap/tidb/parser/charset"
 	timodel "github.com/pingcap/tidb/parser/model"
-	"github.com/pingcap/tiflow/cdc/contextutil"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/metrics"
-	dmutils "github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/errorutil"
-	"github.com/pingcap/tiflow/pkg/notify"
-	"github.com/pingcap/tiflow/pkg/quotes"
-	"github.com/pingcap/tiflow/pkg/retry"
-	pmysql "github.com/pingcap/tiflow/pkg/sink/mysql"
+	"sdbflow/cdc/contextutil"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/metrics"
+	dmutils "sdbflow/dm/pkg/utils"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/errorutil"
+	"sdbflow/pkg/notify"
+	"sdbflow/pkg/quotes"
+	"sdbflow/pkg/retry"
+	pmysql "sdbflow/pkg/sink/mysql"
 	"github.com/prometheus/client_golang/prometheus"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
@@ -538,7 +538,7 @@ func (s *mysqlSink) cleanTableResource(tableID model.TableID) {
 	// We need to clean up the old values of the table,
 	// otherwise when the table is dispatched back again,
 	// it may read the old values.
-	// See: https://github.com/pingcap/tiflow/issues/4464#issuecomment-1085385382.
+	// See: https://sdbflow/issues/4464#issuecomment-1085385382.
 	if resolved, loaded := s.tableMaxResolvedTs.LoadAndDelete(tableID); loaded {
 		log.Info("clean up table max resolved ts in MySQL sink",
 			zap.Int64("tableID", tableID),

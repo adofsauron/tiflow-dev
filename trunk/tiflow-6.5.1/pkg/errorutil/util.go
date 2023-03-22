@@ -22,8 +22,8 @@ import (
 	"github.com/pingcap/tidb/parser/mysql"
 	"github.com/pingcap/tidb/util/dbterror"
 	"github.com/pingcap/tidb/util/dbutil"
-	dmretry "github.com/pingcap/tiflow/dm/pkg/retry"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	dmretry "sdbflow/dm/pkg/retry"
+	cerror "sdbflow/pkg/errors"
 	v3rpc "go.etcd.io/etcd/api/v3/v3rpc/rpctypes"
 )
 
@@ -83,7 +83,7 @@ func IsRetryableEtcdError(err error) bool {
 	if strings.Contains(etcdErr.Error(), "raft: stopped") {
 		return true
 	}
-	// see: https://github.com/pingcap/tiflow/issues/6720
+	// see: https://sdbflow/issues/6720
 	if strings.Contains(etcdErr.Error(), "received prior goaway: code: NO_ERROR") {
 		return true
 	}

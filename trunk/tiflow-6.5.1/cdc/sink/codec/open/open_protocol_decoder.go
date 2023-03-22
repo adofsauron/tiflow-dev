@@ -17,10 +17,10 @@ import (
 	"encoding/binary"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec"
-	"github.com/pingcap/tiflow/cdc/sink/codec/internal"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec"
+	"sdbflow/cdc/sink/codec/internal"
+	cerror "sdbflow/pkg/errors"
 )
 
 // BatchMixedDecoder decodes the byte of a batch into the original messages.

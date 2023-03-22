@@ -18,8 +18,8 @@ import (
 	"time"
 
 	. "github.com/pingcap/check"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pb"
+	"sdbflow/dm/config"
+	"sdbflow/dm/pb"
 )
 
 func (t *testForEtcd) TestStageJSON(c *C) {

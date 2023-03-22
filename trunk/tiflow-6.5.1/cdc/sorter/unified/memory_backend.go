@@ -18,7 +18,7 @@ import (
 
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 	"go.uber.org/zap"
 )
 

@@ -14,8 +14,8 @@
 package model
 
 import (
-	"github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/pkg/label"
+	"sdbflow/engine/model"
+	"sdbflow/pkg/label"
 )
 
 // ExecutorInfo contains information about each executor

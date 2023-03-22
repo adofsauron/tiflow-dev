@@ -21,10 +21,10 @@ import (
 	"github.com/pingcap/tidb-tools/pkg/column-mapping"
 	"github.com/pingcap/tidb/util/filter"
 	router "github.com/pingcap/tidb/util/table-router"
-	"github.com/pingcap/tiflow/dm/openapi"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/storage"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/openapi"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/storage"
+	"sdbflow/dm/pkg/terror"
 	"go.uber.org/zap"
 )
 

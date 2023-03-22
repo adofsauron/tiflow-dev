@@ -18,9 +18,9 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/pkg/client"
-	"github.com/pingcap/tiflow/engine/pkg/notifier"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/pkg/client"
+	"sdbflow/engine/pkg/notifier"
+	"sdbflow/pkg/errors"
 	"go.uber.org/zap"
 	"golang.org/x/exp/maps"
 	"golang.org/x/sync/errgroup"

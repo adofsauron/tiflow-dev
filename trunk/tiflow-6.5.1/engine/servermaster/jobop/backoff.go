@@ -18,7 +18,7 @@ import (
 
 	"github.com/cenkalti/backoff/v4"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/pkg/clock"
+	"sdbflow/engine/pkg/clock"
 	"go.uber.org/zap"
 )
 

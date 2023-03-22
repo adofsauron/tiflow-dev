@@ -16,8 +16,8 @@ package v1
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/api/internal/rest"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/api/internal/rest"
 )
 
 // CapturesGetter has a method to return a CaptureInterface.

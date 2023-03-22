@@ -21,8 +21,8 @@ import (
 
 	"github.com/golang/mock/gomock"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/api/v1/mock"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/api/v1/mock"
 	"github.com/stretchr/testify/require"
 )
 

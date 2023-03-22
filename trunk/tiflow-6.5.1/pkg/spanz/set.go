@@ -13,7 +13,7 @@
 
 package spanz
 
-import "github.com/pingcap/tiflow/cdc/processor/tablepb"
+import "sdbflow/cdc/processor/tablepb"
 
 // Set maintains a set of Span.
 type Set struct {

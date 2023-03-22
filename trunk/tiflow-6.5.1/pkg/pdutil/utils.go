@@ -18,7 +18,7 @@ import (
 	"strconv"
 
 	"github.com/pingcap/log"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	cerror "sdbflow/pkg/errors"
 	pd "github.com/tikv/pd/client"
 	"go.uber.org/zap"
 )

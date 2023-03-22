@@ -19,12 +19,12 @@ import (
 	"github.com/golang/protobuf/proto"
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec"
-	"github.com/pingcap/tiflow/cdc/sink/codec/common"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	canal "github.com/pingcap/tiflow/proto/canal"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec"
+	"sdbflow/cdc/sink/codec/common"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	canal "sdbflow/proto/canal"
 	"go.uber.org/zap"
 )
 

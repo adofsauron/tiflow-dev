@@ -17,7 +17,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/pingcap/tiflow/pkg/httputil"
+	"sdbflow/pkg/httputil"
 )
 
 // HTTPMethod represents HTTP method.

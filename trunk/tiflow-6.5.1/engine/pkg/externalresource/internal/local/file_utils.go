@@ -20,9 +20,9 @@ import (
 	"testing"
 
 	brStorage "github.com/pingcap/tidb/br/pkg/storage"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	frameModel "sdbflow/engine/framework/model"
+	resModel "sdbflow/engine/pkg/externalresource/model"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 )
 

@@ -23,7 +23,7 @@ import (
 	"testing"
 
 	"github.com/gin-gonic/gin"
-	"github.com/pingcap/tiflow/pkg/httputil"
+	"sdbflow/pkg/httputil"
 	"github.com/stretchr/testify/require"
 	"go.etcd.io/etcd/client/v3/concurrency"
 )

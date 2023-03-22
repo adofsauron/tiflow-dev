@@ -19,13 +19,13 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/cdc/api/owner"
-	"github.com/pingcap/tiflow/cdc/api/status"
-	v1 "github.com/pingcap/tiflow/cdc/api/v1"
-	v2 "github.com/pingcap/tiflow/cdc/api/v2"
-	"github.com/pingcap/tiflow/cdc/capture"
-	_ "github.com/pingcap/tiflow/docs/swagger" // use for OpenAPI online docs
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/api/owner"
+	"sdbflow/cdc/api/status"
+	v1 "sdbflow/cdc/api/v1"
+	v2 "sdbflow/cdc/api/v2"
+	"sdbflow/cdc/capture"
+	_ "sdbflow/docs/swagger" // use for OpenAPI online docs
+	"sdbflow/pkg/util"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	swaggerFiles "github.com/swaggo/files"

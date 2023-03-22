@@ -18,8 +18,8 @@ import (
 	"errors"
 	"os"
 
-	"github.com/pingcap/tiflow/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/pb"
+	"sdbflow/dm/ctl/common"
+	"sdbflow/dm/pb"
 	"github.com/spf13/cobra"
 )
 

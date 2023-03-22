@@ -22,12 +22,12 @@ import (
 
 	"github.com/cockroachdb/pebble"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/sourcemanager/engine"
-	epebble "github.com/pingcap/tiflow/cdc/processor/sourcemanager/engine/pebble"
-	metrics "github.com/pingcap/tiflow/cdc/sorter"
-	"github.com/pingcap/tiflow/pkg/config"
-	dbMetrics "github.com/pingcap/tiflow/pkg/db"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/sourcemanager/engine"
+	epebble "sdbflow/cdc/processor/sourcemanager/engine/pebble"
+	metrics "sdbflow/cdc/sorter"
+	"sdbflow/pkg/config"
+	dbMetrics "sdbflow/pkg/db"
 	"go.uber.org/atomic"
 	"go.uber.org/multierr"
 )

@@ -16,10 +16,10 @@ package client
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/engine/enginepb"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/pkg/client/internal"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
+	"sdbflow/engine/enginepb"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/pkg/client/internal"
+	resModel "sdbflow/engine/pkg/externalresource/model"
 )
 
 // BrokerServiceClient wraps a pb.BrokerServiceClient

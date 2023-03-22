@@ -22,9 +22,9 @@ import (
 	"testing"
 	"time"
 
-	pb "github.com/pingcap/tiflow/engine/enginepb"
-	cvs "github.com/pingcap/tiflow/engine/jobmaster/cvsjob"
-	"github.com/pingcap/tiflow/engine/test/e2e"
+	pb "sdbflow/engine/enginepb"
+	cvs "sdbflow/engine/jobmaster/cvsjob"
+	"sdbflow/engine/test/e2e"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
 )

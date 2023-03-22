@@ -17,13 +17,13 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/config"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/openapi"
-	dmpkg "github.com/pingcap/tiflow/engine/pkg/dm"
-	engineOpenAPI "github.com/pingcap/tiflow/engine/pkg/openapi"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/engine/jobmaster/dm/config"
+	"sdbflow/engine/jobmaster/dm/openapi"
+	dmpkg "sdbflow/engine/pkg/dm"
+	engineOpenAPI "sdbflow/engine/pkg/openapi"
+	"sdbflow/pkg/errors"
 )
 
 // errCodePrefix is the prefix that attach to terror's error code string.

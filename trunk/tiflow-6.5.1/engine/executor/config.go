@@ -22,10 +22,10 @@ import (
 
 	"github.com/BurntSushi/toml"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/label"
-	"github.com/pingcap/tiflow/pkg/logutil"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/label"
+	"sdbflow/pkg/logutil"
+	"sdbflow/pkg/security"
 )
 
 var (

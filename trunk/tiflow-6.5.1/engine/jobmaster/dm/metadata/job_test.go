@@ -19,11 +19,11 @@ import (
 	"testing"
 
 	"github.com/pingcap/log"
-	dmconfig "github.com/pingcap/tiflow/dm/config"
-	dmmaster "github.com/pingcap/tiflow/dm/master"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/config"
-	"github.com/pingcap/tiflow/engine/pkg/adapter"
-	"github.com/pingcap/tiflow/engine/pkg/meta/mock"
+	dmconfig "sdbflow/dm/config"
+	dmmaster "sdbflow/dm/master"
+	"sdbflow/engine/jobmaster/dm/config"
+	"sdbflow/engine/pkg/adapter"
+	"sdbflow/engine/pkg/meta/mock"
 	"github.com/stretchr/testify/require"
 )
 

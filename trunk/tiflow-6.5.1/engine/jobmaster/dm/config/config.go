@@ -23,9 +23,9 @@ import (
 	"github.com/pingcap/tidb-tools/pkg/column-mapping"
 	"github.com/pingcap/tidb/util/filter"
 	router "github.com/pingcap/tidb/util/table-router"
-	dmconfig "github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/master"
-	"github.com/pingcap/tiflow/pkg/errors"
+	dmconfig "sdbflow/dm/config"
+	"sdbflow/dm/master"
+	"sdbflow/pkg/errors"
 	"gopkg.in/yaml.v2"
 )
 
@@ -261,7 +261,7 @@ func (c *JobCfg) ToTaskCfg() *TaskCfg {
 type TaskCfg struct {
 	JobCfg
 
-	// FIXME: remove this item after fix https://github.com/pingcap/tiflow/issues/7304
+	// FIXME: remove this item after fix https://sdbflow/issues/7304
 	NeedExtStorage bool
 }
 

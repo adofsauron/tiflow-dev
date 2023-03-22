@@ -17,7 +17,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/pkg/security"
 	"github.com/stretchr/testify/require"
 )
 

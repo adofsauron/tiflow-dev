@@ -14,8 +14,8 @@
 package pipeline
 
 import (
-	"github.com/pingcap/tiflow/pkg/context"
-	pmessage "github.com/pingcap/tiflow/pkg/pipeline/message"
+	"sdbflow/pkg/context"
+	pmessage "sdbflow/pkg/pipeline/message"
 )
 
 // NodeContext adds two functions to `context.Context` and is created by pipeline

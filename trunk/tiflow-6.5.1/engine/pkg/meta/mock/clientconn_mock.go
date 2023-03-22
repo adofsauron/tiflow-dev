@@ -7,8 +7,8 @@ import (
 
 	"github.com/glebarez/go-sqlite"
 	"github.com/pingcap/log"
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	metaModel "sdbflow/engine/pkg/meta/model"
+	"sdbflow/pkg/errors"
 )
 
 const mockSqliteDriverName = "mock-sqlite"

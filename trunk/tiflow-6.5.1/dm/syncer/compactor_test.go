@@ -23,14 +23,14 @@ import (
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/tidb/parser"
 	"github.com/pingcap/tidb/util/mock"
-	cdcmodel "github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/syncer/metrics"
-	"github.com/pingcap/tiflow/pkg/sqlmodel"
+	cdcmodel "sdbflow/cdc/model"
+	"sdbflow/dm/config"
+	"sdbflow/dm/pkg/binlog"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/syncer/metrics"
+	"sdbflow/pkg/sqlmodel"
 )
 
 // mockExecute mock a kv store.
@@ -282,9 +282,9 @@ func (s *testSyncerSuite) TestCompactorSafeMode(c *C) {
 		metricsProxies: metrics.DefaultMetricsProxies.CacheForOneTask("task", "worker", "source"),
 	}
 
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/syncer/SkipFlushCompactor", `return()`), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/syncer/SkipFlushCompactor", `return()`), IsNil)
 	//nolint:errcheck
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/syncer/SkipFlushCompactor")
+	defer failpoint.Disable("sdbflow/dm/syncer/SkipFlushCompactor")
 
 	outCh := compactorWrap(inCh, syncer)
 

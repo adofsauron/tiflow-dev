@@ -16,7 +16,7 @@ package sqlmodel
 import (
 	"strings"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/pkg/log"
 	"go.uber.org/zap"
 )
 

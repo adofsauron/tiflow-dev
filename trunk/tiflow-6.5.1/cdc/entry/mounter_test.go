@@ -35,11 +35,11 @@ import (
 	"github.com/pingcap/tidb/testkit"
 	"github.com/pingcap/tidb/types"
 	"github.com/pingcap/tidb/util/mock"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/config"
-	pfilter "github.com/pingcap/tiflow/pkg/filter"
-	"github.com/pingcap/tiflow/pkg/regionspan"
-	"github.com/pingcap/tiflow/pkg/sqlmodel"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/config"
+	pfilter "sdbflow/pkg/filter"
+	"sdbflow/pkg/regionspan"
+	"sdbflow/pkg/sqlmodel"
 	"github.com/stretchr/testify/require"
 	"github.com/tikv/client-go/v2/oracle"
 	"go.uber.org/zap"
@@ -451,7 +451,7 @@ func walkTableSpanInStore(t *testing.T, store tidbkv.Storage, tableID int64, f f
 }
 
 // We use OriginDefaultValue instead of DefaultValue in the ut, pls ref to
-// https://github.com/pingcap/tiflow/issues/4048
+// https://sdbflow/issues/4048
 // FIXME: OriginDefaultValue seems always to be string, and test more corner case
 // Ref: https://github.com/pingcap/tidb/blob/d2c352980a43bb593db81fd1db996f47af596d91/table/column.go#L489
 func TestGetDefaultZeroValue(t *testing.T) {

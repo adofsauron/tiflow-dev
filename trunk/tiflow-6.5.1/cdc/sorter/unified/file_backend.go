@@ -23,9 +23,9 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sorter/encoding"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sorter/encoding"
+	cerrors "sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

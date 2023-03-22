@@ -16,13 +16,13 @@ package kv
 import (
 	"testing"
 
-	"github.com/pingcap/tiflow/pkg/leakutil"
+	"sdbflow/pkg/leakutil"
 	"go.uber.org/goleak"
 )
 
 func TestMain(m *testing.M) {
 	opts := []goleak.Option{
-		goleak.IgnoreTopFunction("github.com/pingcap/tiflow/pkg/workerpool.(*worker).run"),
+		goleak.IgnoreTopFunction("sdbflow/pkg/workerpool.(*worker).run"),
 		goleak.IgnoreTopFunction("sync.runtime_Semacquire"),
 	}
 

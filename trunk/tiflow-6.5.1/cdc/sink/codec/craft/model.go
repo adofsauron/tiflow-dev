@@ -15,8 +15,8 @@ package craft
 
 import (
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	cerror "sdbflow/pkg/errors"
 )
 
 const (

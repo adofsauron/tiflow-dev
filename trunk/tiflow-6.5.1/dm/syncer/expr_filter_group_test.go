@@ -20,11 +20,11 @@ import (
 	ddl2 "github.com/pingcap/tidb/ddl"
 	"github.com/pingcap/tidb/parser/ast"
 	"github.com/pingcap/tidb/util/filter"
-	"github.com/pingcap/tiflow/dm/config"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/schema"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/config"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/schema"
+	"sdbflow/dm/pkg/utils"
 	"github.com/stretchr/testify/require"
 )
 

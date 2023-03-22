@@ -21,10 +21,10 @@ import (
 	"github.com/go-mysql-org/go-mysql/replication"
 	"github.com/pingcap/tidb/parser"
 	"github.com/pingcap/tidb/parser/ast"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	parserpkg "github.com/pingcap/tiflow/dm/pkg/parser"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/binlog"
+	parserpkg "sdbflow/dm/pkg/parser"
+	"sdbflow/dm/pkg/terror"
 )
 
 // HandleError handle error for syncer.

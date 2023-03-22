@@ -24,10 +24,10 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/redo/common"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/redo"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/redo/common"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/redo"
 	"go.uber.org/multierr"
 	"go.uber.org/zap"
 )

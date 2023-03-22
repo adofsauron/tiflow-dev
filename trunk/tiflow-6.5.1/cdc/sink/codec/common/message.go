@@ -17,8 +17,8 @@ import (
 	"encoding/binary"
 	"time"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/config"
 	"github.com/tikv/client-go/v2/oracle"
 )
 

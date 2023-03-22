@@ -26,16 +26,16 @@ import (
 	. "github.com/pingcap/check"
 	"github.com/pingcap/errors"
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/relay"
-	"github.com/pingcap/tiflow/dm/unit"
+	"sdbflow/dm/config"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/gtid"
+	"sdbflow/dm/pkg/ha"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/relay"
+	"sdbflow/dm/unit"
 	"github.com/stretchr/testify/require"
 	"github.com/tikv/pd/pkg/utils/tempurl"
 	v3rpc "go.etcd.io/etcd/api/v3/v3rpc/rpctypes"
@@ -316,7 +316,7 @@ func (t *testServer) TestHandleSourceBoundAfterError(c *C) {
 	}), IsTrue)
 
 	// enable failpoint
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/pkg/ha/FailToGetSourceCfg", `return(true)`), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/pkg/ha/FailToGetSourceCfg", `return(true)`), IsNil)
 	sourceCfg := loadSourceConfigWithoutPassword(c)
 	sourceCfg.EnableRelay = false
 	_, err = ha.PutSourceCfg(etcdCli, sourceCfg)
@@ -352,7 +352,7 @@ func (t *testServer) TestHandleSourceBoundAfterError(c *C) {
 	// stop watching and disable failpoint
 	cancel()
 	wg.Wait()
-	c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/pkg/ha/FailToGetSourceCfg"), IsNil)
+	c.Assert(failpoint.Disable("sdbflow/dm/pkg/ha/FailToGetSourceCfg"), IsNil)
 
 	_, err = ha.PutSourceBound(etcdCli, sourceBound)
 	c.Assert(err, IsNil)

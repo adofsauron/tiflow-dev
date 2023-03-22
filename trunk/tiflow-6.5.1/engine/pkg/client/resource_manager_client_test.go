@@ -18,9 +18,9 @@ import (
 	"testing"
 
 	"github.com/golang/mock/gomock"
-	"github.com/pingcap/tiflow/engine/enginepb"
-	"github.com/pingcap/tiflow/engine/enginepb/mock"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/enginepb"
+	"sdbflow/engine/enginepb/mock"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 )
 

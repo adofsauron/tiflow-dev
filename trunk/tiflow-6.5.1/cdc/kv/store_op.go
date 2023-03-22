@@ -20,9 +20,9 @@ import (
 	tidbkv "github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/meta"
 	"github.com/pingcap/tidb/store/driver"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/flags"
-	"github.com/pingcap/tiflow/pkg/security"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/flags"
+	"sdbflow/pkg/security"
 	tikvconfig "github.com/tikv/client-go/v2/config"
 )
 

@@ -18,9 +18,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/engine/framework"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/pkg/logutil"
+	"sdbflow/engine/framework"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/pkg/logutil"
 	"github.com/stretchr/testify/require"
 )
 

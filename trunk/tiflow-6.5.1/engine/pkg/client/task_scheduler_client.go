@@ -16,8 +16,8 @@ package client
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/engine/enginepb"
-	"github.com/pingcap/tiflow/engine/pkg/client/internal"
+	"sdbflow/engine/enginepb"
+	"sdbflow/engine/pkg/client/internal"
 )
 
 // TaskSchedulerClient is an interface for a client to the task scheduler

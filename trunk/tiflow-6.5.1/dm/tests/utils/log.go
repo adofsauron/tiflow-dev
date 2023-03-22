@@ -16,7 +16,7 @@ package utils
 import (
 	"os"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/pkg/log"
 	"go.uber.org/zap"
 )
 

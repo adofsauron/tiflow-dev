@@ -19,10 +19,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/config"
+	"sdbflow/dm/ctl/common"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/utils"
 	"github.com/spf13/cobra"
 )
 

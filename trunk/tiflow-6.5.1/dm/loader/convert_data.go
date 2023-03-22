@@ -26,10 +26,10 @@ import (
 	cm "github.com/pingcap/tidb-tools/pkg/column-mapping"
 	"github.com/pingcap/tidb/parser/ast"
 	regexprrouter "github.com/pingcap/tidb/util/regexpr-router"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	parserpkg "github.com/pingcap/tiflow/dm/pkg/parser"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	tcontext "sdbflow/dm/pkg/context"
+	parserpkg "sdbflow/dm/pkg/parser"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 func bytes2str(bs []byte) string {

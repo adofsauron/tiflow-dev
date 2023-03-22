@@ -9,8 +9,8 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	model "github.com/pingcap/tiflow/cdc/model"
-	v1 "github.com/pingcap/tiflow/pkg/api/v1"
+	model "sdbflow/cdc/model"
+	v1 "sdbflow/pkg/api/v1"
 )
 
 // MockCapturesGetter is a mock of CapturesGetter interface.

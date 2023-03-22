@@ -25,16 +25,16 @@ import (
 
 	"github.com/golang/mock/gomock"
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/dm/checker"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/master/scheduler"
-	"github.com/pingcap/tiflow/dm/openapi"
-	"github.com/pingcap/tiflow/dm/openapi/fixtures"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pbmock"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/checker"
+	"sdbflow/dm/config"
+	"sdbflow/dm/master/scheduler"
+	"sdbflow/dm/openapi"
+	"sdbflow/dm/openapi/fixtures"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pbmock"
+	"sdbflow/dm/pkg/ha"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
 	"github.com/stretchr/testify/suite"
 )
 
@@ -65,15 +65,15 @@ func (s *OpenAPIControllerSuite) SetupSuite() {
 
 	checker.CheckSyncConfigFunc = mockCheckSyncConfig
 	CheckAndAdjustSourceConfigFunc = checkAndNoAdjustSourceConfigMock
-	s.Nil(failpoint.Enable("github.com/pingcap/tiflow/dm/master/MockSkipAdjustTargetDB", `return(true)`))
-	s.Nil(failpoint.Enable("github.com/pingcap/tiflow/dm/master/MockSkipRemoveMetaData", `return(true)`))
+	s.Nil(failpoint.Enable("sdbflow/dm/master/MockSkipAdjustTargetDB", `return(true)`))
+	s.Nil(failpoint.Enable("sdbflow/dm/master/MockSkipRemoveMetaData", `return(true)`))
 }
 
 func (s *OpenAPIControllerSuite) TearDownSuite() {
 	CheckAndAdjustSourceConfigFunc = checkAndAdjustSourceConfig
 	checker.CheckSyncConfigFunc = checker.CheckSyncConfig
-	s.Nil(failpoint.Disable("github.com/pingcap/tiflow/dm/master/MockSkipAdjustTargetDB"))
-	s.Nil(failpoint.Disable("github.com/pingcap/tiflow/dm/master/MockSkipRemoveMetaData"))
+	s.Nil(failpoint.Disable("sdbflow/dm/master/MockSkipAdjustTargetDB"))
+	s.Nil(failpoint.Disable("sdbflow/dm/master/MockSkipRemoveMetaData"))
 }
 
 func (s *OpenAPIControllerSuite) TestSourceController() {
@@ -300,7 +300,7 @@ func (s *OpenAPIControllerSuite) TestTaskController() {
 		batch := 1000
 		task.SourceConfig.IncrMigrateConf.ReplBatch = &batch
 		updateReq := openapi.UpdateTaskRequest{Task: task}
-		s.NoError(failpoint.Enable("github.com/pingcap/tiflow/dm/master/scheduler/operateCheckSubtasksCanUpdate", `return("success")`))
+		s.NoError(failpoint.Enable("sdbflow/dm/master/scheduler/operateCheckSubtasksCanUpdate", `return("success")`))
 		res, err := server.updateTask(ctx, updateReq)
 		s.NoError(err)
 		s.EqualValues(task.SourceConfig.IncrMigrateConf, res.Task.SourceConfig.IncrMigrateConf)
@@ -310,7 +310,7 @@ func (s *OpenAPIControllerSuite) TestTaskController() {
 		res, err = server.updateTask(ctx, updateReq)
 		s.NoError(err)
 		s.EqualValues(*s.testTask, res.Task)
-		s.NoError(failpoint.Disable("github.com/pingcap/tiflow/dm/master/scheduler/operateCheckSubtasksCanUpdate"))
+		s.NoError(failpoint.Disable("sdbflow/dm/master/scheduler/operateCheckSubtasksCanUpdate"))
 	}
 
 	// get and with status

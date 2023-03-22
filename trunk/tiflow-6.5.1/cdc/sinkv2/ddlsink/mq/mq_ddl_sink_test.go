@@ -21,11 +21,11 @@ import (
 
 	"github.com/Shopify/sarama"
 	mm "github.com/pingcap/tidb/parser/model"
-	"github.com/pingcap/tiflow/cdc/model"
-	mqv1 "github.com/pingcap/tiflow/cdc/sink/mq"
-	"github.com/pingcap/tiflow/cdc/sinkv2/ddlsink/mq/ddlproducer"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/sink/kafka"
+	"sdbflow/cdc/model"
+	mqv1 "sdbflow/cdc/sink/mq"
+	"sdbflow/cdc/sinkv2/ddlsink/mq/ddlproducer"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/sink/kafka"
 	"github.com/stretchr/testify/require"
 )
 

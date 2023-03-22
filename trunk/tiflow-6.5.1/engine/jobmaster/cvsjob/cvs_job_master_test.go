@@ -13,7 +13,7 @@
 
 package cvs
 
-import "github.com/pingcap/tiflow/engine/framework"
+import "sdbflow/engine/framework"
 
 // TODO more unit test cases
 

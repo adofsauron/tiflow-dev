@@ -17,9 +17,9 @@ import (
 	"context"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/model"
-	schedModel "github.com/pingcap/tiflow/engine/servermaster/scheduler/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/model"
+	schedModel "sdbflow/engine/servermaster/scheduler/model"
+	"sdbflow/pkg/errors"
 	"go.uber.org/zap"
 	"golang.org/x/exp/slices"
 )

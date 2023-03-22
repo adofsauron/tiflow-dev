@@ -17,7 +17,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/pingcap/tiflow/cdc/sinkv2/eventsink"
+	"sdbflow/cdc/sinkv2/eventsink"
 )
 
 // backend indicates a transaction backend like MySQL, TiDB, ...

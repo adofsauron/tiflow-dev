@@ -19,11 +19,11 @@ import (
 	"testing"
 	"time"
 
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/engine/pkg/externalresource/internal/s3"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
-	pkgOrm "github.com/pingcap/tiflow/engine/pkg/orm"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/model"
+	"sdbflow/engine/pkg/externalresource/internal/s3"
+	resModel "sdbflow/engine/pkg/externalresource/model"
+	pkgOrm "sdbflow/engine/pkg/orm"
 	"github.com/stretchr/testify/require"
 )
 

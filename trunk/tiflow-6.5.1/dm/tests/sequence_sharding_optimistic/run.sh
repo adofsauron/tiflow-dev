@@ -76,7 +76,7 @@ run() {
 
 	# now, for optimistic shard DDL, different sources will reach a stage often not at the same time,
 	# in order to simply the check and resume flow, only enable the failpoint for one DM-worker.
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/syncer/FlushCheckpointStage=return(100)" # for all stages
+	export GO_FAILPOINTS="sdbflow/dm/syncer/FlushCheckpointStage=return(100)" # for all stages
 	echo "restart dm-worker1"
 	kill_process dm-worker1
 	check_port_offline $WORKER1_PORT 20

@@ -20,14 +20,14 @@ import (
 	"testing"
 	"time"
 
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/framework/statusutil"
-	dcontext "github.com/pingcap/tiflow/engine/pkg/context"
-	"github.com/pingcap/tiflow/engine/pkg/deps"
-	"github.com/pingcap/tiflow/engine/pkg/externalresource/broker"
-	metaMock "github.com/pingcap/tiflow/engine/pkg/meta/mock"
-	pkgOrm "github.com/pingcap/tiflow/engine/pkg/orm"
-	"github.com/pingcap/tiflow/engine/pkg/p2p"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/framework/statusutil"
+	dcontext "sdbflow/engine/pkg/context"
+	"sdbflow/engine/pkg/deps"
+	"sdbflow/engine/pkg/externalresource/broker"
+	metaMock "sdbflow/engine/pkg/meta/mock"
+	pkgOrm "sdbflow/engine/pkg/orm"
+	"sdbflow/engine/pkg/p2p"
 	"github.com/stretchr/testify/require"
 )
 

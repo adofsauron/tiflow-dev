@@ -15,9 +15,9 @@ package client
 
 import (
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/enginepb"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/engine/enginepb"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/security"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 )

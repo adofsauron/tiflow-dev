@@ -35,7 +35,7 @@ function run() {
 	check_sync_diff $WORK_DIR $CUR/conf/diff_config.toml 60
 
 	# TiCDC discards all SEQUENCE DDL for now.
-	# See https://github.com/pingcap/tiflow/issues/4559
+	# See https://sdbflow/issues/4559
 	! run_sql "SHOW CREATE SEQUENCE sequence_test.seq0;" ${DOWN_TIDB_HOST} ${DOWN_TIDB_PORT}
 	run_sql "DROP SEQUENCE sequence_test.seq0;" ${UP_TIDB_HOST} ${UP_TIDB_PORT}
 

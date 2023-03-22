@@ -15,9 +15,9 @@ package craft
 
 import (
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec"
+	cerror "sdbflow/pkg/errors"
 )
 
 // batchDecoder decodes the byte of a batch into the original messages.

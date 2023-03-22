@@ -18,7 +18,7 @@ package model
 import (
 	"fmt"
 
-	"github.com/pingcap/tiflow/pkg/regionspan"
+	"sdbflow/pkg/regionspan"
 )
 
 // OpType for the kv, delete or put

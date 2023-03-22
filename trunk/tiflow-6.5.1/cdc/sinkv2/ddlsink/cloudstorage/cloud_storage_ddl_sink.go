@@ -21,13 +21,13 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/tidb/br/pkg/storage"
-	"github.com/pingcap/tiflow/cdc/contextutil"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sinkv2/ddlsink"
-	"github.com/pingcap/tiflow/cdc/sinkv2/metrics"
-	"github.com/pingcap/tiflow/pkg/sink"
-	"github.com/pingcap/tiflow/pkg/sink/cloudstorage"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/contextutil"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sinkv2/ddlsink"
+	"sdbflow/cdc/sinkv2/metrics"
+	"sdbflow/pkg/sink"
+	"sdbflow/pkg/sink/cloudstorage"
+	"sdbflow/pkg/util"
 )
 
 // Assert DDLEventSink implementation

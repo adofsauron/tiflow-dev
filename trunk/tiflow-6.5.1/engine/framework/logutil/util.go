@@ -14,8 +14,8 @@
 package logutil
 
 import (
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/pkg/tenant"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/pkg/tenant"
 	"go.uber.org/zap"
 )
 

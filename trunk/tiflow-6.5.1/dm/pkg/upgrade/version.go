@@ -16,10 +16,10 @@ package upgrade
 import (
 	"encoding/json"
 
-	"github.com/pingcap/tiflow/dm/common"
-	"github.com/pingcap/tiflow/dm/pkg/etcdutil"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/dm/common"
+	"sdbflow/dm/pkg/etcdutil"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/pkg/version"
 	clientv3 "go.etcd.io/etcd/client/v3"
 )
 

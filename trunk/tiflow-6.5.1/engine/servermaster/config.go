@@ -23,12 +23,12 @@ import (
 	"github.com/BurntSushi/toml"
 	validation "github.com/go-ozzo/ozzo-validation/v4"
 	"github.com/pingcap/log"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
-	"github.com/pingcap/tiflow/engine/servermaster/jobop"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/logutil"
-	"github.com/pingcap/tiflow/pkg/security"
+	resModel "sdbflow/engine/pkg/externalresource/model"
+	metaModel "sdbflow/engine/pkg/meta/model"
+	"sdbflow/engine/servermaster/jobop"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/logutil"
+	"sdbflow/pkg/security"
 	"go.uber.org/zap"
 )
 

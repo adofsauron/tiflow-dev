@@ -15,9 +15,9 @@ package framework
 
 import (
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/framework/internal/master"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	engineModel "github.com/pingcap/tiflow/engine/model"
+	"sdbflow/engine/framework/internal/master"
+	frameModel "sdbflow/engine/framework/model"
+	engineModel "sdbflow/engine/model"
 	"go.uber.org/zap"
 )
 

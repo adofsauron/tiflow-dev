@@ -19,10 +19,10 @@ import (
 	"strings"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/framework"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	dcontext "github.com/pingcap/tiflow/engine/pkg/context"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/framework"
+	frameModel "sdbflow/engine/framework/model"
+	dcontext "sdbflow/engine/pkg/context"
+	"sdbflow/pkg/errors"
 )
 
 // WorkerFactory is an interface that should be implemented by the author of

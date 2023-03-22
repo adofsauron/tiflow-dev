@@ -19,8 +19,8 @@ import (
 	"time"
 
 	toolutils "github.com/pingcap/tidb-tools/pkg/utils"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/tests/utils"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/tests/utils"
 	"google.golang.org/grpc"
 )
 

@@ -16,10 +16,10 @@ package cmd
 import (
 	"os"
 
-	"github.com/pingcap/tiflow/engine/pkg/cmd/cli"
-	"github.com/pingcap/tiflow/engine/pkg/cmd/executor"
-	"github.com/pingcap/tiflow/engine/pkg/cmd/master"
-	"github.com/pingcap/tiflow/engine/pkg/cmd/version"
+	"sdbflow/engine/pkg/cmd/cli"
+	"sdbflow/engine/pkg/cmd/executor"
+	"sdbflow/engine/pkg/cmd/master"
+	"sdbflow/engine/pkg/cmd/version"
 	"github.com/spf13/cobra"
 )
 

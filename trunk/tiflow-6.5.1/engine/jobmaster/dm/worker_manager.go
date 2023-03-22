@@ -18,16 +18,16 @@ import (
 	"sync"
 	"time"
 
-	dmconfig "github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/engine/framework"
-	"github.com/pingcap/tiflow/engine/framework/logutil"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/config"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/metadata"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/runtime"
-	dmpkg "github.com/pingcap/tiflow/engine/pkg/dm"
-	"github.com/pingcap/tiflow/engine/pkg/dm/ticker"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
+	dmconfig "sdbflow/dm/config"
+	"sdbflow/engine/framework"
+	"sdbflow/engine/framework/logutil"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/jobmaster/dm/config"
+	"sdbflow/engine/jobmaster/dm/metadata"
+	"sdbflow/engine/jobmaster/dm/runtime"
+	dmpkg "sdbflow/engine/pkg/dm"
+	"sdbflow/engine/pkg/dm/ticker"
+	resModel "sdbflow/engine/pkg/externalresource/model"
 	"go.uber.org/zap"
 )
 
@@ -271,7 +271,7 @@ func (wm *WorkerManager) checkAndScheduleWorkers(ctx context.Context, job *metad
 			resources = append(resources, resID)
 		}
 
-		// FIXME: remove this after fix https://github.com/pingcap/tiflow/issues/7304
+		// FIXME: remove this after fix https://sdbflow/issues/7304
 		if nextUnit != frameModel.WorkerDMSync || isFresh {
 			taskCfg.NeedExtStorage = true
 		}

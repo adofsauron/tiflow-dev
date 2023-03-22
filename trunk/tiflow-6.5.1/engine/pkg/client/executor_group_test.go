@@ -20,8 +20,8 @@ import (
 	"time"
 
 	"github.com/golang/mock/gomock"
-	"github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/model"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 )
 

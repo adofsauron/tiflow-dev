@@ -18,8 +18,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/pingcap/tiflow/engine/pkg/externalresource/internal"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/pkg/externalresource/internal"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 )
 

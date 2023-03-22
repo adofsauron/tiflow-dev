@@ -15,7 +15,7 @@ package pessimism
 
 import (
 	. "github.com/pingcap/check"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/terror"
 )
 
 type testLock struct{}

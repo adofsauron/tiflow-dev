@@ -20,8 +20,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/engine/framework/taskutil"
-	"github.com/pingcap/tiflow/engine/pkg/clock"
+	"sdbflow/engine/framework/taskutil"
+	"sdbflow/engine/pkg/clock"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/atomic"
 )

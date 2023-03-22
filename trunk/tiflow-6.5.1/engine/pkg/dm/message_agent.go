@@ -23,11 +23,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pingcap/tiflow/engine/framework"
-	"github.com/pingcap/tiflow/engine/pkg/p2p"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/logutil"
-	"github.com/pingcap/tiflow/pkg/workerpool"
+	"sdbflow/engine/framework"
+	"sdbflow/engine/pkg/p2p"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/logutil"
+	"sdbflow/pkg/workerpool"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 )

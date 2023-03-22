@@ -16,14 +16,14 @@ package scheduler
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/scheduler/internal"
-	v3 "github.com/pingcap/tiflow/cdc/scheduler/internal/v3"
-	v3agent "github.com/pingcap/tiflow/cdc/scheduler/internal/v3/agent"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/p2p"
-	"github.com/pingcap/tiflow/pkg/pdutil"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/scheduler/internal"
+	v3 "sdbflow/cdc/scheduler/internal/v3"
+	v3agent "sdbflow/cdc/scheduler/internal/v3/agent"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/p2p"
+	"sdbflow/pkg/pdutil"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

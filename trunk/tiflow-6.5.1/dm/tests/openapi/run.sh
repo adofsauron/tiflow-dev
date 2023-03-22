@@ -468,7 +468,7 @@ function test_task_templates() {
 function test_noshard_task_dump_status() {
 	echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>START TEST OPENAPI: NO SHARD TASK DUMP STATUS"
 
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/dumpling/dumpUnitProcessForever=return()"
+	export GO_FAILPOINTS="sdbflow/dm/dumpling/dumpUnitProcessForever=return()"
 	kill_dm_worker
 	check_port_offline $WORKER1_PORT 20
 	check_port_offline $WORKER2_PORT 20
@@ -810,7 +810,7 @@ function test_start_task_with_condition() {
 	openapi_task_check "get_task_list" 0
 
 	# incremental task no duration has error
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/syncer/SafeModeInitPhaseSeconds=return(\"0s\")"
+	export GO_FAILPOINTS="sdbflow/dm/syncer/SafeModeInitPhaseSeconds=return(\"0s\")"
 	kill_dm_worker
 	check_port_offline $WORKER1_PORT 20
 	check_port_offline $WORKER2_PORT 20
@@ -892,7 +892,7 @@ function test_stop_task_with_condition() {
 	openapi_source_check "get_source_status_success" "mysql-02"
 
 	# test wait_time_on_stop
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/dm/syncer/recordAndIgnorePrepareTime=return();github.com/pingcap/tiflow/dm/syncer/checkWaitDuration=return("200s")'
+	export GO_FAILPOINTS='sdbflow/dm/syncer/recordAndIgnorePrepareTime=return();sdbflow/dm/syncer/checkWaitDuration=return("200s")'
 	kill_dm_worker
 	check_port_offline $WORKER1_PORT 20
 	check_port_offline $WORKER2_PORT 20

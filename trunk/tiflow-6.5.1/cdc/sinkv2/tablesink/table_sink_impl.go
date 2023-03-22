@@ -20,9 +20,9 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sinkv2/eventsink"
-	"github.com/pingcap/tiflow/cdc/sinkv2/tablesink/state"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sinkv2/eventsink"
+	"sdbflow/cdc/sinkv2/tablesink/state"
 	"github.com/prometheus/client_golang/prometheus"
 	"go.uber.org/zap"
 )

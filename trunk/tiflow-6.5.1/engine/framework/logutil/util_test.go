@@ -18,8 +18,8 @@ import (
 	"testing"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/pkg/tenant"
-	"github.com/pingcap/tiflow/pkg/logutil"
+	"sdbflow/engine/pkg/tenant"
+	"sdbflow/pkg/logutil"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zaptest"

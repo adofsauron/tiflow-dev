@@ -17,7 +17,7 @@ import (
 	"context"
 
 	"github.com/coreos/go-semver/semver"
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
+	metaModel "sdbflow/engine/pkg/meta/model"
 	"go.uber.org/zap"
 )
 

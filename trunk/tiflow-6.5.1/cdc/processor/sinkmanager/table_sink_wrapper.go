@@ -22,11 +22,11 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/pipeline"
-	"github.com/pingcap/tiflow/cdc/processor/sourcemanager/engine"
-	"github.com/pingcap/tiflow/cdc/processor/tablepb"
-	sinkv2 "github.com/pingcap/tiflow/cdc/sinkv2/tablesink"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/pipeline"
+	"sdbflow/cdc/processor/sourcemanager/engine"
+	"sdbflow/cdc/processor/tablepb"
+	sinkv2 "sdbflow/cdc/sinkv2/tablesink"
 	"github.com/tikv/client-go/v2/oracle"
 	"go.uber.org/zap"
 )

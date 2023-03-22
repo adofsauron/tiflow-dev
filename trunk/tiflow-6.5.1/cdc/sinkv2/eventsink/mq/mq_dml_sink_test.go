@@ -21,12 +21,12 @@ import (
 	"time"
 
 	"github.com/Shopify/sarama"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sinkv2/eventsink"
-	"github.com/pingcap/tiflow/cdc/sinkv2/eventsink/mq/dmlproducer"
-	"github.com/pingcap/tiflow/cdc/sinkv2/tablesink/state"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/sink/kafka"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sinkv2/eventsink"
+	"sdbflow/cdc/sinkv2/eventsink/mq/dmlproducer"
+	"sdbflow/cdc/sinkv2/tablesink/state"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/sink/kafka"
 	"github.com/stretchr/testify/require"
 )
 

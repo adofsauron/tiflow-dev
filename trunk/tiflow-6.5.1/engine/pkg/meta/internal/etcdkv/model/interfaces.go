@@ -16,7 +16,7 @@ package model
 import (
 	"context"
 
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
+	metaModel "sdbflow/engine/pkg/meta/model"
 )
 
 // KVExt extends the KV interface with Do method to implement the intermediate

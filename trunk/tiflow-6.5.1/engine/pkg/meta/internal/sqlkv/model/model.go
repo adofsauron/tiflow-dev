@@ -14,8 +14,8 @@
 package sqlkv
 
 import (
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
-	ormModel "github.com/pingcap/tiflow/engine/pkg/orm/model"
+	metaModel "sdbflow/engine/pkg/meta/model"
+	ormModel "sdbflow/engine/pkg/orm/model"
 )
 
 const (

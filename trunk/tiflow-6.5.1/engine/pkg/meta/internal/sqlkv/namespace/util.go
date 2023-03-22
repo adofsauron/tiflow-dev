@@ -14,8 +14,8 @@
 package namespace
 
 import (
-	sqlkvModel "github.com/pingcap/tiflow/engine/pkg/meta/internal/sqlkv/model"
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
+	sqlkvModel "sdbflow/engine/pkg/meta/internal/sqlkv/model"
+	metaModel "sdbflow/engine/pkg/meta/model"
 )
 
 // TableNameWithNamespace constructs the table name with projectID

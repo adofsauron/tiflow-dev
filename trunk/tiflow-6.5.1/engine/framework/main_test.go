@@ -15,7 +15,7 @@ package framework
 import (
 	"testing"
 
-	"github.com/pingcap/tiflow/pkg/leakutil"
+	"sdbflow/pkg/leakutil"
 )
 
 // TODO: enable leak test in this package

@@ -23,8 +23,8 @@ import (
 	"time"
 
 	"github.com/phayes/freeport"
-	p2pImpl "github.com/pingcap/tiflow/pkg/p2p"
-	"github.com/pingcap/tiflow/pkg/security"
+	p2pImpl "sdbflow/pkg/p2p"
+	"sdbflow/pkg/security"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/atomic"
 )

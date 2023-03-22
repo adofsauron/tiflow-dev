@@ -21,10 +21,10 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/pingcap/tiflow/cdc/api"
-	"github.com/pingcap/tiflow/cdc/capture"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/cdc/api"
+	"sdbflow/cdc/capture"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/version"
 )
 
 // status of cdc server

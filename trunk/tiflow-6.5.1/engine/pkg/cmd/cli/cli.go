@@ -20,8 +20,8 @@ import (
 
 	"github.com/chzyer/readline"
 	"github.com/mattn/go-shellwords"
-	"github.com/pingcap/tiflow/engine/pkg/cmd/util"
-	ticdcutil "github.com/pingcap/tiflow/pkg/cmd/util"
+	"sdbflow/engine/pkg/cmd/util"
+	ticdcutil "sdbflow/pkg/cmd/util"
 	"github.com/spf13/cobra"
 )
 

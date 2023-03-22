@@ -23,10 +23,10 @@ import (
 	"github.com/cockroachdb/pebble"
 	"github.com/cockroachdb/pebble/bloom"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/sourcemanager/engine"
-	"github.com/pingcap/tiflow/cdc/processor/sourcemanager/engine/pebble/encoding"
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/sourcemanager/engine"
+	"sdbflow/cdc/processor/sourcemanager/engine/pebble/encoding"
+	"sdbflow/pkg/config"
 	"go.uber.org/zap"
 )
 

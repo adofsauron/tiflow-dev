@@ -20,7 +20,7 @@ import (
 
 	"github.com/coreos/go-semver/semver"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 )

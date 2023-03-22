@@ -21,8 +21,8 @@ import (
 	"time"
 
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/dm/pkg/etcdutil"
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/pkg/etcdutil"
+	"sdbflow/dm/pkg/log"
 	"github.com/stretchr/testify/require"
 	"github.com/tikv/pd/pkg/utils/tempurl"
 )
@@ -73,9 +73,9 @@ func TestFailToStartLeader(t *testing.T) {
 	cfg2.Join = cfg1.MasterAddr // join to an existing cluster
 
 	// imitate fail to start scheduler/pessimism/optimism
-	require.NoError(t, failpoint.Enable("github.com/pingcap/tiflow/dm/master/FailToStartLeader", `return("dm-master-2")`))
+	require.NoError(t, failpoint.Enable("sdbflow/dm/master/FailToStartLeader", `return("dm-master-2")`))
 	//nolint:errcheck
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/master/FailToStartLeader")
+	defer failpoint.Disable("sdbflow/dm/master/FailToStartLeader")
 
 	s2 = NewServer(cfg2)
 	require.NoError(t, s2.Start(ctx))
@@ -105,7 +105,7 @@ func TestFailToStartLeader(t *testing.T) {
 	}, 3*time.Second, 100*time.Millisecond)
 	clusterID := s1.ClusterID()
 
-	require.NoError(t, failpoint.Disable("github.com/pingcap/tiflow/dm/master/FailToStartLeader"))
+	require.NoError(t, failpoint.Disable("sdbflow/dm/master/FailToStartLeader"))
 	s1.election.Resign()
 	time.Sleep(1 * time.Second)
 

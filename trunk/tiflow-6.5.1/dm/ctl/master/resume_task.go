@@ -14,7 +14,7 @@
 package master
 
 import (
-	"github.com/pingcap/tiflow/dm/pb"
+	"sdbflow/dm/pb"
 	"github.com/spf13/cobra"
 )
 

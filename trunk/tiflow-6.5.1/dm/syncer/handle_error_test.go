@@ -18,10 +18,10 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	"github.com/pingcap/tiflow/dm/syncer/binlogstream"
-	"github.com/pingcap/tiflow/dm/syncer/dbconn"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/conn"
+	"sdbflow/dm/syncer/binlogstream"
+	"sdbflow/dm/syncer/dbconn"
 	"github.com/stretchr/testify/require"
 )
 

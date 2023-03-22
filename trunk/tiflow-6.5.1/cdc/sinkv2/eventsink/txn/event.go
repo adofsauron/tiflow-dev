@@ -20,8 +20,8 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sinkv2/eventsink"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sinkv2/eventsink"
 	"go.uber.org/zap"
 )
 

@@ -21,9 +21,9 @@ import (
 	"github.com/pingcap/tidb/parser/ast"
 	timodel "github.com/pingcap/tidb/parser/model"
 	timock "github.com/pingcap/tidb/util/mock"
-	cdcmodel "github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	cdcmodel "sdbflow/cdc/model"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/utils"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 )

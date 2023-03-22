@@ -22,8 +22,8 @@ import (
 	"time"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/pkg/security"
-	"github.com/pingcap/tiflow/proto/p2p"
+	"sdbflow/pkg/security"
+	"sdbflow/proto/p2p"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"

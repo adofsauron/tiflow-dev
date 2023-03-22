@@ -19,8 +19,8 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/container/queue"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/container/queue"
 	"github.com/prometheus/client_golang/prometheus"
 	"go.uber.org/zap"
 )

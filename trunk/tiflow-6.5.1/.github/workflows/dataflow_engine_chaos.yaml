@@ -284,7 +284,7 @@ jobs:
           kubectl describe -f $GITHUB_WORKSPACE/engine/chaos/manifests/cases.yaml
           kubectl get pods
 
-      # FIXME: remove this after fix https://github.com/pingcap/tiflow/issues/7304
+      # FIXME: remove this after fix https://sdbflow/issues/7304
       - name: Wait DM enter sync stage
         run: |
           for idx in $(seq 0 300); do
@@ -350,4 +350,4 @@ jobs:
           msg_type: text
           content: |
             text: |
-              dataflow engine chaos job failed, see https://github.com/pingcap/tiflow/actions/runs/${{ github.run_id }}
+              dataflow engine chaos job failed, see https://sdbflow/actions/runs/${{ github.run_id }}

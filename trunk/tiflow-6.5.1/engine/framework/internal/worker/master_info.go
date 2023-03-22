@@ -17,8 +17,8 @@ import (
 	"context"
 	"sync"
 
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/pkg/p2p"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/pkg/p2p"
 	"go.uber.org/atomic"
 )
 

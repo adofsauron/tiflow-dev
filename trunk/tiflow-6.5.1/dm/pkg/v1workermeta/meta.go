@@ -15,8 +15,8 @@ package v1workermeta
 
 import (
 	"github.com/golang/protobuf/proto"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/terror"
 	"github.com/syndtr/goleveldb/leveldb"
 	"github.com/syndtr/goleveldb/leveldb/util"
 )

@@ -24,7 +24,7 @@ import (
 	"strings"
 
 	"github.com/BurntSushi/toml"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/terror"
 )
 
 const (

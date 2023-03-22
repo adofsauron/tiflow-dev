@@ -21,7 +21,7 @@ import (
 	"testing"
 
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
-	pb "github.com/pingcap/tiflow/engine/enginepb"
+	pb "sdbflow/engine/enginepb"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/protobuf/encoding/protojson"
 )

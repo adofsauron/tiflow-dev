@@ -16,7 +16,7 @@ package model
 import (
 	"errors"
 
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	cerror "sdbflow/pkg/errors"
 )
 
 // RunningError represents some running error from cdc components, such as processor.

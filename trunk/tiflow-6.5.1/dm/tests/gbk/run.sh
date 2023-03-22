@@ -76,7 +76,7 @@ function run() {
 	kill_dm_worker
 
 	# test invalid connection with status running
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/syncer/TestHandleSpecialDDLError=return();github.com/pingcap/tiflow/dm/syncer/TestStatus=1*return(\"running\");github.com/pingcap/tiflow/dm/syncer/ChangeDuration=return()"
+	export GO_FAILPOINTS="sdbflow/dm/syncer/TestHandleSpecialDDLError=return();sdbflow/dm/syncer/TestStatus=1*return(\"running\");sdbflow/dm/syncer/ChangeDuration=return()"
 	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
 	run_dm_worker $WORK_DIR/worker2 $WORKER2_PORT $cur/conf/dm-worker2.toml
@@ -96,7 +96,7 @@ function run() {
 	kill_dm_worker
 
 	# test invalid connection with status queueing
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/syncer/TestHandleSpecialDDLError=return();github.com/pingcap/tiflow/dm/syncer/TestStatus=1*return(\"queueing\");github.com/pingcap/tiflow/dm/syncer/ChangeDuration=return()"
+	export GO_FAILPOINTS="sdbflow/dm/syncer/TestHandleSpecialDDLError=return();sdbflow/dm/syncer/TestStatus=1*return(\"queueing\");sdbflow/dm/syncer/ChangeDuration=return()"
 	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
 	run_dm_worker $WORK_DIR/worker2 $WORKER2_PORT $cur/conf/dm-worker2.toml
@@ -116,7 +116,7 @@ function run() {
 	kill_dm_worker
 
 	# test invalid connection with status none
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/syncer/TestHandleSpecialDDLError=return();github.com/pingcap/tiflow/dm/syncer/TestStatus=1*return(\"none\");github.com/pingcap/tiflow/dm/syncer/ChangeDuration=return()"
+	export GO_FAILPOINTS="sdbflow/dm/syncer/TestHandleSpecialDDLError=return();sdbflow/dm/syncer/TestStatus=1*return(\"none\");sdbflow/dm/syncer/ChangeDuration=return()"
 	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
 	run_dm_worker $WORK_DIR/worker2 $WORKER2_PORT $cur/conf/dm-worker2.toml
@@ -136,7 +136,7 @@ function run() {
 	kill_dm_worker
 
 	# test inserting data after invalid connection
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/syncer/TestHandleSpecialDDLError=return();github.com/pingcap/tiflow/dm/syncer/ChangeDuration=return()"
+	export GO_FAILPOINTS="sdbflow/dm/syncer/TestHandleSpecialDDLError=return();sdbflow/dm/syncer/ChangeDuration=return()"
 	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
 	run_dm_worker $WORK_DIR/worker2 $WORKER2_PORT $cur/conf/dm-worker2.toml
@@ -157,7 +157,7 @@ function run() {
 	kill_dm_worker
 
 	# test adding UNIQUE on column with duplicate data
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/syncer/TestHandleSpecialDDLError=return();github.com/pingcap/tiflow/dm/syncer/ChangeDuration=return()"
+	export GO_FAILPOINTS="sdbflow/dm/syncer/TestHandleSpecialDDLError=return();sdbflow/dm/syncer/ChangeDuration=return()"
 	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
 	run_dm_worker $WORK_DIR/worker2 $WORKER2_PORT $cur/conf/dm-worker2.toml
@@ -185,7 +185,7 @@ function run() {
 
 	#	# multi-schema change tests
 	#	# test invalid connection with status running (multi-schema change)
-	#	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/syncer/TestHandleSpecialDDLError=return();github.com/pingcap/tiflow/dm/syncer/TestStatus=1*return(\"running\");github.com/pingcap/tiflow/dm/syncer/ChangeDuration=return()"
+	#	export GO_FAILPOINTS="sdbflow/dm/syncer/TestHandleSpecialDDLError=return();sdbflow/dm/syncer/TestStatus=1*return(\"running\");sdbflow/dm/syncer/ChangeDuration=return()"
 	#	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	#	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
 	#	run_dm_worker $WORK_DIR/worker2 $WORKER2_PORT $cur/conf/dm-worker2.toml
@@ -207,7 +207,7 @@ function run() {
 	#	kill_dm_worker
 	#
 	#	# test invalid connection with status queueing (multi-schema change)
-	#	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/syncer/TestHandleSpecialDDLError=return();github.com/pingcap/tiflow/dm/syncer/TestStatus=1*return(\"queueing\");github.com/pingcap/tiflow/dm/syncer/ChangeDuration=return()"
+	#	export GO_FAILPOINTS="sdbflow/dm/syncer/TestHandleSpecialDDLError=return();sdbflow/dm/syncer/TestStatus=1*return(\"queueing\");sdbflow/dm/syncer/ChangeDuration=return()"
 	#	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	#	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
 	#	run_dm_worker $WORK_DIR/worker2 $WORKER2_PORT $cur/conf/dm-worker2.toml
@@ -230,7 +230,7 @@ function run() {
 	#	kill_dm_worker
 	#
 	#	# test invalid connection with status none (multi-schema change)
-	#	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/syncer/TestHandleSpecialDDLError=return();github.com/pingcap/tiflow/dm/syncer/TestStatus=1*return(\"none\");github.com/pingcap/tiflow/dm/syncer/ChangeDuration=return()"
+	#	export GO_FAILPOINTS="sdbflow/dm/syncer/TestHandleSpecialDDLError=return();sdbflow/dm/syncer/TestStatus=1*return(\"none\");sdbflow/dm/syncer/ChangeDuration=return()"
 	#	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	#	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
 	#	run_dm_worker $WORK_DIR/worker2 $WORKER2_PORT $cur/conf/dm-worker2.toml
@@ -253,7 +253,7 @@ function run() {
 	#	kill_dm_worker
 	#
 	#	# test inserting data after invalid connection (multi-schema change)
-	#	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/syncer/TestHandleSpecialDDLError=return();github.com/pingcap/tiflow/dm/syncer/ChangeDuration=return()"
+	#	export GO_FAILPOINTS="sdbflow/dm/syncer/TestHandleSpecialDDLError=return();sdbflow/dm/syncer/ChangeDuration=return()"
 	#	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	#	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
 	#	run_dm_worker $WORK_DIR/worker2 $WORKER2_PORT $cur/conf/dm-worker2.toml
@@ -277,7 +277,7 @@ function run() {
 	#	kill_dm_worker
 	#
 	#	# test adding UNIQUE on column with duplicate data (multi-schema change)
-	#	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/syncer/TestHandleSpecialDDLError=return();github.com/pingcap/tiflow/dm/syncer/ChangeDuration=return()"
+	#	export GO_FAILPOINTS="sdbflow/dm/syncer/TestHandleSpecialDDLError=return();sdbflow/dm/syncer/ChangeDuration=return()"
 	#	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	#	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
 	#	run_dm_worker $WORK_DIR/worker2 $WORKER2_PORT $cur/conf/dm-worker2.toml

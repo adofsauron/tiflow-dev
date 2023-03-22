@@ -18,7 +18,7 @@ import (
 	cm "github.com/pingcap/tidb-tools/pkg/column-mapping"
 	regexprrouter "github.com/pingcap/tidb/util/regexpr-router"
 	router "github.com/pingcap/tidb/util/table-router"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
+	tcontext "sdbflow/dm/pkg/context"
 )
 
 var _ = Suite(&testConvertDataSuite{})

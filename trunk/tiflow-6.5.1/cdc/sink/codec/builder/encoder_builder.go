@@ -16,16 +16,16 @@ package builder
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/cdc/sink/codec"
-	"github.com/pingcap/tiflow/cdc/sink/codec/avro"
-	"github.com/pingcap/tiflow/cdc/sink/codec/canal"
-	"github.com/pingcap/tiflow/cdc/sink/codec/common"
-	"github.com/pingcap/tiflow/cdc/sink/codec/craft"
-	"github.com/pingcap/tiflow/cdc/sink/codec/csv"
-	"github.com/pingcap/tiflow/cdc/sink/codec/maxwell"
-	"github.com/pingcap/tiflow/cdc/sink/codec/open"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/sink/codec"
+	"sdbflow/cdc/sink/codec/avro"
+	"sdbflow/cdc/sink/codec/canal"
+	"sdbflow/cdc/sink/codec/common"
+	"sdbflow/cdc/sink/codec/craft"
+	"sdbflow/cdc/sink/codec/csv"
+	"sdbflow/cdc/sink/codec/maxwell"
+	"sdbflow/cdc/sink/codec/open"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
 )
 
 // NewEventBatchEncoderBuilder returns an EncoderBuilder

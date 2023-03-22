@@ -20,11 +20,11 @@ import (
 
 	"github.com/go-mysql-org/go-mysql/replication"
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/common"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/event"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/binlog/common"
+	"sdbflow/dm/pkg/binlog/event"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 	"go.uber.org/zap"
 )
 

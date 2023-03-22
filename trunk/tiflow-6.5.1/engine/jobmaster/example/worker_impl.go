@@ -20,9 +20,9 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/framework"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/pkg/p2p"
+	"sdbflow/engine/framework"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/pkg/p2p"
 	"go.uber.org/zap"
 )
 

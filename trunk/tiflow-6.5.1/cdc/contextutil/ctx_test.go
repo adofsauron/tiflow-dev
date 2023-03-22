@@ -18,8 +18,8 @@ import (
 	"testing"
 
 	"github.com/pingcap/tidb/store/mockstore"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/util"
 	"github.com/stretchr/testify/require"
 )
 

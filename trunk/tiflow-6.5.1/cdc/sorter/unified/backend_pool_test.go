@@ -24,8 +24,8 @@ import (
 
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/tidb/util/memory"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/fsutil"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/fsutil"
 	"github.com/stretchr/testify/require"
 )
 
@@ -45,7 +45,7 @@ func TestBasicFunction(t *testing.T) {
 	conf.Sorter.MaxMemoryConsumption = 16 * 1024 * 1024 * 1024 // 16G
 	config.StoreGlobalServerConfig(conf)
 
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/sorter/unified/memoryPressureInjectPoint", "return(100)")
+	err = failpoint.Enable("sdbflow/cdc/sorter/unified/memoryPressureInjectPoint", "return(100)")
 	require.Nil(t, err)
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*20)
@@ -62,9 +62,9 @@ func TestBasicFunction(t *testing.T) {
 	fileName := backEnd.(*fileBackEnd).fileName
 	require.NotEqual(t, "", fileName)
 
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/sorter/unified/memoryPressureInjectPoint", "return(0)")
+	err = failpoint.Enable("sdbflow/cdc/sorter/unified/memoryPressureInjectPoint", "return(0)")
 	require.Nil(t, err)
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/sorter/unified/memoryUsageInjectPoint", "return(34359738368)")
+	err = failpoint.Enable("sdbflow/cdc/sorter/unified/memoryUsageInjectPoint", "return(34359738368)")
 	require.Nil(t, err)
 
 	backEnd1, err := backEndPool.alloc(ctx)
@@ -74,9 +74,9 @@ func TestBasicFunction(t *testing.T) {
 	require.NotEqual(t, "", fileName1)
 	require.NotEqual(t, fileName, fileName1)
 
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/sorter/unified/memoryPressureInjectPoint", "return(0)")
+	err = failpoint.Enable("sdbflow/cdc/sorter/unified/memoryPressureInjectPoint", "return(0)")
 	require.Nil(t, err)
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/sorter/unified/memoryUsageInjectPoint", "return(0)")
+	err = failpoint.Enable("sdbflow/cdc/sorter/unified/memoryUsageInjectPoint", "return(0)")
 	require.Nil(t, err)
 
 	backEnd2, err := backEndPool.alloc(ctx)
@@ -155,9 +155,9 @@ func TestCleanUpSelf(t *testing.T) {
 	conf.Sorter.MaxMemoryConsumption = 16 * 1024 * 1024 * 1024 // 16G
 	config.StoreGlobalServerConfig(conf)
 
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/sorter/unified/memoryPressureInjectPoint", "return(100)")
+	err = failpoint.Enable("sdbflow/cdc/sorter/unified/memoryPressureInjectPoint", "return(100)")
 	require.Nil(t, err)
-	defer failpoint.Disable("github.com/pingcap/tiflow/cdc/sorter/unified/memoryPressureInjectPoint") //nolint:errcheck
+	defer failpoint.Disable("sdbflow/cdc/sorter/unified/memoryPressureInjectPoint") //nolint:errcheck
 
 	backEndPool, err := newBackEndPool(sorterDir)
 	require.Nil(t, err)
@@ -345,7 +345,7 @@ func TestCheckDataDirSatisfied(t *testing.T) {
 	conf.DataDir = dir
 	config.StoreGlobalServerConfig(conf)
 
-	p := "github.com/pingcap/tiflow/cdc/sorter/unified/" +
+	p := "sdbflow/cdc/sorter/unified/" +
 		"InjectCheckDataDirSatisfied"
 	require.Nil(t, failpoint.Enable(p, ""))
 	err := checkDataDirSatisfied()

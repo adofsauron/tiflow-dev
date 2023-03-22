@@ -7,8 +7,8 @@ import (
 	fmt "fmt"
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
-	github_com_pingcap_tiflow_cdc_model "github.com/pingcap/tiflow/cdc/model"
-	tablepb "github.com/pingcap/tiflow/cdc/processor/tablepb"
+	github_com_pingcap_tiflow_cdc_model "sdbflow/cdc/model"
+	tablepb "sdbflow/cdc/processor/tablepb"
 	io "io"
 	math "math"
 	math_bits "math/bits"
@@ -60,7 +60,7 @@ func (MessageType) EnumDescriptor() ([]byte, []int) {
 }
 
 type AddTableRequest struct {
-	TableID     github_com_pingcap_tiflow_cdc_model.TableID `protobuf:"varint,1,opt,name=table_id,json=tableId,proto3,casttype=github.com/pingcap/tiflow/cdc/model.TableID" json:"table_id,omitempty"`
+	TableID     github_com_pingcap_tiflow_cdc_model.TableID `protobuf:"varint,1,opt,name=table_id,json=tableId,proto3,casttype=sdbflow/cdc/model.TableID" json:"table_id,omitempty"`
 	IsSecondary bool                                        `protobuf:"varint,2,opt,name=is_secondary,json=isSecondary,proto3" json:"is_secondary,omitempty"`
 	Checkpoint  tablepb.Checkpoint                          `protobuf:"bytes,3,opt,name=checkpoint,proto3" json:"checkpoint"`
 }
@@ -120,7 +120,7 @@ func (m *AddTableRequest) GetCheckpoint() tablepb.Checkpoint {
 }
 
 type RemoveTableRequest struct {
-	TableID github_com_pingcap_tiflow_cdc_model.TableID `protobuf:"varint,1,opt,name=table_id,json=tableId,proto3,casttype=github.com/pingcap/tiflow/cdc/model.TableID" json:"table_id,omitempty"`
+	TableID github_com_pingcap_tiflow_cdc_model.TableID `protobuf:"varint,1,opt,name=table_id,json=tableId,proto3,casttype=sdbflow/cdc/model.TableID" json:"table_id,omitempty"`
 }
 
 func (m *RemoveTableRequest) Reset()         { *m = RemoveTableRequest{} }
@@ -439,7 +439,7 @@ func (*DispatchTableResponse) XXX_OneofWrappers() []interface{} {
 }
 
 type Heartbeat struct {
-	TableIDs     []github_com_pingcap_tiflow_cdc_model.TableID `protobuf:"varint,1,rep,packed,name=table_ids,json=tableIds,proto3,casttype=github.com/pingcap/tiflow/cdc/model.TableID" json:"table_ids,omitempty"`
+	TableIDs     []github_com_pingcap_tiflow_cdc_model.TableID `protobuf:"varint,1,rep,packed,name=table_ids,json=tableIds,proto3,casttype=sdbflow/cdc/model.TableID" json:"table_ids,omitempty"`
 	IsStopping   bool                                          `protobuf:"varint,2,opt,name=is_stopping,json=isStopping,proto3" json:"is_stopping,omitempty"`
 	CollectStats bool                                          `protobuf:"varint,4,opt,name=collect_stats,json=collectStats,proto3" json:"collect_stats,omitempty"`
 }
@@ -500,7 +500,7 @@ func (m *Heartbeat) GetCollectStats() bool {
 
 type HeartbeatResponse struct {
 	Tables   []tablepb.TableStatus                        `protobuf:"bytes,1,rep,name=tables,proto3" json:"tables"`
-	Liveness github_com_pingcap_tiflow_cdc_model.Liveness `protobuf:"varint,2,opt,name=liveness,proto3,casttype=github.com/pingcap/tiflow/cdc/model.Liveness" json:"liveness,omitempty"`
+	Liveness github_com_pingcap_tiflow_cdc_model.Liveness `protobuf:"varint,2,opt,name=liveness,proto3,casttype=sdbflow/cdc/model.Liveness" json:"liveness,omitempty"`
 }
 
 func (m *HeartbeatResponse) Reset()         { *m = HeartbeatResponse{} }
@@ -641,8 +641,8 @@ func (m *ProcessorEpoch) GetEpoch() string {
 type Message struct {
 	Header                *Message_Header                               `protobuf:"bytes,1,opt,name=header,proto3" json:"header,omitempty"`
 	MsgType               MessageType                                   `protobuf:"varint,2,opt,name=msg_type,json=msgType,proto3,enum=pingcap.tiflow.cdc.scheduler.schedulepb.MessageType" json:"msg_type,omitempty"`
-	From                  github_com_pingcap_tiflow_cdc_model.CaptureID `protobuf:"bytes,3,opt,name=from,proto3,casttype=github.com/pingcap/tiflow/cdc/model.CaptureID" json:"from,omitempty"`
-	To                    github_com_pingcap_tiflow_cdc_model.CaptureID `protobuf:"bytes,4,opt,name=to,proto3,casttype=github.com/pingcap/tiflow/cdc/model.CaptureID" json:"to,omitempty"`
+	From                  github_com_pingcap_tiflow_cdc_model.CaptureID `protobuf:"bytes,3,opt,name=from,proto3,casttype=sdbflow/cdc/model.CaptureID" json:"from,omitempty"`
+	To                    github_com_pingcap_tiflow_cdc_model.CaptureID `protobuf:"bytes,4,opt,name=to,proto3,casttype=sdbflow/cdc/model.CaptureID" json:"to,omitempty"`
 	DispatchTableRequest  *DispatchTableRequest                         `protobuf:"bytes,5,opt,name=dispatch_table_request,json=dispatchTableRequest,proto3" json:"dispatch_table_request,omitempty"`
 	DispatchTableResponse *DispatchTableResponse                        `protobuf:"bytes,6,opt,name=dispatch_table_response,json=dispatchTableResponse,proto3" json:"dispatch_table_response,omitempty"`
 	Heartbeat             *Heartbeat                                    `protobuf:"bytes,7,opt,name=heartbeat,proto3" json:"heartbeat,omitempty"`

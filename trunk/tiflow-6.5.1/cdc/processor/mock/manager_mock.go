@@ -10,7 +10,7 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	orchestrator "github.com/pingcap/tiflow/pkg/orchestrator"
+	orchestrator "sdbflow/pkg/orchestrator"
 )
 
 // MockManager is a mock of Manager interface.

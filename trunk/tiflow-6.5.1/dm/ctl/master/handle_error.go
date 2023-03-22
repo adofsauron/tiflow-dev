@@ -18,9 +18,9 @@ import (
 	"errors"
 	"os"
 
-	"github.com/pingcap/tiflow/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
+	"sdbflow/dm/ctl/common"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/binlog"
 	"github.com/spf13/cobra"
 )
 

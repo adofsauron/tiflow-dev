@@ -20,9 +20,9 @@ import (
 	"net/http"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/pkg/openapi"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/httputil"
+	"sdbflow/engine/pkg/openapi"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/httputil"
 	"go.uber.org/zap"
 )
 

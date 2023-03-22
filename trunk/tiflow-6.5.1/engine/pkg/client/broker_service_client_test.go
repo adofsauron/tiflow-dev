@@ -18,8 +18,8 @@ import (
 	"testing"
 
 	"github.com/golang/mock/gomock"
-	"github.com/pingcap/tiflow/engine/enginepb"
-	pbMock "github.com/pingcap/tiflow/engine/enginepb/mock"
+	"sdbflow/engine/enginepb"
+	pbMock "sdbflow/engine/enginepb/mock"
 	"github.com/stretchr/testify/require"
 )
 

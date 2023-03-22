@@ -18,8 +18,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
 )
 
 const timeFormat = `"2006-01-02 15:04:05.000"`

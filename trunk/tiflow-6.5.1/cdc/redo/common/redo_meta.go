@@ -16,7 +16,7 @@
 package common
 
 import (
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 )
 
 // LogMeta is used for store meta info.

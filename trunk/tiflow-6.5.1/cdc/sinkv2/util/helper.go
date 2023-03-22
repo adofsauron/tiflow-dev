@@ -18,12 +18,12 @@ import (
 	"strings"
 
 	"github.com/Shopify/sarama"
-	"github.com/pingcap/tiflow/cdc/sink/codec/common"
-	"github.com/pingcap/tiflow/cdc/sink/mq/manager"
-	"github.com/pingcap/tiflow/cdc/sink/mq/producer/kafka"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	pkafka "github.com/pingcap/tiflow/pkg/sink/kafka"
+	"sdbflow/cdc/sink/codec/common"
+	"sdbflow/cdc/sink/mq/manager"
+	"sdbflow/cdc/sink/mq/producer/kafka"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	pkafka "sdbflow/pkg/sink/kafka"
 )
 
 // GetTopic returns the topic name from the sink URI.

@@ -15,8 +15,8 @@
 package sqlgen
 
 import (
-	"github.com/pingcap/tiflow/dm/simulator/config"
-	"github.com/pingcap/tiflow/dm/simulator/mcp"
+	"sdbflow/dm/simulator/config"
+	"sdbflow/dm/simulator/mcp"
 )
 
 // SQLGenerator contains all the operations for generating SQLs.

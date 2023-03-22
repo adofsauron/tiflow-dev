@@ -8,7 +8,7 @@ import "google/protobuf/empty.proto";
 
 import "engine/proto/resources.proto";
 
-option go_package = "github.com/pingcap/tiflow/engine/enginepb";
+option go_package = "sdbflow/engine/enginepb";
 
 service Discovery {
     rpc RegisterExecutor(RegisterExecutorRequest) returns(Executor) {

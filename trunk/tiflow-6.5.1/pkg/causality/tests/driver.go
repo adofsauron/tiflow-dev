@@ -19,7 +19,7 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/pkg/causality"
+	"sdbflow/pkg/causality"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 )

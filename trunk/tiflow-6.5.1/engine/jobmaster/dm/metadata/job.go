@@ -20,11 +20,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/bootstrap"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/config"
-	"github.com/pingcap/tiflow/engine/pkg/adapter"
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/jobmaster/dm/bootstrap"
+	"sdbflow/engine/jobmaster/dm/config"
+	"sdbflow/engine/pkg/adapter"
+	metaModel "sdbflow/engine/pkg/meta/model"
+	"sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

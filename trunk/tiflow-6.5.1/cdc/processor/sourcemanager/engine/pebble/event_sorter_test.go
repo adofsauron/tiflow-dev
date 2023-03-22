@@ -20,9 +20,9 @@ import (
 	"time"
 
 	"github.com/cockroachdb/pebble"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/sourcemanager/engine"
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/sourcemanager/engine"
+	"sdbflow/pkg/config"
 	"github.com/stretchr/testify/require"
 )
 

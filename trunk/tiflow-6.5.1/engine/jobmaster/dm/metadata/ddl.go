@@ -14,7 +14,7 @@
 package metadata
 
 import (
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
+	metaModel "sdbflow/engine/pkg/meta/model"
 )
 
 // DDL represents the state of ddls.

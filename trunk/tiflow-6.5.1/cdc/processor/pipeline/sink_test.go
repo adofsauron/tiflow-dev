@@ -20,12 +20,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/tablepb"
-	"github.com/pingcap/tiflow/cdc/redo"
-	mocksink "github.com/pingcap/tiflow/cdc/sink/mock"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
-	pmessage "github.com/pingcap/tiflow/pkg/pipeline/message"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/tablepb"
+	"sdbflow/cdc/redo"
+	mocksink "sdbflow/cdc/sink/mock"
+	cerrors "sdbflow/pkg/errors"
+	pmessage "sdbflow/pkg/pipeline/message"
 	"github.com/stretchr/testify/require"
 )
 

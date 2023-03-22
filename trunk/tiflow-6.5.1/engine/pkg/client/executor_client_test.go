@@ -18,7 +18,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/pkg/security"
 	"github.com/stretchr/testify/require"
 )
 

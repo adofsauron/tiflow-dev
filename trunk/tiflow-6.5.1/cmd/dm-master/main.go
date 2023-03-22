@@ -23,12 +23,12 @@ import (
 	"syscall"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/master"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/dm/ctl/common"
+	"sdbflow/dm/master"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/pkg/version"
 	"go.uber.org/zap"
 )
 

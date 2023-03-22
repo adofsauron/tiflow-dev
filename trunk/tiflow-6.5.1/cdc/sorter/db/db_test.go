@@ -22,12 +22,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/cdc/sorter/db/message"
-	"github.com/pingcap/tiflow/pkg/actor"
-	actormsg "github.com/pingcap/tiflow/pkg/actor/message"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/db"
-	"github.com/pingcap/tiflow/pkg/leakutil"
+	"sdbflow/cdc/sorter/db/message"
+	"sdbflow/pkg/actor"
+	actormsg "sdbflow/pkg/actor/message"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/db"
+	"sdbflow/pkg/leakutil"
 	"github.com/stretchr/testify/require"
 )
 

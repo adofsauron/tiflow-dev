@@ -16,9 +16,9 @@ package model
 import (
 	"encoding/json"
 
-	ormModel "github.com/pingcap/tiflow/engine/pkg/orm/model"
-	"github.com/pingcap/tiflow/engine/pkg/tenant"
-	"github.com/pingcap/tiflow/pkg/errors"
+	ormModel "sdbflow/engine/pkg/orm/model"
+	"sdbflow/engine/pkg/tenant"
+	"sdbflow/pkg/errors"
 )
 
 // WorkerState represents worker running status in master worker framework

@@ -14,9 +14,9 @@
 package worker
 
 import (
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
+	"sdbflow/dm/config"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/ha"
 	clientv3 "go.etcd.io/etcd/client/v3"
 )
 

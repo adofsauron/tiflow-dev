@@ -20,7 +20,7 @@ import (
 	"io"
 	"testing"
 
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/terror"
 	"github.com/stretchr/testify/require"
 )
 

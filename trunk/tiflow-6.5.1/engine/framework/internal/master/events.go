@@ -13,7 +13,7 @@
 
 package master
 
-import frameModel "github.com/pingcap/tiflow/engine/framework/model"
+import frameModel "sdbflow/engine/framework/model"
 
 type masterEventType int32
 

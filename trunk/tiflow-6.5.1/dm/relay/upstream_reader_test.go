@@ -20,7 +20,7 @@ import (
 	"github.com/go-mysql-org/go-mysql/replication"
 	"github.com/pingcap/check"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/reader"
+	"sdbflow/dm/pkg/binlog/reader"
 )
 
 var _ = check.Suite(&testRemoteReaderSuite{})

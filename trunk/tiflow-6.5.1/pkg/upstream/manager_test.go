@@ -20,10 +20,10 @@ import (
 
 	"github.com/benbjohnson/clock"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/orchestrator"
-	"github.com/pingcap/tiflow/pkg/security"
-	"github.com/pingcap/tiflow/pkg/txnutil/gc"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/orchestrator"
+	"sdbflow/pkg/security"
+	"sdbflow/pkg/txnutil/gc"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/atomic"
 )

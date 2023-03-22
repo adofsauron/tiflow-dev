@@ -17,8 +17,8 @@ import (
 	"context"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/enginepb"
-	cmdcontext "github.com/pingcap/tiflow/pkg/cmd/context"
+	"sdbflow/engine/enginepb"
+	cmdcontext "sdbflow/pkg/cmd/context"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 )

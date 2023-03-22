@@ -17,8 +17,8 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 // TaskCliArgs is the task command line arguments, these arguments have higher priority than the config file and

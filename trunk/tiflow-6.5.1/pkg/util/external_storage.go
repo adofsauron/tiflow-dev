@@ -27,7 +27,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/pingcap/log"
 	"github.com/pingcap/tidb/br/pkg/storage"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

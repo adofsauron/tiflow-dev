@@ -14,11 +14,11 @@
 package model
 
 import (
-	"github.com/pingcap/tiflow/engine/enginepb"
-	"github.com/pingcap/tiflow/engine/model"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/label"
+	"sdbflow/engine/enginepb"
+	"sdbflow/engine/model"
+	resModel "sdbflow/engine/pkg/externalresource/model"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/label"
 )
 
 // SchedulerRequest represents a request for an executor to run a given task.

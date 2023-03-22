@@ -16,9 +16,9 @@ package sqlkv
 import (
 	"database/sql"
 
-	"github.com/pingcap/tiflow/engine/pkg/meta/internal/sqlkv/namespace"
-	"github.com/pingcap/tiflow/engine/pkg/meta/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/pkg/meta/internal/sqlkv/namespace"
+	"sdbflow/engine/pkg/meta/model"
+	"sdbflow/pkg/errors"
 )
 
 // ClientBuilderImpl is the implement of ClientBuilder for sqlkv

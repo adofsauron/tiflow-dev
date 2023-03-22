@@ -14,7 +14,7 @@
 package dm
 
 import (
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
+	resModel "sdbflow/engine/pkg/externalresource/model"
 )
 
 // NewDMResourceID returns a ResourceID in DM's style. Currently only support s3 resource.

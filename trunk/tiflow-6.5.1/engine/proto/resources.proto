@@ -4,7 +4,7 @@ package enginepb;
 
 import "engine/proto/projects.proto";
 
-option go_package = "github.com/pingcap/tiflow/engine/enginepb";
+option go_package = "sdbflow/engine/enginepb";
 
 service ResourceManager {
   rpc CreateResource(CreateResourceRequest) returns (CreateResourceResponse){}

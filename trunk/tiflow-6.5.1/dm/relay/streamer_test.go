@@ -21,8 +21,8 @@ import (
 	. "github.com/pingcap/check"
 	"github.com/pingcap/errors"
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/event"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/binlog/event"
+	"sdbflow/dm/pkg/terror"
 )
 
 var _ = Suite(&testStreamerSuite{})
@@ -30,9 +30,9 @@ var _ = Suite(&testStreamerSuite{})
 type testStreamerSuite struct{}
 
 func (t *testStreamerSuite) TestStreamer(c *C) {
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/relay/SetHeartbeatInterval", "return(10000)"), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/relay/SetHeartbeatInterval", "return(10000)"), IsNil)
 	defer func() {
-		c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/relay/SetHeartbeatInterval"), IsNil)
+		c.Assert(failpoint.Disable("sdbflow/dm/relay/SetHeartbeatInterval"), IsNil)
 	}()
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
@@ -104,9 +104,9 @@ func (t *testStreamerSuite) TestStreamer(c *C) {
 }
 
 func (t *testStreamerSuite) TestHeartbeat(c *C) {
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/relay/SetHeartbeatInterval", "return(1)"), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/relay/SetHeartbeatInterval", "return(1)"), IsNil)
 	defer func() {
-		c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/relay/SetHeartbeatInterval"), IsNil)
+		c.Assert(failpoint.Disable("sdbflow/dm/relay/SetHeartbeatInterval"), IsNil)
 	}()
 
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)

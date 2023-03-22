@@ -16,7 +16,7 @@ package internal
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 )
 
 // Agent is an interface for an object inside Processor that is responsible

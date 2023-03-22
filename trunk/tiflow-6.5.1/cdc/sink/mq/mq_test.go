@@ -22,12 +22,12 @@ import (
 	"github.com/Shopify/sarama"
 	"github.com/pingcap/errors"
 	"github.com/pingcap/tidb/parser/mysql"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec/open"
-	kafkap "github.com/pingcap/tiflow/cdc/sink/mq/producer/kafka"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/retry"
-	"github.com/pingcap/tiflow/pkg/sink/kafka"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec/open"
+	kafkap "sdbflow/cdc/sink/mq/producer/kafka"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/retry"
+	"sdbflow/pkg/sink/kafka"
 	"github.com/stretchr/testify/require"
 )
 

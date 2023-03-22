@@ -18,9 +18,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sorter/encoding"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sorter/encoding"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 )
 

@@ -20,12 +20,12 @@ import (
 
 	"github.com/go-sql-driver/mysql"
 	"github.com/pingcap/tidb/errno"
-	dmconfig "github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/retry"
-	"github.com/pingcap/tiflow/pkg/errors"
+	dmconfig "sdbflow/dm/config"
+	"sdbflow/dm/pkg/conn"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/retry"
+	"sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

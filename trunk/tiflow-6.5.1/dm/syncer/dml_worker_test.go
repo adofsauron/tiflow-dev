@@ -21,8 +21,8 @@ import (
 	"github.com/pingcap/tidb/parser/ast"
 	timodel "github.com/pingcap/tidb/parser/model"
 	timock "github.com/pingcap/tidb/util/mock"
-	cdcmodel "github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/sqlmodel"
+	cdcmodel "sdbflow/cdc/model"
+	"sdbflow/pkg/sqlmodel"
 	"github.com/stretchr/testify/require"
 )
 

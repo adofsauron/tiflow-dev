@@ -20,13 +20,13 @@ import (
 	"time"
 
 	"github.com/golang/mock/gomock"
-	"github.com/pingcap/tiflow/engine/framework/config"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/pkg/clock"
-	pkgOrm "github.com/pingcap/tiflow/engine/pkg/orm"
-	ormMock "github.com/pingcap/tiflow/engine/pkg/orm/mock"
-	"github.com/pingcap/tiflow/engine/pkg/p2p"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/framework/config"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/pkg/clock"
+	pkgOrm "sdbflow/engine/pkg/orm"
+	ormMock "sdbflow/engine/pkg/orm/mock"
+	"sdbflow/engine/pkg/p2p"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 )
 

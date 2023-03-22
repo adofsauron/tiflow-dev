@@ -30,7 +30,7 @@ function run() {
 	uuid=($(get_uuid $MYSQL_HOST1 $MYSQL_PORT1))
 	binlog_name=($(get_binlog_name $MYSQL_HOST2 $MYSQL_PORT2))
 
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/worker/defaultKeepAliveTTL=return(1)"
+	export GO_FAILPOINTS="sdbflow/dm/worker/defaultKeepAliveTTL=return(1)"
 
 	run_dm_master $WORK_DIR/master $MASTER_PORT $cur/conf/dm-master.toml
 	check_rpc_alive $cur/../bin/check_master_online 127.0.0.1:$MASTER_PORT
@@ -132,7 +132,7 @@ function run() {
 	sed -i "s/binlog-pos-placeholder-2/4/g" $WORK_DIR/dm-task.yaml
 
 	# test graceful display error
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/dm/syncer/binlogstream/GetEventError=return'
+	export GO_FAILPOINTS='sdbflow/dm/syncer/binlogstream/GetEventError=return'
 	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
 	run_dm_worker $WORK_DIR/worker2 $WORKER2_PORT $cur/conf/dm-worker2.toml
@@ -148,7 +148,7 @@ function run() {
 	check_port_offline $WORKER2_PORT 20
 
 	# only mock pull binlog failed once
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/syncer/WaitUserCancel=return(8);github.com/pingcap/tiflow/dm/syncer/binlogstream/GetEventError=1*return"
+	export GO_FAILPOINTS="sdbflow/dm/syncer/WaitUserCancel=return(8);sdbflow/dm/syncer/binlogstream/GetEventError=1*return"
 	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
 	run_dm_worker $WORK_DIR/worker2 $WORKER2_PORT $cur/conf/dm-worker2.toml
@@ -192,7 +192,7 @@ function run() {
 	check_port_offline $WORKER1_PORT 20
 	check_port_offline $WORKER2_PORT 20
 
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/syncer/FlushCheckpointStage=return(100)" # for all stages
+	export GO_FAILPOINTS="sdbflow/dm/syncer/FlushCheckpointStage=return(100)" # for all stages
 	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
 	run_dm_worker $WORK_DIR/worker2 $WORKER2_PORT $cur/conf/dm-worker2.toml

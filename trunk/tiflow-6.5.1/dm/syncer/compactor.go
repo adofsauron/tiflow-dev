@@ -19,9 +19,9 @@ import (
 	"time"
 
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/syncer/metrics"
-	"github.com/pingcap/tiflow/pkg/sqlmodel"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/syncer/metrics"
+	"sdbflow/pkg/sqlmodel"
 	"go.uber.org/zap"
 )
 

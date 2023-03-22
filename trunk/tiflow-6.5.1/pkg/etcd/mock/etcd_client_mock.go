@@ -9,8 +9,8 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	model "github.com/pingcap/tiflow/cdc/model"
-	etcd "github.com/pingcap/tiflow/pkg/etcd"
+	model "sdbflow/cdc/model"
+	etcd "sdbflow/pkg/etcd"
 	mvccpb "go.etcd.io/etcd/api/v3/mvccpb"
 	clientv3 "go.etcd.io/etcd/client/v3"
 )

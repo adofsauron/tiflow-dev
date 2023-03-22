@@ -15,7 +15,7 @@ package broker
 import (
 	"testing"
 
-	"github.com/pingcap/tiflow/pkg/leakutil"
+	"sdbflow/pkg/leakutil"
 	"go.uber.org/goleak"
 )
 

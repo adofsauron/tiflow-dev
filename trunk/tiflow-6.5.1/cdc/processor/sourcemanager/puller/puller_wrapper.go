@@ -19,16 +19,16 @@ import (
 
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/contextutil"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/sourcemanager/engine"
-	"github.com/pingcap/tiflow/cdc/puller"
-	"github.com/pingcap/tiflow/pkg/config"
-	cdccontext "github.com/pingcap/tiflow/pkg/context"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/regionspan"
-	"github.com/pingcap/tiflow/pkg/upstream"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/contextutil"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/sourcemanager/engine"
+	"sdbflow/cdc/puller"
+	"sdbflow/pkg/config"
+	cdccontext "sdbflow/pkg/context"
+	cerrors "sdbflow/pkg/errors"
+	"sdbflow/pkg/regionspan"
+	"sdbflow/pkg/upstream"
+	"sdbflow/pkg/util"
 	"go.uber.org/zap"
 )
 
@@ -87,7 +87,7 @@ func (n *Wrapper) Start(
 	ctxC = contextutil.PutRoleInCtx(ctxC, util.RoleProcessor)
 	kvCfg := config.GetGlobalServerConfig().KVClient
 	// NOTICE: always pull the old value internally
-	// See also: https://github.com/pingcap/tiflow/issues/2301.
+	// See also: https://sdbflow/issues/2301.
 	n.p = puller.New(
 		ctxC,
 		up.PDClient,

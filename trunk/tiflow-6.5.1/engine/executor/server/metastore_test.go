@@ -19,11 +19,11 @@ import (
 	"testing"
 
 	"github.com/golang/mock/gomock"
-	pb "github.com/pingcap/tiflow/engine/enginepb"
-	"github.com/pingcap/tiflow/engine/executor/server/mock"
-	"github.com/pingcap/tiflow/engine/pkg/client"
-	metaMock "github.com/pingcap/tiflow/engine/pkg/meta/mock"
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
+	pb "sdbflow/engine/enginepb"
+	"sdbflow/engine/executor/server/mock"
+	"sdbflow/engine/pkg/client"
+	metaMock "sdbflow/engine/pkg/meta/mock"
+	metaModel "sdbflow/engine/pkg/meta/model"
 	"github.com/stretchr/testify/require"
 )
 

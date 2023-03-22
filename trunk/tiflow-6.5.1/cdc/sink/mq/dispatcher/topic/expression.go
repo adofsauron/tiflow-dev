@@ -16,7 +16,7 @@ package topic
 import (
 	"regexp"
 
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/errors"
 )
 
 var (

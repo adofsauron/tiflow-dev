@@ -14,7 +14,7 @@
 package internal
 
 import (
-	"github.com/pingcap/tiflow/engine/pkg/clock"
+	"sdbflow/engine/pkg/clock"
 )
 
 // RuntimeInfo records some information related to the runnable object

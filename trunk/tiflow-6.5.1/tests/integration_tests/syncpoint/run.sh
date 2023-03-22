@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # [DISCRIPTION]:
-#   This test is related to https://github.com/pingcap/tiflow/issues/658.
+#   This test is related to https://sdbflow/issues/658.
 #   It will record the syncpoint map of upstream and downstream to a table to achieve snapshot level consistency replication
 # [STEP]:
 #   1. Create changefeed with --sync-point --sync-interval=10s
@@ -156,7 +156,7 @@ function run() {
 	run_sql "CREATE DATABASE testSync;" ${DOWN_TIDB_HOST} ${DOWN_TIDB_PORT}
 
 	# make suer no panic happen when the syncpoint enable and the ddl sink initializing slowly
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/cdc/owner/DDLSinkInitializeSlowly=return(true)'
+	export GO_FAILPOINTS='sdbflow/cdc/owner/DDLSinkInitializeSlowly=return(true)'
 	start_ts=$(run_cdc_cli_tso_query ${UP_PD_HOST_1} ${UP_PD_PORT_1})
 	run_cdc_server --workdir $WORK_DIR --binary $CDC_BINARY
 

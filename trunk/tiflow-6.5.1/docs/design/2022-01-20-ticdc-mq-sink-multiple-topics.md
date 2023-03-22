@@ -1,7 +1,7 @@
 # TiCDC supports multi-topic dispatch
 
 - Author(s): [hi-rustin](https://github.com/hi-rustin)
-- Tracking Issue: https://github.com/pingcap/tiflow/issues/4423
+- Tracking Issue: https://sdbflow/issues/4423
 
 ## Table of Contents
 

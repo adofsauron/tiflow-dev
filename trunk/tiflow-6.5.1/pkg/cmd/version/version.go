@@ -14,7 +14,7 @@
 package version
 
 import (
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/pkg/version"
 	"github.com/spf13/cobra"
 )
 

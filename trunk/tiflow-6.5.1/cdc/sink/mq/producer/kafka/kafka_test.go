@@ -22,11 +22,11 @@ import (
 
 	"github.com/Shopify/sarama"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/contextutil"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec/common"
-	"github.com/pingcap/tiflow/pkg/sink/kafka"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/contextutil"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec/common"
+	"sdbflow/pkg/sink/kafka"
+	"sdbflow/pkg/util"
 	"github.com/stretchr/testify/require"
 )
 

@@ -20,7 +20,7 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap/zaptest"
 	"gorm.io/gorm"

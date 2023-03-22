@@ -17,9 +17,9 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/pingcap/tiflow/dm/common"
-	"github.com/pingcap/tiflow/dm/pkg/etcdutil"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/common"
+	"sdbflow/dm/pkg/etcdutil"
+	"sdbflow/dm/pkg/utils"
 	"go.etcd.io/etcd/api/v3/mvccpb"
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.etcd.io/etcd/client/v3/clientv3util"

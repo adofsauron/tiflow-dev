@@ -17,8 +17,8 @@ import (
 	"context"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sinkv2/ddlsink"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sinkv2/ddlsink"
 	"go.uber.org/zap"
 )
 

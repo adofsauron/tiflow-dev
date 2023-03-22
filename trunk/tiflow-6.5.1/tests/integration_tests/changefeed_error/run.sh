@@ -38,7 +38,7 @@ function run() {
 	start_ts=$(run_cdc_cli_tso_query ${UP_PD_HOST_1} ${UP_PD_PORT_1})
 	run_sql "CREATE DATABASE changefeed_error;" ${UP_TIDB_HOST} ${UP_TIDB_PORT}
 	go-ycsb load mysql -P $CUR/conf/workload -p mysql.host=${UP_TIDB_HOST} -p mysql.port=${UP_TIDB_PORT} -p mysql.user=root -p mysql.db=changefeed_error
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/cdc/owner/NewChangefeedNoRetryError=1*return(true)'
+	export GO_FAILPOINTS='sdbflow/cdc/owner/NewChangefeedNoRetryError=1*return(true)'
 	run_cdc_server --workdir $WORK_DIR --binary $CDC_BINARY
 	capture_pid=$(ps -C $CDC_BINARY -o pid= | awk '{print $1}')
 
@@ -62,7 +62,7 @@ function run() {
 	go-ycsb load mysql -P $CUR/conf/workload -p mysql.host=${UP_TIDB_HOST} -p mysql.port=${UP_TIDB_PORT} -p mysql.user=root -p mysql.db=changefeed_error
 	check_sync_diff $WORK_DIR $CUR/conf/diff_config.toml
 
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/cdc/owner/NewChangefeedRetryError=return(true)'
+	export GO_FAILPOINTS='sdbflow/cdc/owner/NewChangefeedRetryError=return(true)'
 	kill -9 $capture_pid
 	# make sure old cpature key and old owner key expire in etcd
 	ETCDCTL_API=3 etcdctl get /tidb/cdc/default/__cdc_meta__/capture --prefix | grep -v "capture"
@@ -80,7 +80,7 @@ function run() {
 	ensure $MAX_RETRIES "check_etcd_meta_not_exist '/tidb/cdc/default/__cdc_meta__/owner' 'owner'"
 
 	# owner DDL error case
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/cdc/owner/InjectChangefeedDDLError=return(true)'
+	export GO_FAILPOINTS='sdbflow/cdc/owner/InjectChangefeedDDLError=return(true)'
 	run_cdc_server --workdir $WORK_DIR --binary $CDC_BINARY
 	changefeedid_1="changefeed-error-1"
 	run_cdc_cli changefeed create --start-ts=$start_ts --sink-uri="$SINK_URI" -c $changefeedid_1
@@ -92,7 +92,7 @@ function run() {
 	cleanup_process $CDC_BINARY
 	ensure $MAX_RETRIES "check_etcd_meta_not_exist '/tidb/cdc/default/__cdc_meta__/owner' 'owner'"
 	# updating GC safepoint failure case
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/pkg/txnutil/gc/InjectActualGCSafePoint=return(9223372036854775807)'
+	export GO_FAILPOINTS='sdbflow/pkg/txnutil/gc/InjectActualGCSafePoint=return(9223372036854775807)'
 	run_cdc_server --workdir $WORK_DIR --binary $CDC_BINARY
 
 	changefeedid_2="changefeed-error-2"
@@ -104,7 +104,7 @@ function run() {
 	cleanup_process $CDC_BINARY
 
 	# make sure initialize changefeed error will not stuck the owner
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/cdc/owner/ChangefeedNewRedoManagerError=2*return(true)'
+	export GO_FAILPOINTS='sdbflow/cdc/owner/ChangefeedNewRedoManagerError=2*return(true)'
 	run_cdc_server --workdir $WORK_DIR --binary $CDC_BINARY
 
 	changefeedid_3="changefeed-initialize-error"

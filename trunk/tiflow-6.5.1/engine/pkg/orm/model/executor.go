@@ -18,9 +18,9 @@ import (
 	"encoding/json"
 	"reflect"
 
-	engineModel "github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/label"
+	engineModel "sdbflow/engine/model"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/label"
 )
 
 // LabelSet is a type alias for label.Set.

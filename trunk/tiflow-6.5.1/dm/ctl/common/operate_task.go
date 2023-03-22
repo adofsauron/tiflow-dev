@@ -16,7 +16,7 @@ package common
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/dm/pb"
+	"sdbflow/dm/pb"
 )
 
 // OperateTask does operation on task.

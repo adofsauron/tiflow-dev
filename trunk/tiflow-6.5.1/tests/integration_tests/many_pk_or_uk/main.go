@@ -23,7 +23,7 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/tests/integration_tests/util"
+	"sdbflow/tests/integration_tests/util"
 )
 
 func main() {

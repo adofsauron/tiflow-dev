@@ -30,9 +30,9 @@ import (
 	"context"
 	"time"
 
-	"github.com/pingcap/tiflow/engine/pkg/deps"
-	"github.com/pingcap/tiflow/engine/pkg/p2p"
-	"github.com/pingcap/tiflow/engine/pkg/tenant"
+	"sdbflow/engine/pkg/deps"
+	"sdbflow/engine/pkg/p2p"
+	"sdbflow/engine/pkg/tenant"
 )
 
 // Context is used to in dm to record some context field like

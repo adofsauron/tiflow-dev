@@ -17,7 +17,7 @@ import (
 	"testing"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/terror"
 	"github.com/stretchr/testify/require"
 )
 

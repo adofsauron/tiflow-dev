@@ -8,8 +8,8 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	model "github.com/pingcap/tiflow/cdc/model"
-	engine "github.com/pingcap/tiflow/cdc/processor/sourcemanager/engine"
+	model "sdbflow/cdc/model"
+	engine "sdbflow/cdc/processor/sourcemanager/engine"
 )
 
 // MockSortEngine is a mock of SortEngine interface.

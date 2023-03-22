@@ -18,8 +18,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/engine/executor/worker/internal"
-	"github.com/pingcap/tiflow/engine/pkg/clock"
+	"sdbflow/engine/executor/worker/internal"
+	"sdbflow/engine/pkg/clock"
 	"github.com/stretchr/testify/require"
 )
 

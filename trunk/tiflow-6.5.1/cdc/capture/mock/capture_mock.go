@@ -10,10 +10,10 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	model "github.com/pingcap/tiflow/cdc/model"
-	owner "github.com/pingcap/tiflow/cdc/owner"
-	etcd "github.com/pingcap/tiflow/pkg/etcd"
-	upstream "github.com/pingcap/tiflow/pkg/upstream"
+	model "sdbflow/cdc/model"
+	owner "sdbflow/cdc/owner"
+	etcd "sdbflow/pkg/etcd"
+	upstream "sdbflow/pkg/upstream"
 )
 
 // MockCapture is a mock of Capture interface.

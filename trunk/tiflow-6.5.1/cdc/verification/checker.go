@@ -20,8 +20,8 @@ import (
 	"strings"
 
 	"github.com/pingcap/log"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/filter"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/filter"
 	"go.uber.org/zap"
 )
 

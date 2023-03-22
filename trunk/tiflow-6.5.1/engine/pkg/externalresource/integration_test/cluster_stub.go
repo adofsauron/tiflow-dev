@@ -16,12 +16,12 @@ package integration
 import (
 	"context"
 
-	pb "github.com/pingcap/tiflow/engine/enginepb"
-	"github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/pkg/client"
-	"github.com/pingcap/tiflow/engine/pkg/externalresource/broker"
-	"github.com/pingcap/tiflow/engine/pkg/externalresource/manager"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
+	pb "sdbflow/engine/enginepb"
+	"sdbflow/engine/framework/model"
+	"sdbflow/engine/pkg/client"
+	"sdbflow/engine/pkg/externalresource/broker"
+	"sdbflow/engine/pkg/externalresource/manager"
+	resModel "sdbflow/engine/pkg/externalresource/model"
 )
 
 type resourceClientStub struct {

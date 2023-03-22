@@ -18,10 +18,10 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/pingcap/log"
-	pb "github.com/pingcap/tiflow/engine/enginepb"
-	"github.com/pingcap/tiflow/engine/pkg/client/internal"
-	"github.com/pingcap/tiflow/engine/pkg/tenant"
-	"github.com/pingcap/tiflow/pkg/errors"
+	pb "sdbflow/engine/enginepb"
+	"sdbflow/engine/pkg/client/internal"
+	"sdbflow/engine/pkg/tenant"
+	"sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

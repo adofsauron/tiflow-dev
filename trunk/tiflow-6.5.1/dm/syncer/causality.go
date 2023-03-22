@@ -18,8 +18,8 @@ import (
 	"time"
 
 	"github.com/pingcap/tidb/sessionctx"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/syncer/metrics"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/syncer/metrics"
 	"go.uber.org/zap"
 )
 

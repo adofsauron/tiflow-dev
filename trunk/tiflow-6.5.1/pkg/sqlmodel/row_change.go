@@ -20,10 +20,10 @@ import (
 	"github.com/pingcap/failpoint"
 	timodel "github.com/pingcap/tidb/parser/model"
 	"github.com/pingcap/tidb/sessionctx"
-	cdcmodel "github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/pkg/quotes"
+	cdcmodel "sdbflow/cdc/model"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/pkg/quotes"
 	"go.uber.org/zap"
 )
 

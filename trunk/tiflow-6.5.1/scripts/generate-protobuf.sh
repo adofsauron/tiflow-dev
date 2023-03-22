@@ -72,9 +72,9 @@ $PROTOC -I. -I"$TOOLS_INCLUDE_DIR" \
 	--plugin=protoc-gen-go-grpc="$GO_GRPC" \
 	--plugin=protoc-gen-grpc-gateway-v2="$GRPC_GATEWAY_V2" \
 	--plugin=protoc-gen-openapiv2="$OPENAPIV2" \
-	--go_out=. --go_opt=module=github.com/pingcap/tiflow \
-	--go-grpc_out=. --go-grpc_opt=module=github.com/pingcap/tiflow,require_unimplemented_servers=false \
-	--grpc-gateway-v2_out=. --grpc-gateway-v2_opt=module=github.com/pingcap/tiflow \
+	--go_out=. --go_opt=module=sdbflow \
+	--go-grpc_out=. --go-grpc_opt=module=sdbflow,require_unimplemented_servers=false \
+	--grpc-gateway-v2_out=. --grpc-gateway-v2_opt=module=sdbflow \
 	--openapiv2_out=engine/pkg/openapi \
 	--openapiv2_opt=allow_merge=true,merge_file_name="apiv1",omit_enum_default_value=true,json_names_for_fields=false \
 	engine/proto/*.proto

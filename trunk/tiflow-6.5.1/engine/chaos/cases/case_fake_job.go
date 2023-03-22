@@ -20,13 +20,13 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	pb "github.com/pingcap/tiflow/engine/enginepb"
-	"github.com/pingcap/tiflow/engine/framework/fake"
-	"github.com/pingcap/tiflow/engine/pkg/tenant"
-	"github.com/pingcap/tiflow/engine/test/e2e"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/retry"
-	"github.com/pingcap/tiflow/pkg/util"
+	pb "sdbflow/engine/enginepb"
+	"sdbflow/engine/framework/fake"
+	"sdbflow/engine/pkg/tenant"
+	"sdbflow/engine/test/e2e"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/retry"
+	"sdbflow/pkg/util"
 	"go.uber.org/zap"
 )
 

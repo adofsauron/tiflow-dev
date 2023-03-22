@@ -20,8 +20,8 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/retry"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/retry"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 )

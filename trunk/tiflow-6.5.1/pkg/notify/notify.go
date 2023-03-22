@@ -17,7 +17,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/errors"
 )
 
 // Notifier provides a one-to-many notification mechanism

@@ -17,11 +17,11 @@ import (
 	"strings"
 
 	"github.com/pingcap/errors"
-	v2 "github.com/pingcap/tiflow/cdc/api/v2"
-	apiv2client "github.com/pingcap/tiflow/pkg/api/v2"
-	"github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/cmd/factory"
-	"github.com/pingcap/tiflow/pkg/cmd/util"
+	v2 "sdbflow/cdc/api/v2"
+	apiv2client "sdbflow/pkg/api/v2"
+	"sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/cmd/factory"
+	"sdbflow/pkg/cmd/util"
 	"github.com/spf13/cobra"
 )
 

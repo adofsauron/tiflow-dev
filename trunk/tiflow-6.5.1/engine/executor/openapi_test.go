@@ -23,9 +23,9 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	engineModel "github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/engine/pkg/openapi"
-	"github.com/pingcap/tiflow/pkg/errors"
+	engineModel "sdbflow/engine/model"
+	"sdbflow/engine/pkg/openapi"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 )
 

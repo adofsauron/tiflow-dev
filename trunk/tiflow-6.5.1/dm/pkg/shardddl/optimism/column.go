@@ -16,8 +16,8 @@ package optimism
 import (
 	"encoding/json"
 
-	"github.com/pingcap/tiflow/dm/common"
-	"github.com/pingcap/tiflow/dm/pkg/etcdutil"
+	"sdbflow/dm/common"
+	"sdbflow/dm/pkg/etcdutil"
 	clientv3 "go.etcd.io/etcd/client/v3"
 )
 

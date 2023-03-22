@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package enginepb;
 
-option go_package = "github.com/pingcap/tiflow/engine/enginepb";
+option go_package = "sdbflow/engine/enginepb";
 
 service DataRWService {
     rpc ReadLines(ReadLinesRequest ) returns (stream ReadLinesResponse) {}

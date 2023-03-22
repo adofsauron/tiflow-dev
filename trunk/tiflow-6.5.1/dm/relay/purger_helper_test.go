@@ -19,9 +19,9 @@ import (
 	"time"
 
 	. "github.com/pingcap/check"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/streamer"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/streamer"
+	"sdbflow/dm/pkg/utils"
 )
 
 func (t *testPurgerSuite) TestPurgeRelayFilesBeforeFile(c *C) {

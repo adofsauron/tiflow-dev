@@ -18,7 +18,7 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/tests/mq_protocol_tests/framework"
+	"sdbflow/tests/mq_protocol_tests/framework"
 )
 
 const (

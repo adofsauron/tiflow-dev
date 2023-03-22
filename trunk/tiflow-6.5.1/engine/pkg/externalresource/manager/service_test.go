@@ -19,12 +19,12 @@ import (
 	"testing"
 
 	"github.com/golang/mock/gomock"
-	pb "github.com/pingcap/tiflow/engine/enginepb"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
-	pkgOrm "github.com/pingcap/tiflow/engine/pkg/orm"
-	rpcutilMock "github.com/pingcap/tiflow/engine/pkg/rpcutil/mock"
-	"github.com/pingcap/tiflow/engine/pkg/tenant"
-	"github.com/pingcap/tiflow/pkg/errors"
+	pb "sdbflow/engine/enginepb"
+	resModel "sdbflow/engine/pkg/externalresource/model"
+	pkgOrm "sdbflow/engine/pkg/orm"
+	rpcutilMock "sdbflow/engine/pkg/rpcutil/mock"
+	"sdbflow/engine/pkg/tenant"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 )
 

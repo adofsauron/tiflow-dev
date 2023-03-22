@@ -13,7 +13,7 @@
 
 package partition
 
-import "github.com/pingcap/tiflow/cdc/model"
+import "sdbflow/cdc/model"
 
 // TsDispatcher is a partition dispatcher which dispatch events based on ts.
 type TsDispatcher struct{}

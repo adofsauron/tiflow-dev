@@ -17,14 +17,14 @@ import (
 	"context"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/contextutil"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/puller"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/pipeline"
-	"github.com/pingcap/tiflow/pkg/regionspan"
-	"github.com/pingcap/tiflow/pkg/upstream"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/contextutil"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/puller"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/pipeline"
+	"sdbflow/pkg/regionspan"
+	"sdbflow/pkg/upstream"
+	"sdbflow/pkg/util"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -70,7 +70,7 @@ func (n *pullerNode) startWithSorterNode(ctx pipeline.NodeContext,
 	ctxC = contextutil.PutRoleInCtx(ctxC, util.RoleProcessor)
 	kvCfg := config.GetGlobalServerConfig().KVClient
 	// NOTICE: always pull the old value internally
-	// See also: https://github.com/pingcap/tiflow/issues/2301.
+	// See also: https://sdbflow/issues/2301.
 	n.plr = puller.New(
 		ctxC,
 		up.PDClient,

@@ -13,7 +13,7 @@
 
 package jobop
 
-import "github.com/pingcap/tiflow/engine/pkg/clock"
+import "sdbflow/engine/pkg/clock"
 
 // BackoffManager manages backoff of a target job set
 type BackoffManager interface {

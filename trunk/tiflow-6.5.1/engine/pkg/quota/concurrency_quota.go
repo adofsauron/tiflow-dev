@@ -16,7 +16,7 @@ package quota
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/errors"
 	"golang.org/x/sync/semaphore"
 )
 

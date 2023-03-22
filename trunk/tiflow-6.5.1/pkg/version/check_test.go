@@ -25,7 +25,7 @@ import (
 	"github.com/coreos/go-semver/semver"
 	"github.com/pingcap/kvproto/pkg/metapb"
 	"github.com/pingcap/tidb/util/engine"
-	"github.com/pingcap/tiflow/pkg/httputil"
+	"sdbflow/pkg/httputil"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	pd "github.com/tikv/pd/client"

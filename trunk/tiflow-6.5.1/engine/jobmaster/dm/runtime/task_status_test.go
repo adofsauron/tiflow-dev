@@ -16,8 +16,8 @@ package runtime
 import (
 	"testing"
 
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/metadata"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/jobmaster/dm/metadata"
 	"github.com/stretchr/testify/require"
 )
 

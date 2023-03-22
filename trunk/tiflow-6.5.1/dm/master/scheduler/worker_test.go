@@ -18,11 +18,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/master/workerrpc"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/config"
+	"sdbflow/dm/master/workerrpc"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/ha"
+	"sdbflow/dm/pkg/terror"
 	"github.com/stretchr/testify/require"
 )
 

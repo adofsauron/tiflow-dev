@@ -17,9 +17,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/pingcap/tiflow/cdc/entry"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/memquota"
+	"sdbflow/cdc/entry"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/memquota"
 	"github.com/stretchr/testify/require"
 )
 

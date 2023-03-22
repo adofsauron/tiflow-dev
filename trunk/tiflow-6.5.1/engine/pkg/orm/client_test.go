@@ -26,14 +26,14 @@ import (
 	"github.com/DATA-DOG/go-sqlmock"
 	"github.com/go-sql-driver/mysql"
 	"github.com/pingcap/failpoint"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	engineModel "github.com/pingcap/tiflow/engine/model"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
-	metaMock "github.com/pingcap/tiflow/engine/pkg/meta/mock"
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
-	"github.com/pingcap/tiflow/engine/pkg/orm/model"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/label"
+	frameModel "sdbflow/engine/framework/model"
+	engineModel "sdbflow/engine/model"
+	resModel "sdbflow/engine/pkg/externalresource/model"
+	metaMock "sdbflow/engine/pkg/meta/mock"
+	metaModel "sdbflow/engine/pkg/meta/model"
+	"sdbflow/engine/pkg/orm/model"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/label"
 	"github.com/stretchr/testify/require"
 )
 
@@ -1413,18 +1413,18 @@ func TestContext(t *testing.T) {
 	defer conn.Close()
 
 	// test normal function
-	err := failpoint.Enable("github.com/pingcap/tiflow/engine/pkg/orm/initializedDelay", "sleep(2000)")
+	err := failpoint.Enable("sdbflow/engine/pkg/orm/initializedDelay", "sleep(2000)")
 	require.NoError(t, err)
 	ctx = failpoint.WithHook(ctx, func(ctx context.Context, fpname string) bool {
 		return ctx.Value(fpname) != nil
 	})
-	ctx2 := context.WithValue(ctx, "github.com/pingcap/tiflow/engine/pkg/orm/initializedDelay", struct{}{})
+	ctx2 := context.WithValue(ctx, "sdbflow/engine/pkg/orm/initializedDelay", struct{}{})
 
 	// NEED enable failpoint here, or you will meet sql mock NOT MATCH error
 	err = InitAllFrameworkModels(ctx2, conn)
 	require.Error(t, err)
 	require.Regexp(t, "context deadline exceed", err.Error())
-	failpoint.Disable("github.com/pingcap/tiflow/engine/pkg/orm/initializedDelay")
+	failpoint.Disable("sdbflow/engine/pkg/orm/initializedDelay")
 }
 
 func TestJobOp(t *testing.T) {

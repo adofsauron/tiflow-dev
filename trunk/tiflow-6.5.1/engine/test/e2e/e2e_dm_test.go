@@ -29,14 +29,14 @@ import (
 	"testing"
 	"time"
 
-	pb "github.com/pingcap/tiflow/engine/enginepb"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/metadata"
-	"github.com/pingcap/tiflow/engine/jobmaster/dm/openapi"
-	dmpkg "github.com/pingcap/tiflow/engine/pkg/dm"
-	"github.com/pingcap/tiflow/engine/test/e2e"
-	"github.com/pingcap/tiflow/pkg/httputil"
-	"github.com/pingcap/tiflow/tests/integration_tests/util"
+	pb "sdbflow/engine/enginepb"
+	"sdbflow/engine/jobmaster/dm"
+	"sdbflow/engine/jobmaster/dm/metadata"
+	"sdbflow/engine/jobmaster/dm/openapi"
+	dmpkg "sdbflow/engine/pkg/dm"
+	"sdbflow/engine/test/e2e"
+	"sdbflow/pkg/httputil"
+	"sdbflow/tests/integration_tests/util"
 	"github.com/stretchr/testify/require"
 )
 

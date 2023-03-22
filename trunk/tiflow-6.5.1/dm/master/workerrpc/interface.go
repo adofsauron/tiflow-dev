@@ -17,7 +17,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/pingcap/tiflow/dm/pb"
+	"sdbflow/dm/pb"
 )
 
 // CmdType represents the concrete request type in Request or response type in Response.

@@ -19,9 +19,9 @@ import (
 	"time"
 
 	. "github.com/pingcap/check"
-	"github.com/pingcap/tiflow/dm/common"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/shardddl/pessimism"
+	"sdbflow/dm/common"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/shardddl/pessimism"
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.etcd.io/etcd/tests/v3/integration"
 )

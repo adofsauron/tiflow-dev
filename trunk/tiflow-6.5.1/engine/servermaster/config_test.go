@@ -18,8 +18,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/pingcap/tiflow/pkg/cmd/util"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/pkg/cmd/util"
+	"sdbflow/pkg/security"
 	"github.com/stretchr/testify/require"
 )
 

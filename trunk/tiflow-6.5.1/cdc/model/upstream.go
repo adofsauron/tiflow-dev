@@ -17,7 +17,7 @@ import (
 	"encoding/json"
 
 	"github.com/pingcap/errors"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	cerror "sdbflow/pkg/errors"
 )
 
 // UpstreamID is the type for upstream ID

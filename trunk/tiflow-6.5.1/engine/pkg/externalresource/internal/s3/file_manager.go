@@ -21,10 +21,10 @@ import (
 
 	"github.com/pingcap/log"
 	brStorage "github.com/pingcap/tidb/br/pkg/storage"
-	"github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/engine/pkg/externalresource/internal"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/model"
+	"sdbflow/engine/pkg/externalresource/internal"
+	resModel "sdbflow/engine/pkg/externalresource/model"
+	"sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

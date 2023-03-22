@@ -16,7 +16,7 @@ package loader
 import (
 	"testing"
 
-	"github.com/pingcap/tiflow/dm/config"
+	"sdbflow/dm/config"
 	"github.com/stretchr/testify/require"
 )
 

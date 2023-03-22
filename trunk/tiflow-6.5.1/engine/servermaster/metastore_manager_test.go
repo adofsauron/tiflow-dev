@@ -16,7 +16,7 @@ package servermaster
 import (
 	"testing"
 
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
+	metaModel "sdbflow/engine/pkg/meta/model"
 	"github.com/stretchr/testify/require"
 )
 

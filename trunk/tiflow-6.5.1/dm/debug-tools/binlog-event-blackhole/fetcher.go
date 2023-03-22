@@ -19,7 +19,7 @@ import (
 
 	"github.com/go-mysql-org/go-mysql/client"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/pkg/log"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 )

@@ -14,7 +14,7 @@
 package enginepb
 
 import (
-	"github.com/pingcap/tiflow/pkg/logutil"
+	"sdbflow/pkg/logutil"
 	"go.uber.org/zap/zapcore"
 )
 

@@ -17,8 +17,8 @@ import (
 	"container/heap"
 	"sync"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/sourcemanager/engine"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/sourcemanager/engine"
 )
 
 // progress is the fetch progress of a table.

@@ -16,7 +16,7 @@ package dispatcher
 import (
 	"testing"
 
-	"github.com/pingcap/tiflow/pkg/leakutil"
+	"sdbflow/pkg/leakutil"
 )
 
 func TestMain(m *testing.M) {

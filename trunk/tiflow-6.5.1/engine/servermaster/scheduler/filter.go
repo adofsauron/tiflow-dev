@@ -16,8 +16,8 @@ package scheduler
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/engine/model"
-	schedModel "github.com/pingcap/tiflow/engine/servermaster/scheduler/model"
+	"sdbflow/engine/model"
+	schedModel "sdbflow/engine/servermaster/scheduler/model"
 )
 
 type filter interface {

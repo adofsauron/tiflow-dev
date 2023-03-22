@@ -28,11 +28,11 @@ import (
 	"github.com/pingcap/tidb/parser/mysql"
 	"github.com/pingcap/tidb/parser/types"
 	"github.com/pingcap/tidb/util/filter"
-	cdcmodel "github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/pkg/sqlmodel"
+	cdcmodel "sdbflow/cdc/model"
+	"sdbflow/dm/config"
+	"sdbflow/dm/pkg/conn"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/pkg/sqlmodel"
 	"github.com/stretchr/testify/require"
 )
 
@@ -58,9 +58,9 @@ func genRowChangeJob(tbl filter.Table, tblInfo *model.TableInfo, key string, tp 
 }
 
 func TestValidatorWorkerValidateTableChanges(t *testing.T) {
-	require.Nil(t, failpoint.Enable("github.com/pingcap/tiflow/dm/syncer/ValidatorMockUpstreamTZ", `return()`))
+	require.Nil(t, failpoint.Enable("sdbflow/dm/syncer/ValidatorMockUpstreamTZ", `return()`))
 	defer func() {
-		require.Nil(t, failpoint.Disable("github.com/pingcap/tiflow/dm/syncer/ValidatorMockUpstreamTZ"))
+		require.Nil(t, failpoint.Disable("sdbflow/dm/syncer/ValidatorMockUpstreamTZ"))
 	}()
 	testFunc := func(t *testing.T, mode string) {
 		t.Helper()

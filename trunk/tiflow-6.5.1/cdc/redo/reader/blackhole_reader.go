@@ -16,7 +16,7 @@ package reader
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 )
 
 // BlackHoleReader is a blockHole storage which implements LogReader interface

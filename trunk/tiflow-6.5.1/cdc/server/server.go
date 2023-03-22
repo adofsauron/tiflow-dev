@@ -27,21 +27,21 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
 	"github.com/pingcap/tidb/util/memory"
-	"github.com/pingcap/tiflow/cdc"
-	"github.com/pingcap/tiflow/cdc/capture"
-	"github.com/pingcap/tiflow/cdc/kv"
-	"github.com/pingcap/tiflow/cdc/processor/pipeline/system"
-	"github.com/pingcap/tiflow/cdc/processor/sourcemanager/engine/factory"
-	ssystem "github.com/pingcap/tiflow/cdc/sorter/db/system"
-	"github.com/pingcap/tiflow/cdc/sorter/unified"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/fsutil"
-	"github.com/pingcap/tiflow/pkg/p2p"
-	"github.com/pingcap/tiflow/pkg/pdutil"
-	"github.com/pingcap/tiflow/pkg/tcpserver"
-	p2pProto "github.com/pingcap/tiflow/proto/p2p"
+	"sdbflow/cdc"
+	"sdbflow/cdc/capture"
+	"sdbflow/cdc/kv"
+	"sdbflow/cdc/processor/pipeline/system"
+	"sdbflow/cdc/processor/sourcemanager/engine/factory"
+	ssystem "sdbflow/cdc/sorter/db/system"
+	"sdbflow/cdc/sorter/unified"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/fsutil"
+	"sdbflow/pkg/p2p"
+	"sdbflow/pkg/pdutil"
+	"sdbflow/pkg/tcpserver"
+	p2pProto "sdbflow/proto/p2p"
 	pd "github.com/tikv/pd/client"
 	"go.etcd.io/etcd/client/pkg/v3/logutil"
 	clientv3 "go.etcd.io/etcd/client/v3"
@@ -226,7 +226,7 @@ func (s *server) startActorSystems(ctx context.Context) error {
 	}
 
 	// Sorter dir has been set and checked when server starts.
-	// See https://github.com/pingcap/tiflow/blob/9dad09/cdc/server.go#L275
+	// See https://sdbflow/blob/9dad09/cdc/server.go#L275
 	sortDir := config.GetGlobalServerConfig().Sorter.SortDir
 
 	if s.useEventSortEngine {

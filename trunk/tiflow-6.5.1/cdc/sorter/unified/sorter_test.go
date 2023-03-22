@@ -25,9 +25,9 @@ import (
 
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sorter"
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sorter"
+	"sdbflow/pkg/config"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
@@ -122,12 +122,12 @@ func TestSorterCancel(t *testing.T) {
 }
 
 func testSorter(ctx context.Context, t *testing.T, sorter sorter.EventSorter, count int) error {
-	err := failpoint.Enable("github.com/pingcap/tiflow/cdc/sorter/unified/sorterDebug", "return(true)")
+	err := failpoint.Enable("sdbflow/cdc/sorter/unified/sorterDebug", "return(true)")
 	if err != nil {
 		log.Panic("Could not enable failpoint", zap.Error(err))
 	}
 
-	p := "github.com/pingcap/tiflow/pkg/util/InjectCheckDataDirSatisfied"
+	p := "sdbflow/pkg/util/InjectCheckDataDirSatisfied"
 	require.Nil(t, failpoint.Enable(p, ""))
 	defer func() {
 		require.Nil(t, failpoint.Disable(p))
@@ -269,17 +269,17 @@ func TestSorterCancelRestart(t *testing.T) {
 	require.Nil(t, err)
 
 	// enable the failpoint to simulate delays
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/sorter/unified/asyncFlushStartDelay", "sleep(100)")
+	err = failpoint.Enable("sdbflow/cdc/sorter/unified/asyncFlushStartDelay", "sleep(100)")
 	require.Nil(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/sorter/unified/asyncFlushStartDelay")
+		_ = failpoint.Disable("sdbflow/cdc/sorter/unified/asyncFlushStartDelay")
 	}()
 
 	// enable the failpoint to simulate delays
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/sorter/unified/asyncFlushInProcessDelay", "1%sleep(1)")
+	err = failpoint.Enable("sdbflow/cdc/sorter/unified/asyncFlushInProcessDelay", "1%sleep(1)")
 	require.Nil(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/sorter/unified/asyncFlushInProcessDelay")
+		_ = failpoint.Disable("sdbflow/cdc/sorter/unified/asyncFlushInProcessDelay")
 	}()
 
 	for i := 0; i < 5; i++ {
@@ -321,10 +321,10 @@ func TestSorterIOError(t *testing.T) {
 	defer cancel()
 
 	// enable the failpoint to simulate backEnd allocation error (usually would happen when creating a file)
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/sorter/unified/InjectErrorBackEndAlloc", "return(true)")
+	err = failpoint.Enable("sdbflow/cdc/sorter/unified/InjectErrorBackEndAlloc", "return(true)")
 	require.Nil(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/sorter/unified/InjectErrorBackEndAlloc")
+		_ = failpoint.Disable("sdbflow/cdc/sorter/unified/InjectErrorBackEndAlloc")
 	}()
 
 	finishedCh := make(chan struct{})
@@ -342,12 +342,12 @@ func TestSorterIOError(t *testing.T) {
 	}
 
 	CleanUp()
-	_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/sorter/unified/InjectErrorBackEndAlloc")
+	_ = failpoint.Disable("sdbflow/cdc/sorter/unified/InjectErrorBackEndAlloc")
 	// enable the failpoint to simulate backEnd write error (usually would happen when writing to a file)
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/sorter/unified/InjectErrorBackEndWrite", "return(true)")
+	err = failpoint.Enable("sdbflow/cdc/sorter/unified/InjectErrorBackEndWrite", "return(true)")
 	require.Nil(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/sorter/unified/InjectErrorBackEndWrite")
+		_ = failpoint.Disable("sdbflow/cdc/sorter/unified/InjectErrorBackEndWrite")
 	}()
 
 	// recreate the sorter
@@ -400,16 +400,16 @@ func TestSorterErrorReportCorrect(t *testing.T) {
 	defer cancel()
 
 	// enable the failpoint to simulate backEnd allocation error (usually would happen when creating a file)
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/sorter/unified/InjectHeapSorterExitDelay", "sleep(2000)")
+	err = failpoint.Enable("sdbflow/cdc/sorter/unified/InjectHeapSorterExitDelay", "sleep(2000)")
 	require.Nil(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/sorter/unified/InjectHeapSorterExitDelay")
+		_ = failpoint.Disable("sdbflow/cdc/sorter/unified/InjectHeapSorterExitDelay")
 	}()
 
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/sorter/unified/InjectErrorBackEndAlloc", "return(true)")
+	err = failpoint.Enable("sdbflow/cdc/sorter/unified/InjectErrorBackEndAlloc", "return(true)")
 	require.Nil(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/sorter/unified/InjectErrorBackEndAlloc")
+		_ = failpoint.Disable("sdbflow/cdc/sorter/unified/InjectErrorBackEndAlloc")
 	}()
 
 	finishedCh := make(chan struct{})

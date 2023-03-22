@@ -17,9 +17,9 @@ import (
 	"context"
 	"time"
 
-	"github.com/pingcap/tiflow/cdc/contextutil"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/sink"
+	"sdbflow/cdc/contextutil"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/sink"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

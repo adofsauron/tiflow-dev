@@ -23,10 +23,10 @@ import (
 	dmysql "github.com/go-sql-driver/mysql"
 	"github.com/pingcap/tidb/infoschema"
 	timodel "github.com/pingcap/tidb/parser/model"
-	"github.com/pingcap/tiflow/cdc/contextutil"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/config"
-	pmysql "github.com/pingcap/tiflow/pkg/sink/mysql"
+	"sdbflow/cdc/contextutil"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/config"
+	pmysql "sdbflow/pkg/sink/mysql"
 	"github.com/stretchr/testify/require"
 )
 

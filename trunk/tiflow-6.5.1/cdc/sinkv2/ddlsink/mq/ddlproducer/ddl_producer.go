@@ -17,8 +17,8 @@ import (
 	"context"
 
 	"github.com/Shopify/sarama"
-	"github.com/pingcap/tiflow/cdc/sink/codec/common"
-	"github.com/pingcap/tiflow/pkg/sink/kafka"
+	"sdbflow/cdc/sink/codec/common"
+	"sdbflow/pkg/sink/kafka"
 )
 
 // DDLProducer is the interface for DDL message producer.

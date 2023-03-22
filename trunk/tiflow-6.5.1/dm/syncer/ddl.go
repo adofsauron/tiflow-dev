@@ -27,20 +27,20 @@ import (
 	tablefilter "github.com/pingcap/tidb/util/filter"
 	regexprrouter "github.com/pingcap/tidb/util/regexpr-router"
 	filter "github.com/pingcap/tidb/util/table-filter"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/event"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	parserpkg "github.com/pingcap/tiflow/dm/pkg/parser"
-	"github.com/pingcap/tiflow/dm/pkg/schema"
-	"github.com/pingcap/tiflow/dm/pkg/shardddl/optimism"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/syncer/metrics"
-	onlineddl "github.com/pingcap/tiflow/dm/syncer/online-ddl-tools"
-	sm "github.com/pingcap/tiflow/dm/syncer/safe-mode"
-	"github.com/pingcap/tiflow/dm/syncer/shardddl"
+	"sdbflow/dm/config"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/binlog/event"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
+	parserpkg "sdbflow/dm/pkg/parser"
+	"sdbflow/dm/pkg/schema"
+	"sdbflow/dm/pkg/shardddl/optimism"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/syncer/metrics"
+	onlineddl "sdbflow/dm/syncer/online-ddl-tools"
+	sm "sdbflow/dm/syncer/safe-mode"
+	"sdbflow/dm/syncer/shardddl"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 )
@@ -279,7 +279,7 @@ func (ddl *DDLWorker) HandleQueryEvent(ev *replication.QueryEvent, ec eventConte
 
 	if qec.shardingReSync != nil {
 		qec.shardingReSync.currLocation = qec.endLocation
-		// TODO: refactor this, see https://github.com/pingcap/tiflow/issues/6691
+		// TODO: refactor this, see https://sdbflow/issues/6691
 		// for optimistic ddl, we can resync idemponent ddl.
 		cmp := binlog.CompareLocation(qec.shardingReSync.currLocation, qec.shardingReSync.latestLocation, ddl.enableGTID)
 		if cmp > 0 || (cmp == 0 && ddl.shardMode != config.ShardOptimistic) {

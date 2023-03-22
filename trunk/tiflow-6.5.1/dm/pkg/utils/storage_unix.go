@@ -19,7 +19,7 @@ package utils
 import (
 	"reflect"
 
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/terror"
 	"golang.org/x/sys/unix"
 )
 

@@ -18,10 +18,10 @@ import (
 	"fmt"
 	"net/url"
 
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/model"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
-	"github.com/pingcap/tiflow/engine/pkg/tenant"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/model"
+	resModel "sdbflow/engine/pkg/externalresource/model"
+	"sdbflow/engine/pkg/tenant"
 )
 
 // ResourceScope represents the environment in which the resource

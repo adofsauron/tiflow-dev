@@ -17,9 +17,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/v1workermeta"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/v1workermeta"
 	"go.uber.org/zap"
 )
 

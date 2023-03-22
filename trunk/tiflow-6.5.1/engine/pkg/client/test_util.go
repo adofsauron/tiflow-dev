@@ -20,7 +20,7 @@ import (
 	"reflect"
 
 	"github.com/golang/mock/gomock"
-	"github.com/pingcap/tiflow/engine/enginepb"
+	"sdbflow/engine/enginepb"
 )
 
 type preDispatchArgsMatcher struct {

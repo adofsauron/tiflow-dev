@@ -19,7 +19,7 @@ import (
 	"testing"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 	"github.com/stretchr/testify/require"
 	pd "github.com/tikv/pd/client"
 )

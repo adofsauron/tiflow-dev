@@ -18,7 +18,7 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
+	cerrors "sdbflow/pkg/errors"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 )

@@ -19,15 +19,15 @@ import (
 	"sync/atomic"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sinkv2/eventsink"
-	"github.com/pingcap/tiflow/cdc/sinkv2/eventsink/txn/mysql"
-	"github.com/pingcap/tiflow/cdc/sinkv2/metrics"
-	"github.com/pingcap/tiflow/cdc/sinkv2/tablesink/state"
-	"github.com/pingcap/tiflow/pkg/causality"
-	"github.com/pingcap/tiflow/pkg/config"
-	psink "github.com/pingcap/tiflow/pkg/sink"
-	pmysql "github.com/pingcap/tiflow/pkg/sink/mysql"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sinkv2/eventsink"
+	"sdbflow/cdc/sinkv2/eventsink/txn/mysql"
+	"sdbflow/cdc/sinkv2/metrics"
+	"sdbflow/cdc/sinkv2/tablesink/state"
+	"sdbflow/pkg/causality"
+	"sdbflow/pkg/config"
+	psink "sdbflow/pkg/sink"
+	pmysql "sdbflow/pkg/sink/mysql"
 )
 
 const (

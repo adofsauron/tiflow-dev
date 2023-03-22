@@ -15,10 +15,10 @@ package cli
 
 import (
 	"github.com/pingcap/errors"
-	apiv2client "github.com/pingcap/tiflow/pkg/api/v2"
-	"github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/cmd/factory"
-	"github.com/pingcap/tiflow/pkg/cmd/util"
+	apiv2client "sdbflow/pkg/api/v2"
+	"sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/cmd/factory"
+	"sdbflow/pkg/cmd/util"
 	"github.com/spf13/cobra"
 )
 

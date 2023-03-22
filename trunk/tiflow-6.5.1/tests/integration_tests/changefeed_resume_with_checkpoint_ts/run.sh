@@ -83,7 +83,7 @@ function resume_changefeed_in_stopped_state() {
 }
 
 function resume_changefeed_in_failed_state() {
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/cdc/owner/InjectChangefeedFastFailError=1*return(true)'
+	export GO_FAILPOINTS='sdbflow/cdc/owner/InjectChangefeedFastFailError=1*return(true)'
 	pd_addr="http://$UP_PD_HOST_1:$UP_PD_PORT_1"
 	SINK_URI="mysql://normal:123456@127.0.0.1:3306/?max-txn-row=1"
 	run_cdc_server --workdir $WORK_DIR --binary $CDC_BINARY --pd $pd_addr

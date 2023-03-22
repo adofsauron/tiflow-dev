@@ -16,8 +16,8 @@ package canal
 import (
 	mm "github.com/pingcap/tidb/parser/model"
 	"github.com/pingcap/tidb/parser/mysql"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec/internal"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec/internal"
 )
 
 type testColumnTuple struct {

@@ -14,7 +14,7 @@
 package engine
 
 import (
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 )
 
 // SortEngine is a storage engine to store and sort CDC events.

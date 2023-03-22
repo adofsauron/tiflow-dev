@@ -27,13 +27,13 @@ import (
 	"github.com/go-mysql-org/go-mysql/mysql"
 	"github.com/go-mysql-org/go-mysql/replication"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/event"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/reader"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/binlog/event"
+	"sdbflow/dm/pkg/binlog/reader"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 	"go.uber.org/zap"
 )
 
@@ -588,7 +588,7 @@ func (r *BinlogReader) parseFile(
 		}
 
 		// align with MySQL
-		// ref https://github.com/pingcap/tiflow/issues/5063#issuecomment-1082678211
+		// ref https://sdbflow/issues/5063#issuecomment-1082678211
 		// heartbeat period is implemented in LocalStreamer.GetEvent
 		if state.skipGTID {
 			switch e.Event.(type) {

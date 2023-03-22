@@ -150,7 +150,7 @@ function run_error_check() {
 	kill_dm_master
 	kill_dm_worker
 
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/loader/TestRemoveMetaFile=return()"
+	export GO_FAILPOINTS="sdbflow/dm/loader/TestRemoveMetaFile=return()"
 
 	# start dm master and worker
 	run_dm_master $WORK_DIR/master $MASTER_PORT $cur/conf/dm-master.toml

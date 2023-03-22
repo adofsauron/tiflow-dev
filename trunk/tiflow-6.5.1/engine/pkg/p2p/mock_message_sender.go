@@ -18,7 +18,7 @@ import (
 	"sync"
 
 	"github.com/edwingeng/deque"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/errors"
 )
 
 // MockMessageSender defines a mock message sender

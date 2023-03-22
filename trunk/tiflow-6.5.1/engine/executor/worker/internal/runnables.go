@@ -17,7 +17,7 @@ import (
 	"context"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/pkg/clock"
+	"sdbflow/engine/pkg/clock"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 )

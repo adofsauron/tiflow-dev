@@ -19,7 +19,7 @@ import (
 	"time"
 
 	"github.com/pingcap/tidb/util/timeutil"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	cerror "sdbflow/pkg/errors"
 )
 
 // GetTimezone returns the timezone specified by the name

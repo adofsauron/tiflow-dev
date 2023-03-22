@@ -1,7 +1,7 @@
 # TiCDC Design Documents
 
 - Author(s): [Zhao Yilin](http://github.com/leoppro), [Zhang Xiang](http://github.com/zhangyangyu)
-- Tracking Issue: https://github.com/pingcap/tiflow/issues/5338
+- Tracking Issue: https://sdbflow/issues/5338
 
 ## Table of Contents
 

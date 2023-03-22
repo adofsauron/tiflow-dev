@@ -19,10 +19,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/retry"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/engine/model"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/retry"
+	"sdbflow/pkg/security"
 	"go.uber.org/zap"
 )
 

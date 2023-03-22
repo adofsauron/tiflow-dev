@@ -17,10 +17,10 @@ import (
 	"context"
 	"time"
 
-	"github.com/pingcap/tiflow/cdc/entry"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/memquota"
-	metrics "github.com/pingcap/tiflow/cdc/sorter"
+	"sdbflow/cdc/entry"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/memquota"
+	metrics "sdbflow/cdc/sorter"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

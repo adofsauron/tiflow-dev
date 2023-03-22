@@ -19,8 +19,8 @@ import (
 	"testing"
 
 	"github.com/BurntSushi/toml"
-	dmconfig "github.com/pingcap/tiflow/dm/config"
-	dmmaster "github.com/pingcap/tiflow/dm/master"
+	dmconfig "sdbflow/dm/config"
+	dmmaster "sdbflow/dm/master"
 	"github.com/stretchr/testify/require"
 )
 

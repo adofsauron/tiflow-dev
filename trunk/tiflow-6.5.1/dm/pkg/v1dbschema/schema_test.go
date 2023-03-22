@@ -23,10 +23,10 @@ import (
 	gmysql "github.com/go-mysql-org/go-mysql/mysql"
 	. "github.com/pingcap/check"
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
+	"sdbflow/dm/config"
+	"sdbflow/dm/pkg/conn"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/gtid"
 )
 
 func TestSuite(t *testing.T) {
@@ -100,12 +100,12 @@ func (t *testSchema) TestSchemaV106ToV20x(c *C) {
 		endGS, _ = gtid.ParserGTID(gmysql.MySQLFlavor, "ccb992ad-a557-11ea-ba6a-0242ac140002:1-16")
 	)
 
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/pkg/v1dbschema/MockGetGTIDsForPos", `return("ccb992ad-a557-11ea-ba6a-0242ac140002:10-16")`), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/pkg/v1dbschema/MockGetGTIDsForPos", `return("ccb992ad-a557-11ea-ba6a-0242ac140002:10-16")`), IsNil)
 	//nolint:errcheck
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/pkg/v1dbschema/MockGetGTIDsForPos")
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/pkg/utils/GetGTIDPurged", `return("ccb992ad-a557-11ea-ba6a-0242ac140002:1-9")`), IsNil)
+	defer failpoint.Disable("sdbflow/dm/pkg/v1dbschema/MockGetGTIDsForPos")
+	c.Assert(failpoint.Enable("sdbflow/dm/pkg/utils/GetGTIDPurged", `return("ccb992ad-a557-11ea-ba6a-0242ac140002:1-9")`), IsNil)
 	//nolint:errcheck
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/pkg/utils/GetGTIDPurged")
+	defer failpoint.Disable("sdbflow/dm/pkg/utils/GetGTIDPurged")
 
 	// update schema without GTID enabled.
 	// mock updateSyncerCheckpoint

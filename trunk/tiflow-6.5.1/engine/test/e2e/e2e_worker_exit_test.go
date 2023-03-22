@@ -20,10 +20,10 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	pb "github.com/pingcap/tiflow/engine/enginepb"
-	"github.com/pingcap/tiflow/engine/framework/fake"
-	"github.com/pingcap/tiflow/engine/pkg/tenant"
-	"github.com/pingcap/tiflow/engine/test/e2e"
+	pb "sdbflow/engine/enginepb"
+	"sdbflow/engine/framework/fake"
+	"sdbflow/engine/pkg/tenant"
+	"sdbflow/engine/test/e2e"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"
 )

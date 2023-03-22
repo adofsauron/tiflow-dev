@@ -14,10 +14,10 @@
 package cli
 
 import (
-	apiv1client "github.com/pingcap/tiflow/pkg/api/v1"
-	cmdcontext "github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/cmd/factory"
-	"github.com/pingcap/tiflow/pkg/cmd/util"
+	apiv1client "sdbflow/pkg/api/v1"
+	cmdcontext "sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/cmd/factory"
+	"sdbflow/pkg/cmd/util"
 	"github.com/spf13/cobra"
 )
 

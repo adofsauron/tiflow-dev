@@ -17,8 +17,8 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	cerrors "sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 )
 

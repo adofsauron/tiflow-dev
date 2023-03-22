@@ -16,7 +16,7 @@ package spanz
 import (
 	"testing"
 
-	"github.com/pingcap/tiflow/cdc/processor/tablepb"
+	"sdbflow/cdc/processor/tablepb"
 	"github.com/stretchr/testify/require"
 )
 

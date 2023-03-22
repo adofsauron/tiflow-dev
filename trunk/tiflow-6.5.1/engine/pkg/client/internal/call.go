@@ -17,8 +17,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/pingcap/tiflow/engine/pkg/rpcutil"
-	"github.com/pingcap/tiflow/pkg/retry"
+	"sdbflow/engine/pkg/rpcutil"
+	"sdbflow/pkg/retry"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

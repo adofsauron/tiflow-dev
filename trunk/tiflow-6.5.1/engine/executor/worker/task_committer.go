@@ -18,8 +18,8 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/executor/worker/internal"
-	"github.com/pingcap/tiflow/engine/pkg/clock"
+	"sdbflow/engine/executor/worker/internal"
+	"sdbflow/engine/pkg/clock"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 )

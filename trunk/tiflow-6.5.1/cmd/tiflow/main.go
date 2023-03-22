@@ -14,7 +14,7 @@
 package main
 
 import (
-	"github.com/pingcap/tiflow/engine/pkg/cmd"
+	"sdbflow/engine/pkg/cmd"
 )
 
 func main() {

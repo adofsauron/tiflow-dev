@@ -20,7 +20,7 @@ import (
 	"time"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/dm/pb"
+	"sdbflow/dm/pb"
 	"google.golang.org/grpc"
 )
 

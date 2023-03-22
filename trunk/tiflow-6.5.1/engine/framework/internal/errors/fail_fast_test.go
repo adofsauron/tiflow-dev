@@ -15,7 +15,7 @@ package errors
 import (
 	"testing"
 
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 )
 

@@ -9,7 +9,7 @@ API_VERSION="v1alpha1"
 TASK_NAME="test"
 
 function advance_gtid_test() {
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/syncer/NotUpdateLatestGTID=return()"
+	export GO_FAILPOINTS="sdbflow/dm/syncer/NotUpdateLatestGTID=return()"
 	run_sql_file $cur/data/db1.prepare.sql $MYSQL_HOST1 $MYSQL_PORT1 $MYSQL_PASSWORD1
 	run_sql_file $cur/data/db2.prepare.sql $MYSQL_HOST2 $MYSQL_PORT2 $MYSQL_PASSWORD2
 	cp $cur/conf/source1.yaml $WORK_DIR/source1.yaml

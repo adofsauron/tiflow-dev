@@ -21,11 +21,11 @@ import (
 	"github.com/mailru/easyjson/jwriter"
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec"
-	"github.com/pingcap/tiflow/cdc/sink/codec/common"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec"
+	"sdbflow/cdc/sink/codec/common"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

@@ -21,11 +21,11 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/tidb/parser/mysql"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec/builder"
-	"github.com/pingcap/tiflow/cdc/sink/codec/common"
-	"github.com/pingcap/tiflow/cdc/sink/metrics"
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec/builder"
+	"sdbflow/cdc/sink/codec/common"
+	"sdbflow/cdc/sink/metrics"
+	"sdbflow/pkg/config"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/atomic"
 )

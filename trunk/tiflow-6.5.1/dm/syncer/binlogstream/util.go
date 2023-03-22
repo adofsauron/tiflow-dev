@@ -16,7 +16,7 @@ package binlogstream
 import (
 	"time"
 
-	"github.com/pingcap/tiflow/dm/relay"
+	"sdbflow/dm/relay"
 )
 
 // BinlogType represents binlog type from syncer's view.

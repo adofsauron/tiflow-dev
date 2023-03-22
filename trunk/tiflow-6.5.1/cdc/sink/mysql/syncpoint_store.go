@@ -19,8 +19,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	cerror "sdbflow/pkg/errors"
 )
 
 // SyncPointStore is an abstraction for anything that a changefeed may emit into.

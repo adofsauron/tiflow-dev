@@ -21,11 +21,11 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/contextutil"
-	"github.com/pingcap/tiflow/cdc/sinkv2/metrics/txn"
-	"github.com/pingcap/tiflow/cdc/sinkv2/tablesink/state"
-	"github.com/pingcap/tiflow/pkg/chann"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/contextutil"
+	"sdbflow/cdc/sinkv2/metrics/txn"
+	"sdbflow/cdc/sinkv2/tablesink/state"
+	"sdbflow/pkg/chann"
+	cerror "sdbflow/pkg/errors"
 	"github.com/prometheus/client_golang/prometheus"
 	"go.uber.org/zap"
 )

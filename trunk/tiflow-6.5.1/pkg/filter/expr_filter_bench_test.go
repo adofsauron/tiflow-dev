@@ -16,13 +16,13 @@ package filter
 import (
 	"testing"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/cdc/model"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/pkg/config"
 	"github.com/stretchr/testify/require"
 )
 
-// cmd: go test -benchmem -run=^$ -bench ^BenchmarkSkipDML$ github.com/pingcap/tiflow/pkg/filter
+// cmd: go test -benchmem -run=^$ -bench ^BenchmarkSkipDML$ sdbflow/pkg/filter
 // goos: maxOS 12.3.1
 // goarch: arm64
 // cpu: Apple M1 Pro

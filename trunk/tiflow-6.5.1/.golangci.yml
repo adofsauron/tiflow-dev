@@ -67,8 +67,8 @@ linters-settings:
           - errors
           - github.com/pingcap/errors
         packages-with-error-message:
-          - errors: "error handling is allowed only by github.com/pingcap/tiflow/pkg/errors"
-          - github.com/pingcap/errors: "error handling is allowed only by github.com/pingcap/tiflow/pkg/errors"
+          - errors: "error handling is allowed only by sdbflow/pkg/errors"
+          - github.com/pingcap/errors: "error handling is allowed only by sdbflow/pkg/errors"
         ignore-file-rules:
           - "!**/tiflow/engine/**"
           - "**/engine/pkg/rpcutil/*.go"

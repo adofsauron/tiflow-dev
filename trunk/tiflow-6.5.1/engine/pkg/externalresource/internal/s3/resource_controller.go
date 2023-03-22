@@ -18,9 +18,9 @@ import (
 	"fmt"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/engine/pkg/externalresource/internal"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
+	"sdbflow/engine/model"
+	"sdbflow/engine/pkg/externalresource/internal"
+	resModel "sdbflow/engine/pkg/externalresource/model"
 	"go.uber.org/zap"
 )
 

@@ -13,7 +13,7 @@ function run() {
 	start_engine_cluster $CONFIG
 	# add a delay in case that the cluster is not ready
 	sleep 3s
-	CGO_ENABLED=0 go test -count=1 -v -run ^TestSubmitTest$ github.com/pingcap/tiflow/engine/test/e2e
+	CGO_ENABLED=0 go test -count=1 -v -run ^TestSubmitTest$ sdbflow/engine/test/e2e
 }
 
 trap "stop_engine_cluster $WORK_DIR $CONFIG" EXIT

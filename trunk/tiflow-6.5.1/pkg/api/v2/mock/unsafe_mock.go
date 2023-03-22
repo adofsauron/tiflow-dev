@@ -9,8 +9,8 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	v2 "github.com/pingcap/tiflow/cdc/api/v2"
-	v20 "github.com/pingcap/tiflow/pkg/api/v2"
+	v2 "sdbflow/cdc/api/v2"
+	v20 "sdbflow/pkg/api/v2"
 )
 
 // MockUnsafeGetter is a mock of UnsafeGetter interface.

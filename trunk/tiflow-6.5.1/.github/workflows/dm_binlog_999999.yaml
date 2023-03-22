@@ -120,4 +120,4 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_NOTIFY }}
         uses: Ilshidur/action-slack@2.1.0
         with:
-          args: "binlog 999999 failed, see https://github.com/pingcap/tiflow/actions/runs/{{ GITHUB_RUN_ID }}"
+          args: "binlog 999999 failed, see https://sdbflow/actions/runs/{{ GITHUB_RUN_ID }}"

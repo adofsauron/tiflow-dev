@@ -21,9 +21,9 @@ import (
 	"time"
 
 	"github.com/golang/mock/gomock"
-	v2 "github.com/pingcap/tiflow/cdc/api/v2"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/config"
+	v2 "sdbflow/cdc/api/v2"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/config"
 	"github.com/spf13/cobra"
 	"github.com/stretchr/testify/require"
 )

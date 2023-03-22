@@ -15,9 +15,9 @@ package jobop
 
 import (
 	"github.com/pingcap/log"
-	frameworkModel "github.com/pingcap/tiflow/engine/framework/model"
-	pkgOrm "github.com/pingcap/tiflow/engine/pkg/orm"
-	ormModel "github.com/pingcap/tiflow/engine/pkg/orm/model"
+	frameworkModel "sdbflow/engine/framework/model"
+	pkgOrm "sdbflow/engine/pkg/orm"
+	ormModel "sdbflow/engine/pkg/orm/model"
 	"go.uber.org/multierr"
 	"go.uber.org/zap"
 	"golang.org/x/net/context"

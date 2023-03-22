@@ -5,7 +5,7 @@ package verification
 import (
 	context "context"
 
-	filter "github.com/pingcap/tiflow/pkg/filter"
+	filter "sdbflow/pkg/filter"
 	mock "github.com/stretchr/testify/mock"
 )
 

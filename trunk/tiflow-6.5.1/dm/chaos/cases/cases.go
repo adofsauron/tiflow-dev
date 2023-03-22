@@ -17,9 +17,9 @@ import (
 	"context"
 	"path/filepath"
 
-	config2 "github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	config2 "sdbflow/dm/config"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/utils"
 	"golang.org/x/sync/errgroup"
 )
 

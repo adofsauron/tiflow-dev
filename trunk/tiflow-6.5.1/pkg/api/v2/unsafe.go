@@ -16,8 +16,8 @@ package v2
 import (
 	"context"
 
-	v2 "github.com/pingcap/tiflow/cdc/api/v2"
-	"github.com/pingcap/tiflow/pkg/api/internal/rest"
+	v2 "sdbflow/cdc/api/v2"
+	"sdbflow/pkg/api/internal/rest"
 )
 
 // UnsafeGetter has a method to return a UnsafeInterface.

@@ -17,10 +17,10 @@ import (
 	"sync"
 
 	"github.com/pingcap/log"
-	pb "github.com/pingcap/tiflow/engine/enginepb"
-	"github.com/pingcap/tiflow/engine/framework"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	pb "sdbflow/engine/enginepb"
+	"sdbflow/engine/framework"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

@@ -42,8 +42,8 @@ function run() {
 	check_contains 'Query OK, 3 rows affected'
 
 	inject_points=(
-		"github.com/pingcap/tiflow/dm/syncer/online-ddl-tools/ExitAfterSaveOnlineDDL=return()"
-		"github.com/pingcap/tiflow/dm/syncer/ExitAfterSaveOnlineDDL=return()"
+		"sdbflow/dm/syncer/online-ddl-tools/ExitAfterSaveOnlineDDL=return()"
+		"sdbflow/dm/syncer/ExitAfterSaveOnlineDDL=return()"
 	)
 	export GO_FAILPOINTS="$(join_string \; ${inject_points[@]})"
 	run_dm_worker $WORK_DIR/worker2 $WORKER2_PORT $cur/conf/dm-worker2.toml

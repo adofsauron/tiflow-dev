@@ -18,8 +18,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/pkg/errors"
-	p2pImpl "github.com/pingcap/tiflow/pkg/p2p"
+	"sdbflow/pkg/errors"
+	p2pImpl "sdbflow/pkg/p2p"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 )

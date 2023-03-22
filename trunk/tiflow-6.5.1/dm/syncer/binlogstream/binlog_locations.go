@@ -18,10 +18,10 @@ import (
 	"strings"
 
 	"github.com/go-mysql-org/go-mysql/replication"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/event"
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/binlog/event"
+	"sdbflow/dm/pkg/gtid"
+	"sdbflow/dm/pkg/log"
 	"go.uber.org/zap"
 )
 

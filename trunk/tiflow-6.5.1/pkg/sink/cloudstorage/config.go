@@ -22,9 +22,9 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	psink "github.com/pingcap/tiflow/pkg/sink"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	psink "sdbflow/pkg/sink"
 	"go.uber.org/zap"
 )
 

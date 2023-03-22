@@ -16,8 +16,8 @@ package manager
 import (
 	"context"
 
-	pb "github.com/pingcap/tiflow/engine/enginepb"
-	"github.com/pingcap/tiflow/engine/pkg/client"
+	pb "sdbflow/engine/enginepb"
+	"sdbflow/engine/pkg/client"
 	"github.com/stretchr/testify/mock"
 )
 

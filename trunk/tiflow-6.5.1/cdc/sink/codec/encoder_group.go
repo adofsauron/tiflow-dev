@@ -21,9 +21,9 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec/common"
-	"github.com/pingcap/tiflow/cdc/sinkv2/eventsink"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec/common"
+	"sdbflow/cdc/sinkv2/eventsink"
 	"go.uber.org/zap"
 	"golang.org/x/sync/errgroup"
 )

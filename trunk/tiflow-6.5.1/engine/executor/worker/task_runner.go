@@ -18,10 +18,10 @@ import (
 	"sync"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/executor/worker/internal"
-	"github.com/pingcap/tiflow/engine/pkg/clock"
-	"github.com/pingcap/tiflow/engine/pkg/notifier"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/executor/worker/internal"
+	"sdbflow/engine/pkg/clock"
+	"sdbflow/engine/pkg/notifier"
+	"sdbflow/pkg/errors"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 )

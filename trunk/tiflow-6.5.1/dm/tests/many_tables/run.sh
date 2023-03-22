@@ -77,7 +77,7 @@ function run() {
 	echo "finish prepare_data"
 
 	# we will check metrics, so don't clean metrics
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/dm/loader/DontUnregister=return();github.com/pingcap/tiflow/dm/syncer/IOTotalBytes=return("uuid")'
+	export GO_FAILPOINTS='sdbflow/dm/loader/DontUnregister=return();sdbflow/dm/syncer/IOTotalBytes=return("uuid")'
 
 	run_dm_master $WORK_DIR/master $MASTER_PORT $cur/conf/dm-master.toml
 	check_rpc_alive $cur/../bin/check_master_online 127.0.0.1:$MASTER_PORT
@@ -105,7 +105,7 @@ function run() {
 
 	check_log_contains $WORK_DIR/worker1/log/dm-worker.log 'Error 8004 (HY000): Transaction is too large'
 
-	# check https://github.com/pingcap/tiflow/issues/5063
+	# check https://sdbflow/issues/5063
 	check_time=100
 	sleep 5
 	while [ $check_time -gt 0 ]; do
@@ -137,10 +137,10 @@ function run() {
 	restore_timezone
 	trap - EXIT
 
-	# test https://github.com/pingcap/tiflow/issues/5344
+	# test https://sdbflow/issues/5344
 	kill_dm_worker
 	# let some binlog event save table checkpoint before meet downstream error
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/dm/syncer/BlockExecuteSQLs=return(1)'
+	export GO_FAILPOINTS='sdbflow/dm/syncer/BlockExecuteSQLs=return(1)'
 	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
 	run_sql_source1 "CREATE TABLE many_tables_db.flush (c INT PRIMARY KEY);"

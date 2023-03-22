@@ -18,9 +18,9 @@ import (
 	"time"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sorter/encoding"
-	"github.com/pingcap/tiflow/pkg/db"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sorter/encoding"
+	"sdbflow/pkg/db"
 	"golang.org/x/sync/semaphore"
 )
 

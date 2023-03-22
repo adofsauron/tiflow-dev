@@ -21,7 +21,7 @@ import (
 
 	"github.com/go-mysql-org/go-mysql/mysql"
 	. "github.com/pingcap/check"
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
+	"sdbflow/dm/pkg/gtid"
 )
 
 var _ = Suite(&testMetaSuite{})

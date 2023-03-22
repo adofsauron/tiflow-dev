@@ -9,7 +9,7 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	model "github.com/pingcap/tiflow/cdc/model"
+	model "sdbflow/cdc/model"
 )
 
 // MockStatusProvider is a mock of StatusProvider interface.

@@ -18,8 +18,8 @@ import (
 	"testing"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
-	pmessage "github.com/pingcap/tiflow/pkg/pipeline/message"
+	"sdbflow/cdc/model"
+	pmessage "sdbflow/pkg/pipeline/message"
 	"github.com/stretchr/testify/require"
 )
 

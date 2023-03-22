@@ -18,8 +18,8 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/sourcemanager/engine"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/sourcemanager/engine"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

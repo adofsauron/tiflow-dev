@@ -20,8 +20,8 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/pkg/security"
-	proto "github.com/pingcap/tiflow/proto/p2p"
+	"sdbflow/pkg/security"
+	proto "sdbflow/proto/p2p"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 )

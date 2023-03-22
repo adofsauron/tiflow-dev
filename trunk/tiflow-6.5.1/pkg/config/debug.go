@@ -15,7 +15,7 @@ package config
 
 import (
 	"github.com/pingcap/errors"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
+	cerrors "sdbflow/pkg/errors"
 )
 
 // DebugConfig represents config for ticdc unexposed feature configurations

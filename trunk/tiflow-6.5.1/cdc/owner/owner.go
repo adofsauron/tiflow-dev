@@ -26,13 +26,13 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/scheduler"
-	cdcContext "github.com/pingcap/tiflow/pkg/context"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/orchestrator"
-	"github.com/pingcap/tiflow/pkg/upstream"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/scheduler"
+	cdcContext "sdbflow/pkg/context"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/orchestrator"
+	"sdbflow/pkg/upstream"
+	"sdbflow/pkg/version"
 	"go.uber.org/zap"
 	"golang.org/x/time/rate"
 )
@@ -53,7 +53,7 @@ const (
 // captures with versions different from that of the owner
 const versionInconsistentLogRate = 1
 
-// Remove following variables once we fix https://github.com/pingcap/tiflow/issues/7657.
+// Remove following variables once we fix https://sdbflow/issues/7657.
 var (
 	recreateChangefeedDelayLimit = 30 * time.Second
 	hasCIEnv                     = func() bool {
@@ -134,7 +134,7 @@ type ownerImpl struct {
 		up *upstream.Upstream,
 	) *changefeed
 
-	// removedChangefeed is a workload of https://github.com/pingcap/tiflow/issues/7657
+	// removedChangefeed is a workload of https://sdbflow/issues/7657
 	// by delaying recreate changefeed with the same ID.
 	// TODO: remove these fields after the issue is resolved.
 	removedChangefeed map[model.ChangeFeedID]time.Time

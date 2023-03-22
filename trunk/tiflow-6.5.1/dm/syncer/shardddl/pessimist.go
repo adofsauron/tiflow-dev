@@ -17,11 +17,11 @@ import (
 	"context"
 	"sync"
 
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/etcdutil"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/shardddl/pessimism"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/etcdutil"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/shardddl/pessimism"
+	"sdbflow/dm/pkg/terror"
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.uber.org/zap"
 )

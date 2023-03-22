@@ -18,12 +18,12 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/engine/framework/internal/worker"
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	pkgOrm "github.com/pingcap/tiflow/engine/pkg/orm"
-	"github.com/pingcap/tiflow/engine/pkg/p2p"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/retry"
+	"sdbflow/engine/framework/internal/worker"
+	frameModel "sdbflow/engine/framework/model"
+	pkgOrm "sdbflow/engine/pkg/orm"
+	"sdbflow/engine/pkg/p2p"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/retry"
 	"go.uber.org/zap"
 	"golang.org/x/time/rate"
 )

@@ -21,8 +21,8 @@ import (
 	"time"
 
 	filter "github.com/pingcap/tidb/util/table-filter"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 	"github.com/tikv/client-go/v2/oracle"
 )

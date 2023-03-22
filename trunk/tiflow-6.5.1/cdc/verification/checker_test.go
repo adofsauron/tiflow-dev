@@ -20,8 +20,8 @@ import (
 
 	"github.com/DATA-DOG/go-sqlmock"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/filter"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/filter"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 )

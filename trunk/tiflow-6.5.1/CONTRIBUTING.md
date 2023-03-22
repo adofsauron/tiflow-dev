@@ -32,7 +32,7 @@ For more information on how to trigger these tests, please see the [command help
 
 ### Debug with [delve](https://github.com/go-delve/delve)
 ```shell
-dlv debug --build-flags="-ldflags='-X github.com/pingcap/tiflow/pkg/version.ReleaseVersion=$(git describe --tags)'" ./cmd/cdc -- server
+dlv debug --build-flags="-ldflags='-X sdbflow/pkg/version.ReleaseVersion=$(git describe --tags)'" ./cmd/cdc -- server
 ```
 
 ### Updating dependencies

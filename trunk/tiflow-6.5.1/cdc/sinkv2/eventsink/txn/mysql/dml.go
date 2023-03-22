@@ -17,8 +17,8 @@ import (
 	"strings"
 
 	"github.com/pingcap/tidb/parser/charset"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/quotes"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/quotes"
 )
 
 // prepareUpdate builds a parametrics UPDATE statement as following

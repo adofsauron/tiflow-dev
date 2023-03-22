@@ -17,11 +17,11 @@ import (
 	"math"
 	"testing"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/tablepb"
-	"github.com/pingcap/tiflow/cdc/scheduler/internal"
-	"github.com/pingcap/tiflow/cdc/scheduler/internal/v3/member"
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/tablepb"
+	"sdbflow/cdc/scheduler/internal"
+	"sdbflow/cdc/scheduler/internal/v3/member"
+	"sdbflow/pkg/config"
 	"github.com/stretchr/testify/require"
 )
 

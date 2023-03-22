@@ -17,8 +17,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/pingcap/tiflow/engine/pkg/clock"
-	"github.com/pingcap/tiflow/engine/pkg/p2p"
+	"sdbflow/engine/pkg/clock"
+	"sdbflow/engine/pkg/p2p"
 )
 
 // HeartbeatPingTopic is heartbeat ping message topic, each master has a unique one.

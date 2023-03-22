@@ -17,8 +17,8 @@ import (
 	"context"
 	"sync/atomic"
 
-	"github.com/pingcap/tiflow/pkg/actor"
-	pmessage "github.com/pingcap/tiflow/pkg/pipeline/message"
+	"sdbflow/pkg/actor"
+	pmessage "sdbflow/pkg/pipeline/message"
 )
 
 // System manages table pipeline global resource.

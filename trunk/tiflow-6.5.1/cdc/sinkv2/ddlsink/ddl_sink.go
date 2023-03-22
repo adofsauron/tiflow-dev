@@ -16,7 +16,7 @@ package ddlsink
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 )
 
 // DDLEventSink is the interface for sink of DDL events.

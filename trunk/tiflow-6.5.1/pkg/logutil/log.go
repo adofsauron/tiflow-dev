@@ -253,8 +253,8 @@ func initGRPCLogger(level zapcore.Level) error {
 	logger := log.L().With(zap.String("component", "grpc"))
 	// For gRPC 1.26.0, logging call stack:
 	//
-	// github.com/pingcap/tiflow/pkg/util.levelToFunc.func1
-	// github.com/pingcap/tiflow/pkg/util.(*grpcLoggerWriter).Write
+	// sdbflow/pkg/util.levelToFunc.func1
+	// sdbflow/pkg/util.(*grpcLoggerWriter).Write
 	// log.(*Logger).Output
 	// log.(*Logger).Printf
 	// google.golang.org/grpc/grpclog.(*loggerT).Infof

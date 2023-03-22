@@ -15,8 +15,8 @@ package db
 
 import (
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sorter/db/message"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sorter/db/message"
 	"go.uber.org/zap"
 )
 

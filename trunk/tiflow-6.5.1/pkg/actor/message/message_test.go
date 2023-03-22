@@ -17,7 +17,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/pingcap/tiflow/pkg/leakutil"
+	"sdbflow/pkg/leakutil"
 	"github.com/stretchr/testify/require"
 )
 

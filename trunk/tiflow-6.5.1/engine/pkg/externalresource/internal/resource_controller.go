@@ -16,8 +16,8 @@ package internal
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/engine/model"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
+	"sdbflow/engine/model"
+	resModel "sdbflow/engine/pkg/externalresource/model"
 )
 
 // ResourceController is an interface providing relevant operations related

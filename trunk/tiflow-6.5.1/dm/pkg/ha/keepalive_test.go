@@ -21,7 +21,7 @@ import (
 	"time"
 
 	. "github.com/pingcap/check"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/utils"
 )
 
 // keepAliveTTL is set to 0 because the actual ttl is set to minLeaseTTL of etcd

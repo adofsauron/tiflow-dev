@@ -14,8 +14,8 @@
 package fake
 
 import (
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/framework/registry"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/framework/registry"
 )
 
 // RegisterWorker registers fake job master and fake worker to global registry.

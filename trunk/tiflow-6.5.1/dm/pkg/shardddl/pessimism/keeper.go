@@ -16,8 +16,8 @@ package pessimism
 import (
 	"sync"
 
-	"github.com/pingcap/tiflow/dm/master/metrics"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/master/metrics"
+	"sdbflow/dm/pkg/utils"
 )
 
 // LockKeeper used to keep and handle DDL lock conveniently.

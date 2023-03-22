@@ -16,12 +16,12 @@ package cli
 import (
 	"time"
 
-	"github.com/pingcap/tiflow/cdc/api/owner"
-	"github.com/pingcap/tiflow/cdc/model"
-	apiv1client "github.com/pingcap/tiflow/pkg/api/v1"
-	"github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/cmd/factory"
-	"github.com/pingcap/tiflow/pkg/cmd/util"
+	"sdbflow/cdc/api/owner"
+	"sdbflow/cdc/model"
+	apiv1client "sdbflow/pkg/api/v1"
+	"sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/cmd/factory"
+	"sdbflow/pkg/cmd/util"
 	"github.com/spf13/cobra"
 )
 

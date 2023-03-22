@@ -16,7 +16,7 @@ package tablesink
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 )
 
 // TableSink is the interface for table sink.

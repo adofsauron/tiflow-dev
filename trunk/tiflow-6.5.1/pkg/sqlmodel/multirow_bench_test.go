@@ -18,7 +18,7 @@ import (
 	"testing"
 	"time"
 
-	cdcmodel "github.com/pingcap/tiflow/cdc/model"
+	cdcmodel "sdbflow/cdc/model"
 )
 
 func prepareDataOneColoumnPK(t *testing.T, batch int) []*RowChange {
@@ -63,7 +63,7 @@ func prepareDataMultiColumnsPK(t *testing.T, batch int) []*RowChange {
 	return changes
 }
 
-// bench cmd: go test -run='^$' -benchmem -bench '^(BenchmarkGenUpdate)$' github.com/pingcap/tiflow/pkg/sqlmodel
+// bench cmd: go test -run='^$' -benchmem -bench '^(BenchmarkGenUpdate)$' sdbflow/pkg/sqlmodel
 func BenchmarkGenUpdate(b *testing.B) {
 	t := &testing.T{}
 	type genCase struct {

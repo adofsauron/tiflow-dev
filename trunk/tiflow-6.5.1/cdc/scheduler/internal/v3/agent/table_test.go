@@ -16,8 +16,8 @@ package agent
 import (
 	"testing"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/tablepb"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/tablepb"
 	"github.com/stretchr/testify/require"
 )
 

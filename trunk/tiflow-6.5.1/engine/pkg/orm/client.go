@@ -18,12 +18,12 @@ import (
 	"database/sql"
 	"time"
 
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	engineModel "github.com/pingcap/tiflow/engine/model"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
-	"github.com/pingcap/tiflow/engine/pkg/orm/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	frameModel "sdbflow/engine/framework/model"
+	engineModel "sdbflow/engine/model"
+	resModel "sdbflow/engine/pkg/externalresource/model"
+	metaModel "sdbflow/engine/pkg/meta/model"
+	"sdbflow/engine/pkg/orm/model"
+	"sdbflow/pkg/errors"
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
 )

@@ -14,8 +14,8 @@
 package meta
 
 import (
-	"github.com/pingcap/tiflow/engine/pkg/meta/internal"
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
+	"sdbflow/engine/pkg/meta/internal"
+	metaModel "sdbflow/engine/pkg/meta/model"
 )
 
 // NewKVClientWithNamespace return a KVClient with namspace isolation

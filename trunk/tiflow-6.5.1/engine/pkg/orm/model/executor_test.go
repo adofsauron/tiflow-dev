@@ -16,7 +16,7 @@ package model
 import (
 	"testing"
 
-	"github.com/pingcap/tiflow/pkg/label"
+	"sdbflow/pkg/label"
 	"github.com/stretchr/testify/require"
 )
 

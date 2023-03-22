@@ -13,7 +13,7 @@
 
 package codec
 
-import "github.com/pingcap/tiflow/cdc/model"
+import "sdbflow/cdc/model"
 
 // EventBatchDecoder is an abstraction for events decoder
 // this interface is only for testing now

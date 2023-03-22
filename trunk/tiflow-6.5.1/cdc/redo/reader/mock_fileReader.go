@@ -3,7 +3,7 @@
 package reader
 
 import (
-	model "github.com/pingcap/tiflow/cdc/model"
+	model "sdbflow/cdc/model"
 	mock "github.com/stretchr/testify/mock"
 )
 

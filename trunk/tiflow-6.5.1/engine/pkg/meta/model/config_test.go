@@ -17,7 +17,7 @@ import (
 	"regexp"
 	"testing"
 
-	"github.com/pingcap/tiflow/engine/pkg/dbutil"
+	"sdbflow/engine/pkg/dbutil"
 	"github.com/stretchr/testify/require"
 )
 

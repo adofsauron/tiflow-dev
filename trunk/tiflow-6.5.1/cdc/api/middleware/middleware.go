@@ -19,10 +19,10 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/api"
-	"github.com/pingcap/tiflow/cdc/capture"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/api"
+	"sdbflow/cdc/capture"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 
@@ -88,7 +88,7 @@ func ForwardToOwnerMiddleware(p capture.Capture) gin.HandlerFunc {
 
 			// Without calling Abort(), Gin will continued to process the next handler,
 			// execute code which should only be run by the owner, and cause a panic.
-			// See https://github.com/pingcap/tiflow/issues/5888
+			// See https://sdbflow/issues/5888
 			ctx.Abort()
 			return
 		}

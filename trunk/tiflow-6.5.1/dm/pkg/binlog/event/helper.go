@@ -16,8 +16,8 @@ package event
 import (
 	gmysql "github.com/go-mysql-org/go-mysql/mysql"
 	"github.com/go-mysql-org/go-mysql/replication"
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/gtid"
+	"sdbflow/dm/pkg/terror"
 )
 
 // GTIDsFromPreviousGTIDsEvent get GTID set from a PreviousGTIDsEvent.

@@ -17,8 +17,8 @@ import (
 	"testing"
 
 	"github.com/pingcap/tidb/parser/mysql"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec/internal"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec/internal"
 	"github.com/stretchr/testify/require"
 )
 

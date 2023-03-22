@@ -20,7 +20,7 @@ import (
 	"os"
 
 	toolutils "github.com/pingcap/tidb-tools/pkg/utils"
-	"github.com/pingcap/tiflow/dm/tests/utils"
+	"sdbflow/dm/tests/utils"
 )
 
 // use show-ddl-locks request to test DM-master is online

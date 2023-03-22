@@ -22,7 +22,7 @@ import (
 	"github.com/pingcap/tidb/parser/model"
 	"github.com/pingcap/tidb/parser/opcode"
 	driver "github.com/pingcap/tidb/types/parser_driver"
-	"github.com/pingcap/tiflow/pkg/quotes"
+	"sdbflow/pkg/quotes"
 	"go.uber.org/zap"
 )
 

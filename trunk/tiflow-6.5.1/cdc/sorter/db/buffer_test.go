@@ -16,8 +16,8 @@ package db
 import (
 	"testing"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sorter/db/message"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sorter/db/message"
 	"github.com/stretchr/testify/require"
 )
 

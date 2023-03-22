@@ -16,7 +16,7 @@ package statusutil
 import (
 	"fmt"
 
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
+	frameModel "sdbflow/engine/framework/model"
 )
 
 // WorkerStatusMessage contains necessary fileds of a worker status message

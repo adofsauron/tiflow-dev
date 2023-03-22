@@ -16,7 +16,7 @@ package promutil
 import (
 	"sync"
 
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
+	frameModel "sdbflow/engine/framework/model"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/collectors"
 	dto "github.com/prometheus/client_model/go"

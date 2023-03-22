@@ -16,8 +16,8 @@ package loader
 import (
 	"time"
 
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/binlog"
 	"go.uber.org/zap"
 )
 

@@ -27,7 +27,7 @@ import (
 	"time"
 
 	"github.com/pingcap/tidb/util"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/pkg/security"
 	"github.com/stretchr/testify/require"
 )
 

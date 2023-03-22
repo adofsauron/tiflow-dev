@@ -23,8 +23,8 @@ import (
 
 	"github.com/pingcap/tidb/tablecodec"
 	"github.com/pingcap/tidb/util/codec"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/regionspan"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/regionspan"
 	"github.com/stretchr/testify/require"
 	pd "github.com/tikv/pd/client"
 )

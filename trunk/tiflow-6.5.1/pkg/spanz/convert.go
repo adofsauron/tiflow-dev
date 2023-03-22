@@ -16,9 +16,9 @@ package spanz
 import (
 	"sort"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/tablepb"
-	"github.com/pingcap/tiflow/pkg/regionspan"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/tablepb"
+	"sdbflow/pkg/regionspan"
 )
 
 // ArrayToSpan converts an array of TableID to an array of Span.

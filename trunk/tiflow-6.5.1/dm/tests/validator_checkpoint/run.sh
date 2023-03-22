@@ -39,7 +39,7 @@ function run() {
 	# persis success for 2 source, and data of different source didn't interrupt with each other
 	#
 	echo "--> check persist checkpoint and data with 2 source"
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/dm/syncer/SkipDML=return(5)'
+	export GO_FAILPOINTS='sdbflow/dm/syncer/SkipDML=return(5)'
 	prepare_for_test
 	dmctl_start_task $cur/conf/dm-task.yaml --remove-meta
 	# wait until task is in sync unit
@@ -133,8 +133,8 @@ function run() {
 	# validator persist fail in the middle
 	#
 	echo "--> check validator persist fail in the middle"
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/dm/syncer/SkipDML=return(10)'
-	export GO_FAILPOINTS="$GO_FAILPOINTS;github.com/pingcap/tiflow/dm/syncer/ValidatorFailOnPersist=return()"
+	export GO_FAILPOINTS='sdbflow/dm/syncer/SkipDML=return(10)'
+	export GO_FAILPOINTS="$GO_FAILPOINTS;sdbflow/dm/syncer/ValidatorFailOnPersist=return()"
 	prepare_for_test
 	dmctl_start_task $cur/conf/dm-task.yaml --remove-meta
 	# wait until task is in sync unit

@@ -22,20 +22,20 @@ import (
 	"github.com/Shopify/sarama"
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/contextutil"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec"
-	"github.com/pingcap/tiflow/cdc/sink/codec/builder"
-	"github.com/pingcap/tiflow/cdc/sink/codec/common"
-	"github.com/pingcap/tiflow/cdc/sink/metrics"
-	"github.com/pingcap/tiflow/cdc/sink/mq/dispatcher"
-	"github.com/pingcap/tiflow/cdc/sink/mq/manager"
-	"github.com/pingcap/tiflow/cdc/sink/mq/producer"
-	"github.com/pingcap/tiflow/cdc/sink/mq/producer/kafka"
-	"github.com/pingcap/tiflow/pkg/chann"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/contextutil"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec"
+	"sdbflow/cdc/sink/codec/builder"
+	"sdbflow/cdc/sink/codec/common"
+	"sdbflow/cdc/sink/metrics"
+	"sdbflow/cdc/sink/mq/dispatcher"
+	"sdbflow/cdc/sink/mq/manager"
+	"sdbflow/cdc/sink/mq/producer"
+	"sdbflow/cdc/sink/mq/producer/kafka"
+	"sdbflow/pkg/chann"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/util"
 	"go.uber.org/zap"
 	"golang.org/x/sync/errgroup"
 )
@@ -122,7 +122,7 @@ func (k *mqSink) AddTable(tableID model.TableID) error {
 	// We need to clean up the old values of the table,
 	// otherwise when the table is dispatched back again,
 	// it may read the old values.
-	// See: https://github.com/pingcap/tiflow/issues/4464#issuecomment-1085385382.
+	// See: https://sdbflow/issues/4464#issuecomment-1085385382.
 	if checkpoint, loaded := k.tableCheckpointTsMap.LoadAndDelete(tableID); loaded {
 		log.Info("clean up table checkpoint ts in MQ sink",
 			zap.Int64("tableID", tableID),
@@ -202,7 +202,7 @@ func (k *mqSink) bgFlushTs(ctx context.Context) error {
 			}
 			// Since CDC does not guarantee exactly once semantic, it won't cause any problem
 			// here even if the table was moved or removed.
-			// ref: https://github.com/pingcap/tiflow/pull/4356#discussion_r787405134
+			// ref: https://sdbflow/pull/4356#discussion_r787405134
 			k.tableCheckpointTsMap.Store(msg.tableID, resolved)
 		}
 	}

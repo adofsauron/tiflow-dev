@@ -20,7 +20,7 @@ import (
 
 	bf "github.com/pingcap/tidb-tools/pkg/binlog-filter"
 	filter "github.com/pingcap/tidb/util/table-filter"
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/pkg/config"
 	"github.com/stretchr/testify/require"
 )
 

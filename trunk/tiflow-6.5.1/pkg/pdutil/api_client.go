@@ -23,9 +23,9 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/httputil"
-	"github.com/pingcap/tiflow/pkg/retry"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/httputil"
+	"sdbflow/pkg/retry"
 	pd "github.com/tikv/pd/client"
 	"go.uber.org/zap"
 )

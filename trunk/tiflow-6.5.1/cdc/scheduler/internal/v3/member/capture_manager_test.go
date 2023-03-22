@@ -16,11 +16,11 @@ package member
 import (
 	"testing"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/processor/tablepb"
-	"github.com/pingcap/tiflow/cdc/scheduler/internal/v3/replication"
-	"github.com/pingcap/tiflow/cdc/scheduler/schedulepb"
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/processor/tablepb"
+	"sdbflow/cdc/scheduler/internal/v3/replication"
+	"sdbflow/cdc/scheduler/schedulepb"
+	"sdbflow/pkg/config"
 	"github.com/stretchr/testify/require"
 )
 

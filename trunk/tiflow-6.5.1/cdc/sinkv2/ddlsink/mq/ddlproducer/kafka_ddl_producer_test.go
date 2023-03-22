@@ -20,10 +20,10 @@ import (
 	"time"
 
 	"github.com/Shopify/sarama"
-	"github.com/pingcap/tiflow/cdc/sink/codec/common"
-	kafkav1 "github.com/pingcap/tiflow/cdc/sink/mq/producer/kafka"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/sink/kafka"
+	"sdbflow/cdc/sink/codec/common"
+	kafkav1 "sdbflow/cdc/sink/mq/producer/kafka"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/sink/kafka"
 	"github.com/stretchr/testify/require"
 )
 

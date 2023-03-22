@@ -18,8 +18,8 @@ import (
 	"regexp"
 	"testing"
 
-	"github.com/pingcap/tiflow/engine/pkg/meta/model"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/engine/pkg/meta/model"
+	"sdbflow/pkg/security"
 	"github.com/stretchr/testify/require"
 )
 

@@ -16,10 +16,10 @@ package manager
 import (
 	"context"
 
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/model"
-	resModel "github.com/pingcap/tiflow/engine/pkg/externalresource/model"
-	"github.com/pingcap/tiflow/engine/pkg/notifier"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/model"
+	resModel "sdbflow/engine/pkg/externalresource/model"
+	"sdbflow/engine/pkg/notifier"
 )
 
 // ExecutorInfoProvider describes an object that maintains a list

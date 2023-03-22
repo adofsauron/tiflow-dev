@@ -23,8 +23,8 @@ import (
 
 	capturer "github.com/kami-zh/go-capturer"
 	"github.com/pingcap/check"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
 	"go.etcd.io/etcd/server/v3/embed"
 )
 

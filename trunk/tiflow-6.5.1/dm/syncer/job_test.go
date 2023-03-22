@@ -19,9 +19,9 @@ import (
 	"github.com/go-mysql-org/go-mysql/mysql"
 	. "github.com/pingcap/check"
 	"github.com/pingcap/tidb/util/filter"
-	cdcmodel "github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/pkg/sqlmodel"
+	cdcmodel "sdbflow/cdc/model"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/pkg/sqlmodel"
 	"github.com/stretchr/testify/require"
 )
 

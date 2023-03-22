@@ -21,11 +21,11 @@ import (
 
 	"github.com/chzyer/readline"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/ctl/master"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/dm/ctl/common"
+	"sdbflow/dm/ctl/master"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/pkg/version"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap/zapcore"
 )

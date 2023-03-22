@@ -18,8 +18,8 @@ import (
 
 	"github.com/pingcap/tidb/parser"
 	"github.com/pingcap/tidb/util/filter"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 	"github.com/stretchr/testify/require"
 )
 

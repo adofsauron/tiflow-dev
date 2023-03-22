@@ -25,16 +25,16 @@ import (
 	"strings"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/dm/checker"
-	dmcommon "github.com/pingcap/tiflow/dm/common"
-	"github.com/pingcap/tiflow/dm/config"
-	"github.com/pingcap/tiflow/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/master/scheduler"
-	"github.com/pingcap/tiflow/dm/master/workerrpc"
-	"github.com/pingcap/tiflow/dm/openapi"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/checker"
+	dmcommon "sdbflow/dm/common"
+	"sdbflow/dm/config"
+	"sdbflow/dm/ctl/common"
+	"sdbflow/dm/master/scheduler"
+	"sdbflow/dm/master/workerrpc"
+	"sdbflow/dm/openapi"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/ha"
+	"sdbflow/dm/pkg/terror"
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.uber.org/zap"
 )
@@ -125,7 +125,7 @@ func (s *Server) createSource(ctx context.Context, req openapi.CreateSourceReque
 	if err != nil {
 		return nil, err
 	}
-	// TODO: refine relay logic https://github.com/pingcap/tiflow/issues/4985
+	// TODO: refine relay logic https://sdbflow/issues/4985
 	if cfg.EnableRelay {
 		return &req.Source, s.enableRelay(ctx, req.Source.SourceName, openapi.EnableRelayRequest{})
 	}

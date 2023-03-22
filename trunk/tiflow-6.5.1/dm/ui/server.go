@@ -21,8 +21,8 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"github.com/pingcap/tiflow/dm/openapi"
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/openapi"
+	"sdbflow/dm/pkg/log"
 	"go.uber.org/zap"
 )
 

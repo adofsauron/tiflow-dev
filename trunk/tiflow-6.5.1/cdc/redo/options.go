@@ -14,7 +14,7 @@
 package redo
 
 import (
-	"github.com/pingcap/tiflow/pkg/redo"
+	"sdbflow/pkg/redo"
 )
 
 // ManagerOptions defines options for redo log manager.

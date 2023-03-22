@@ -17,7 +17,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 )
 
 // FilterChangefeedFiles return the files that match to the changefeed.

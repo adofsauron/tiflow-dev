@@ -16,10 +16,10 @@ package master
 import (
 	"context"
 
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	"github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/engine/pkg/p2p"
-	"github.com/pingcap/tiflow/pkg/errors"
+	frameModel "sdbflow/engine/framework/model"
+	"sdbflow/engine/model"
+	"sdbflow/engine/pkg/p2p"
+	"sdbflow/pkg/errors"
 	"go.uber.org/atomic"
 )
 

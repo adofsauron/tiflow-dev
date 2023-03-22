@@ -17,7 +17,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/engine/pkg/clock"
+	"sdbflow/engine/pkg/clock"
 	"github.com/stretchr/testify/require"
 )
 

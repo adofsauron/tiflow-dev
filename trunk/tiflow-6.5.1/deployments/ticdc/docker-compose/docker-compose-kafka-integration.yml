@@ -30,7 +30,7 @@ services:
       - "zookeeper"
 
   canal-adapter:
-    # Build from https://github.com/pingcap/tiflow/tree/master/scripts/canal/docker.
+    # Build from https://sdbflow/tree/master/scripts/canal/docker.
     image: rustinliu/ticdc-canal-json-adapter:latest
     environment:
       # Since we are all under the kafka service's network, we use 127.0.0.1 directly.
@@ -63,4 +63,4 @@ services:
     network_mode: "service:kafka"
     volumes:
       - ./logs/tidb_cdc_test:/tmp/tidb_cdc_test
-      - ../../../tests:/go/src/github.com/pingcap/tiflow/tests
+      - ../../../tests:/go/src/sdbflow/tests

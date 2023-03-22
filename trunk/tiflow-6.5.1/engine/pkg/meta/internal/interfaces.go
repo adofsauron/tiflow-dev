@@ -14,7 +14,7 @@
 package internal
 
 import (
-	metaModel "github.com/pingcap/tiflow/engine/pkg/meta/model"
+	metaModel "sdbflow/engine/pkg/meta/model"
 )
 
 type clientBuilder interface {

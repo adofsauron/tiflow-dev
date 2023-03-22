@@ -17,8 +17,8 @@ import (
 	"context"
 
 	"github.com/gin-gonic/gin"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/owner"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/owner"
 	pd "github.com/tikv/pd/client"
 )
 

@@ -18,9 +18,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/scheduler/schedulepb"
-	"github.com/pingcap/tiflow/pkg/p2p"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/scheduler/schedulepb"
+	"sdbflow/pkg/p2p"
 	"github.com/stretchr/testify/require"
 )
 

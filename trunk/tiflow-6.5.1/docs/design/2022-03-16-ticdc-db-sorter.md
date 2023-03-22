@@ -1,7 +1,7 @@
 # DB Sorter
 
 - Author(s): [overvenus](https://github.com/overvenus)
-- Tracking Issue: https://github.com/pingcap/tiflow/issues/3227
+- Tracking Issue: https://sdbflow/issues/3227
 
 ## Table of Contents
 
@@ -203,5 +203,5 @@ N/A
 
 N/A
 
-[1]: https://github.com/pingcap/tiflow/issues/2698
+[1]: https://sdbflow/issues/2698
 [2]: https://msgpack.org

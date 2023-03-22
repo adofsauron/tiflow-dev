@@ -20,9 +20,9 @@ import (
 	"github.com/DATA-DOG/go-sqlmock"
 	"github.com/go-sql-driver/mysql"
 	"github.com/pingcap/tidb/errno"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/retry"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/retry"
+	"sdbflow/dm/pkg/terror"
 	"github.com/stretchr/testify/require"
 )
 

@@ -20,11 +20,11 @@ import (
 
 	"github.com/pingcap/failpoint"
 	toolutils "github.com/pingcap/tidb-tools/pkg/utils"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/ha"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 )
@@ -107,7 +107,7 @@ func (s *Server) KeepAlive() {
 		failpoint.Label("bypass")
 
 		// TODO: report the error.
-		// when lost keepalive, stop the worker without graceful. this is to fix https://github.com/pingcap/tiflow/issues/3737
+		// when lost keepalive, stop the worker without graceful. this is to fix https://sdbflow/issues/3737
 		err := s.stopSourceWorker("", true, false)
 		if err != nil {
 			log.L().Error("fail to stop worker", zap.Error(err))

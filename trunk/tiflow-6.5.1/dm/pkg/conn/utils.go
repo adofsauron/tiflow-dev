@@ -23,9 +23,9 @@ import (
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/tidb/dumpling/export"
 	tmysql "github.com/pingcap/tidb/parser/mysql"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/gtid"
+	"sdbflow/dm/pkg/terror"
 	"go.uber.org/zap"
 )
 

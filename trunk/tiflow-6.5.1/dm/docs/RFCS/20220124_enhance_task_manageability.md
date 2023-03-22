@@ -5,7 +5,7 @@
 
 ## Background
 
-The main purpose of this change is to address the root cause of problems like [#3771](https://github.com/pingcap/tiflow/issues/3771), which are caused by the fact that commands about DM task do not distinguish between dynamic configuration and static resources, making it impossible for users to intuitively manage their tasks. For this reasons, we will attempt to redesign the state machine of DM task and optimize the dmctl interaction interface to provide a better user experience.
+The main purpose of this change is to address the root cause of problems like [#3771](https://sdbflow/issues/3771), which are caused by the fact that commands about DM task do not distinguish between dynamic configuration and static resources, making it impossible for users to intuitively manage their tasks. For this reasons, we will attempt to redesign the state machine of DM task and optimize the dmctl interaction interface to provide a better user experience.
 
 ### Current State machine of task
 

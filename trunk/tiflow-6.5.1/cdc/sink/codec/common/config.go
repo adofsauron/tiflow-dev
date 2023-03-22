@@ -18,8 +18,8 @@ import (
 	"strconv"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
 )
 
 // defaultMaxBatchSize sets the default value for max-batch-size

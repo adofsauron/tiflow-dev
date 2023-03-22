@@ -17,11 +17,11 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/tidb/br/pkg/storage"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sinkv2/metrics"
-	"github.com/pingcap/tiflow/pkg/chann"
-	"github.com/pingcap/tiflow/pkg/hash"
-	"github.com/pingcap/tiflow/pkg/sink/cloudstorage"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sinkv2/metrics"
+	"sdbflow/pkg/chann"
+	"sdbflow/pkg/hash"
+	"sdbflow/pkg/sink/cloudstorage"
 	"golang.org/x/sync/errgroup"
 )
 

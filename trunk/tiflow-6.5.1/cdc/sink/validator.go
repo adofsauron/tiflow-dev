@@ -17,14 +17,14 @@ import (
 	"context"
 	"net/url"
 
-	"github.com/pingcap/tiflow/cdc/contextutil"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sinkv2/eventsink/factory"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/sink"
-	pmysql "github.com/pingcap/tiflow/pkg/sink/mysql"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/contextutil"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sinkv2/eventsink/factory"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/sink"
+	pmysql "sdbflow/pkg/sink/mysql"
+	"sdbflow/pkg/util"
 )
 
 // Validate sink if given valid parameters.

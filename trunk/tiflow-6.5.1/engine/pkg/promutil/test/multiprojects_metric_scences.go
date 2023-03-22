@@ -19,9 +19,9 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	engineModel "github.com/pingcap/tiflow/engine/model"
-	"github.com/pingcap/tiflow/engine/pkg/promutil"
-	"github.com/pingcap/tiflow/engine/pkg/tenant"
+	engineModel "sdbflow/engine/model"
+	"sdbflow/engine/pkg/promutil"
+	"sdbflow/engine/pkg/tenant"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

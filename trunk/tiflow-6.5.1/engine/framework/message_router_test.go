@@ -19,8 +19,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/engine/pkg/p2p"
-	"github.com/pingcap/tiflow/pkg/workerpool"
+	"sdbflow/engine/pkg/p2p"
+	"sdbflow/pkg/workerpool"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/atomic"
 )

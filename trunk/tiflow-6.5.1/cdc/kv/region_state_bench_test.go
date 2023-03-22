@@ -19,7 +19,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/pingcap/tiflow/pkg/regionspan"
+	"sdbflow/pkg/regionspan"
 	"github.com/tikv/client-go/v2/tikv"
 )
 

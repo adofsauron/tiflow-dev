@@ -14,8 +14,8 @@
 package sqlkv
 
 import (
-	"github.com/pingcap/tiflow/engine/pkg/meta/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/pkg/meta/model"
+	"sdbflow/pkg/errors"
 )
 
 // sqlError wraps IsRetryable to etcd error.

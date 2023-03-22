@@ -16,10 +16,10 @@ package jobop
 import (
 	"testing"
 
-	frameModel "github.com/pingcap/tiflow/engine/framework/model"
-	pkgOrm "github.com/pingcap/tiflow/engine/pkg/orm"
-	ormModel "github.com/pingcap/tiflow/engine/pkg/orm/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	frameModel "sdbflow/engine/framework/model"
+	pkgOrm "sdbflow/engine/pkg/orm"
+	ormModel "sdbflow/engine/pkg/orm/model"
+	"sdbflow/pkg/errors"
 	"github.com/stretchr/testify/require"
 	"golang.org/x/net/context"
 )

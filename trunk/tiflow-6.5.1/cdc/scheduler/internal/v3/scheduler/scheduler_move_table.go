@@ -17,9 +17,9 @@ import (
 	"sync"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/scheduler/internal/v3/member"
-	"github.com/pingcap/tiflow/cdc/scheduler/internal/v3/replication"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/scheduler/internal/v3/member"
+	"sdbflow/cdc/scheduler/internal/v3/replication"
 	"go.uber.org/zap"
 )
 

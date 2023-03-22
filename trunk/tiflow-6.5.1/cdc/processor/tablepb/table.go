@@ -23,7 +23,7 @@ import (
 	"strings"
 	"sync/atomic"
 
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 )
 
 // Load TableState with THREAD-SAFE

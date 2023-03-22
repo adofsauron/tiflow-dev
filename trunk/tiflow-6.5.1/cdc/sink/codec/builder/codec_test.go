@@ -19,13 +19,13 @@ import (
 	"context"
 	"testing"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec"
-	"github.com/pingcap/tiflow/cdc/sink/codec/common"
-	"github.com/pingcap/tiflow/cdc/sink/codec/craft"
-	"github.com/pingcap/tiflow/cdc/sink/codec/internal"
-	"github.com/pingcap/tiflow/cdc/sink/codec/open"
-	"github.com/pingcap/tiflow/proto/benchmark"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec"
+	"sdbflow/cdc/sink/codec/common"
+	"sdbflow/cdc/sink/codec/craft"
+	"sdbflow/cdc/sink/codec/internal"
+	"sdbflow/cdc/sink/codec/open"
+	"sdbflow/proto/benchmark"
 	"github.com/stretchr/testify/require"
 )
 

@@ -18,8 +18,8 @@ import (
 	"regexp"
 	"testing"
 
-	ormModel "github.com/pingcap/tiflow/engine/pkg/orm/model"
-	"github.com/pingcap/tiflow/pkg/label"
+	ormModel "sdbflow/engine/pkg/orm/model"
+	"sdbflow/pkg/label"
 	"github.com/stretchr/testify/require"
 )
 

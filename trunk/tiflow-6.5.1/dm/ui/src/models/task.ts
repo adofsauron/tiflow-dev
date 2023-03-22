@@ -388,7 +388,7 @@ export enum TaskStage {
   Stopping = 'Stopping',
 }
 
-// https://github.com/pingcap/tiflow/blob/9261014edd93902d1b0bcb473aec911e80901721/dm/dm/ctl/master/query_status.go#L130
+// https://sdbflow/blob/9261014edd93902d1b0bcb473aec911e80901721/dm/dm/ctl/master/query_status.go#L130
 export const calculateTaskStatus = (subtasks?: SubTaskStatus[]): TaskStage => {
   if (!subtasks) {
     return TaskStage.InvalidStage

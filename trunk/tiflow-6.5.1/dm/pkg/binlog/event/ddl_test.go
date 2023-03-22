@@ -19,7 +19,7 @@ import (
 	"testing"
 
 	gmysql "github.com/go-mysql-org/go-mysql/mysql"
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
+	"sdbflow/dm/pkg/gtid"
 	"github.com/stretchr/testify/require"
 )
 

@@ -17,10 +17,10 @@ import (
 	"context"
 	"testing"
 
-	"github.com/pingcap/tiflow/engine/model"
-	schedModel "github.com/pingcap/tiflow/engine/servermaster/scheduler/model"
-	"github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/label"
+	"sdbflow/engine/model"
+	schedModel "sdbflow/engine/servermaster/scheduler/model"
+	"sdbflow/pkg/errors"
+	"sdbflow/pkg/label"
 	"github.com/stretchr/testify/require"
 )
 

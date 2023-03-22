@@ -20,9 +20,9 @@ import (
 
 	"github.com/pingcap/failpoint"
 	toolutils "github.com/pingcap/tidb-tools/pkg/utils"
-	"github.com/pingcap/tiflow/dm/master/metrics"
-	"github.com/pingcap/tiflow/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/master/metrics"
+	"sdbflow/dm/pb"
+	"sdbflow/dm/pkg/log"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 )

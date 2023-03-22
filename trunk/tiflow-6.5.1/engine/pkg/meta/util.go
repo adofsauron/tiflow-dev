@@ -17,9 +17,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/pingcap/tiflow/engine/pkg/dbutil"
-	"github.com/pingcap/tiflow/engine/pkg/meta/model"
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/engine/pkg/dbutil"
+	"sdbflow/engine/pkg/meta/model"
+	"sdbflow/pkg/errors"
 )
 
 // CreateSchemaIfNotExists creates a db schema if not exists

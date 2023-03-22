@@ -18,10 +18,10 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/scheduler/internal/v3/member"
-	"github.com/pingcap/tiflow/cdc/scheduler/internal/v3/replication"
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/scheduler/internal/v3/member"
+	"sdbflow/cdc/scheduler/internal/v3/replication"
+	"sdbflow/pkg/config"
 	"go.uber.org/zap"
 )
 

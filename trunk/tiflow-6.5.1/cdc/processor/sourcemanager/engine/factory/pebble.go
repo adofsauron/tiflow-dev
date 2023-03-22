@@ -21,9 +21,9 @@ import (
 
 	"github.com/cockroachdb/pebble"
 	"github.com/pingcap/log"
-	epebble "github.com/pingcap/tiflow/cdc/processor/sourcemanager/engine/pebble"
-	metrics "github.com/pingcap/tiflow/cdc/sorter/db"
-	"github.com/pingcap/tiflow/pkg/config"
+	epebble "sdbflow/cdc/processor/sourcemanager/engine/pebble"
+	metrics "sdbflow/cdc/sorter/db"
+	"sdbflow/pkg/config"
 	"go.uber.org/zap"
 )
 

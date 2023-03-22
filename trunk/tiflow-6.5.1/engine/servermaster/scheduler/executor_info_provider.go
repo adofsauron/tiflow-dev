@@ -14,8 +14,8 @@
 package scheduler
 
 import (
-	"github.com/pingcap/tiflow/engine/model"
-	schedModel "github.com/pingcap/tiflow/engine/servermaster/scheduler/model"
+	"sdbflow/engine/model"
+	schedModel "sdbflow/engine/servermaster/scheduler/model"
 )
 
 // executorInfoProvider is the abstraction for an object that provides
