@@ -31,7 +31,7 @@ import (
 )
 
 const (
-	schemaName = "tiflow"
+	schemaName = "sdbflow"
 )
 
 // MasterServerList stores a map from server addresses to whether they are the leader.
