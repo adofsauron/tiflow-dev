@@ -26,8 +26,8 @@ import (
 // NewCmd creates the root command.
 func NewCmd() *cobra.Command {
 	return &cobra.Command{
-		Use:   "cdc",
-		Short: "CDC",
+		Use:   "sdbcdc",
+		Short: "SDBCDC",
 		Long:  `Change Data Capture`,
 		CompletionOptions: cobra.CompletionOptions{
 			DisableDefaultCmd: true,

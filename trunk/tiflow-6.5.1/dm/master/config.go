@@ -37,7 +37,7 @@ import (
 
 const (
 	defaultRPCTimeout              = "30s"
-	defaultNamePrefix              = "dm-master"
+	defaultNamePrefix              = "sdm-master"
 	defaultDataDirPrefix           = "default"
 	defaultPeerUrls                = "http://127.0.0.1:8291"
 	defaultInitialClusterState     = embed.ClusterStateFlagNew
@@ -56,7 +56,7 @@ var SampleConfig string
 // NewConfig creates a config for dm-master.
 func NewConfig() *Config {
 	cfg := &Config{}
-	cfg.flagSet = flag.NewFlagSet("dm-master", flag.ContinueOnError)
+	cfg.flagSet = flag.NewFlagSet("sdm-master", flag.ContinueOnError)
 	fs := cfg.flagSet
 
 	fs.BoolVar(&cfg.printVersion, "V", false, "prints version and exit")

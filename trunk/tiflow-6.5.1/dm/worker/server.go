@@ -59,9 +59,9 @@ var (
 type Server struct {
 	// closeMu is used to sync Start/Close and protect 5 fields below
 	closeMu sync.Mutex
-	// closed is used to indicate whether dm-worker server is in closed state.
+	// closed is used to indicate whether sdm-worker server is in closed state.
 	closed atomic.Bool
-	// calledClose is used to indicate that dm-worker has received signal to close and closed successfully.
+	// calledClose is used to indicate that sdm-worker has received signal to close and closed successfully.
 	// we use this variable to avoid Start() after Close()
 	calledClose bool
 	rootLis     net.Listener
@@ -106,7 +106,7 @@ func NewServer(cfg *Config) *Server {
 // Start starts to serving.
 // this function should only exit when can't dail DM-master, for other errors it should not exit.
 func (s *Server) Start() error {
-	log.L().Info("starting dm-worker server")
+	log.L().Info("starting sdm-worker server")
 	RegistryMetrics()
 
 	var m cmux.CMux
@@ -119,7 +119,7 @@ func (s *Server) Start() error {
 	startErr := func() error {
 		s.closeMu.Lock()
 		defer s.closeMu.Unlock()
-		// if dm-worker has received signal and finished close, start() should not continue
+		// if sdm-worker has received signal and finished close, start() should not continue
 		if s.calledClose {
 			return terror.ErrWorkerServerClosed
 		}

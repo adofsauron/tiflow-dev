@@ -5,7 +5,7 @@
 	clean_integration_test_containers \
 	mysql_docker_integration_test mysql_docker_integration_test_with_build \
 	build_mysql_integration_test_images clean_integration_test_images \
-	dm dm-master dm-worker dmctl dm-syncer dm_coverage \
+	dm sdm-master sdm-worker sdmctl sdm-syncer dm_coverage \
 	engine tiflow tiflow-demo tiflow-chaos-case engine_image help \
 	format-makefiles check-makefiles
 
@@ -143,17 +143,17 @@ bank:
 
 build-failpoint: check_failpoint_ctl
 	$(FAILPOINT_ENABLE)
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/cdc ./cmd/cdc/main.go
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdbcdc ./cmd/cdc/main.go
 	$(FAILPOINT_DISABLE)
 
 cdc:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/cdc ./cmd/cdc/main.go
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdbcdc ./cmd/cdc/main.go
 
 kafka_consumer:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/cdc_kafka_consumer ./cmd/kafka-consumer/main.go
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdbcdc_kafka_consumer ./cmd/kafka-consumer/main.go
 
 storage_consumer:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/cdc_storage_consumer ./cmd/storage-consumer/main.go
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdbcdc_storage_consumer ./cmd/storage-consumer/main.go
 
 cdc_test_image: 
 	@which docker || (echo "docker not found in ${PATH}"; exit 1)
@@ -349,27 +349,27 @@ clean:
 	rm -rf tools/bin
 	rm -rf tools/include
 
-dm: dm-master dm-worker dmctl dm-syncer
+dm: sdm-master sdm-worker sdmctl sdm-syncer
 
-dm-master:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/dm-master ./cmd/dm-master
+sdm-master:
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdm-master ./cmd/dm-master
 
-dm-master-with-webui:
+sdm-master-with-webui:
 	@echo "build webui first"
 	cd dm/ui && yarn --ignore-scripts && yarn build
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -tags dm_webui -o bin/dm-master ./cmd/dm-master
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -tags dm_webui -o bin/sdm-master ./cmd/dm-master
 
-dm-worker:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/dm-worker ./cmd/dm-worker
+sdm-worker:
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdm-worker ./cmd/dm-worker
 
-dmctl:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/dmctl ./cmd/dm-ctl
+sdmctl:
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdmctl ./cmd/dm-ctl
 
-dm-syncer:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/dm-syncer ./cmd/dm-syncer
+sdm-syncer:
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdm-syncer ./cmd/dm-syncer
 
-dm-chaos-case:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/dm-chaos-case ./dm/chaos/cases
+sdm-chaos-case:
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdm-chaos-case ./dm/chaos/cases
 
 dm_debug-tools:
 	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/binlog-event-blackhole ./dm/debug-tools/binlog-event-blackhole
@@ -401,10 +401,10 @@ dm_unit_test_in_verify_ci: check_failpoint_ctl tools/bin/gotestsum tools/bin/goc
 	mkdir -p $(DM_TEST_DIR)
 	$(FAILPOINT_ENABLE)
 	@export log_level=error; \
-	CGO_ENABLED=1 tools/bin/gotestsum --junitfile dm-junit-report.xml -- -v -timeout 10m -p $(P) --race \
+	CGO_ENABLED=1 tools/bin/gotestsum --junitfile sdm-junit-report.xml -- -v -timeout 10m -p $(P) --race \
 	-covermode=atomic -coverprofile="$(DM_TEST_DIR)/cov.unit_test.out" $(DM_PACKAGES) \
 	|| { $(FAILPOINT_DISABLE); exit 1; }
-	tools/bin/gocov convert "$(DM_TEST_DIR)/cov.unit_test.out" | tools/bin/gocov-xml > dm-coverage.xml
+	tools/bin/gocov convert "$(DM_TEST_DIR)/cov.unit_test.out" | tools/bin/gocov-xml > sdm-coverage.xml
 	$(FAILPOINT_DISABLE)
 	@bash <(curl -s https://codecov.io/bash) -F dm -f $(DM_TEST_DIR)/cov.unit_test.out -t $(TICDC_CODECOV_TOKEN)
 
@@ -412,19 +412,19 @@ dm_integration_test_build: check_failpoint_ctl
 	$(FAILPOINT_ENABLE)
 	$(GOTEST) -ldflags '$(LDFLAGS)' -c -cover -covermode=atomic \
 		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/dm-worker.test github.com/pingcap/tiflow/cmd/dm-worker \
+		-o bin/sdm-worker.test github.com/pingcap/tiflow/cmd/sdm-worker \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(GOTEST) -ldflags '$(LDFLAGS)' -c -cover -covermode=atomic \
 		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/dm-master.test github.com/pingcap/tiflow/cmd/dm-master \
+		-o bin/sdm-master.test github.com/pingcap/tiflow/cmd/sdm-master \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(GOTESTNORACE) -ldflags '$(LDFLAGS)' -c -cover -covermode=count \
 		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/dmctl.test github.com/pingcap/tiflow/cmd/dm-ctl \
+		-o bin/sdmctl.test github.com/pingcap/tiflow/cmd/sdm-ctl \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(GOTEST) -ldflags '$(LDFLAGS)' -c -cover -covermode=atomic \
 		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/dm-syncer.test github.com/pingcap/tiflow/cmd/dm-syncer \
+		-o bin/sdm-syncer.test github.com/pingcap/tiflow/cmd/sdm-syncer \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(FAILPOINT_DISABLE)
 	./dm/tests/prepare_tools.sh
@@ -433,7 +433,7 @@ dm_integration_test_build_worker: check_failpoint_ctl
 	$(FAILPOINT_ENABLE)
 	$(GOTEST) -ldflags '$(LDFLAGS)' -c -cover -covermode=atomic \
 		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/dm-worker.test github.com/pingcap/tiflow/cmd/dm-worker \
+		-o bin/sdm-worker.test github.com/pingcap/tiflow/cmd/sdm-worker \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(FAILPOINT_DISABLE)
 	./dm/tests/prepare_tools.sh
@@ -442,7 +442,7 @@ dm_integration_test_build_master: check_failpoint_ctl
 	$(FAILPOINT_ENABLE)
 	$(GOTEST) -ldflags '$(LDFLAGS)' -c -cover -covermode=atomic \
 		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/dm-master.test github.com/pingcap/tiflow/cmd/dm-master \
+		-o bin/sdm-master.test github.com/pingcap/tiflow/cmd/sdm-master \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(FAILPOINT_DISABLE)
 	./dm/tests/prepare_tools.sh
@@ -451,7 +451,7 @@ dm_integration_test_build_ctl: check_failpoint_ctl
 	$(FAILPOINT_ENABLE)
 	$(GOTESTNORACE) -ldflags '$(LDFLAGS)' -c -cover -covermode=count \
 		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/dmctl.test github.com/pingcap/tiflow/cmd/dm-ctl \
+		-o bin/sdmctl.test github.com/pingcap/tiflow/cmd/sdm-ctl \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(FAILPOINT_DISABLE)
 	./dm/tests/prepare_tools.sh
@@ -467,23 +467,23 @@ check_third_party_binary_for_dm:
 	@which bin/minio
 
 dm_integration_test: check_third_party_binary_for_dm install_test_python_dep
-	@which bin/dm-master.test
-	@which bin/dm-worker.test
-	@which bin/dm-syncer.test
+	@which bin/sdm-master.test
+	@which bin/sdm-worker.test
+	@which bin/sdm-syncer.test
 	cd dm && ln -sf ../bin .
 	cd dm && ./tests/run.sh $(CASE)
 
 dm_compatibility_test: check_third_party_binary_for_dm
-	@which bin/dm-master.test.current
-	@which bin/dm-worker.test.current
-	@which bin/dm-master.test.previous
-	@which bin/dm-worker.test.previous
+	@which bin/sdm-master.test.current
+	@which bin/sdm-worker.test.current
+	@which bin/sdm-master.test.previous
+	@which bin/sdm-worker.test.previous
 	cd dm && ln -sf ../bin .
 	cd dm && ./tests/compatibility_run.sh ${CASE}
 
 dm_coverage: tools/bin/gocovmerge tools/bin/goveralls
 	# unify cover mode in coverage files, more details refer to dm/tests/_utils/run_dm_ctl
-	find "$(DM_TEST_DIR)" -type f -name "cov.*.dmctl.*.out" -exec $(SED) -i "s/mode: count/mode: atomic/g" {} \;
+	find "$(DM_TEST_DIR)" -type f -name "cov.*.sdmctl.*.out" -exec $(SED) -i "s/mode: count/mode: atomic/g" {} \;
 	tools/bin/gocovmerge "$(DM_TEST_DIR)"/cov.* | grep -vE ".*.pb.go|.*.pb.gw.go|.*.__failpoint_binding__.go|.*debug-tools.*|.*chaos.*" > "$(DM_TEST_DIR)/all_cov.out"
 	tools/bin/gocovmerge "$(DM_TEST_DIR)"/cov.unit_test*.out | grep -vE ".*.pb.go|.*.pb.gw.go|.*.__failpoint_binding__.go|.*debug-tools.*|.*chaos.*" > $(DM_TEST_DIR)/unit_test.out
 	go tool cover -html "$(DM_TEST_DIR)/all_cov.out" -o "$(DM_TEST_DIR)/all_cov.html"
@@ -501,13 +501,13 @@ failpoint-disable: check_failpoint_ctl
 engine: tiflow
 
 tiflow:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/tiflow ./cmd/tiflow/main.go
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdbflow ./cmd/tiflow/main.go
 
 tiflow-demo:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/tiflow-demoserver ./cmd/tiflow-demoserver
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdbflow-demoserver ./cmd/tiflow-demoserver
 
 tiflow-chaos-case:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/tiflow-chaos-case ./engine/chaos/cases
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdbflow-chaos-case ./engine/chaos/cases
 
 engine_unit_test: check_failpoint_ctl
 	$(call run_engine_unit_test,$(ENGINE_PACKAGES))

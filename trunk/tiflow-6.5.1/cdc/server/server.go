@@ -127,7 +127,7 @@ func New(pdEndpoints []string) (*server, error) {
 		useEventSortEngine: useEventSortEngine,
 	}
 
-	log.Info("CDC server created",
+	log.Info("SDBCDC server created",
 		zap.Strings("pd", pdEndpoints), zap.Stringer("config", conf))
 
 	return s, nil

@@ -46,8 +46,8 @@ func (c CommandMasterFlags) Reset() {
 // NewRootCmd generates a new rootCmd.
 func NewRootCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:           "dmctl",
-		Short:         "DM control",
+		Use:           "sdmctl",
+		Short:         "SDM control",
 		SilenceUsage:  true,
 		SilenceErrors: true,
 		CompletionOptions: cobra.CompletionOptions{

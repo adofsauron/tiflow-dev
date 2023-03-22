@@ -27,7 +27,7 @@ func NewCmdCli() *cobra.Command {
 
 	cmds := &cobra.Command{
 		Use:   "cli",
-		Short: "Manage replication task and TiCDC cluster",
+		Short: "Manage replication task and SDBCDC cluster",
 		PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
 			// Here we will initialize the logging configuration and set the current default context.
 			cancel := util.InitCmd(cmd, &logutil.Config{Level: cf.GetLogLevel()})

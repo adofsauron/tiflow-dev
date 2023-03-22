@@ -59,15 +59,15 @@ func main() {
 	utils.LogHTTPProxies(true)
 
 	// 3. print process version information
-	version.LogVersionInfo("dm-master")
-	log.L().Info("", zap.Stringer("dm-master config", cfg))
+	version.LogVersionInfo("sdm-master")
+	log.L().Info("", zap.Stringer("sdm-master config", cfg))
 
 	// 4. start the server
 	ctx, cancel := context.WithCancel(context.Background())
 	server := master.NewServer(cfg)
 	err = server.Start(ctx)
 	if err != nil {
-		log.L().Error("fail to start dm-master", zap.Error(err))
+		log.L().Error("fail to start sdm-master", zap.Error(err))
 		os.Exit(2)
 	}
 
@@ -87,7 +87,7 @@ func main() {
 
 	// 6. close the server
 	server.Close()
-	log.L().Info("dm-master exit")
+	log.L().Info("sdm-master exit")
 
 	// 7. flush log
 	if syncErr := log.L().Sync(); syncErr != nil {
