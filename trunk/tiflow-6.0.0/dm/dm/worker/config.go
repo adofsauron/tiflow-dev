@@ -67,7 +67,7 @@ func NewConfig() *Config {
 	fs.StringVar(&cfg.LogFormat, "log-format", "text", `the format of the log, "text" or "json"`)
 	// fs.StringVar(&cfg.LogRotate, "log-rotate", "day", "log file rotate type, hour/day")
 	// NOTE: add `advertise-addr` for dm-master if needed.
-	fs.StringVar(&cfg.Join, "join", "", `join to an existing cluster (usage: dm-master cluster's "${master-addr}")`)
+	fs.StringVar(&cfg.Join, "join", "", `join to an existing cluster (usage: sdm-master cluster's "${master-addr}")`)
 	fs.StringVar(&cfg.Name, "name", "", "human-readable name for SDM-worker member")
 	fs.Int64Var(&cfg.KeepAliveTTL, "keepalive-ttl", defaultKeepAliveTTL, "SDM-worker's TTL for keepalive with etcd (in seconds)")
 	fs.Int64Var(&cfg.RelayKeepAliveTTL, "relay-keepalive-ttl", defaultRelayKeepAliveTTL, "SDM-worker's TTL for keepalive with etcd when handle relay enabled sources (in seconds)")

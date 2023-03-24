@@ -37,7 +37,7 @@ import (
 
 const (
 	defaultRPCTimeout              = "30s"
-	defaultNamePrefix              = "dm-master"
+	defaultNamePrefix              = "sdm-master"
 	defaultDataDirPrefix           = "default"
 	defaultPeerUrls                = "http://127.0.0.1:8291"
 	defaultInitialClusterState     = embed.ClusterStateFlagNew
@@ -55,7 +55,7 @@ var SampleConfig string
 // NewConfig creates a config for dm-master.
 func NewConfig() *Config {
 	cfg := &Config{}
-	cfg.flagSet = flag.NewFlagSet("dm-master", flag.ContinueOnError)
+	cfg.flagSet = flag.NewFlagSet("sdm-master", flag.ContinueOnError)
 	fs := cfg.flagSet
 
 	fs.BoolVar(&cfg.printVersion, "V", false, "prints version and exit")
@@ -71,7 +71,7 @@ func NewConfig() *Config {
 
 	fs.StringVar(&cfg.Name, "name", "", "human-readable name for this SDM-master member")
 	fs.StringVar(&cfg.DataDir, "data-dir", "", `path to the data directory (default "default.${name}")`)
-	fs.StringVar(&cfg.InitialCluster, "initial-cluster", "", fmt.Sprintf("initial cluster configuration for bootstrapping, e.g. dm-master=%s", defaultPeerUrls))
+	fs.StringVar(&cfg.InitialCluster, "initial-cluster", "", fmt.Sprintf("initial cluster configuration for bootstrapping, e.g. sdm-master=%s", defaultPeerUrls))
 	fs.StringVar(&cfg.PeerUrls, "peer-urls", defaultPeerUrls, "URLs for peer traffic")
 	fs.StringVar(&cfg.AdvertisePeerUrls, "advertise-peer-urls", "", `advertise URLs for peer traffic (default "${peer-urls}")`)
 	fs.StringVar(&cfg.Join, "join", "", `join to an existing cluster (usage: cluster's "${master-addr}" list, e.g. "127.0.0.1:8261,127.0.0.1:18261"`)

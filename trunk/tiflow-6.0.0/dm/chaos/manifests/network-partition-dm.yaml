@@ -11,12 +11,12 @@ spec:
   mode: one
   selector:
     labelSelectors:
-      "app": "dm-worker"
+      "app": "sdm-worker"
   direction: both
   target:
     selector:
       labelSelectors:
-        "app": "dm-master"
+        "app": "sdm-master"
     mode: one
   duration: "30s"
   scheduler:
@@ -35,12 +35,12 @@ spec:
   mode: one
   selector:
     labelSelectors:
-      "app": "dm-master"
+      "app": "sdm-master"
   direction: both
   target:
     selector:
       labelSelectors:
-        "app": "dm-master"
+        "app": "sdm-master"
     mode: one
   duration: "30s"
   scheduler:

@@ -67,7 +67,7 @@ func main() {
 	lightningLogger := lg.With(zap.String("component", "lightning"))
 	lightningLog.SetAppLogger(lightningLogger)
 
-	utils.PrintInfo("dm-worker", func() {
+	utils.PrintInfo("sdm-worker", func() {
 		log.L().Info("", zap.Stringer("dm-worker config", cfg))
 	})
 

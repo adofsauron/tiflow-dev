@@ -2122,7 +2122,7 @@ func (t *testMaster) TestGetCfg(c *check.C) {
 	c.Assert(resp3.Cfg, check.Equals, resp1.Cfg)
 
 	req3 := &pb.GetCfgRequest{
-		Name: "dm-master",
+		Name: "sdm-master",
 		Type: pb.CfgType_MasterType,
 	}
 	resp4, err := server.GetCfg(context.Background(), req3)

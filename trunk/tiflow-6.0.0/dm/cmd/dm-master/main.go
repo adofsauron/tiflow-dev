@@ -59,7 +59,7 @@ func main() {
 	utils.LogHTTPProxies(true)
 
 	// 3. print process version information
-	utils.PrintInfo("dm-master", func() {
+	utils.PrintInfo("sdm-master", func() {
 		log.L().Info("", zap.Stringer("dm-master config", cfg))
 	})
 
