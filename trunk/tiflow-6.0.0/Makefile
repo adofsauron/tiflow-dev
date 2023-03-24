@@ -82,7 +82,7 @@ GOTESTNORACE := CGO_ENABLED=1 $(GO) test -p $(P)
 # LDFLAGS += -X "$(DM_PKG)/pkg/utils.GitBranch=$(GITBRANCH)"
 # LDFLAGS += -X "$(DM_PKG)/pkg/utils.GoVersion=$(GOVERSION)"
 
-LDFLAGS :=''
+LDFLAGS :=
 
 default: build buildsucc
 
