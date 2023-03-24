@@ -19,11 +19,11 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	schedulerv2 "github.com/pingcap/tiflow/cdc/scheduler"
-	cdcContext "github.com/pingcap/tiflow/pkg/context"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/orchestrator"
+	"sdbflow/cdc/model"
+	schedulerv2 "sdbflow/cdc/scheduler"
+	cdcContext "sdbflow/pkg/context"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/orchestrator"
 	"go.uber.org/zap"
 )
 

@@ -24,9 +24,9 @@ import (
 	"sync"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/redo/common"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/redo/common"
+	cerror "sdbflow/pkg/errors"
 	"go.uber.org/multierr"
 )
 

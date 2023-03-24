@@ -28,17 +28,17 @@ import (
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	"github.com/pingcap/tiflow/dm/pkg/etcdutil"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/streamer"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/relay"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/conn"
+	"sdbflow/dm/pkg/etcdutil"
+	"sdbflow/dm/pkg/ha"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/streamer"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/relay"
 )
 
 // SourceWorker manages a source(upstream) which is mainly related to subtasks and relay.
@@ -541,7 +541,7 @@ func (w *SourceWorker) StartSubTask(cfg *config.SubTaskConfig, expectStage, vali
 		defer w.Unlock()
 	}
 
-	// copy some config item from dm-worker's source config
+	// copy some config item from SDM-worker's source config
 	err := copyConfigFromSource(cfg, w.cfg, w.relayEnabled.Load())
 	if err != nil {
 		return err
@@ -1308,7 +1308,7 @@ func (w *SourceWorker) tryRefreshSubTaskAndSourceConfig(subTask *SubTask) error 
 		return terror.ErrWorkerFailToGetSubtaskConfigFromEtcd.Generate(taskName)
 	}
 
-	// copy some config item from dm-worker's source config
+	// copy some config item from SDM-worker's source config
 	if err := copyConfigFromSource(&cfg, w.cfg, w.relayEnabled.Load()); err != nil {
 		return err
 	}
@@ -1327,7 +1327,7 @@ func (w *SourceWorker) CheckCfgCanUpdated(cfg *config.SubTaskConfig) error {
 	if subTask == nil {
 		return terror.ErrWorkerSubTaskNotFound.Generate(cfg.Name)
 	}
-	// copy some config item from dm-worker's source config
+	// copy some config item from SDM-worker's source config
 	if err := copyConfigFromSource(cfg, w.cfg, w.relayEnabled.Load()); err != nil {
 		return err
 	}

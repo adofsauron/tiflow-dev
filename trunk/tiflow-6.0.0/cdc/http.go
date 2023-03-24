@@ -19,16 +19,16 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/cdc/api"
-	"github.com/pingcap/tiflow/cdc/capture"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/api"
+	"sdbflow/cdc/capture"
+	"sdbflow/pkg/util"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 
 	// use for OpenAPI online docs
-	_ "github.com/pingcap/tiflow/docs/swagger"
+	_ "sdbflow/docs/swagger"
 )
 
 // RegisterRoutes create a router for OpenAPI

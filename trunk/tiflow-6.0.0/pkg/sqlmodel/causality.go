@@ -23,8 +23,8 @@ import (
 	"github.com/pingcap/tidb/tablecodec"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/utils"
 )
 
 // CausalityKeys returns all string representation of causality keys. If two row

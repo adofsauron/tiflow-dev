@@ -22,12 +22,12 @@ import (
 	"time"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
-	tablepipeline "github.com/pingcap/tiflow/cdc/processor/pipeline"
-	"github.com/pingcap/tiflow/pkg/config"
-	cdcContext "github.com/pingcap/tiflow/pkg/context"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/orchestrator"
+	"sdbflow/cdc/model"
+	tablepipeline "sdbflow/cdc/processor/pipeline"
+	"sdbflow/pkg/config"
+	cdcContext "sdbflow/pkg/context"
+	cerrors "sdbflow/pkg/errors"
+	"sdbflow/pkg/orchestrator"
 	"github.com/stretchr/testify/require"
 )
 

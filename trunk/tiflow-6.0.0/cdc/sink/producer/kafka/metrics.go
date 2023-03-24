@@ -19,8 +19,8 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/pkg/kafka"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/pkg/kafka"
+	"sdbflow/pkg/util"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/rcrowley/go-metrics"
 	"go.uber.org/zap"

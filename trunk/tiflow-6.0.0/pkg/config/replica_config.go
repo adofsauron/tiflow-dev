@@ -18,11 +18,11 @@ import (
 	"fmt"
 	"net/url"
 
-	"github.com/pingcap/tiflow/pkg/config/outdated"
+	"sdbflow/pkg/config/outdated"
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	cerror "sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

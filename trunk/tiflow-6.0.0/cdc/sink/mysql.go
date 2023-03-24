@@ -29,18 +29,18 @@ import (
 	"github.com/pingcap/log"
 	timodel "github.com/pingcap/tidb/parser/model"
 	"github.com/pingcap/tidb/parser/mysql"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/common"
-	dmutils "github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/cyclic"
-	"github.com/pingcap/tiflow/pkg/cyclic/mark"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/errorutil"
-	tifilter "github.com/pingcap/tiflow/pkg/filter"
-	"github.com/pingcap/tiflow/pkg/notify"
-	"github.com/pingcap/tiflow/pkg/quotes"
-	"github.com/pingcap/tiflow/pkg/retry"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/common"
+	dmutils "sdbflow/dm/pkg/utils"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/cyclic"
+	"sdbflow/pkg/cyclic/mark"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/errorutil"
+	tifilter "sdbflow/pkg/filter"
+	"sdbflow/pkg/notify"
+	"sdbflow/pkg/quotes"
+	"sdbflow/pkg/retry"
 	"github.com/prometheus/client_golang/prometheus"
 	"go.uber.org/zap"
 )
@@ -227,7 +227,7 @@ func (s *mysqlSink) EmitRowChangedEvents(ctx context.Context, rows ...*model.Row
 func (s *mysqlSink) FlushRowChangedEvents(ctx context.Context, tableID model.TableID, resolvedTs uint64) (uint64, error) {
 	// Since CDC does not guarantee exactly once semantic, it won't cause any problem
 	// here even if the table was moved or removed.
-	// ref: https://github.com/pingcap/tiflow/pull/4356#discussion_r787405134
+	// ref: https://sdbflow/pull/4356#discussion_r787405134
 	v, ok := s.tableMaxResolvedTs.Load(tableID)
 	if !ok || v.(uint64) < resolvedTs {
 		s.tableMaxResolvedTs.Store(tableID, resolvedTs)

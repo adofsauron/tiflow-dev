@@ -20,7 +20,7 @@ import (
 	"strings"
 
 	"github.com/pingcap/tidb-tools/pkg/dbutil"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/utils"
 )
 
 // MySQLBinlogEnableChecker checks whether `log_bin` variable is enabled in MySQL.

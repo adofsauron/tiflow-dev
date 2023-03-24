@@ -18,8 +18,8 @@ import (
 	"sync"
 
 	"github.com/pingcap/errors"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/proto/p2p"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/proto/p2p"
 	"go.uber.org/atomic"
 )
 

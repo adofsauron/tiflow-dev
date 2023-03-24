@@ -20,10 +20,10 @@ import (
 
 	"github.com/BurntSushi/toml"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 // `var` rather than `const` for testing.

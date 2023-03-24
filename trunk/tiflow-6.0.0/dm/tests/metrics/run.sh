@@ -18,9 +18,9 @@ function run() {
 	check_dashboard_datasource
 
 	inject_points=(
-		"github.com/pingcap/tiflow/dm/syncer/BlockDDLJob=return(1)"
-		"github.com/pingcap/tiflow/dm/syncer/ShowLagInLog=return(1)" # test lag metric >= 1 because we inject BlockDDLJob(ddl) to sleep(1)
-		"github.com/pingcap/tiflow/dm/dm/worker/PrintStatusCheckSeconds=return(1)"
+		"sdbflow/dm/syncer/BlockDDLJob=return(1)"
+		"sdbflow/dm/syncer/ShowLagInLog=return(1)" # test lag metric >= 1 because we inject BlockDDLJob(ddl) to sleep(1)
+		"sdbflow/dm/dm/worker/PrintStatusCheckSeconds=return(1)"
 	)
 	export GO_FAILPOINTS="$(join_string \; ${inject_points[@]})"
 
@@ -87,8 +87,8 @@ function run() {
 	rm -rf $WORK_DIR/worker1/log/dm-worker.log # clean up the old log
 	rm -rf $WORK_DIR/worker2/log/dm-worker.log # clean up the old log
 	inject_points=(
-		"github.com/pingcap/tiflow/dm/syncer/BlockExecuteSQLs=return(2)"
-		"github.com/pingcap/tiflow/dm/syncer/ShowLagInLog=return(2)" # test lag metric >= 2 because we inject BlockExecuteSQLs to sleep(2) although skip lag is 0 (locally), but we use that lag of all dml/skip lag, so lag still >= 2
+		"sdbflow/dm/syncer/BlockExecuteSQLs=return(2)"
+		"sdbflow/dm/syncer/ShowLagInLog=return(2)" # test lag metric >= 2 because we inject BlockExecuteSQLs to sleep(2) although skip lag is 0 (locally), but we use that lag of all dml/skip lag, so lag still >= 2
 	)
 	export GO_FAILPOINTS="$(join_string \; ${inject_points[@]})"
 
@@ -153,8 +153,8 @@ function run() {
 	wait_pattern_exit dm-worker1.toml
 
 	inject_points=(
-		"github.com/pingcap/tiflow/dm/syncer/noJobInQueueLog=return()"
-		"github.com/pingcap/tiflow/dm/syncer/IgnoreSomeTypeEvent=return(\"HeartbeatEvent\")"
+		"sdbflow/dm/syncer/noJobInQueueLog=return()"
+		"sdbflow/dm/syncer/IgnoreSomeTypeEvent=return(\"HeartbeatEvent\")"
 	)
 	export GO_FAILPOINTS="$(join_string \; ${inject_points[@]})"
 	rm -rf $WORK_DIR/worker1/log/dm-worker.log # clean up the old log

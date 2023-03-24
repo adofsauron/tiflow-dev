@@ -28,12 +28,12 @@ import (
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
 	"github.com/pingcap/tidb/util/memory"
-	"github.com/pingcap/tiflow/cdc/sorter"
-	sorterencoding "github.com/pingcap/tiflow/cdc/sorter/encoding"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/fsutil"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/sorter"
+	sorterencoding "sdbflow/cdc/sorter/encoding"
+	"sdbflow/pkg/config"
+	cerrors "sdbflow/pkg/errors"
+	"sdbflow/pkg/fsutil"
+	"sdbflow/pkg/util"
 	"go.uber.org/zap"
 )
 

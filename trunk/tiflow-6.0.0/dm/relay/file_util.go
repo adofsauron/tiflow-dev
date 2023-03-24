@@ -24,11 +24,11 @@ import (
 	"github.com/go-mysql-org/go-mysql/replication"
 	"github.com/pingcap/tidb/parser"
 
-	"github.com/pingcap/tiflow/dm/pkg/binlog/event"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/reader"
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
-	parserpkg "github.com/pingcap/tiflow/dm/pkg/parser"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/binlog/event"
+	"sdbflow/dm/pkg/binlog/reader"
+	"sdbflow/dm/pkg/gtid"
+	parserpkg "sdbflow/dm/pkg/parser"
+	"sdbflow/dm/pkg/terror"
 )
 
 // checkBinlogHeaderExist checks if the file has a binlog file header.

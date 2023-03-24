@@ -20,9 +20,9 @@ import (
 	"github.com/gogo/protobuf/jsonpb"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/dm/common"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
+	"sdbflow/dm/dm/common"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/binlog"
 )
 
 // Status returns the status of the current sub task.

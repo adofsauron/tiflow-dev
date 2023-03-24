@@ -21,10 +21,10 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/orchestrator/util"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/orchestrator/util"
 	"github.com/stretchr/testify/require"
 )
 

@@ -441,7 +441,7 @@ function test_task_templates() {
 function test_noshard_task_dump_status() {
 	echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>START TEST OPENAPI: NO SHARD TASK DUMP STATUS"
 
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/dumpling/dumpUnitProcessForever=return()"
+	export GO_FAILPOINTS="sdbflow/dm/dumpling/dumpUnitProcessForever=return()"
 	kill_dm_worker
 	check_port_offline $WORKER1_PORT 20
 	check_port_offline $WORKER2_PORT 20

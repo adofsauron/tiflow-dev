@@ -16,9 +16,9 @@ package pessimism
 import (
 	"sync"
 
-	"github.com/pingcap/tiflow/dm/dm/master/metrics"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/dm/master/metrics"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 // Lock represents the shard DDL lock in memory.
@@ -28,7 +28,7 @@ type Lock struct {
 
 	ID     string   // lock's ID
 	Task   string   // lock's corresponding task name
-	Owner  string   // Owner's source ID (not DM-worker's name)
+	Owner  string   // Owner's source ID (not SDM-worker's name)
 	DDLs   []string // DDL statements
 	remain int      // remain count of sources needed to receive DDL info
 

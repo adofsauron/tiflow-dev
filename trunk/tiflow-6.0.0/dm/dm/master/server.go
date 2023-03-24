@@ -38,28 +38,28 @@ import (
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 
-	"github.com/pingcap/tiflow/dm/checker"
-	dmcommon "github.com/pingcap/tiflow/dm/dm/common"
-	"github.com/pingcap/tiflow/dm/dm/config"
-	ctlcommon "github.com/pingcap/tiflow/dm/dm/ctl/common"
-	ctlmaster "github.com/pingcap/tiflow/dm/dm/ctl/master"
-	"github.com/pingcap/tiflow/dm/dm/master/metrics"
-	"github.com/pingcap/tiflow/dm/dm/master/scheduler"
-	"github.com/pingcap/tiflow/dm/dm/master/shardddl"
-	"github.com/pingcap/tiflow/dm/dm/master/workerrpc"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/dm/unit"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/cputil"
-	"github.com/pingcap/tiflow/dm/pkg/election"
-	"github.com/pingcap/tiflow/dm/pkg/etcdutil"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/ui"
+	"sdbflow/dm/checker"
+	dmcommon "sdbflow/dm/dm/common"
+	"sdbflow/dm/dm/config"
+	ctlcommon "sdbflow/dm/dm/ctl/common"
+	ctlmaster "sdbflow/dm/dm/ctl/master"
+	"sdbflow/dm/dm/master/metrics"
+	"sdbflow/dm/dm/master/scheduler"
+	"sdbflow/dm/dm/master/shardddl"
+	"sdbflow/dm/dm/master/workerrpc"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/dm/unit"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/conn"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/cputil"
+	"sdbflow/dm/pkg/election"
+	"sdbflow/dm/pkg/etcdutil"
+	"sdbflow/dm/pkg/ha"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/ui"
 )
 
 const (
@@ -1190,7 +1190,7 @@ func (s *Server) getStatusFromWorkers(
 	s.fillUnsyncedStatus(workerResps)
 
 	// when taskName is empty we need list all task even the worker that handle this task is not running.
-	// see more here https://github.com/pingcap/tiflow/issues/3348
+	// see more here https://sdbflow/issues/3348
 	if taskName == "" {
 		// sourceName -> resp
 		fakeWorkerRespM := make(map[string]*pb.QueryStatusResponse)

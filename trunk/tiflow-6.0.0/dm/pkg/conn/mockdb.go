@@ -31,7 +31,7 @@ import (
 	"github.com/pingcap/tidb/store/mockstore"
 	"github.com/tikv/client-go/v2/testutils"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
+	"sdbflow/dm/dm/config"
 )
 
 type mockDBProvider struct {

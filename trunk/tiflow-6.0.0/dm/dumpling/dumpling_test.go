@@ -27,10 +27,10 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 
 	. "github.com/pingcap/check"
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/conn"
+	"sdbflow/dm/pkg/log"
 )
 
 var _ = Suite(&testDumplingSuite{})
@@ -77,9 +77,9 @@ func (t *testDumplingSuite) TestDumpling(c *C) {
 	c.Assert(err, IsNil)
 	resultCh := make(chan pb.ProcessResult, 1)
 
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dumpling/dumpUnitProcessNoError", `return(true)`), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/dumpling/dumpUnitProcessNoError", `return(true)`), IsNil)
 	//nolint:errcheck
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/dumpling/dumpUnitProcessNoError")
+	defer failpoint.Disable("sdbflow/dm/dumpling/dumpUnitProcessNoError")
 
 	dumpling.Process(ctx, resultCh)
 	c.Assert(len(resultCh), Equals, 1)
@@ -87,11 +87,11 @@ func (t *testDumplingSuite) TestDumpling(c *C) {
 	c.Assert(result.IsCanceled, IsFalse)
 	c.Assert(len(result.Errors), Equals, 0)
 	//nolint:errcheck
-	failpoint.Disable("github.com/pingcap/tiflow/dm/dumpling/dumpUnitProcessNoError")
+	failpoint.Disable("sdbflow/dm/dumpling/dumpUnitProcessNoError")
 
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dumpling/dumpUnitProcessWithError", `return("unknown error")`), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/dumpling/dumpUnitProcessWithError", `return("unknown error")`), IsNil)
 	// nolint:errcheck
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/dumpling/dumpUnitProcessWithError")
+	defer failpoint.Disable("sdbflow/dm/dumpling/dumpUnitProcessWithError")
 
 	// return error
 	dumpling.Process(ctx, resultCh)
@@ -101,15 +101,15 @@ func (t *testDumplingSuite) TestDumpling(c *C) {
 	c.Assert(len(result.Errors), Equals, 1)
 	c.Assert(result.Errors[0].Message, Equals, "unknown error")
 	// nolint:errcheck
-	failpoint.Disable("github.com/pingcap/tiflow/dm/dumpling/dumpUnitProcessWithError")
+	failpoint.Disable("sdbflow/dm/dumpling/dumpUnitProcessWithError")
 
 	// cancel
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dumpling/dumpUnitProcessCancel", `return("unknown error")`), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/dumpling/dumpUnitProcessCancel", `return("unknown error")`), IsNil)
 	// nolint:errcheck
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/dumpling/dumpUnitProcessCancel")
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dumpling/dumpUnitProcessForever", `return(true)`), IsNil)
+	defer failpoint.Disable("sdbflow/dm/dumpling/dumpUnitProcessCancel")
+	c.Assert(failpoint.Enable("sdbflow/dm/dumpling/dumpUnitProcessForever", `return(true)`), IsNil)
 	//nolint:errcheck
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/dumpling/dumpUnitProcessForever")
+	defer failpoint.Disable("sdbflow/dm/dumpling/dumpUnitProcessForever")
 
 	ctx2, cancel2 := context.WithTimeout(context.Background(), 3*time.Second)
 	defer cancel2()

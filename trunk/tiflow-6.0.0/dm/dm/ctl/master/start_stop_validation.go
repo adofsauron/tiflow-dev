@@ -21,9 +21,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/dm/pb"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/ctl/common"
+	"sdbflow/dm/dm/pb"
 )
 
 const (

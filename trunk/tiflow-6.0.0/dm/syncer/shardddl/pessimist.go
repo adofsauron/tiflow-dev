@@ -20,9 +20,9 @@ import (
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/shardddl/pessimism"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/shardddl/pessimism"
+	"sdbflow/dm/pkg/terror"
 )
 
 // Pessimist used to coordinate the shard DDL migration in pessimism mode.

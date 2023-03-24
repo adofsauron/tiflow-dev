@@ -24,9 +24,9 @@ import (
 	"github.com/google/shlex"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/utils"
 
 	"github.com/BurntSushi/toml"
 	"github.com/pingcap/errors"

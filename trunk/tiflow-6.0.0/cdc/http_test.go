@@ -22,7 +22,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/cdc/capture"
+	"sdbflow/cdc/capture"
 	"github.com/stretchr/testify/require"
 )
 
@@ -63,7 +63,7 @@ func TestPProfPath(t *testing.T) {
 func TestHandleFailpoint(t *testing.T) {
 	router := gin.New()
 	RegisterRoutes(router, capture.NewCapture4Test(nil), nil)
-	fp := "github.com/pingcap/tiflow/cdc/TestHandleFailpoint"
+	fp := "sdbflow/cdc/TestHandleFailpoint"
 	uri := fmt.Sprintf("/debug/fail/%s", fp)
 	body := bytes.NewReader([]byte("return(true)"))
 	req, err := http.NewRequest("PUT", uri, body)

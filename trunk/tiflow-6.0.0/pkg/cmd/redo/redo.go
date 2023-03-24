@@ -14,8 +14,8 @@
 package redo
 
 import (
-	"github.com/pingcap/tiflow/pkg/cmd/util"
-	"github.com/pingcap/tiflow/pkg/logutil"
+	"sdbflow/pkg/cmd/util"
+	"sdbflow/pkg/logutil"
 	"github.com/spf13/cobra"
 )
 
@@ -47,7 +47,7 @@ func NewCmdRedo() *cobra.Command {
 
 	cmds := &cobra.Command{
 		Use:   "redo",
-		Short: "Manage redo logs of TiCDC cluster",
+		Short: "Manage redo logs of SDBCDC cluster",
 		PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
 			// Here we will initialize the logging configuration and set the current default context.
 			util.InitCmd(cmd, &logutil.Config{Level: o.logLevel})

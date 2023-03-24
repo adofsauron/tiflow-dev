@@ -19,7 +19,7 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/pkg/log"
 )
 
 // HasNotNullUniqueIdx returns true when the target table structure has PK or UK

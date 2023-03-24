@@ -19,7 +19,7 @@ import (
 	"strings"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/pkg/security"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )

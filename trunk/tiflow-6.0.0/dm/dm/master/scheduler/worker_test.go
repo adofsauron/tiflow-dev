@@ -20,11 +20,11 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/master/workerrpc"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/master/workerrpc"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/ha"
+	"sdbflow/dm/pkg/terror"
 )
 
 func TestWorker(t *testing.T) {

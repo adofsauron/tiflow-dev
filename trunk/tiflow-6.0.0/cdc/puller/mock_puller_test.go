@@ -22,9 +22,9 @@ import (
 
 	"github.com/pingcap/check"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/entry"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/entry"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/util"
 	"github.com/tikv/client-go/v2/oracle"
 )
 

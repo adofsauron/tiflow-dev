@@ -22,9 +22,9 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/pingcap/tidb/errno"
 
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/syncer/dbconn"
+	"sdbflow/dm/pkg/conn"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/syncer/dbconn"
 )
 
 func newMysqlErr(number uint16, message string) *mysql.MySQLError {

@@ -20,10 +20,10 @@ import (
 	"github.com/pingcap/failpoint"
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/metricsproxy"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/metricsproxy"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 var (

@@ -14,7 +14,7 @@
 package partition
 
 import (
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 )
 
 // DefaultDispatcher is the default partition dispatcher.

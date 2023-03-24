@@ -16,8 +16,8 @@ package dbconn
 import (
 	"fmt"
 
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/terror"
 )
 
 // GetTableCreateSQL gets table create sql by 'show create table schema.table'.

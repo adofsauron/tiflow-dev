@@ -17,7 +17,7 @@ import (
 	"fmt"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/pkg/p2p"
+	"sdbflow/pkg/p2p"
 	"github.com/vmihailenco/msgpack/v5"
 )
 

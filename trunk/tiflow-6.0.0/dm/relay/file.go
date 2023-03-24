@@ -19,10 +19,10 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 // FileCmp is a compare condition used when collecting binlog files.

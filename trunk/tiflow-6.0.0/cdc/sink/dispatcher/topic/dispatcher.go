@@ -16,7 +16,7 @@ package topic
 import (
 	"fmt"
 
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 )
 
 // Dispatcher is an abstraction for dispatching rows and ddls into different topics.

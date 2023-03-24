@@ -22,13 +22,13 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/syncer"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/ctl/common"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/syncer"
 
 	"github.com/pingcap/errors"
 	globalLog "github.com/pingcap/log"
@@ -70,8 +70,8 @@ func main() {
 	globalLog.ReplaceGlobals(lg, r)
 
 	// 3. print process version information
-	utils.PrintInfo("dm-syncer", func() {
-		log.L().Info("", zap.Stringer("dm-syncer conf", conf))
+	utils.PrintInfo("sdm-syncer", func() {
+		log.L().Info("", zap.Stringer("sdm-syncer conf", conf))
 	})
 
 	sync := syncer.NewSyncer(conf, nil, nil) // do not support shard DDL for singleton syncer.
@@ -103,7 +103,7 @@ func main() {
 
 	// 5. close the syncer
 	sync.Close()
-	log.L().Info("dm-syncer exit")
+	log.L().Info("sdm-syncer exit")
 
 	// 6. flush log
 	if syncErr := log.L().Sync(); syncErr != nil {

@@ -26,9 +26,9 @@ import (
 	"github.com/pingcap/log"
 	timodel "github.com/pingcap/tidb/parser/model"
 	"github.com/pingcap/tidb/parser/mysql"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
 	"go.uber.org/zap"
 	"golang.org/x/text/encoding/charmap"
 )

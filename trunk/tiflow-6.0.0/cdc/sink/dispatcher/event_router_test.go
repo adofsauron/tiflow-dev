@@ -16,10 +16,10 @@ package dispatcher
 import (
 	"testing"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/dispatcher/partition"
-	"github.com/pingcap/tiflow/cdc/sink/dispatcher/topic"
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/dispatcher/partition"
+	"sdbflow/cdc/sink/dispatcher/topic"
+	"sdbflow/pkg/config"
 	"github.com/stretchr/testify/require"
 )
 

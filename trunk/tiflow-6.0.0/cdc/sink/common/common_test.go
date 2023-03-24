@@ -19,8 +19,8 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/util/testleak"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/util/testleak"
 	"github.com/stretchr/testify/require"
 )
 

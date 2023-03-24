@@ -16,8 +16,8 @@ package ha
 import (
 	. "github.com/pingcap/check"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
 )
 
 func (t *testForEtcd) TestOpsEtcd(c *C) {

@@ -22,20 +22,20 @@ import (
 	"github.com/Shopify/sarama"
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec"
-	"github.com/pingcap/tiflow/cdc/sink/dispatcher"
-	"github.com/pingcap/tiflow/cdc/sink/manager"
-	kafkamanager "github.com/pingcap/tiflow/cdc/sink/manager/kafka"
-	pulsarmanager "github.com/pingcap/tiflow/cdc/sink/manager/pulsar"
-	"github.com/pingcap/tiflow/cdc/sink/producer"
-	"github.com/pingcap/tiflow/cdc/sink/producer/kafka"
-	"github.com/pingcap/tiflow/cdc/sink/producer/pulsar"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/filter"
-	"github.com/pingcap/tiflow/pkg/security"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec"
+	"sdbflow/cdc/sink/dispatcher"
+	"sdbflow/cdc/sink/manager"
+	kafkamanager "sdbflow/cdc/sink/manager/kafka"
+	pulsarmanager "sdbflow/cdc/sink/manager/pulsar"
+	"sdbflow/cdc/sink/producer"
+	"sdbflow/cdc/sink/producer/kafka"
+	"sdbflow/cdc/sink/producer/pulsar"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/filter"
+	"sdbflow/pkg/security"
+	"sdbflow/pkg/util"
 	"go.uber.org/zap"
 	"golang.org/x/sync/errgroup"
 )
@@ -203,7 +203,7 @@ func (k *mqSink) bgFlushTs(ctx context.Context) error {
 			}
 			// Since CDC does not guarantee exactly once semantic, it won't cause any problem
 			// here even if the table was moved or removed.
-			// ref: https://github.com/pingcap/tiflow/pull/4356#discussion_r787405134
+			// ref: https://sdbflow/pull/4356#discussion_r787405134
 			k.tableCheckpointTsMap.Store(msg.tableID, resolvedTs)
 		}
 	}

@@ -17,8 +17,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/util/testleak"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/util/testleak"
 	"github.com/stretchr/testify/require"
 )
 

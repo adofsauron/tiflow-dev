@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"math/rand"
 
-	config2 "github.com/pingcap/tiflow/dm/dm/config"
+	config2 "sdbflow/dm/dm/config"
 )
 
 const (

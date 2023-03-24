@@ -32,9 +32,9 @@ import (
 	"go.uber.org/zap/zapcore"
 	"golang.org/x/time/rate"
 
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/orchestrator/util"
+	cerrors "sdbflow/pkg/errors"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/orchestrator/util"
 )
 
 const (

@@ -19,8 +19,8 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/security"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/security"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 	gbackoff "google.golang.org/grpc/backoff"

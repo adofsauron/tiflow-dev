@@ -25,17 +25,17 @@ import (
 	"github.com/pingcap/errors"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/master/scheduler"
-	"github.com/pingcap/tiflow/dm/dm/master/workerrpc"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/upgrade"
-	"github.com/pingcap/tiflow/dm/pkg/v1dbschema"
-	"github.com/pingcap/tiflow/dm/pkg/v1workermeta"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/master/scheduler"
+	"sdbflow/dm/dm/master/workerrpc"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/conn"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/upgrade"
+	"sdbflow/dm/pkg/v1dbschema"
+	"sdbflow/dm/pkg/v1workermeta"
 )
 
 var (

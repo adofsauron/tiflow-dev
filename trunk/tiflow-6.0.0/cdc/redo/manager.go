@@ -24,11 +24,11 @@ import (
 
 	"github.com/pingcap/log"
 	"github.com/pingcap/tidb/br/pkg/storage"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/redo/writer"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/redo/writer"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/util"
 	"go.uber.org/zap"
 )
 

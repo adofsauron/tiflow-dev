@@ -21,11 +21,11 @@ import (
 	"go.etcd.io/etcd/tests/v3/integration"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	mode "github.com/pingcap/tiflow/dm/syncer/safe-mode"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/pkg/binlog"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
+	mode "sdbflow/dm/syncer/safe-mode"
 )
 
 type mockCheckpointForSafeMode struct {

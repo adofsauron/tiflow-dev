@@ -18,13 +18,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/pkg/pdtime"
+	"sdbflow/pkg/pdtime"
 
 	"github.com/pingcap/check"
 	"github.com/pingcap/errors"
-	cdcContext "github.com/pingcap/tiflow/pkg/context"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/util/testleak"
+	cdcContext "sdbflow/pkg/context"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/util/testleak"
 	"github.com/tikv/client-go/v2/oracle"
 )
 

@@ -14,11 +14,11 @@
 package cli
 
 import (
-	"github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/cmd/factory"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/cyclic/mark"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/cmd/factory"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/cyclic/mark"
+	"sdbflow/pkg/security"
 	"github.com/spf13/cobra"
 	"github.com/tikv/client-go/v2/oracle"
 	pd "github.com/tikv/pd/client"

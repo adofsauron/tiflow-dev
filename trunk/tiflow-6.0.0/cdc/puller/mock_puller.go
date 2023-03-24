@@ -27,8 +27,8 @@ import (
 	"github.com/pingcap/tidb/session"
 	"github.com/pingcap/tidb/store/mockstore"
 	"github.com/pingcap/tidb/util/testkit"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/regionspan"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/regionspan"
 	"github.com/tikv/client-go/v2/testutils"
 	"go.uber.org/zap"
 )

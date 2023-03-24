@@ -28,9 +28,9 @@ import (
 	"github.com/pingcap/tidb/parser/types"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/conn"
 )
 
 // split into 3 cases, since it may be unstable when put together.

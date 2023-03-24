@@ -25,14 +25,14 @@ import (
 	"github.com/pingcap/tidb/parser/model"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/openapi"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/schema"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/syncer/dbconn"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/openapi"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/schema"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/syncer/dbconn"
 )
 
 // OperateSchema operates schema for an upstream table.

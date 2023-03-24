@@ -15,7 +15,7 @@ package util
 
 import (
 	"github.com/pingcap/check"
-	"github.com/pingcap/tiflow/pkg/util/testleak"
+	"sdbflow/pkg/util/testleak"
 )
 
 const (

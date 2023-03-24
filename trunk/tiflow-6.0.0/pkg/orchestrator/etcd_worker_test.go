@@ -34,9 +34,9 @@ import (
 	"go.uber.org/zap"
 	"golang.org/x/sync/errgroup"
 
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/orchestrator/util"
+	cerrors "sdbflow/pkg/errors"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/orchestrator/util"
 )
 
 const (

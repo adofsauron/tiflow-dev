@@ -19,7 +19,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	cdcmodel "github.com/pingcap/tiflow/cdc/model"
+	cdcmodel "sdbflow/cdc/model"
 )
 
 func TestCausalityKeys(t *testing.T) {

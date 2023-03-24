@@ -21,9 +21,9 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/pingcap/tiflow/cdc/capture"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/cdc/capture"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/version"
 	clientv3 "go.etcd.io/etcd/client/v3"
 )
 

@@ -28,12 +28,12 @@ import (
 	"github.com/pingcap/tidb-tools/pkg/filter"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/pkg/dumpling"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/router"
-	"github.com/pingcap/tiflow/dm/pkg/storage"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/dumpling"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/router"
+	"sdbflow/dm/pkg/storage"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 // task modes.
@@ -225,7 +225,7 @@ type SubTaskConfig struct {
 	// RelayDir get value from dm-worker config
 	RelayDir string `toml:"relay-dir" json:"relay-dir"`
 
-	// UseRelay get value from dm-worker's relayEnabled
+	// UseRelay get value from SDM-worker's relayEnabled
 	UseRelay bool     `toml:"use-relay" json:"use-relay"`
 	From     DBConfig `toml:"from" json:"from"`
 	To       DBConfig `toml:"to" json:"to"`

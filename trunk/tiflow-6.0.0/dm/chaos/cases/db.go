@@ -25,10 +25,10 @@ import (
 	"github.com/pingcap/tidb/errno"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/retry"
+	"sdbflow/dm/pkg/conn"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/retry"
 )
 
 // dbConn holds a connection to a database and supports to reset the connection.

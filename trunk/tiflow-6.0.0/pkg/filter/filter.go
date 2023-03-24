@@ -17,9 +17,9 @@ import (
 	filterV1 "github.com/pingcap/tidb-tools/pkg/filter"
 	filterV2 "github.com/pingcap/tidb-tools/pkg/table-filter"
 	"github.com/pingcap/tidb/parser/model"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/cyclic/mark"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/cyclic/mark"
+	cerror "sdbflow/pkg/errors"
 )
 
 // Filter is an event filter implementation.

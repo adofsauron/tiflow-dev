@@ -33,15 +33,15 @@ import (
 	"github.com/pingcap/log"
 	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/store/mockstore/mockcopr"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/pdtime"
-	"github.com/pingcap/tiflow/pkg/regionspan"
-	"github.com/pingcap/tiflow/pkg/retry"
-	"github.com/pingcap/tiflow/pkg/security"
-	"github.com/pingcap/tiflow/pkg/txnutil"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/pdtime"
+	"sdbflow/pkg/regionspan"
+	"sdbflow/pkg/retry"
+	"sdbflow/pkg/security"
+	"sdbflow/pkg/txnutil"
+	"sdbflow/pkg/util"
 	"github.com/stretchr/testify/require"
 	"github.com/tikv/client-go/v2/oracle"
 	"github.com/tikv/client-go/v2/testutils"
@@ -1383,10 +1383,10 @@ func testStreamRecvWithError(t *testing.T, failpointStr string) {
 	cluster.AddStore(1, addr1)
 	cluster.Bootstrap(regionID, []uint64{1}, []uint64{4}, 4)
 
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/kv/kvClientStreamRecvError", failpointStr)
+	err = failpoint.Enable("sdbflow/cdc/kv/kvClientStreamRecvError", failpointStr)
 	require.Nil(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/kv/kvClientStreamRecvError")
+		_ = failpoint.Disable("sdbflow/cdc/kv/kvClientStreamRecvError")
 	}()
 	baseAllocatedID := currentRequestID()
 	lockResolver := txnutil.NewLockerResolver(kvStorage, "changefeed-test", util.RoleTester)
@@ -1574,10 +1574,10 @@ func TestStreamRecvWithErrorAndResolvedGoBack(t *testing.T) {
 	}, retry.WithBackoffBaseDelay(200), retry.WithBackoffMaxDelay(60*1000), retry.WithMaxTries(10))
 
 	require.Nil(t, err)
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/kv/kvClientStreamRecvError", "1*return(\"\")")
+	err = failpoint.Enable("sdbflow/cdc/kv/kvClientStreamRecvError", "1*return(\"\")")
 	require.Nil(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/kv/kvClientStreamRecvError")
+		_ = failpoint.Disable("sdbflow/cdc/kv/kvClientStreamRecvError")
 	}()
 	ch1 <- resolved
 
@@ -1719,10 +1719,10 @@ func TestIncompatibleTiKV(t *testing.T) {
 	cluster.AddStore(1, addr1)
 	cluster.Bootstrap(regionID, []uint64{1}, []uint64{4}, 4)
 
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/kv/kvClientDelayWhenIncompatible", "return(true)")
+	err = failpoint.Enable("sdbflow/cdc/kv/kvClientDelayWhenIncompatible", "return(true)")
 	require.Nil(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/kv/kvClientDelayWhenIncompatible")
+		_ = failpoint.Disable("sdbflow/cdc/kv/kvClientDelayWhenIncompatible")
 	}()
 	lockResolver := txnutil.NewLockerResolver(kvStorage, "changefeed-test", util.RoleTester)
 	isPullInit := &mockPullerInit{}
@@ -1980,10 +1980,10 @@ func TestResolveLock(t *testing.T) {
 	cluster.AddStore(1, addr1)
 	cluster.Bootstrap(regionID, []uint64{1}, []uint64{4}, 4)
 
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/kv/kvClientResolveLockInterval", "return(3)")
+	err = failpoint.Enable("sdbflow/cdc/kv/kvClientResolveLockInterval", "return(3)")
 	require.Nil(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/kv/kvClientResolveLockInterval")
+		_ = failpoint.Disable("sdbflow/cdc/kv/kvClientResolveLockInterval")
 	}()
 	baseAllocatedID := currentRequestID()
 	lockResolver := txnutil.NewLockerResolver(kvStorage, "changefeed-test", util.RoleTester)
@@ -2081,10 +2081,10 @@ func testEventCommitTsFallback(t *testing.T, events []*cdcpb.ChangeDataEvent) {
 	}()
 
 	// This inject will make regionWorker exit directly and trigger execution line cancel when meet error
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/kv/kvClientErrUnreachable", "return(true)")
+	err = failpoint.Enable("sdbflow/cdc/kv/kvClientErrUnreachable", "return(true)")
 	require.Nil(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/kv/kvClientErrUnreachable")
+		_ = failpoint.Disable("sdbflow/cdc/kv/kvClientErrUnreachable")
 	}()
 	baseAllocatedID := currentRequestID()
 	lockResolver := txnutil.NewLockerResolver(kvStorage, "changefeed-test", util.RoleTester)
@@ -2232,10 +2232,10 @@ func testEventAfterFeedStop(t *testing.T) {
 	// add 2s delay to simulate event feed processor has been marked stopped, but
 	// before event feed processor is reconstruct, some duplicated events are
 	// sent to event feed processor.
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/kv/kvClientSingleFeedProcessDelay", "1*sleep(2000)")
+	err = failpoint.Enable("sdbflow/cdc/kv/kvClientSingleFeedProcessDelay", "1*sleep(2000)")
 	require.Nil(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/kv/kvClientSingleFeedProcessDelay")
+		_ = failpoint.Disable("sdbflow/cdc/kv/kvClientSingleFeedProcessDelay")
 	}()
 	baseAllocatedID := currentRequestID()
 	lockResolver := txnutil.NewLockerResolver(kvStorage, "changefeed-test", util.RoleTester)
@@ -2716,13 +2716,13 @@ func TestFailRegionReentrant(t *testing.T) {
 	cluster.AddStore(1, addr1)
 	cluster.Bootstrap(regionID, []uint64{1}, []uint64{4}, 4)
 
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/kv/kvClientRegionReentrantError", "1*return(\"ok\")->1*return(\"error\")")
+	err = failpoint.Enable("sdbflow/cdc/kv/kvClientRegionReentrantError", "1*return(\"ok\")->1*return(\"error\")")
 	require.Nil(t, err)
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/kv/kvClientRegionReentrantErrorDelay", "sleep(500)")
+	err = failpoint.Enable("sdbflow/cdc/kv/kvClientRegionReentrantErrorDelay", "sleep(500)")
 	require.Nil(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/kv/kvClientRegionReentrantError")
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/kv/kvClientRegionReentrantErrorDelay")
+		_ = failpoint.Disable("sdbflow/cdc/kv/kvClientRegionReentrantError")
+		_ = failpoint.Disable("sdbflow/cdc/kv/kvClientRegionReentrantErrorDelay")
 	}()
 	baseAllocatedID := currentRequestID()
 	lockResolver := txnutil.NewLockerResolver(kvStorage, "changefeed-test", util.RoleTester)
@@ -2797,13 +2797,13 @@ func TestClientV1UnlockRangeReentrant(t *testing.T) {
 	cluster.Bootstrap(regionID3, []uint64{1}, []uint64{4}, 4)
 	cluster.SplitRaw(regionID3, regionID4, []byte("b"), []uint64{5}, 5)
 
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/kv/kvClientStreamRecvError", "1*return(\"injected stream recv error\")")
+	err = failpoint.Enable("sdbflow/cdc/kv/kvClientStreamRecvError", "1*return(\"injected stream recv error\")")
 	require.Nil(t, err)
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/kv/kvClientPendingRegionDelay", "1*sleep(0)->1*sleep(2000)")
+	err = failpoint.Enable("sdbflow/cdc/kv/kvClientPendingRegionDelay", "1*sleep(0)->1*sleep(2000)")
 	require.Nil(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/kv/kvClientStreamRecvError")
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/kv/kvClientPendingRegionDelay")
+		_ = failpoint.Disable("sdbflow/cdc/kv/kvClientStreamRecvError")
+		_ = failpoint.Disable("sdbflow/cdc/kv/kvClientPendingRegionDelay")
 	}()
 	lockResolver := txnutil.NewLockerResolver(kvStorage, "changefeed-test", util.RoleTester)
 	isPullInit := &mockPullerInit{}
@@ -2859,16 +2859,16 @@ func testClientErrNoPendingRegion(t *testing.T) {
 	cluster.Bootstrap(regionID3, []uint64{1}, []uint64{4}, 4)
 	cluster.SplitRaw(regionID3, regionID4, []byte("b"), []uint64{5}, 5)
 
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/kv/kvClientStreamRecvError", "1*return(\"injected error\")")
+	err = failpoint.Enable("sdbflow/cdc/kv/kvClientStreamRecvError", "1*return(\"injected error\")")
 	require.Nil(t, err)
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/kv/kvClientPendingRegionDelay", "1*sleep(0)->2*sleep(1000)")
+	err = failpoint.Enable("sdbflow/cdc/kv/kvClientPendingRegionDelay", "1*sleep(0)->2*sleep(1000)")
 	require.Nil(t, err)
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/kv/kvClientStreamCloseDelay", "sleep(2000)")
+	err = failpoint.Enable("sdbflow/cdc/kv/kvClientStreamCloseDelay", "sleep(2000)")
 	require.Nil(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/kv/kvClientStreamRecvError")
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/kv/kvClientPendingRegionDelay")
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/kv/kvClientStreamCloseDelay")
+		_ = failpoint.Disable("sdbflow/cdc/kv/kvClientStreamRecvError")
+		_ = failpoint.Disable("sdbflow/cdc/kv/kvClientPendingRegionDelay")
+		_ = failpoint.Disable("sdbflow/cdc/kv/kvClientStreamCloseDelay")
 	}()
 	lockResolver := txnutil.NewLockerResolver(kvStorage, "changefeed-test", util.RoleTester)
 	isPullInit := &mockPullerInit{}
@@ -3088,10 +3088,10 @@ func TestConcurrentProcessRangeRequest(t *testing.T) {
 	cluster.AddStore(storeID, addr1)
 	cluster.Bootstrap(regionID, []uint64{storeID}, []uint64{peerID}, peerID)
 
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/kv/kvClientMockRangeLock", "1*return(20)")
+	err = failpoint.Enable("sdbflow/cdc/kv/kvClientMockRangeLock", "1*return(20)")
 	require.Nil(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/kv/kvClientMockRangeLock")
+		_ = failpoint.Disable("sdbflow/cdc/kv/kvClientMockRangeLock")
 	}()
 	lockResolver := txnutil.NewLockerResolver(kvStorage, "changefeed-test", util.RoleTester)
 	isPullInit := &mockPullerInit{}
@@ -3200,10 +3200,10 @@ func TestEvTimeUpdate(t *testing.T) {
 
 	originalReconnectInterval := reconnectInterval
 	reconnectInterval = 1500 * time.Millisecond
-	err = failpoint.Enable("github.com/pingcap/tiflow/cdc/kv/kvClientCheckUnInitRegionInterval", "return(2)")
+	err = failpoint.Enable("sdbflow/cdc/kv/kvClientCheckUnInitRegionInterval", "return(2)")
 	require.Nil(t, err)
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/cdc/kv/kvClientCheckUnInitRegionInterval")
+		_ = failpoint.Disable("sdbflow/cdc/kv/kvClientCheckUnInitRegionInterval")
 		reconnectInterval = originalReconnectInterval
 	}()
 

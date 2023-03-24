@@ -28,10 +28,10 @@ import (
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/pkg/binlog/common"
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/binlog/common"
+	"sdbflow/dm/pkg/gtid"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
 )
 
 // FileReader is a binlog event reader which reads binlog events from a file.

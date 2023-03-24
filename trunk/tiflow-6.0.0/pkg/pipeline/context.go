@@ -13,7 +13,7 @@
 
 package pipeline
 
-import "github.com/pingcap/tiflow/pkg/context"
+import "sdbflow/pkg/context"
 
 // NodeContext adds two functions to `context.Context` and is created by pipeline
 type NodeContext interface {

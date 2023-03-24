@@ -26,10 +26,10 @@ import (
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.uber.org/zap"
 
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/retry"
-	"github.com/pingcap/tiflow/pkg/errorutil"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/retry"
+	"sdbflow/pkg/errorutil"
 )
 
 const (

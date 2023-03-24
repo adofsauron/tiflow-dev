@@ -19,8 +19,8 @@ import (
 	. "github.com/pingcap/check"
 	"go.uber.org/atomic"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/pkg/log"
 )
 
 func (*testLoaderSuite) TestConcurrentStatus(c *C) {

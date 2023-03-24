@@ -25,12 +25,12 @@ import (
 	"github.com/shopspring/decimal"
 	"go.uber.org/zap"
 
-	cdcmodel "github.com/pingcap/tiflow/cdc/model"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/pkg/sqlmodel"
+	cdcmodel "sdbflow/cdc/model"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/pkg/sqlmodel"
 )
 
 // genDMLParam stores original data and table structure.

@@ -20,11 +20,11 @@ import (
 
 	"github.com/go-mysql-org/go-mysql/mysql"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 func (s *Syncer) setInitActiveRelayLog(ctx context.Context) error {

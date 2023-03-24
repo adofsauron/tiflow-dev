@@ -16,7 +16,7 @@ package sink
 import (
 	"container/heap"
 
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 )
 
 type innerTxnsHeap []innerHeapEntry

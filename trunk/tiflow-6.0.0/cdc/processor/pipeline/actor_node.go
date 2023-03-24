@@ -17,7 +17,7 @@ import (
 	"context"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/pkg/pipeline"
+	"sdbflow/pkg/pipeline"
 )
 
 // ActorNode is an async message process node, it fetches and handle table message non-blocking

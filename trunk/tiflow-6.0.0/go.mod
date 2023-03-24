@@ -1,4 +1,4 @@
-module github.com/pingcap/tiflow
+module sdbflow
 
 go 1.18
 

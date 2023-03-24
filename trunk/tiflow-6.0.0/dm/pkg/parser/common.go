@@ -19,9 +19,9 @@ import (
 
 	"github.com/pingcap/tidb/parser/charset"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 
 	"github.com/pingcap/tidb-tools/pkg/filter"
 	"github.com/pingcap/tidb/parser"

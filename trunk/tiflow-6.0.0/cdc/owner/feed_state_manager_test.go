@@ -17,10 +17,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/config"
-	cdcContext "github.com/pingcap/tiflow/pkg/context"
-	"github.com/pingcap/tiflow/pkg/orchestrator"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/config"
+	cdcContext "sdbflow/pkg/context"
+	"sdbflow/pkg/orchestrator"
 	"github.com/stretchr/testify/require"
 )
 

@@ -17,8 +17,8 @@ import (
 	"testing"
 	"time"
 
-	kafkaconfig "github.com/pingcap/tiflow/cdc/sink/producer/kafka"
-	kafkamock "github.com/pingcap/tiflow/pkg/kafka"
+	kafkaconfig "sdbflow/cdc/sink/producer/kafka"
+	kafkamock "sdbflow/pkg/kafka"
 	"github.com/stretchr/testify/require"
 )
 

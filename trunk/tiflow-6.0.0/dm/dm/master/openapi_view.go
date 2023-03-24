@@ -24,15 +24,15 @@ import (
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/master/workerrpc"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/openapi"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/master/workerrpc"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/openapi"
+	"sdbflow/dm/pkg/conn"
+	"sdbflow/dm/pkg/ha"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 const (

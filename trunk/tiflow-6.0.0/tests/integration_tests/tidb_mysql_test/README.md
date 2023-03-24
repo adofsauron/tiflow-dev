@@ -3,7 +3,7 @@ https://github.com/pingcap/tidb-test/tree/master/mysql_test
 https://github.com/pingcap/mysql-tester
 
 ## Issue
-https://github.com/pingcap/tiflow/issues/4674
+https://sdbflow/issues/4674
 
 ## Description
 Migrate from TiDB mysql-test

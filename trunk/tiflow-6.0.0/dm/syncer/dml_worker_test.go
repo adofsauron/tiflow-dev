@@ -23,8 +23,8 @@ import (
 	timock "github.com/pingcap/tidb/util/mock"
 	"github.com/stretchr/testify/require"
 
-	cdcmodel "github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/sqlmodel"
+	cdcmodel "sdbflow/cdc/model"
+	"sdbflow/pkg/sqlmodel"
 )
 
 func mockTableInfo(t *testing.T, sql string) *timodel.TableInfo {

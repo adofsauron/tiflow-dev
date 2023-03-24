@@ -20,7 +20,7 @@ import (
 	"github.com/modern-go/reflect2"
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/proto/p2p"
+	"sdbflow/proto/p2p"
 	"go.uber.org/zap"
 	"google.golang.org/grpc/codes"
 	gRPCPeer "google.golang.org/grpc/peer"

@@ -26,13 +26,13 @@ import (
 	"go.uber.org/zap"
 
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/dumpling"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/storage"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/pkg/dumpling"
+	"sdbflow/dm/pkg/ha"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/storage"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 // SQLReplace works like strings.Replace but only supports one replacement.

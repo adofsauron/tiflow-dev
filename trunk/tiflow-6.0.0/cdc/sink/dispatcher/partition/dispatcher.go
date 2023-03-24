@@ -14,7 +14,7 @@
 package partition
 
 import (
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 )
 
 // Dispatcher is an abstraction for dispatching rows into different partitions

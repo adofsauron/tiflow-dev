@@ -22,12 +22,12 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink"
-	cdcContext "github.com/pingcap/tiflow/pkg/context"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/filter"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink"
+	cdcContext "sdbflow/pkg/context"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/filter"
+	"sdbflow/pkg/util"
 	"go.uber.org/zap"
 )
 

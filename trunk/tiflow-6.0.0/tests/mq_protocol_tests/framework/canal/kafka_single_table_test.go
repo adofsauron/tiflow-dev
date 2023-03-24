@@ -17,7 +17,7 @@ import (
 	"database/sql"
 	"testing"
 
-	"github.com/pingcap/tiflow/tests/mq_protocol_tests/framework"
+	"sdbflow/tests/mq_protocol_tests/framework"
 	"github.com/stretchr/testify/require"
 )
 

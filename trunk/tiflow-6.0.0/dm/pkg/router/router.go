@@ -21,7 +21,7 @@ import (
 	"github.com/pingcap/tidb-tools/pkg/filter"
 	tablerouter "github.com/pingcap/tidb-tools/pkg/table-router"
 
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/terror"
 )
 
 type (

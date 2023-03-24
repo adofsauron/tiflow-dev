@@ -25,16 +25,16 @@ import (
 	"github.com/pingcap/failpoint"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/common"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/reader"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/retry"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/relay"
-	"github.com/pingcap/tiflow/dm/syncer/dbconn"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/binlog/common"
+	"sdbflow/dm/pkg/binlog/reader"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/retry"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/relay"
+	"sdbflow/dm/syncer/dbconn"
 )
 
 // the minimal interval to retry reset binlog streamer.

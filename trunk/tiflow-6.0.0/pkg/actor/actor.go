@@ -17,8 +17,8 @@ import (
 	"context"
 	"sync/atomic"
 
-	"github.com/pingcap/tiflow/pkg/actor/message"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/actor/message"
+	cerrors "sdbflow/pkg/errors"
 )
 
 var errMailboxFull = cerrors.ErrMailboxFull.FastGenByArgs()

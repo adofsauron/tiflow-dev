@@ -18,10 +18,10 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/entry"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/cyclic/mark"
-	"github.com/pingcap/tiflow/pkg/pipeline"
+	"sdbflow/cdc/entry"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/cyclic/mark"
+	"sdbflow/pkg/pipeline"
 	"go.uber.org/zap"
 )
 

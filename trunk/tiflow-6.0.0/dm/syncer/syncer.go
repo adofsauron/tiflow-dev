@@ -42,34 +42,34 @@ import (
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/dm/unit"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/event"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/reader"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	fr "github.com/pingcap/tiflow/dm/pkg/func-rollback"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	parserpkg "github.com/pingcap/tiflow/dm/pkg/parser"
-	"github.com/pingcap/tiflow/dm/pkg/router"
-	"github.com/pingcap/tiflow/dm/pkg/schema"
-	"github.com/pingcap/tiflow/dm/pkg/shardddl/pessimism"
-	"github.com/pingcap/tiflow/dm/pkg/storage"
-	"github.com/pingcap/tiflow/dm/pkg/streamer"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/relay"
-	"github.com/pingcap/tiflow/dm/syncer/dbconn"
-	operator "github.com/pingcap/tiflow/dm/syncer/err-operator"
-	"github.com/pingcap/tiflow/dm/syncer/metrics"
-	onlineddl "github.com/pingcap/tiflow/dm/syncer/online-ddl-tools"
-	sm "github.com/pingcap/tiflow/dm/syncer/safe-mode"
-	"github.com/pingcap/tiflow/dm/syncer/shardddl"
-	"github.com/pingcap/tiflow/pkg/errorutil"
-	"github.com/pingcap/tiflow/pkg/sqlmodel"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/dm/unit"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/binlog/event"
+	"sdbflow/dm/pkg/binlog/reader"
+	"sdbflow/dm/pkg/conn"
+	tcontext "sdbflow/dm/pkg/context"
+	fr "sdbflow/dm/pkg/func-rollback"
+	"sdbflow/dm/pkg/ha"
+	"sdbflow/dm/pkg/log"
+	parserpkg "sdbflow/dm/pkg/parser"
+	"sdbflow/dm/pkg/router"
+	"sdbflow/dm/pkg/schema"
+	"sdbflow/dm/pkg/shardddl/pessimism"
+	"sdbflow/dm/pkg/storage"
+	"sdbflow/dm/pkg/streamer"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/relay"
+	"sdbflow/dm/syncer/dbconn"
+	operator "sdbflow/dm/syncer/err-operator"
+	"sdbflow/dm/syncer/metrics"
+	onlineddl "sdbflow/dm/syncer/online-ddl-tools"
+	sm "sdbflow/dm/syncer/safe-mode"
+	"sdbflow/dm/syncer/shardddl"
+	"sdbflow/pkg/errorutil"
+	"sdbflow/pkg/sqlmodel"
 )
 
 var (
@@ -2184,7 +2184,7 @@ func (s *Syncer) Run(ctx context.Context) (err error) {
 }
 
 func (s *Syncer) initSafeModeExitTS(firstBinlogTS int64) error {
-	// see more in https://github.com/pingcap/tiflow/pull/4601#discussion_r814446628
+	// see more in https://sdbflow/pull/4601#discussion_r814446628
 	duration, err := time.ParseDuration(s.cliArgs.SafeModeDuration)
 	if err != nil {
 		return err

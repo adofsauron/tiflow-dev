@@ -18,7 +18,7 @@ import (
 	"testing"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/tests/mq_protocol_tests/framework"
+	"sdbflow/tests/mq_protocol_tests/framework"
 	"github.com/stretchr/testify/require"
 )
 

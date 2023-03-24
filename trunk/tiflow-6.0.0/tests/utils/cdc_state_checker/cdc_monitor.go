@@ -27,9 +27,9 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/backoff"
 
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/orchestrator"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/orchestrator"
+	"sdbflow/pkg/security"
 )
 
 type cdcMonitor struct {

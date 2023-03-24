@@ -24,20 +24,20 @@ import (
 
 	"github.com/pingcap/errors"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/cputil"
-	"github.com/pingcap/tiflow/dm/pkg/dumpling"
-	fr "github.com/pingcap/tiflow/dm/pkg/func-rollback"
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/schema"
-	"github.com/pingcap/tiflow/dm/pkg/storage"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/syncer/dbconn"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/conn"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/cputil"
+	"sdbflow/dm/pkg/dumpling"
+	fr "sdbflow/dm/pkg/func-rollback"
+	"sdbflow/dm/pkg/gtid"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/schema"
+	"sdbflow/dm/pkg/storage"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/syncer/dbconn"
 
 	"github.com/go-mysql-org/go-mysql/mysql"
 	"github.com/pingcap/failpoint"
@@ -977,7 +977,7 @@ func (cp *RemoteCheckPoint) createTable(tctx *tcontext.Context) error {
 			exit_safe_binlog_name VARCHAR(128) DEFAULT '',
 			exit_safe_binlog_pos INT UNSIGNED DEFAULT 0,
 			exit_safe_binlog_gtid TEXT,
-			table_info JSON NOT NULL,
+			table_info TEXT NOT NULL,
 			is_global BOOLEAN,
 			create_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 			update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,

@@ -22,9 +22,9 @@ import (
 
 	"github.com/davecgh/go-spew/spew"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/notify"
-	"github.com/pingcap/tiflow/pkg/util/testleak"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/notify"
+	"sdbflow/pkg/util/testleak"
 	"github.com/stretchr/testify/require"
 	"golang.org/x/sync/errgroup"
 )

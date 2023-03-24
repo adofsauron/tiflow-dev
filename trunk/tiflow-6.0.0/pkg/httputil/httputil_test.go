@@ -24,7 +24,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/pkg/security"
 	"github.com/stretchr/testify/require"
 
 	"github.com/pingcap/tidb-tools/pkg/utils"

@@ -19,9 +19,9 @@ import (
 	"github.com/pingcap/check"
 	mm "github.com/pingcap/tidb/parser/model"
 	"github.com/pingcap/tidb/util/timeutil"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/util/testleak"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/util/testleak"
 	"golang.org/x/text/encoding/charmap"
 )
 

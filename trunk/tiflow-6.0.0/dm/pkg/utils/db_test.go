@@ -28,7 +28,7 @@ import (
 	tmysql "github.com/pingcap/tidb/parser/mysql"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
+	"sdbflow/dm/pkg/gtid"
 )
 
 var _ = Suite(&testDBSuite{})

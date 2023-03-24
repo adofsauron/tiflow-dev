@@ -197,10 +197,10 @@ func TestSubstituteTopicExpression(t *testing.T) {
 	}
 }
 
-// cmd: go test -run='^$' -bench '^(BenchmarkSubstitute)$' github.com/pingcap/tiflow/cdc/sink/dispatcher/topic
+// cmd: go test -run='^$' -bench '^(BenchmarkSubstitute)$' sdbflow/cdc/sink/dispatcher/topic
 // goos: linux
 // goarch: amd64
-// pkg: github.com/pingcap/tiflow/cdc/sink/dispatcher
+// pkg: sdbflow/cdc/sink/dispatcher
 // cpu: Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz
 // BenchmarkSubstitute/schema_substitution-40         	  199372	      6477 ns/op
 // BenchmarkSubstitute/schema_table_substitution-40   	  110752	     13637 ns/op

@@ -19,7 +19,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/pkg/metricsproxy"
+	"sdbflow/dm/pkg/metricsproxy"
 )
 
 // should alert.

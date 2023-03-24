@@ -19,9 +19,9 @@ import (
 
 	"golang.org/x/sync/errgroup"
 
-	config2 "github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	config2 "sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/utils"
 )
 
 var (

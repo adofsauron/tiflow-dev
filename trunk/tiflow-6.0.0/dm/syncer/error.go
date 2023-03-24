@@ -29,10 +29,10 @@ import (
 	"github.com/pingcap/tidb/util/dbterror"
 	"go.uber.org/zap"
 
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/syncer/dbconn"
-	"github.com/pingcap/tiflow/pkg/errorutil"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/syncer/dbconn"
+	"sdbflow/pkg/errorutil"
 )
 
 // ignoreTrackerDDLError is also same with ignoreDDLError, but in order to keep tracker's table structure same as

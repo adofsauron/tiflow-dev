@@ -25,12 +25,12 @@ import (
 	. "github.com/pingcap/check"
 	filter "github.com/pingcap/tidb-tools/pkg/binlog-filter"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/dm/pbmock"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/dm/pbmock"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
 )
 
 func (t *testMaster) TestCollectSourceConfigFilesV1Import(c *C) {

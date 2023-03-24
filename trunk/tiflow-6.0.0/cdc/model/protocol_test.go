@@ -17,7 +17,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/pingcap/tiflow/pkg/p2p"
+	"sdbflow/pkg/p2p"
 	"github.com/stretchr/testify/require"
 )
 

@@ -25,9 +25,9 @@ import (
 	dmysql "github.com/go-sql-driver/mysql"
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/security"
-	"github.com/pingcap/tiflow/pkg/util"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/security"
+	"sdbflow/pkg/util"
 	"go.uber.org/zap"
 )
 

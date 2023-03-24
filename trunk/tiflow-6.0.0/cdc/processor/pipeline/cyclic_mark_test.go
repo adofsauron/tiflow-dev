@@ -21,11 +21,11 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/pingcap/tidb/tablecodec"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/config"
-	cdcContext "github.com/pingcap/tiflow/pkg/context"
-	"github.com/pingcap/tiflow/pkg/cyclic/mark"
-	"github.com/pingcap/tiflow/pkg/pipeline"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/config"
+	cdcContext "sdbflow/pkg/context"
+	"sdbflow/pkg/cyclic/mark"
+	"sdbflow/pkg/pipeline"
 	"github.com/stretchr/testify/require"
 )
 

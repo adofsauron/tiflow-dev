@@ -25,8 +25,8 @@ import (
 
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/orchestrator/util"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/orchestrator/util"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"
 )
@@ -121,9 +121,9 @@ func (b *bankReactor) Tick(ctx context.Context, state ReactorState) (nextState R
 }
 
 func TestEtcdBank(t *testing.T) {
-	_ = failpoint.Enable("github.com/pingcap/tiflow/pkg/orchestrator/InjectProgressRequestAfterCommit", "10%return(true)")
+	_ = failpoint.Enable("sdbflow/pkg/orchestrator/InjectProgressRequestAfterCommit", "10%return(true)")
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/pkg/orchestrator/InjectProgressRequestAfterCommit")
+		_ = failpoint.Disable("sdbflow/pkg/orchestrator/InjectProgressRequestAfterCommit")
 	}()
 
 	totalAccountNumber := 25

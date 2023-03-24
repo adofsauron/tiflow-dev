@@ -14,9 +14,9 @@
 package cli
 
 import (
-	cmdcontext "github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/cmd/factory"
-	"github.com/pingcap/tiflow/pkg/cmd/util"
+	cmdcontext "sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/cmd/factory"
+	"sdbflow/pkg/cmd/util"
 	"github.com/spf13/cobra"
 )
 
@@ -41,7 +41,7 @@ func (o *changefeedOptions) addFlags(cmd *cobra.Command) {
 	_ = cmd.PersistentFlags().MarkHidden("disable-version-check")
 }
 
-// run checks the TiCDC cluster version.
+// run checks the SDBCDC cluster version.
 func (o *changefeedOptions) run(f factory.Factory) error {
 	if o.disableVersionCheck {
 		return nil

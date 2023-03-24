@@ -20,13 +20,13 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	apiv1client "github.com/pingcap/tiflow/pkg/api/v1"
-	cmdcontext "github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/cmd/factory"
-	"github.com/pingcap/tiflow/pkg/cmd/util"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/cdc/model"
+	apiv1client "sdbflow/pkg/api/v1"
+	cmdcontext "sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/cmd/factory"
+	"sdbflow/pkg/cmd/util"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/version"
 	"github.com/spf13/cobra"
 	"github.com/tikv/client-go/v2/oracle"
 	pd "github.com/tikv/pd/client"
@@ -103,7 +103,7 @@ func (o *statisticsChangefeedOptions) complete(f factory.Factory) error {
 	o.runWithAPIClient = true
 	if !cdcClusterVer.ShouldRunCliWithAPIClientByDefault() {
 		o.runWithAPIClient = false
-		log.Warn("The TiCDC cluster is built from an older version, run cli with etcd client by default.",
+		log.Warn("The SDBCDC cluster is built from an older version, run cli with etcd client by default.",
 			zap.String("version", cdcClusterVer.String()))
 	}
 

@@ -23,7 +23,7 @@ spec:
     cron: "2-59/3 * * * *" # At every 3rd minute from 2 through 59, (2, 5, 8, ...)
 
 ---
-# network partition between DM-master members
+# network partition between SDM-master members
 apiVersion: chaos-mesh.org/v1alpha1
 kind: NetworkChaos
 metadata:

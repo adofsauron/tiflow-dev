@@ -18,7 +18,7 @@ import (
 
 	"github.com/coreos/go-semver/semver"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/pkg/util"
 	"go.uber.org/zap"
 )
 

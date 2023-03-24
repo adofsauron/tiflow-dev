@@ -18,7 +18,7 @@ import (
 	"strings"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/pkg/cmd/factory"
+	"sdbflow/pkg/cmd/factory"
 	"github.com/spf13/cobra"
 )
 

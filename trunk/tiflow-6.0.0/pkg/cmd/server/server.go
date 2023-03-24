@@ -23,16 +23,16 @@ import (
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
 	ticonfig "github.com/pingcap/tidb/config"
-	"github.com/pingcap/tiflow/cdc"
-	"github.com/pingcap/tiflow/cdc/sorter/unified"
-	cmdcontext "github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/cmd/util"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/logutil"
-	"github.com/pingcap/tiflow/pkg/security"
-	ticdcutil "github.com/pingcap/tiflow/pkg/util"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/cdc"
+	"sdbflow/cdc/sorter/unified"
+	cmdcontext "sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/cmd/util"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/logutil"
+	"sdbflow/pkg/security"
+	ticdcutil "sdbflow/pkg/util"
+	"sdbflow/pkg/version"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 	"go.uber.org/zap"
@@ -64,7 +64,7 @@ func (o *options) addFlags(cmd *cobra.Command) {
 	cmd.Flags().StringVar(&o.serverConfig.Addr, "addr", o.serverConfig.Addr, "Set the listening address")
 	cmd.Flags().StringVar(&o.serverConfig.AdvertiseAddr, "advertise-addr", o.serverConfig.AdvertiseAddr, "Set the advertise listening address for client communication")
 
-	cmd.Flags().StringVar(&o.serverConfig.TZ, "tz", o.serverConfig.TZ, "Specify time zone of TiCDC cluster")
+	cmd.Flags().StringVar(&o.serverConfig.TZ, "tz", o.serverConfig.TZ, "Specify time zone of SDBCDC cluster")
 	cmd.Flags().Int64Var(&o.serverConfig.GcTTL, "gc-ttl", o.serverConfig.GcTTL, "CDC GC safepoint TTL duration, specified in seconds")
 
 	cmd.Flags().StringVar(&o.serverConfig.LogFile, "log-file", o.serverConfig.LogFile, "log file path")
@@ -283,7 +283,7 @@ func NewCmdServer() *cobra.Command {
 
 	command := &cobra.Command{
 		Use:   "server",
-		Short: "Start a TiCDC capture server",
+		Short: "Start a SDBCDC capture server",
 		Args:  cobra.NoArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			err := o.complete(cmd)

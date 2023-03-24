@@ -23,10 +23,10 @@ import (
 	"github.com/pingcap/log"
 	timodel "github.com/pingcap/tidb/parser/model"
 	"github.com/pingcap/tidb/parser/types"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
-	canal "github.com/pingcap/tiflow/proto/canal"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/config"
+	cerrors "sdbflow/pkg/errors"
+	canal "sdbflow/proto/canal"
 	"go.uber.org/zap"
 )
 
@@ -487,7 +487,7 @@ func canalFlatMessage2RowChangedEvent(flatMessage canalFlatMessageInterface) (*m
 			flatMessage.getData(), mysqlType, javaSQLType)
 		// canal-json encoder does not encode `Flag` information into the result,
 		// we have to set the `Flag` to make it can be handled by MySQL Sink.
-		// see https://github.com/pingcap/tiflow/blob/7bfce98/cdc/sink/mysql.go#L869-L888
+		// see https://sdbflow/blob/7bfce98/cdc/sink/mysql.go#L869-L888
 		result.WithHandlePrimaryFlag(flatMessage.pkNameSet())
 		return result, err
 	}
@@ -554,7 +554,7 @@ func canalFlatMessage2DDLEvent(flatDDL canalFlatMessageInterface) *model.DDLEven
 	result.Query = flatDDL.getQuery()
 
 	// hack the DDL Type to be compatible with MySQL sink's logic
-	// see https://github.com/pingcap/tiflow/blob/0578db337d/cdc/sink/mysql.go#L362-L370
+	// see https://sdbflow/blob/0578db337d/cdc/sink/mysql.go#L362-L370
 	result.Type = getDDLActionType(result.Query)
 	return result
 }

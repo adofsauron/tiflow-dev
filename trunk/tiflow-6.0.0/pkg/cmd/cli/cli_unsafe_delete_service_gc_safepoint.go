@@ -15,9 +15,9 @@ package cli
 
 import (
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/cmd/factory"
-	"github.com/pingcap/tiflow/pkg/txnutil/gc"
+	"sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/cmd/factory"
+	"sdbflow/pkg/txnutil/gc"
 	"github.com/spf13/cobra"
 	pd "github.com/tikv/pd/client"
 )

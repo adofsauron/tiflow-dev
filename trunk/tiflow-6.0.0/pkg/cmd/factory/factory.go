@@ -18,9 +18,9 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/tidb/kv"
-	"github.com/pingcap/tiflow/pkg/cmd/util"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/pkg/cmd/util"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/security"
 	"github.com/spf13/cobra"
 	pd "github.com/tikv/pd/client"
 	"google.golang.org/grpc"

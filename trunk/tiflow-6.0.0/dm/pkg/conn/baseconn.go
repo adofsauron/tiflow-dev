@@ -25,12 +25,12 @@ import (
 	"github.com/pingcap/failpoint"
 	"go.uber.org/zap"
 
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/metricsproxy"
-	"github.com/pingcap/tiflow/dm/pkg/retry"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/metricsproxy"
+	"sdbflow/dm/pkg/retry"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 // BaseConn is the basic connection we use in dm

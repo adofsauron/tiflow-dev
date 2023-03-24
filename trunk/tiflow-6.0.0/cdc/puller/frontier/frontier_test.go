@@ -19,7 +19,7 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/pingcap/tiflow/pkg/regionspan"
+	"sdbflow/pkg/regionspan"
 	"github.com/stretchr/testify/require"
 )
 

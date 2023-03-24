@@ -34,9 +34,9 @@ import (
 	"go.uber.org/zap/zapcore"
 	"golang.org/x/sync/errgroup"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/model"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/util"
 )
 
 type Captures []*model.CaptureInfo

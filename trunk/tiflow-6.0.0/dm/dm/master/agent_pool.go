@@ -17,7 +17,7 @@ import (
 	"context"
 	"math"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/pkg/log"
 
 	"go.uber.org/zap"
 	"golang.org/x/time/rate"

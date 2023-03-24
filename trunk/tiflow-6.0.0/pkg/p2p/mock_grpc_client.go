@@ -18,7 +18,7 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/pingcap/tiflow/proto/p2p"
+	"sdbflow/proto/p2p"
 	"github.com/stretchr/testify/mock"
 	"google.golang.org/grpc"
 )

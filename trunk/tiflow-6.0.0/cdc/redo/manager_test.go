@@ -18,8 +18,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/config"
 	"github.com/stretchr/testify/require"
 )
 

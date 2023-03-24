@@ -18,9 +18,9 @@ import (
 	"testing"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/scheduler/util"
-	cdcContext "github.com/pingcap/tiflow/pkg/context"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/scheduler/util"
+	cdcContext "sdbflow/pkg/context"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"

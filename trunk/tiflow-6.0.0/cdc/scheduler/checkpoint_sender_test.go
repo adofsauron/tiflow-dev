@@ -18,8 +18,8 @@ import (
 	"time"
 
 	"github.com/benbjohnson/clock"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/context"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/context"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"

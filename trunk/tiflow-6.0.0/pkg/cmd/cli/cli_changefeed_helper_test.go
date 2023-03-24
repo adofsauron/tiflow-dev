@@ -18,7 +18,7 @@ import (
 	"path/filepath"
 
 	"github.com/pingcap/check"
-	"github.com/pingcap/tiflow/pkg/util/testleak"
+	"sdbflow/pkg/util/testleak"
 	"github.com/spf13/cobra"
 )
 

@@ -32,16 +32,16 @@ import (
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.etcd.io/etcd/tests/v3/integration"
 
-	"github.com/pingcap/tiflow/dm/checker"
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/dm/pbmock"
-	"github.com/pingcap/tiflow/dm/openapi"
-	"github.com/pingcap/tiflow/dm/openapi/fixtures"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/checker"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/dm/pbmock"
+	"sdbflow/dm/openapi"
+	"sdbflow/dm/openapi/fixtures"
+	"sdbflow/dm/pkg/conn"
+	"sdbflow/dm/pkg/ha"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 var openAPITestSuite = check.SerialSuites(&openAPISuite{})
@@ -420,8 +420,8 @@ func (t *openAPISuite) TestSourceAPI(c *check.C) {
 func (t *openAPISuite) TestTaskAPI(c *check.C) {
 	ctx, cancel := context.WithCancel(context.Background())
 	s := setupTestServer(ctx, t.testT)
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/master/MockSkipAdjustTargetDB", `return(true)`), check.IsNil)
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/master/MockSkipRemoveMetaData", `return(true)`), check.IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/dm/master/MockSkipAdjustTargetDB", `return(true)`), check.IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/dm/master/MockSkipRemoveMetaData", `return(true)`), check.IsNil)
 	checker.CheckSyncConfigFunc = mockCheckSyncConfig
 	ctrl := gomock.NewController(c)
 	defer func() {
@@ -429,8 +429,8 @@ func (t *openAPISuite) TestTaskAPI(c *check.C) {
 		cancel()
 		s.Close()
 		ctrl.Finish()
-		c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/dm/master/MockSkipAdjustTargetDB"), check.IsNil)
-		c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/dm/master/MockSkipRemoveMetaData"), check.IsNil)
+		c.Assert(failpoint.Disable("sdbflow/dm/dm/master/MockSkipAdjustTargetDB"), check.IsNil)
+		c.Assert(failpoint.Disable("sdbflow/dm/dm/master/MockSkipRemoveMetaData"), check.IsNil)
 	}()
 
 	dbCfg := config.GetDBConfigForTest()
@@ -496,7 +496,7 @@ func (t *openAPISuite) TestTaskAPI(c *check.C) {
 	c.Assert(task.Name, check.Equals, task1FromHTTP.Name)
 
 	// update a task
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/master/scheduler/operateCheckSubtasksCanUpdate", `return("success")`), check.IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/dm/master/scheduler/operateCheckSubtasksCanUpdate", `return("success")`), check.IsNil)
 	clone := task
 	batch := 1000
 	clone.SourceConfig.IncrMigrateConf.ReplBatch = &batch
@@ -505,7 +505,7 @@ func (t *openAPISuite) TestTaskAPI(c *check.C) {
 	c.Assert(result.Code(), check.Equals, http.StatusOK)
 	c.Assert(result.UnmarshalBodyToObject(&task1FromHTTP), check.IsNil)
 	c.Assert(clone.SourceConfig.IncrMigrateConf.ReplBatch, check.DeepEquals, task1FromHTTP.SourceConfig.IncrMigrateConf.ReplBatch)
-	c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/dm/master/scheduler/operateCheckSubtasksCanUpdate"), check.IsNil)
+	c.Assert(failpoint.Disable("sdbflow/dm/dm/master/scheduler/operateCheckSubtasksCanUpdate"), check.IsNil)
 
 	// list tasks
 	result = testutil.NewRequest().Get(taskURL).GoWithHTTPHandler(t.testT, s.openapiHandles)
@@ -771,13 +771,13 @@ func (t *openAPISuite) TestClusterAPI(c *check.C) {
 func (t *openAPISuite) TestTaskTemplatesAPI(c *check.C) {
 	ctx, cancel := context.WithCancel(context.Background())
 	s := setupTestServer(ctx, t.testT)
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/master/MockSkipAdjustTargetDB", `return(true)`), check.IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/dm/master/MockSkipAdjustTargetDB", `return(true)`), check.IsNil)
 	checker.CheckSyncConfigFunc = mockCheckSyncConfig
 	defer func() {
 		checker.CheckSyncConfigFunc = checker.CheckSyncConfig
 		cancel()
 		s.Close()
-		c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/dm/master/MockSkipAdjustTargetDB"), check.IsNil)
+		c.Assert(failpoint.Disable("sdbflow/dm/dm/master/MockSkipAdjustTargetDB"), check.IsNil)
 	}()
 
 	dbCfg := config.GetDBConfigForTest()

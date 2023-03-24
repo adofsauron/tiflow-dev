@@ -17,8 +17,8 @@ import (
 	"sync"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/context"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/context"
 )
 
 // Design Notes:

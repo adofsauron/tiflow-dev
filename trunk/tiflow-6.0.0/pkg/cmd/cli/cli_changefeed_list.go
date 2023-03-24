@@ -17,12 +17,12 @@ import (
 	"encoding/json"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/api"
-	"github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/cmd/factory"
-	"github.com/pingcap/tiflow/pkg/cmd/util"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/cdc/api"
+	"sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/cmd/factory"
+	"sdbflow/pkg/cmd/util"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/security"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 )
@@ -121,7 +121,7 @@ func newCmdListChangefeed(f factory.Factory) *cobra.Command {
 
 	command := &cobra.Command{
 		Use:   "list",
-		Short: "List all replication tasks (changefeeds) in TiCDC cluster",
+		Short: "List all replication tasks (changefeeds) in SDBCDC cluster",
 		Args:  cobra.NoArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			err := o.complete(f)

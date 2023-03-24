@@ -26,9 +26,9 @@ import (
 	"go.uber.org/zap"
 	"google.golang.org/grpc/codes"
 
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/errorutil"
-	"github.com/pingcap/tiflow/pkg/retry"
+	cerrors "sdbflow/pkg/errors"
+	"sdbflow/pkg/errorutil"
+	"sdbflow/pkg/retry"
 )
 
 // etcd operation names

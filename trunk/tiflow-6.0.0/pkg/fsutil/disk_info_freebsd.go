@@ -21,7 +21,7 @@ import (
 	"path/filepath"
 	"syscall"
 
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	cerror "sdbflow/pkg/errors"
 )
 
 // GetDiskInfo return the disk space information of the given directory

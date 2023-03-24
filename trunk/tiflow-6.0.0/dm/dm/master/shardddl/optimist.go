@@ -25,15 +25,15 @@ import (
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/dm/common"
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/master/metrics"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/etcdutil"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/shardddl/optimism"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/dm/common"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/master/metrics"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/etcdutil"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/shardddl/optimism"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 // Optimist is used to coordinate the shard DDL migration in optimism mode.
@@ -108,7 +108,7 @@ func (o *Optimist) Close() {
 	o.closed = true // closed now.
 	o.mu.Unlock()
 	// unlock before wg.Wait() to avoid deadlock because other goroutines acquire the lock.
-	// such as https://github.com/pingcap/tiflow/blob/92fc4c4/dm/dm/master/shardddl/optimist.go#L686
+	// such as https://sdbflow/blob/92fc4c4/dm/dm/master/shardddl/optimist.go#L686
 	o.wg.Wait()
 	o.logger.Info("the shard DDL optimist has closed")
 }

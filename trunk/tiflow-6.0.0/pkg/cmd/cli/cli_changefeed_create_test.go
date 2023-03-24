@@ -20,10 +20,10 @@ import (
 	"testing"
 
 	"github.com/pingcap/check"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/util/testleak"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/util/testleak"
+	"sdbflow/pkg/version"
 	"github.com/spf13/cobra"
 )
 

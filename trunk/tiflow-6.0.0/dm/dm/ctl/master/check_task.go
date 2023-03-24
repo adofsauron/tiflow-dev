@@ -20,9 +20,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/pingcap/tiflow/dm/checker"
-	"github.com/pingcap/tiflow/dm/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/dm/pb"
+	"sdbflow/dm/checker"
+	"sdbflow/dm/dm/ctl/common"
+	"sdbflow/dm/dm/pb"
 )
 
 // NewCheckTaskCmd creates a CheckTask command.

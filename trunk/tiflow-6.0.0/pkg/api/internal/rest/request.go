@@ -26,10 +26,10 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/httputil"
-	"github.com/pingcap/tiflow/pkg/retry"
+	"sdbflow/cdc/model"
+	cerrors "sdbflow/pkg/errors"
+	"sdbflow/pkg/httputil"
+	"sdbflow/pkg/retry"
 	"go.uber.org/zap"
 )
 

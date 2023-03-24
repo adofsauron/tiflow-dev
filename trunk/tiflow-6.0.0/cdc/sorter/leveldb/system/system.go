@@ -23,11 +23,11 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
 	"github.com/pingcap/tidb/util/memory"
-	lsorter "github.com/pingcap/tiflow/cdc/sorter/leveldb"
-	"github.com/pingcap/tiflow/pkg/actor"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/db"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
+	lsorter "sdbflow/cdc/sorter/leveldb"
+	"sdbflow/pkg/actor"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/db"
+	cerrors "sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

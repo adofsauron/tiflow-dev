@@ -20,7 +20,7 @@ import (
 	cpu "github.com/pingcap/tidb-tools/pkg/utils"
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/pingcap/tiflow/dm/pkg/metricsproxy"
+	"sdbflow/dm/pkg/metricsproxy"
 )
 
 // used for ddlPendingCounter, no "Resolved" lock because they will be

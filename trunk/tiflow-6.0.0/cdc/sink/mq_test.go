@@ -22,14 +22,14 @@ import (
 	"github.com/pingcap/check"
 	"github.com/pingcap/errors"
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec"
-	kafkap "github.com/pingcap/tiflow/cdc/sink/producer/kafka"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/filter"
-	"github.com/pingcap/tiflow/pkg/kafka"
-	"github.com/pingcap/tiflow/pkg/util/testleak"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec"
+	kafkap "sdbflow/cdc/sink/producer/kafka"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/filter"
+	"sdbflow/pkg/kafka"
+	"sdbflow/pkg/util/testleak"
 )
 
 type mqSinkSuite struct{}
@@ -214,7 +214,7 @@ func (s mqSinkSuite) TestPulsarSinkEncoderConfig(c *check.C) {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
-	err := failpoint.Enable("github.com/pingcap/tiflow/cdc/sink/producer/pulsar/MockPulsar", "return(true)")
+	err := failpoint.Enable("sdbflow/cdc/sink/producer/pulsar/MockPulsar", "return(true)")
 	c.Assert(err, check.IsNil)
 
 	uri := "pulsar://127.0.0.1:1234/kafka-test?" +

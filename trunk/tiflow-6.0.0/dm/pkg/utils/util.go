@@ -30,9 +30,9 @@ import (
 	"go.uber.org/zap"
 	"golang.org/x/net/http/httpproxy"
 
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
 )
 
 var (

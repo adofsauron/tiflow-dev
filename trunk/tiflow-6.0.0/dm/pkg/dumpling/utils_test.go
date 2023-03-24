@@ -24,9 +24,9 @@ import (
 	. "github.com/pingcap/check"
 	"github.com/pingcap/tidb/dumpling/export"
 
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/gtid"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
 )
 
 var _ = Suite(&testSuite{})

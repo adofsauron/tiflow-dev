@@ -22,9 +22,9 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/spf13/cobra"
 
-	"github.com/pingcap/tiflow/dm/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/dm/ctl/common"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/utils"
 )
 
 // NewPurgeRelayCmd creates a PurgeRelay command
@@ -35,9 +35,9 @@ import (
 func NewPurgeRelayCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		// Use:   "purge-relay <-w worker> [--inactive] [--time] [--filename] [--sub-dir]",
-		// Short: "purge dm-worker's relay log files, choose 1 of 2 methods",
+		// Short: "purge SDM-worker's relay log files, choose 1 of 2 methods",
 		Use:   "purge-relay <-s source> <-f filename> [--sub-dir directory]",
-		Short: "Purges relay log files of the DM-worker according to the specified filename",
+		Short: "Purges relay log files of the SDM-worker according to the specified filename",
 		RunE:  purgeRelayFunc,
 	}
 	// cmd.Flags().BoolP("inactive", "i", false, "whether try to purge all inactive relay log files")

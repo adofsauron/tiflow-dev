@@ -38,12 +38,12 @@ import (
 	"github.com/pingcap/tidb/types"
 	"go.uber.org/zap"
 
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	fr "github.com/pingcap/tiflow/dm/pkg/func-rollback"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	dmterror "github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/syncer/dbconn"
+	tcontext "sdbflow/dm/pkg/context"
+	fr "sdbflow/dm/pkg/func-rollback"
+	"sdbflow/dm/pkg/log"
+	dmterror "sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/syncer/dbconn"
 )
 
 const (

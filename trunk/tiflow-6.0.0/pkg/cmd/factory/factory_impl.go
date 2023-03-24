@@ -27,11 +27,11 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/backoff"
 
-	"github.com/pingcap/tiflow/cdc/kv"
-	cmdconetxt "github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/security"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/cdc/kv"
+	cmdconetxt "sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/security"
+	"sdbflow/pkg/version"
 )
 
 type factoryImpl struct {
@@ -106,7 +106,7 @@ func (f *factoryImpl) EtcdClient() (*etcd.CDCEtcdClient, error) {
 		LogConfig:   &logConfig,
 		DialTimeout: 30 * time.Second,
 		// TODO(hi-rustin): add gRPC metrics to Options.
-		// See also: https://github.com/pingcap/tiflow/pull/2341#discussion_r673018537.
+		// See also: https://sdbflow/pull/2341#discussion_r673018537.
 		DialOptions: []grpc.DialOption{
 			grpcTLSOption,
 			grpc.WithBlock(),
@@ -146,7 +146,7 @@ func (f factoryImpl) PdClient() (pd.Client, error) {
 	pdClient, err := pd.NewClientWithContext(
 		ctx, pdEndpoints, credential.PDSecurityOption(),
 		// TODO(hi-rustin): add gRPC metrics to Options.
-		// See also: https://github.com/pingcap/tiflow/pull/2341#discussion_r673032407.
+		// See also: https://sdbflow/pull/2341#discussion_r673032407.
 		pd.WithGRPCDialOptions(
 			grpcTLSOption,
 			grpc.WithBlock(),

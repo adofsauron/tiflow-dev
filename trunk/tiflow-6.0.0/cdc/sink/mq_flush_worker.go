@@ -19,10 +19,10 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec"
-	"github.com/pingcap/tiflow/cdc/sink/producer"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec"
+	"sdbflow/cdc/sink/producer"
+	cerror "sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

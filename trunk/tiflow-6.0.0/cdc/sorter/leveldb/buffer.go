@@ -15,8 +15,8 @@ package leveldb
 
 import (
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sorter/leveldb/message"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sorter/leveldb/message"
 	"go.uber.org/zap"
 )
 

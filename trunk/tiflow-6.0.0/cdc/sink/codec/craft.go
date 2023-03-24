@@ -15,10 +15,10 @@ package codec
 
 import (
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec/craft"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec/craft"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
 )
 
 // CraftEventBatchEncoder encodes the events into the byte of a batch into craft binary format.

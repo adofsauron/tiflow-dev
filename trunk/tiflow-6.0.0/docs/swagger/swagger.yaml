@@ -590,7 +590,7 @@ paths:
     get:
       consumes:
       - application/json
-      description: list all processors in the TiCDC cluster
+      description: list all processors in the SDBCDC cluster
       produces:
       - application/json
       responses:

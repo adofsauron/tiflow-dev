@@ -17,8 +17,8 @@ import (
 	"testing"
 
 	"github.com/pingcap/errors"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/orchestrator/util"
+	cerrors "sdbflow/pkg/errors"
+	"sdbflow/pkg/orchestrator/util"
 	"github.com/stretchr/testify/require"
 )
 

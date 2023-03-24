@@ -25,9 +25,9 @@ import (
 	"github.com/pingcap/tidb-tools/pkg/filter"
 	router "github.com/pingcap/tidb-tools/pkg/table-router"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/utils"
 )
 
 // commonConfig collects common item for both new config and old config.
@@ -79,7 +79,7 @@ func (c *commonConfig) newConfigFromSyncerConfig(args []string) (*config.SubTask
 		MaxRetry:     c.MaxRetry,
 	}
 
-	cfg.FlagSet = flag.NewFlagSet("dm-syncer", flag.ContinueOnError)
+	cfg.FlagSet = flag.NewFlagSet("sdm-syncer", flag.ContinueOnError)
 	fs := cfg.FlagSet
 
 	var SyncerConfigFormat bool
@@ -145,7 +145,7 @@ func (c *commonConfig) parse(args []string) (*config.SubTaskConfig, error) {
 
 func (c *commonConfig) newSubTaskConfig(args []string) (*config.SubTaskConfig, error) {
 	cfg := &config.SubTaskConfig{}
-	cfg.SetFlagSet(flag.NewFlagSet("dm-syncer", flag.ContinueOnError))
+	cfg.SetFlagSet(flag.NewFlagSet("sdm-syncer", flag.ContinueOnError))
 	fs := cfg.GetFlagSet()
 
 	var syncerConfigFormat bool
@@ -170,7 +170,7 @@ func (c *commonConfig) newSubTaskConfig(args []string) (*config.SubTaskConfig, e
 	fs.BoolVar(&cfg.SafeMode, "safe-mode", false, "enable safe mode to make syncer reentrant")
 	fs.IntVar(&cfg.MaxRetry, "max-retry", 100, "maxinum retry when network interruption")
 	fs.StringVar(&timezoneStr, "timezone", "", "target database timezone location string")
-	fs.StringVar(&cfg.Name, "cp-table-prefix", "dm-syncer", "the prefix of the checkpoint table name")
+	fs.StringVar(&cfg.Name, "cp-table-prefix", "sdm-syncer", "the prefix of the checkpoint table name")
 	fs.BoolVar(&syncerConfigFormat, "syncer-config-format", false, "read syncer config format")
 
 	cfg.ServerID = uint32(serverID)
@@ -191,7 +191,7 @@ func (c *commonConfig) newSubTaskConfig(args []string) (*config.SubTaskConfig, e
 
 func newCommonConfig() *commonConfig {
 	cfg := &commonConfig{}
-	cfg.FlagSet = flag.NewFlagSet("dm-syncer", flag.ContinueOnError)
+	cfg.FlagSet = flag.NewFlagSet("sdm-syncer", flag.ContinueOnError)
 	fs := cfg.FlagSet
 
 	fs.BoolVar(&cfg.printVersion, "V", false, "prints version and exit")

@@ -20,9 +20,9 @@ import (
 	"github.com/pingcap/check"
 	"github.com/pingcap/tidb/parser/mysql"
 	"github.com/pingcap/tidb/util/timeutil"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/util/testleak"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/util/testleak"
 )
 
 func Test(t *testing.T) { check.TestingT(t) }

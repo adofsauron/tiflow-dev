@@ -17,7 +17,7 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/pingcap/tiflow/dm/dm/pb"
+	"sdbflow/dm/dm/pb"
 
 	"github.com/pingcap/check"
 )

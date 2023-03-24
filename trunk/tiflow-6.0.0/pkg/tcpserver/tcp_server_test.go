@@ -27,8 +27,8 @@ import (
 	grpcTestingProto "github.com/grpc-ecosystem/go-grpc-middleware/testing/testproto"
 	"github.com/integralist/go-findroot/find"
 	"github.com/phayes/freeport"
-	"github.com/pingcap/tiflow/pkg/httputil"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/pkg/httputil"
+	"sdbflow/pkg/security"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
 )

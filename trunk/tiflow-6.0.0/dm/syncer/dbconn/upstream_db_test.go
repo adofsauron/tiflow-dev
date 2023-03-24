@@ -23,8 +23,8 @@ import (
 	"github.com/google/uuid"
 	. "github.com/pingcap/check"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/pkg/utils"
 )
 
 var _ = Suite(&testDBSuite{})

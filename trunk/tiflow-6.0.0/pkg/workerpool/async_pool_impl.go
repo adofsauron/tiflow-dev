@@ -19,8 +19,8 @@ import (
 	"sync/atomic"
 
 	"github.com/pingcap/errors"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/retry"
+	cerrors "sdbflow/pkg/errors"
+	"sdbflow/pkg/retry"
 	"golang.org/x/sync/errgroup"
 )
 

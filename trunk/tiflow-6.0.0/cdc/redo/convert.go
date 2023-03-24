@@ -17,7 +17,7 @@ import (
 	"bytes"
 
 	pmodel "github.com/pingcap/tidb/parser/model"
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 )
 
 // RowToRedo converts row changed event to redo log row

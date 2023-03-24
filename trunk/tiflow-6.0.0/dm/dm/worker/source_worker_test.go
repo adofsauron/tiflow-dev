@@ -26,15 +26,15 @@ import (
 	"github.com/tikv/pd/pkg/tempurl"
 	clientv3 "go.etcd.io/etcd/client/v3"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/dm/unit"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/relay"
-	"github.com/pingcap/tiflow/dm/syncer"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/dm/unit"
+	"sdbflow/dm/pkg/conn"
+	"sdbflow/dm/pkg/ha"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/relay"
+	"sdbflow/dm/syncer"
 )
 
 var emptyWorkerStatusInfoJSONLength = 25
@@ -55,14 +55,14 @@ func (t *testServer2) SetUpSuite(c *C) {
 	c.Assert(err, IsNil)
 
 	getMinLocForSubTaskFunc = getFakeLocForSubTask
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/worker/MockGetSourceCfgFromETCD", `return(true)`), IsNil)
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/worker/SkipRefreshFromETCDInUT", `return()`), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/dm/worker/MockGetSourceCfgFromETCD", `return(true)`), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/dm/worker/SkipRefreshFromETCDInUT", `return()`), IsNil)
 }
 
 func (t *testServer2) TearDownSuite(c *C) {
 	getMinLocForSubTaskFunc = getMinLocForSubTask
-	c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/dm/worker/MockGetSourceCfgFromETCD"), IsNil)
-	c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/dm/worker/SkipRefreshFromETCDInUT"), IsNil)
+	c.Assert(failpoint.Disable("sdbflow/dm/dm/worker/MockGetSourceCfgFromETCD"), IsNil)
+	c.Assert(failpoint.Disable("sdbflow/dm/dm/worker/SkipRefreshFromETCDInUT"), IsNil)
 }
 
 func (t *testServer2) TestTaskAutoResume(c *C) {
@@ -97,18 +97,18 @@ func (t *testServer2) TestTaskAutoResume(c *C) {
 		NewRelayHolder = NewRealRelayHolder
 	}()
 
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dumpling/dumpUnitProcessForever", `return()`), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/dumpling/dumpUnitProcessForever", `return()`), IsNil)
 	//nolint:errcheck
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/dumpling/dumpUnitProcessForever")
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/worker/mockCreateUnitsDumpOnly", `return(true)`), IsNil)
+	defer failpoint.Disable("sdbflow/dm/dumpling/dumpUnitProcessForever")
+	c.Assert(failpoint.Enable("sdbflow/dm/dm/worker/mockCreateUnitsDumpOnly", `return(true)`), IsNil)
 	//nolint:errcheck
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/dm/worker/mockCreateUnitsDumpOnly")
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/loader/ignoreLoadCheckpointErr", `return()`), IsNil)
+	defer failpoint.Disable("sdbflow/dm/dm/worker/mockCreateUnitsDumpOnly")
+	c.Assert(failpoint.Enable("sdbflow/dm/loader/ignoreLoadCheckpointErr", `return()`), IsNil)
 	//nolint:errcheck
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/loader/ignoreLoadCheckpointErr")
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dumpling/dumpUnitProcessWithError", `return("test auto resume inject error")`), IsNil)
+	defer failpoint.Disable("sdbflow/dm/loader/ignoreLoadCheckpointErr")
+	c.Assert(failpoint.Enable("sdbflow/dm/dumpling/dumpUnitProcessWithError", `return("test auto resume inject error")`), IsNil)
 	//nolint:errcheck
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/dumpling/dumpUnitProcessWithError")
+	defer failpoint.Disable("sdbflow/dm/dumpling/dumpUnitProcessWithError")
 
 	s := NewServer(cfg)
 	defer s.Close()
@@ -145,7 +145,7 @@ func (t *testServer2) TestTaskAutoResume(c *C) {
 		return false
 	}), IsTrue)
 	//nolint:errcheck
-	failpoint.Disable("github.com/pingcap/tiflow/dm/dumpling/dumpUnitProcessWithError")
+	failpoint.Disable("sdbflow/dm/dumpling/dumpUnitProcessWithError")
 
 	rtsc, ok := s.getSourceWorker(true).taskStatusChecker.(*realTaskStatusChecker)
 	c.Assert(ok, IsTrue)
@@ -186,7 +186,7 @@ func (t *testWorkerFunctionalities) SetUpSuite(c *C) {
 		return []unit.Unit{mockDumper, mockLoader, mockSync}
 	}
 	getMinLocForSubTaskFunc = getFakeLocForSubTask
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/worker/MockGetSourceCfgFromETCD", `return(true)`), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/dm/worker/MockGetSourceCfgFromETCD", `return(true)`), IsNil)
 }
 
 func (t *testWorkerFunctionalities) TearDownSuite(c *C) {
@@ -194,7 +194,7 @@ func (t *testWorkerFunctionalities) TearDownSuite(c *C) {
 	NewSubTask = NewRealSubTask
 	createUnits = createRealUnits
 	getMinLocForSubTaskFunc = getMinLocForSubTask
-	c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/dm/worker/MockGetSourceCfgFromETCD"), IsNil)
+	c.Assert(failpoint.Disable("sdbflow/dm/dm/worker/MockGetSourceCfgFromETCD"), IsNil)
 }
 
 func (t *testWorkerFunctionalities) TestWorkerFunctionalities(c *C) {
@@ -358,14 +358,14 @@ func (t *testWorkerEtcdCompact) SetUpSuite(c *C) {
 		mockSync := NewMockUnit(pb.UnitType_Sync)
 		return []unit.Unit{mockDumper, mockLoader, mockSync}
 	}
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/worker/MockGetSourceCfgFromETCD", `return(true)`), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/dm/worker/MockGetSourceCfgFromETCD", `return(true)`), IsNil)
 }
 
 func (t *testWorkerEtcdCompact) TearDownSuite(c *C) {
 	NewRelayHolder = NewRealRelayHolder
 	NewSubTask = NewRealSubTask
 	createUnits = createRealUnits
-	c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/dm/worker/MockGetSourceCfgFromETCD"), IsNil)
+	c.Assert(failpoint.Disable("sdbflow/dm/dm/worker/MockGetSourceCfgFromETCD"), IsNil)
 }
 
 func (t *testWorkerEtcdCompact) TestWatchSubtaskStageEtcdCompact(c *C) {
@@ -717,9 +717,9 @@ func (t *testServer) testSourceWorker(c *C) {
 	}()
 	w, err := NewSourceWorker(cfg, etcdCli, "", "")
 	c.Assert(err, IsNil)
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/worker/MockGetSourceCfgFromETCD", `return(true)`), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/dm/worker/MockGetSourceCfgFromETCD", `return(true)`), IsNil)
 	c.Assert(w.EnableRelay(false), ErrorMatches, "init error")
-	c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/dm/worker/MockGetSourceCfgFromETCD"), IsNil)
+	c.Assert(failpoint.Disable("sdbflow/dm/dm/worker/MockGetSourceCfgFromETCD"), IsNil)
 
 	NewRelayHolder = NewDummyRelayHolder
 	w, err = NewSourceWorker(cfg, etcdCli, "", "")

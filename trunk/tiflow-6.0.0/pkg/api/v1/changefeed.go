@@ -17,8 +17,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/api/internal/rest"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/api/internal/rest"
 )
 
 // ChangefeedsGetter has a method to return a ChangefeedInterface.

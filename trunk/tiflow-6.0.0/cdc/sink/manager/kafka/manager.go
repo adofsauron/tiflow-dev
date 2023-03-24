@@ -21,9 +21,9 @@ import (
 	"github.com/Shopify/sarama"
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	kafkaconfig "github.com/pingcap/tiflow/cdc/sink/producer/kafka"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/kafka"
+	kafkaconfig "sdbflow/cdc/sink/producer/kafka"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/kafka"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 )

@@ -17,8 +17,8 @@ import (
 	"testing"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	cdcContext "github.com/pingcap/tiflow/pkg/context"
+	"sdbflow/cdc/model"
+	cdcContext "sdbflow/pkg/context"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"

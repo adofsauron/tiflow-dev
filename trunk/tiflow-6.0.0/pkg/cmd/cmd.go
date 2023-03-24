@@ -16,18 +16,18 @@ package cmd
 import (
 	"os"
 
-	"github.com/pingcap/tiflow/pkg/cmd/cli"
-	"github.com/pingcap/tiflow/pkg/cmd/redo"
-	"github.com/pingcap/tiflow/pkg/cmd/server"
-	"github.com/pingcap/tiflow/pkg/cmd/version"
+	"sdbflow/pkg/cmd/cli"
+	"sdbflow/pkg/cmd/redo"
+	"sdbflow/pkg/cmd/server"
+	"sdbflow/pkg/cmd/version"
 	"github.com/spf13/cobra"
 )
 
 // NewCmd creates the root command.
 func NewCmd() *cobra.Command {
 	return &cobra.Command{
-		Use:   "cdc",
-		Short: "CDC",
+		Use:   "scdc",
+		Short: "SCDC",
 		Long:  `Change Data Capture`,
 		CompletionOptions: cobra.CompletionOptions{
 			DisableDefaultCmd: true,

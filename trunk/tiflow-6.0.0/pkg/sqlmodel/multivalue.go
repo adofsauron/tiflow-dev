@@ -18,8 +18,8 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/pkg/quotes"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/pkg/quotes"
 )
 
 // SameTypeTargetAndColumns check whether two row changes have same type, target

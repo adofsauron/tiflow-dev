@@ -14,9 +14,9 @@ function run() {
 	# TableMapEvent, QueryEvent, GTIDEvent, and a specific Event in each group.
 	# so we slow down 460 * 4 ms. Besides the log may be not flushed to disk asap,
 	# we need to add some retry mechanism
-	inject_points=("github.com/pingcap/tiflow/dm/dm/worker/PrintStatusCheckSeconds=return(1)"
-		"github.com/pingcap/tiflow/dm/loader/LoadDataSlowDown=sleep(100)"
-		"github.com/pingcap/tiflow/dm/syncer/ProcessBinlogSlowDown=sleep(4)")
+	inject_points=("sdbflow/dm/dm/worker/PrintStatusCheckSeconds=return(1)"
+		"sdbflow/dm/loader/LoadDataSlowDown=sleep(100)"
+		"sdbflow/dm/syncer/ProcessBinlogSlowDown=sleep(4)")
 	export GO_FAILPOINTS="$(join_string \; ${inject_points[@]})"
 
 	cp $cur/conf/dm-worker1.toml $WORK_DIR/dm-worker1.toml
@@ -45,7 +45,7 @@ function run() {
 }
 
 function check_print_status() {
-	# wait for all dm-worker's log flushed to disk
+	# wait for all SDM-worker's log flushed to disk
 	i=0
 	while [ $i -lt 3 ]; do
 		exit_log=$(grep "dm-worker exit" $WORK_DIR/worker1/log/dm-worker.log || echo "not found")

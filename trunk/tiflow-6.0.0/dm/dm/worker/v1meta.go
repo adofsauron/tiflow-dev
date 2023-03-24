@@ -19,9 +19,9 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/v1workermeta"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/v1workermeta"
 )
 
 // OperateV1Meta implements WorkerServer.OperateV1Meta.

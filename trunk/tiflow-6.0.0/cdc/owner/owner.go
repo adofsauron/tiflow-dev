@@ -24,13 +24,13 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/config"
-	cdcContext "github.com/pingcap/tiflow/pkg/context"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/orchestrator"
-	"github.com/pingcap/tiflow/pkg/txnutil/gc"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/config"
+	cdcContext "sdbflow/pkg/context"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/orchestrator"
+	"sdbflow/pkg/txnutil/gc"
+	"sdbflow/pkg/version"
 	pd "github.com/tikv/pd/client"
 	"go.uber.org/zap"
 	"golang.org/x/time/rate"
@@ -73,7 +73,7 @@ type ownerJob struct {
 	done chan<- error
 }
 
-// Owner managers TiCDC cluster.
+// Owner managers SDBCDC cluster.
 //
 // The interface is thread-safe, except for Tick, it's only used by etcd worker.
 type Owner interface {

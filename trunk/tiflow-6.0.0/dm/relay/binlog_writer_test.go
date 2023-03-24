@@ -21,7 +21,7 @@ import (
 
 	. "github.com/pingcap/check"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/pkg/log"
 )
 
 var _ = Suite(&testBinlogWriterSuite{})

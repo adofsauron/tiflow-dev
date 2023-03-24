@@ -22,8 +22,8 @@ import (
 
 	toolutils "github.com/pingcap/tidb-tools/pkg/utils"
 
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/tests/utils"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/tests/utils"
 )
 
 // use query status request to test DM-worker is online

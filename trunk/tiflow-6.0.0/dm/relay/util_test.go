@@ -23,8 +23,8 @@ import (
 	. "github.com/pingcap/check"
 	"github.com/pingcap/errors"
 
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/conn"
+	"sdbflow/dm/pkg/utils"
 )
 
 var _ = Suite(&testUtilSuite{})

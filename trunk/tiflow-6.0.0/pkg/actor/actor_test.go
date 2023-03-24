@@ -19,8 +19,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/actor/message"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/actor/message"
 	"github.com/stretchr/testify/require"
 )
 

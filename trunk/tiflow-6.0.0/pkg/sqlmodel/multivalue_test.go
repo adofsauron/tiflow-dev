@@ -18,7 +18,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	cdcmodel "github.com/pingcap/tiflow/cdc/model"
+	cdcmodel "sdbflow/cdc/model"
 )
 
 func TestGenDeleteMultiValue(t *testing.T) {

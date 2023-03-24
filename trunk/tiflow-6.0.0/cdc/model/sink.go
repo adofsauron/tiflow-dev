@@ -22,8 +22,8 @@ import (
 	"github.com/pingcap/log"
 	"github.com/pingcap/tidb/parser/model"
 	"github.com/pingcap/tidb/util/rowcodec"
-	"github.com/pingcap/tiflow/pkg/quotes"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/pkg/quotes"
+	"sdbflow/pkg/util"
 	"go.uber.org/zap"
 )
 

@@ -14,8 +14,8 @@
 package v1
 
 import (
-	"github.com/pingcap/tiflow/pkg/api/internal/rest"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/pkg/api/internal/rest"
+	"sdbflow/pkg/security"
 )
 
 // APIV1Interface is an abstraction for TiCDC capture/changefeed/processor operations.

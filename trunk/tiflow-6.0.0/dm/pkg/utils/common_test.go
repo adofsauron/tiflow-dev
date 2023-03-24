@@ -22,7 +22,7 @@ import (
 	. "github.com/pingcap/check"
 	"github.com/pingcap/tidb-tools/pkg/filter"
 	"github.com/pingcap/tidb/parser"
-	"github.com/pingcap/tiflow/dm/pkg/router"
+	"sdbflow/dm/pkg/router"
 )
 
 var _ = Suite(&testCommonSuite{})

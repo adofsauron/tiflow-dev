@@ -25,11 +25,11 @@ import (
 	"github.com/BurntSushi/toml"
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	cmdconetxt "github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/logutil"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/cdc/model"
+	cmdconetxt "sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/logutil"
+	"sdbflow/pkg/version"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 	"golang.org/x/net/http/httpproxy"
@@ -181,14 +181,14 @@ func VerifyAndGetTiCDCClusterVersion(
 		return version.TiCDCClusterVersion{}, err
 	}
 
-	// Check TiCDC cluster version.
+	// Check SDBCDC cluster version.
 	isUnknownVersion, err := version.CheckTiCDCClusterVersion(cdcClusterVer)
 	if err != nil {
 		return version.TiCDCClusterVersion{}, err
 	}
 
 	if isUnknownVersion {
-		return version.TiCDCClusterVersion{}, errors.NewNoStackError("TiCDC cluster is unknown, please start TiCDC cluster")
+		return version.TiCDCClusterVersion{}, errors.NewNoStackError("SDBCDC cluster is unknown, please start SDBCDC cluster")
 	}
 
 	return cdcClusterVer, nil

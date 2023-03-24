@@ -18,7 +18,7 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	cerror "sdbflow/pkg/errors"
 )
 
 // DefaultMaxMessageBytes sets the default value for max-message-bytes

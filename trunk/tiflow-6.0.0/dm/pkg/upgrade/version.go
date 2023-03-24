@@ -18,10 +18,10 @@ import (
 
 	clientv3 "go.etcd.io/etcd/client/v3"
 
-	"github.com/pingcap/tiflow/dm/dm/common"
-	"github.com/pingcap/tiflow/dm/pkg/etcdutil"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/dm/common"
+	"sdbflow/dm/pkg/etcdutil"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 const (

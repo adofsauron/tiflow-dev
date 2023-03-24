@@ -19,11 +19,11 @@ import (
 	. "github.com/pingcap/check"
 	"github.com/pingcap/tidb-tools/pkg/filter"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/schema"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/syncer/dbconn"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/schema"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/syncer/dbconn"
 )
 
 func (s *testFilterSuite) TestSkipDMLByExpression(c *C) {

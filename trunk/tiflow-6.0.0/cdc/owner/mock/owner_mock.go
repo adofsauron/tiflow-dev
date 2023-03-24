@@ -10,9 +10,9 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	model "github.com/pingcap/tiflow/cdc/model"
-	owner "github.com/pingcap/tiflow/cdc/owner"
-	orchestrator "github.com/pingcap/tiflow/pkg/orchestrator"
+	model "sdbflow/cdc/model"
+	owner "sdbflow/cdc/owner"
+	orchestrator "sdbflow/pkg/orchestrator"
 )
 
 // MockOwner is a mock of Owner interface.

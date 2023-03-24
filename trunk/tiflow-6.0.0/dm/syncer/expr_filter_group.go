@@ -23,9 +23,9 @@ import (
 	"github.com/pingcap/tidb/util/chunk"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/utils"
 )
 
 // ExprFilterGroup groups many related fields about expression filter.

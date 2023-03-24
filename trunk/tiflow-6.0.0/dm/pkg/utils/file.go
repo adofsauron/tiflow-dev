@@ -22,8 +22,8 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
 )
 
 // IsFileExists checks if file exists.

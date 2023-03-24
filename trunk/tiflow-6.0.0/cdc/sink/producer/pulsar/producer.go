@@ -21,8 +21,8 @@ import (
 	"github.com/apache/pulsar-client-go/pulsar"
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/sink/codec"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/sink/codec"
+	cerror "sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

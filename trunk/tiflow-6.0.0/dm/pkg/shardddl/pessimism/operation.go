@@ -21,8 +21,8 @@ import (
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.etcd.io/etcd/client/v3/clientv3util"
 
-	"github.com/pingcap/tiflow/dm/dm/common"
-	"github.com/pingcap/tiflow/dm/pkg/etcdutil"
+	"sdbflow/dm/dm/common"
+	"sdbflow/dm/pkg/etcdutil"
 )
 
 // Operation represents a shard DDL coordinate operation.

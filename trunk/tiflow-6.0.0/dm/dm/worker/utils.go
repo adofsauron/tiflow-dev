@@ -16,9 +16,9 @@ package worker
 import (
 	clientv3 "go.etcd.io/etcd/client/v3"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/ha"
 )
 
 func getExpectValidatorStage(cfg config.ValidatorConfig, etcdClient *clientv3.Client, source, task string, revision int64) (pb.Stage, error) {

@@ -20,11 +20,11 @@ import (
 	"github.com/spf13/cobra"
 	"go.etcd.io/etcd/client/v3/concurrency"
 
-	cmdcontext "github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/cmd/factory"
-	"github.com/pingcap/tiflow/pkg/cmd/util"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/etcd"
+	cmdcontext "sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/cmd/factory"
+	"sdbflow/pkg/cmd/util"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/etcd"
 )
 
 // capture holds capture information.
@@ -74,7 +74,7 @@ func newCmdListCapture(f factory.Factory) *cobra.Command {
 
 	command := &cobra.Command{
 		Use:   "list",
-		Short: "List all captures in TiCDC cluster",
+		Short: "List all captures in SDBCDC cluster",
 		Args:  cobra.NoArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			err := o.complete(f)

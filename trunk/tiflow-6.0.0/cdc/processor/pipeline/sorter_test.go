@@ -18,14 +18,14 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/redo"
-	"github.com/pingcap/tiflow/cdc/sorter"
-	"github.com/pingcap/tiflow/cdc/sorter/memory"
-	"github.com/pingcap/tiflow/cdc/sorter/unified"
-	"github.com/pingcap/tiflow/pkg/config"
-	cdcContext "github.com/pingcap/tiflow/pkg/context"
-	"github.com/pingcap/tiflow/pkg/pipeline"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/redo"
+	"sdbflow/cdc/sorter"
+	"sdbflow/cdc/sorter/memory"
+	"sdbflow/cdc/sorter/unified"
+	"sdbflow/pkg/config"
+	cdcContext "sdbflow/pkg/context"
+	"sdbflow/pkg/pipeline"
 	"github.com/stretchr/testify/require"
 )
 

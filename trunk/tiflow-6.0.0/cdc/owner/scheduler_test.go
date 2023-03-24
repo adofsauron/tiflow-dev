@@ -21,12 +21,12 @@ import (
 
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	pscheduler "github.com/pingcap/tiflow/cdc/scheduler"
-	cdcContext "github.com/pingcap/tiflow/pkg/context"
-	"github.com/pingcap/tiflow/pkg/orchestrator"
-	"github.com/pingcap/tiflow/pkg/p2p"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/cdc/model"
+	pscheduler "sdbflow/cdc/scheduler"
+	cdcContext "sdbflow/pkg/context"
+	"sdbflow/pkg/orchestrator"
+	"sdbflow/pkg/p2p"
+	"sdbflow/pkg/version"
 	"github.com/stretchr/testify/require"
 )
 
@@ -35,14 +35,14 @@ const (
 )
 
 func TestSchedulerBasics(t *testing.T) {
-	_ = failpoint.Enable("github.com/pingcap/tiflow/pkg/p2p/ClientInjectSendMessageTryAgain", "50%return(true)")
+	_ = failpoint.Enable("sdbflow/pkg/p2p/ClientInjectSendMessageTryAgain", "50%return(true)")
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/pkg/p2p/ClientInjectSendMessageTryAgain")
+		_ = failpoint.Disable("sdbflow/pkg/p2p/ClientInjectSendMessageTryAgain")
 	}()
 
-	_ = failpoint.Enable("github.com/pingcap/tiflow/pkg/p2p/ClientInjectClosed", "5*return(true)")
+	_ = failpoint.Enable("sdbflow/pkg/p2p/ClientInjectClosed", "5*return(true)")
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/pkg/p2p/ClientInjectClosed")
+		_ = failpoint.Disable("sdbflow/pkg/p2p/ClientInjectClosed")
 	}()
 
 	stdCtx, cancel := context.WithTimeout(context.Background(), 10*time.Second)

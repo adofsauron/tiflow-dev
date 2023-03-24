@@ -19,7 +19,7 @@ import (
 	"time"
 
 	"github.com/pingcap/check"
-	"github.com/pingcap/tiflow/pkg/util/testleak"
+	"sdbflow/pkg/util/testleak"
 )
 
 func init() {

@@ -14,8 +14,8 @@
 package message
 
 import (
-	"github.com/pingcap/tiflow/cdc/model"
-	sorter "github.com/pingcap/tiflow/cdc/sorter/leveldb/message"
+	"sdbflow/cdc/model"
+	sorter "sdbflow/cdc/sorter/leveldb/message"
 )
 
 // Type is the type of Message

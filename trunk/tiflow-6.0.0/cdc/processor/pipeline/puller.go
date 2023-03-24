@@ -17,12 +17,12 @@ import (
 	"context"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/puller"
-	cdcContext "github.com/pingcap/tiflow/pkg/context"
-	"github.com/pingcap/tiflow/pkg/pipeline"
-	"github.com/pingcap/tiflow/pkg/regionspan"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/puller"
+	cdcContext "sdbflow/pkg/context"
+	"sdbflow/pkg/pipeline"
+	"sdbflow/pkg/regionspan"
+	"sdbflow/pkg/util"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -72,7 +72,7 @@ func (n *pullerNode) start(ctx pipeline.NodeContext, wg *errgroup.Group, isActor
 	ctxC = util.PutChangefeedIDInCtx(ctxC, ctx.ChangefeedVars().ID)
 	ctxC = util.PutRoleInCtx(ctxC, util.RoleProcessor)
 	// NOTICE: always pull the old value internally
-	// See also: https://github.com/pingcap/tiflow/issues/2301.
+	// See also: https://sdbflow/issues/2301.
 	plr := puller.NewPuller(
 		ctxC,
 		ctx.GlobalVars().PDClient,

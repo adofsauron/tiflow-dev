@@ -17,7 +17,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/pingcap/tiflow/pkg/regionspan"
+	"sdbflow/pkg/regionspan"
 )
 
 func toCMPBytes(i int) []byte {

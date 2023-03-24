@@ -15,10 +15,10 @@ package cli
 
 import (
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/cmd/factory"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/txnutil/gc"
+	"sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/cmd/factory"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/txnutil/gc"
 	"github.com/spf13/cobra"
 	pd "github.com/tikv/pd/client"
 )
@@ -88,7 +88,7 @@ func newCmdReset(f factory.Factory, commonOptions *unsafeCommonOptions) *cobra.C
 
 	command := &cobra.Command{
 		Use:   "reset",
-		Short: "Reset the status of the TiCDC cluster, delete all meta data in etcd, confirm that you know what this command will do and use it at your own risk",
+		Short: "Reset the status of the SDBCDC cluster, delete all meta data in etcd, confirm that you know what this command will do and use it at your own risk",
 		Args:  cobra.NoArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			if err := commonOptions.confirmMetaDelete(cmd); err != nil {

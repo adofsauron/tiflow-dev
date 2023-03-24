@@ -21,9 +21,9 @@ import (
 	"github.com/pingcap/tidb-tools/pkg/filter"
 	"github.com/stretchr/testify/require"
 
-	"github.com/pingcap/tiflow/dm/openapi"
-	"github.com/pingcap/tiflow/dm/openapi/fixtures"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/openapi"
+	"sdbflow/dm/openapi/fixtures"
+	"sdbflow/dm/pkg/terror"
 )
 
 func (t *testConfig) TestTaskGetTargetDBCfg(c *check.C) {

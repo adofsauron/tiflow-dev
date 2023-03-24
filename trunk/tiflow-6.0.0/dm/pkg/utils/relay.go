@@ -24,7 +24,7 @@ import (
 
 	"github.com/go-mysql-org/go-mysql/replication"
 
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/terror"
 )
 
 // not support to config yet.

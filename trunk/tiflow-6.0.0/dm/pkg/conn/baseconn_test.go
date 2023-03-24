@@ -18,10 +18,10 @@ import (
 	"strings"
 	"testing"
 
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/metricsproxy"
-	"github.com/pingcap/tiflow/dm/pkg/retry"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/metricsproxy"
+	"sdbflow/dm/pkg/retry"
+	"sdbflow/dm/pkg/terror"
 
 	"github.com/DATA-DOG/go-sqlmock"
 	. "github.com/pingcap/check"

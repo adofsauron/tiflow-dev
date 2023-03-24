@@ -11,7 +11,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// MVC for dm-master's openapi server
+// MVC for SDM-master's openapi server
 // Model(data in etcd): source of truth
 // View(openapi_view): do some inner work such as validate, filter, prepare parameters/response and call controller to update model.
 // Controller(openapi_controller): call model func to update data.
@@ -23,14 +23,14 @@ import (
 	"testing"
 
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tiflow/dm/checker"
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/master/scheduler"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/openapi"
-	"github.com/pingcap/tiflow/dm/openapi/fixtures"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/checker"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/master/scheduler"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/openapi"
+	"sdbflow/dm/openapi/fixtures"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
 	"github.com/stretchr/testify/suite"
 )
 
@@ -61,15 +61,15 @@ func (s *OpenAPIControllerSuite) SetupSuite() {
 
 	checker.CheckSyncConfigFunc = mockCheckSyncConfig
 	checkAndAdjustSourceConfigFunc = checkAndNoAdjustSourceConfigMock
-	s.Nil(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/master/MockSkipAdjustTargetDB", `return(true)`))
-	s.Nil(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/master/MockSkipRemoveMetaData", `return(true)`))
+	s.Nil(failpoint.Enable("sdbflow/dm/dm/master/MockSkipAdjustTargetDB", `return(true)`))
+	s.Nil(failpoint.Enable("sdbflow/dm/dm/master/MockSkipRemoveMetaData", `return(true)`))
 }
 
 func (s *OpenAPIControllerSuite) TearDownSuite() {
 	checkAndAdjustSourceConfigFunc = checkAndAdjustSourceConfig
 	checker.CheckSyncConfigFunc = checker.CheckSyncConfig
-	s.Nil(failpoint.Disable("github.com/pingcap/tiflow/dm/dm/master/MockSkipAdjustTargetDB"))
-	s.Nil(failpoint.Disable("github.com/pingcap/tiflow/dm/dm/master/MockSkipRemoveMetaData"))
+	s.Nil(failpoint.Disable("sdbflow/dm/dm/master/MockSkipAdjustTargetDB"))
+	s.Nil(failpoint.Disable("sdbflow/dm/dm/master/MockSkipRemoveMetaData"))
 }
 
 func (s *OpenAPIControllerSuite) TestSourceController() {
@@ -262,7 +262,7 @@ func (s *OpenAPIControllerSuite) TestTaskController() {
 		batch := 1000
 		task.SourceConfig.IncrMigrateConf.ReplBatch = &batch
 		updateReq := openapi.UpdateTaskRequest{Task: task}
-		s.NoError(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/master/scheduler/operateCheckSubtasksCanUpdate", `return("success")`))
+		s.NoError(failpoint.Enable("sdbflow/dm/dm/master/scheduler/operateCheckSubtasksCanUpdate", `return("success")`))
 		taskAfterUpdated, err := server.updateTask(ctx, updateReq)
 		s.NoError(err)
 		s.EqualValues(task.SourceConfig.IncrMigrateConf, taskAfterUpdated.SourceConfig.IncrMigrateConf)
@@ -272,7 +272,7 @@ func (s *OpenAPIControllerSuite) TestTaskController() {
 		taskAfterUpdated, err = server.updateTask(ctx, updateReq)
 		s.NoError(err)
 		s.EqualValues(s.testTask, taskAfterUpdated)
-		s.NoError(failpoint.Disable("github.com/pingcap/tiflow/dm/dm/master/scheduler/operateCheckSubtasksCanUpdate"))
+		s.NoError(failpoint.Disable("sdbflow/dm/dm/master/scheduler/operateCheckSubtasksCanUpdate"))
 	}
 
 	// get and with status

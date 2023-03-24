@@ -45,25 +45,25 @@ import (
 	"go.etcd.io/etcd/tests/v3/integration"
 	"google.golang.org/grpc"
 
-	"github.com/pingcap/tiflow/dm/checker"
-	common2 "github.com/pingcap/tiflow/dm/dm/common"
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/dm/master/scheduler"
-	"github.com/pingcap/tiflow/dm/dm/master/shardddl"
-	"github.com/pingcap/tiflow/dm/dm/master/workerrpc"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/dm/pbmock"
-	"github.com/pingcap/tiflow/dm/openapi/fixtures"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	"github.com/pingcap/tiflow/dm/pkg/cputil"
-	"github.com/pingcap/tiflow/dm/pkg/etcdutil"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/shardddl/optimism"
-	"github.com/pingcap/tiflow/dm/pkg/shardddl/pessimism"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/checker"
+	common2 "sdbflow/dm/dm/common"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/ctl/common"
+	"sdbflow/dm/dm/master/scheduler"
+	"sdbflow/dm/dm/master/shardddl"
+	"sdbflow/dm/dm/master/workerrpc"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/dm/pbmock"
+	"sdbflow/dm/openapi/fixtures"
+	"sdbflow/dm/pkg/conn"
+	"sdbflow/dm/pkg/cputil"
+	"sdbflow/dm/pkg/etcdutil"
+	"sdbflow/dm/pkg/ha"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/shardddl/optimism"
+	"sdbflow/dm/pkg/shardddl/pessimism"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 // use task config from integration test `sharding`.
@@ -2105,9 +2105,9 @@ func (t *testMaster) TestGetCfg(c *check.C) {
 	c.Assert(err, check.IsNil)
 	openapiTask.Name = taskName2
 	c.Assert(ha.PutOpenAPITaskTemplate(t.etcdTestCli, openapiTask, true), check.IsNil)
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/master/MockSkipAdjustTargetDB", `return(true)`), check.IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/dm/master/MockSkipAdjustTargetDB", `return(true)`), check.IsNil)
 	resp2, err = server.GetCfg(context.Background(), &pb.GetCfgRequest{Name: taskName2, Type: pb.CfgType_TaskTemplateType})
-	c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/dm/master/MockSkipAdjustTargetDB"), check.IsNil)
+	c.Assert(failpoint.Disable("sdbflow/dm/dm/master/MockSkipAdjustTargetDB"), check.IsNil)
 	c.Assert(err, check.IsNil)
 	c.Assert(resp2.Result, check.IsTrue)
 	c.Assert(strings.Contains(resp2.Cfg, fmt.Sprintf("name: %s", taskName2)), check.IsTrue)
@@ -2197,12 +2197,12 @@ func (t *testMaster) subTaskStageMatch(c *check.C, s *scheduler.Scheduler, task,
 }
 
 func (t *testMaster) TestGRPCLongResponse(c *check.C) {
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/master/LongRPCResponse", `return()`), check.IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/dm/master/LongRPCResponse", `return()`), check.IsNil)
 	//nolint:errcheck
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/dm/master/LongRPCResponse")
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/ctl/common/SkipUpdateMasterClient", `return()`), check.IsNil)
+	defer failpoint.Disable("sdbflow/dm/dm/master/LongRPCResponse")
+	c.Assert(failpoint.Enable("sdbflow/dm/dm/ctl/common/SkipUpdateMasterClient", `return()`), check.IsNil)
 	//nolint:errcheck
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/dm/ctl/common/SkipUpdateMasterClient")
+	defer failpoint.Disable("sdbflow/dm/dm/ctl/common/SkipUpdateMasterClient")
 
 	masterAddr := tempurl.Alloc()[len("http://"):]
 	lis, err := net.Listen("tcp", masterAddr)

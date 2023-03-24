@@ -47,7 +47,7 @@ message CommonWorkerResponse {
 }
 
 // QueryStatusResponse represents status response for query on a dm-worker
-// status: dm-worker's current sub tasks' status
+// status: SDM-worker's current sub tasks' status
 message QueryStatusResponse {
     bool result = 1;
     string msg = 2;

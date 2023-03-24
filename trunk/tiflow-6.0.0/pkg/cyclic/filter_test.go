@@ -17,8 +17,8 @@ import (
 	"testing"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/cyclic/mark"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/cyclic/mark"
 	"github.com/stretchr/testify/require"
 )
 

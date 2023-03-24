@@ -21,9 +21,9 @@ import (
 	"github.com/pingcap/failpoint"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/syncer/metrics"
-	"github.com/pingcap/tiflow/pkg/sqlmodel"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/syncer/metrics"
+	"sdbflow/pkg/sqlmodel"
 )
 
 // compactor compacts multiple statements into one statement.

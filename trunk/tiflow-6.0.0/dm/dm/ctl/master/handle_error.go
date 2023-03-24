@@ -20,9 +20,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/pingcap/tiflow/dm/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
+	"sdbflow/dm/dm/ctl/common"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/binlog"
 )
 
 // NewHandleErrorCmd creates a HandleError command.

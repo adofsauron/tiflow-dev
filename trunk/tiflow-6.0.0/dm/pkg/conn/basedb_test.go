@@ -19,8 +19,8 @@ import (
 
 	sqlmock "github.com/DATA-DOG/go-sqlmock"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
+	"sdbflow/dm/dm/config"
+	tcontext "sdbflow/dm/pkg/context"
 )
 
 var _ = Suite(&testBaseDBSuite{})
@@ -63,9 +63,9 @@ func (t *testBaseDBSuite) TestGetBaseConn(c *C) {
 }
 
 func (t *testBaseDBSuite) TestFailDBPing(c *C) {
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/pkg/conn/failDBPing", "return"), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/pkg/conn/failDBPing", "return"), IsNil)
 	//nolint:errcheck
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/pkg/conn/failDBPing")
+	defer failpoint.Disable("sdbflow/dm/pkg/conn/failDBPing")
 
 	cfg := &config.DBConfig{User: "root", Host: "127.0.0.1", Port: 3306}
 	cfg.Adjust()

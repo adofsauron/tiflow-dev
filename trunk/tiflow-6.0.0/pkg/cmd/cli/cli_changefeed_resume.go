@@ -17,12 +17,12 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/pingcap/tiflow/cdc/api"
-	"github.com/pingcap/tiflow/cdc/model"
-	cmdcontext "github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/cmd/factory"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/cdc/api"
+	"sdbflow/cdc/model"
+	cmdcontext "sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/cmd/factory"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/security"
 	"github.com/spf13/cobra"
 	pd "github.com/tikv/pd/client"
 )

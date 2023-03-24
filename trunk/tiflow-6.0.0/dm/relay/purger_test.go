@@ -23,10 +23,10 @@ import (
 
 	. "github.com/pingcap/check"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/streamer"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/streamer"
+	"sdbflow/dm/pkg/utils"
 )
 
 var _ = Suite(&testPurgerSuite{

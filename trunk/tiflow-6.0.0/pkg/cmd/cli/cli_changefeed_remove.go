@@ -14,11 +14,11 @@
 package cli
 
 import (
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/cmd/factory"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/cmd/factory"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/security"
 	"github.com/spf13/cobra"
 )
 

@@ -16,7 +16,7 @@ package fixtures
 import (
 	"encoding/json"
 
-	"github.com/pingcap/tiflow/dm/openapi"
+	"sdbflow/dm/openapi"
 )
 
 var (

@@ -21,7 +21,7 @@ import (
 	"github.com/pingcap/tidb-tools/pkg/dbutil"
 	toolsutils "github.com/pingcap/tidb-tools/pkg/utils"
 
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/utils"
 )
 
 // MySQLVersionChecker checks mysql/mariadb/rds,... version.

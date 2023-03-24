@@ -34,12 +34,12 @@ import (
 	timock "github.com/pingcap/tidb/util/mock"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	dlog "github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/syncer/dbconn"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/pkg/conn"
+	tcontext "sdbflow/dm/pkg/context"
+	dlog "sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/syncer/dbconn"
 )
 
 func Test(t *testing.T) {

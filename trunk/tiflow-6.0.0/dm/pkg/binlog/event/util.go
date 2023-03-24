@@ -35,7 +35,7 @@ import (
 	"golang.org/x/text/encoding"
 	"golang.org/x/text/encoding/simplifiedchinese"
 
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/terror"
 )
 
 // encodeTableMapColumnMeta generates the column_meta_def according to the column_type_def.

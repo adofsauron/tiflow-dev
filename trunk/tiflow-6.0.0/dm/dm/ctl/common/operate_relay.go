@@ -16,7 +16,7 @@ package common
 import (
 	"context"
 
-	"github.com/pingcap/tiflow/dm/dm/pb"
+	"sdbflow/dm/dm/pb"
 )
 
 // OperateRelay does operation on relay unit.

@@ -18,8 +18,8 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/binlog"
 )
 
 // Status implements Unit.Status.

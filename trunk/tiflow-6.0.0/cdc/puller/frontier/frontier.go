@@ -19,7 +19,7 @@ import (
 	"math"
 	"strings"
 
-	"github.com/pingcap/tiflow/pkg/regionspan"
+	"sdbflow/pkg/regionspan"
 )
 
 // Frontier checks resolved event of spans and moves the global resolved ts ahead

@@ -21,9 +21,9 @@ import (
 	"github.com/pingcap/errors"
 	model2 "github.com/pingcap/tidb/parser/model"
 	"github.com/pingcap/tidb/parser/mysql"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
 	"github.com/tikv/pd/pkg/tsoutil"
 )
 

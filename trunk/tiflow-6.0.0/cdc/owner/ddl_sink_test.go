@@ -21,11 +21,11 @@ import (
 	"time"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink"
-	cdcContext "github.com/pingcap/tiflow/pkg/context"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/retry"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink"
+	cdcContext "sdbflow/pkg/context"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/retry"
 	"github.com/stretchr/testify/require"
 )
 

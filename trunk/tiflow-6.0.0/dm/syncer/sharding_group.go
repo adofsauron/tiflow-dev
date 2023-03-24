@@ -74,17 +74,17 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/cputil"
-	fr "github.com/pingcap/tiflow/dm/pkg/func-rollback"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/syncer/dbconn"
-	shardmeta "github.com/pingcap/tiflow/dm/syncer/sharding-meta"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/conn"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/cputil"
+	fr "sdbflow/dm/pkg/func-rollback"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/syncer/dbconn"
+	shardmeta "sdbflow/dm/syncer/sharding-meta"
 
 	"github.com/pingcap/tidb-tools/pkg/dbutil"
 	"github.com/pingcap/tidb-tools/pkg/filter"
@@ -700,7 +700,7 @@ func (k *ShardingGroupKeeper) createTable() error {
 		source_table_id  VARCHAR(144) NOT NULL,
 		active_index INT,
 		is_global BOOLEAN,
-		data JSON,
+		data TEXT,
 		create_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 		update_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 		UNIQUE KEY uk_source_id_table_id_source (source_id, target_table_id, source_table_id)

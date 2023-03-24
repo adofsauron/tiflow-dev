@@ -14,8 +14,8 @@
 package partition
 
 import (
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/hash"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/hash"
 )
 
 // IndexValueDispatcher is a partition dispatcher which dispatches events based on the index value.

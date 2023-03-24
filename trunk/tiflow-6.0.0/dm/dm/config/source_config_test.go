@@ -28,7 +28,7 @@ import (
 	. "github.com/pingcap/check"
 	bf "github.com/pingcap/tidb-tools/pkg/binlog-filter"
 
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/utils"
 )
 
 func (t *testConfig) TestConfig(c *C) {

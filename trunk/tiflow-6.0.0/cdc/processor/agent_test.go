@@ -25,12 +25,12 @@ import (
 	"go.etcd.io/etcd/api/v3/mvccpb"
 	clientv3 "go.etcd.io/etcd/client/v3"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	pscheduler "github.com/pingcap/tiflow/cdc/scheduler"
-	cdcContext "github.com/pingcap/tiflow/pkg/context"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/p2p"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/cdc/model"
+	pscheduler "sdbflow/cdc/scheduler"
+	cdcContext "sdbflow/pkg/context"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/p2p"
+	"sdbflow/pkg/version"
 )
 
 const (
@@ -410,9 +410,9 @@ func TestAgentTolerateClientClosed(t *testing.T) {
 	agent, err := suite.CreateAgent(t)
 	require.NoError(t, err)
 
-	_ = failpoint.Enable("github.com/pingcap/tiflow/pkg/p2p/ClientInjectClosed", "5*return(true)")
+	_ = failpoint.Enable("sdbflow/pkg/p2p/ClientInjectClosed", "5*return(true)")
 	defer func() {
-		_ = failpoint.Disable("github.com/pingcap/tiflow/pkg/p2p/ClientInjectClosed")
+		_ = failpoint.Disable("sdbflow/pkg/p2p/ClientInjectClosed")
 	}()
 
 	// Test Point 2: We should tolerate the error ErrPeerMessageClientClosed

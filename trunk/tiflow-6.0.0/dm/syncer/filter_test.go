@@ -24,12 +24,12 @@ import (
 	"github.com/pingcap/tidb-tools/pkg/filter"
 	"github.com/pingcap/tidb/parser"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/schema"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/syncer/dbconn"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/pkg/conn"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/schema"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/syncer/dbconn"
 )
 
 type testFilterSuite struct {

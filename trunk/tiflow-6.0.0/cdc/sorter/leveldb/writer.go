@@ -17,11 +17,11 @@ import (
 	"context"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sorter/encoding"
-	"github.com/pingcap/tiflow/cdc/sorter/leveldb/message"
-	"github.com/pingcap/tiflow/pkg/actor"
-	actormsg "github.com/pingcap/tiflow/pkg/actor/message"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sorter/encoding"
+	"sdbflow/cdc/sorter/leveldb/message"
+	"sdbflow/pkg/actor"
+	actormsg "sdbflow/pkg/actor/message"
 	"github.com/prometheus/client_golang/prometheus"
 	"go.uber.org/zap"
 )

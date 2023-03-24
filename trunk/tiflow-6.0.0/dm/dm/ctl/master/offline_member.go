@@ -17,8 +17,8 @@ import (
 	"context"
 	"os"
 
-	"github.com/pingcap/tiflow/dm/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/dm/pb"
+	"sdbflow/dm/dm/ctl/common"
+	"sdbflow/dm/dm/pb"
 
 	"github.com/pingcap/errors"
 	"github.com/spf13/cobra"

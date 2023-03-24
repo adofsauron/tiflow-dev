@@ -17,8 +17,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	sorter "github.com/pingcap/tiflow/cdc/sorter/leveldb/message"
-	"github.com/pingcap/tiflow/pkg/leakutil"
+	sorter "sdbflow/cdc/sorter/leveldb/message"
+	"sdbflow/pkg/leakutil"
 	"github.com/stretchr/testify/require"
 )
 

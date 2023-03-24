@@ -20,13 +20,13 @@ import (
 
 	"github.com/pingcap/failpoint"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/shardddl/optimism"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/syncer/metrics"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/shardddl/optimism"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/syncer/metrics"
 )
 
 // Status implements Unit.Status.

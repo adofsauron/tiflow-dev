@@ -63,7 +63,7 @@ function lazy_init_tracker() {
 }
 
 function start_task_by_time() {
-	export GO_FAILPOINTS='github.com/pingcap/tiflow/dm/syncer/SafeModeInitPhaseSeconds=return(0)'
+	export GO_FAILPOINTS='sdbflow/dm/syncer/SafeModeInitPhaseSeconds=return(0)'
 	run_dm_master $WORK_DIR/master $MASTER_PORT $cur/conf/dm-master.toml
 	check_rpc_alive $cur/../bin/check_master_online 127.0.0.1:$MASTER_PORT
 	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
@@ -172,8 +172,8 @@ function run() {
 	lazy_init_tracker
 	failpoints=(
 		# 1152 is ErrAbortingConnection
-		"github.com/pingcap/tiflow/dm/pkg/utils/FetchTargetDoTablesFailed=return(1152)"
-		"github.com/pingcap/tiflow/dm/pkg/utils/FetchAllDoTablesFailed=return(1152)"
+		"sdbflow/dm/pkg/utils/FetchTargetDoTablesFailed=return(1152)"
+		"sdbflow/dm/pkg/utils/FetchAllDoTablesFailed=return(1152)"
 	)
 
 	for ((i = 0; i < ${#failpoints[@]}; i++)); do

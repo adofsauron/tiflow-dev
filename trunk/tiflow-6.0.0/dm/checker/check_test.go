@@ -23,10 +23,10 @@ import (
 	router "github.com/pingcap/tidb-tools/pkg/table-router"
 	"github.com/pingcap/tidb/parser/mysql"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	"github.com/pingcap/tiflow/dm/pkg/cputil"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/ctl/common"
+	"sdbflow/dm/pkg/conn"
+	"sdbflow/dm/pkg/cputil"
 
 	tc "github.com/pingcap/check"
 )

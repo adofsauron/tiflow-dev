@@ -25,24 +25,24 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/event"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/reader"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/cputil"
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	parserpkg "github.com/pingcap/tiflow/dm/pkg/parser"
-	"github.com/pingcap/tiflow/dm/pkg/retry"
-	"github.com/pingcap/tiflow/dm/pkg/schema"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/syncer/dbconn"
-	"github.com/pingcap/tiflow/pkg/errorutil"
-	"github.com/pingcap/tiflow/pkg/sqlmodel"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/binlog/event"
+	"sdbflow/dm/pkg/binlog/reader"
+	"sdbflow/dm/pkg/conn"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/cputil"
+	"sdbflow/dm/pkg/gtid"
+	"sdbflow/dm/pkg/log"
+	parserpkg "sdbflow/dm/pkg/parser"
+	"sdbflow/dm/pkg/retry"
+	"sdbflow/dm/pkg/schema"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/syncer/dbconn"
+	"sdbflow/pkg/errorutil"
+	"sdbflow/pkg/sqlmodel"
 	"github.com/stretchr/testify/require"
 
 	sqlmock "github.com/DATA-DOG/go-sqlmock"
@@ -1125,7 +1125,7 @@ func (s *testSyncerSuite) TestExitSafeModeByConfig(c *C) {
 	checkPointMock.ExpectExec(".*INSERT INTO .* VALUES.* ON DUPLICATE KEY UPDATE.*").WillReturnResult(sqlmock.NewResult(0, 1))
 	checkPointMock.ExpectCommit()
 	// disable 1-minute safe mode
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/syncer/SafeModeInitPhaseSeconds", "return(0)"), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/syncer/SafeModeInitPhaseSeconds", "return(0)"), IsNil)
 	go syncer.Process(ctx, resultCh)
 
 	expectJobs := []*expectJob{
@@ -1198,7 +1198,7 @@ func (s *testSyncerSuite) TestExitSafeModeByConfig(c *C) {
 	if err := checkPointMock.ExpectationsWereMet(); err != nil {
 		c.Errorf("checkpointDB unfulfilled expectations: %s", err)
 	}
-	c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/syncer/SafeModeInitPhaseSeconds"), IsNil)
+	c.Assert(failpoint.Disable("sdbflow/dm/syncer/SafeModeInitPhaseSeconds"), IsNil)
 }
 
 func (s *testSyncerSuite) TestRemoveMetadataIsFine(c *C) {
@@ -1812,7 +1812,7 @@ func TestWaitBeforeRunExit(t *testing.T) {
 	defaultMaxPauseOrStopWaitTime = oldMaxPauseOrStopWaitTime
 
 	// test use cliArgs
-	require.NoError(t, failpoint.Enable("github.com/pingcap/tiflow/dm/syncer/recordAndIgnorePrepareTime", "return()"))
+	require.NoError(t, failpoint.Enable("sdbflow/dm/syncer/recordAndIgnorePrepareTime", "return()"))
 	syncer.cliArgs = &config.TaskCliArgs{WaitTimeOnStop: "2s"}
 	ctx3, cancel := context.WithCancel(context.Background())
 	cancel()
@@ -1822,7 +1822,7 @@ func TestWaitBeforeRunExit(t *testing.T) {
 	syncer.waitBeforeRunExit(ctx3)
 	require.Equal(t, context.Canceled, syncer.runCtx.Ctx.Err())
 	require.Equal(t, 2*time.Second, waitBeforeRunExitDurationForTest)
-	require.NoError(t, failpoint.Disable("github.com/pingcap/tiflow/dm/syncer/recordAndIgnorePrepareTime"))
+	require.NoError(t, failpoint.Disable("sdbflow/dm/syncer/recordAndIgnorePrepareTime"))
 }
 
 func TestCheckCanUpdateCfg(t *testing.T) {

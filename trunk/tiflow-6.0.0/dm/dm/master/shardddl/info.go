@@ -16,7 +16,7 @@ package shardddl
 import (
 	"sort"
 
-	"github.com/pingcap/tiflow/dm/pkg/shardddl/pessimism"
+	"sdbflow/dm/pkg/shardddl/pessimism"
 )
 
 // PessimismInfoSlice attaches the methods of Interface to []pessimism.Info,

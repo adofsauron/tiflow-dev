@@ -22,12 +22,12 @@ import (
 	"github.com/pingcap/errors"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/pkg/binlog/common"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/event"
-	"github.com/pingcap/tiflow/dm/pkg/binlog/reader"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/binlog/common"
+	"sdbflow/dm/pkg/binlog/event"
+	"sdbflow/dm/pkg/binlog/reader"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/gtid"
+	"sdbflow/dm/pkg/utils"
 )
 
 // FakeBinlogName is used to bypass the checking of meta in task config when start-task with --start-time.

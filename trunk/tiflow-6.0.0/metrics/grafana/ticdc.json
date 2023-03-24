@@ -546,7 +546,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_TEST-CLUSTER}",
-          "description": "99.9% of TiDB query durations.",
+          "description": "99.9% of SDBDB query durations.",
           "fill": 1,
           "gridPos": {
             "h": 4,
@@ -859,7 +859,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_TEST-CLUSTER}",
-          "description": "99.9% of TiCDC sink write durations.",
+          "description": "99.9% of SDBCDC sink write durations.",
           "fill": 1,
           "gridPos": {
             "h": 4,
@@ -1349,7 +1349,7 @@
           "dashes": false,
           "datasource": "${DS_TEST-CLUSTER}",
           "decimals": 1,
-          "description": "The rate of TiKV advancing resolved ts.",
+          "description": "The rate of SDBKV advancing resolved ts.",
           "fill": 1,
           "gridPos": {
             "h": 4,
@@ -1948,7 +1948,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_TEST-CLUSTER}",
-          "description": "Uptime of TiCDC and TiKV",
+          "description": "Uptime of SDBCDC and TiKV",
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -2056,7 +2056,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_TEST-CLUSTER}",
-          "description": "Goroutine count of TiCDC",
+          "description": "Goroutine count of SDBCDC",
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -2158,7 +2158,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_TEST-CLUSTER}",
-          "description": "The count of open FD count of TiCDC",
+          "description": "The count of open FD count of SDBCDC",
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -2254,7 +2254,7 @@
             }
           ],
           "datasource": "${DS_TEST-CLUSTER}",
-          "description": "TiCDC cluster ownership status",
+          "description": "SDBCDC cluster ownership status",
           "fontSize": "100%",
           "gridPos": {
             "h": 7,
@@ -2334,7 +2334,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_TEST-CLUSTER}",
-          "description": "CPU usage of TiCDC",
+          "description": "CPU usage of SDBCDC",
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -2443,7 +2443,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_TEST-CLUSTER}",
-          "description": "Memory usage of TiCDC",
+          "description": "Memory usage of SDBCDC",
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -2545,7 +2545,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_TEST-CLUSTER}",
-          "description": "The history of TiCDC cluster ownership, owner node has a value that is great than 0",
+          "description": "The history of SDBCDC cluster ownership, owner node has a value that is great than 0",
           "fill": 1,
           "gridPos": {
             "h": 7,
@@ -2740,7 +2740,7 @@
             }
           ],
           "datasource": "${DS_TEST-CLUSTER}",
-          "description": "The number of captured table of TiCDC nodes ",
+          "description": "The number of captured table of SDBCDC nodes ",
           "fontSize": "100%",
           "gridPos": {
             "h": 5,
@@ -2803,7 +2803,7 @@
             }
           ],
           "datasource": "${DS_TEST-CLUSTER}",
-          "description": "Internal resolved ts of TiCDC nodes",
+          "description": "Internal resolved ts of SDBCDC nodes",
           "fontSize": "100%",
           "gridPos": {
             "h": 10,
@@ -11683,7 +11683,7 @@
           "dashes": false,
           "datasource": "${DS_TEST-CLUSTER}",
           "decimals": 1,
-          "description": "CPU usage of TiKV CDC component",
+          "description": "CPU usage of SDBKV CDC component",
           "fill": 1,
           "gridPos": {
             "h": 7,
@@ -11806,7 +11806,7 @@
           "dashes": false,
           "datasource": "${DS_TEST-CLUSTER}",
           "decimals": 1,
-          "description": "Outbound network traffic of TiKV CDC component",
+          "description": "Outbound network traffic of SDBKV CDC component",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -12893,7 +12893,7 @@
           "dashes": false,
           "datasource": "${DS_TEST-CLUSTER}",
           "decimals": 1,
-          "description": "The speed of TiKV CDC incremental scan",
+          "description": "The speed of SDBKV CDC incremental scan",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -12994,7 +12994,7 @@
           "dashes": false,
           "datasource": "${DS_TEST-CLUSTER}",
           "decimals": 1,
-          "description": "The total bytes of TiKV CDC incremental scan",
+          "description": "The total bytes of SDBKV CDC incremental scan",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -14414,7 +14414,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_TEST-CLUSTER}",
-          "description": "CPU usage of TiCDC actors",
+          "description": "CPU usage of SDBCDC actors",
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {

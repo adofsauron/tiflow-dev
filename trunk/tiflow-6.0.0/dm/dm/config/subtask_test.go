@@ -19,7 +19,7 @@ import (
 	. "github.com/pingcap/check"
 	"github.com/pingcap/tidb-tools/pkg/filter"
 
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/terror"
 )
 
 func (t *testConfig) TestSubTask(c *C) {

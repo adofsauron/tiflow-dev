@@ -18,8 +18,8 @@ import (
 	"sync"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/filter"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/filter"
 	"go.uber.org/zap"
 )
 

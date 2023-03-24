@@ -20,8 +20,8 @@ import (
 	"github.com/pingcap/tidb-tools/pkg/filter"
 	"github.com/pingcap/tidb/parser"
 
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 var _ = Suite(&testParserSuite{})

@@ -594,7 +594,7 @@ var doc = `{
         },
         "/api/v1/processors": {
             "get": {
-                "description": "list all processors in the TiCDC cluster",
+                "description": "list all processors in the SDBCDC cluster",
                 "consumes": [
                     "application/json"
                 ],

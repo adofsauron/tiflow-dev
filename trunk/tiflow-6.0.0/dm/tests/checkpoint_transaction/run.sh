@@ -32,7 +32,7 @@ function check_worker_ungraceful_stop_with_retry() {
 }
 
 function run() {
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/syncer/checkCheckpointInMiddleOfTransaction=return"
+	export GO_FAILPOINTS="sdbflow/dm/syncer/checkCheckpointInMiddleOfTransaction=return"
 
 	run_sql_file $cur/data/db1.prepare.sql $MYSQL_HOST1 $MYSQL_PORT1 $MYSQL_PASSWORD1
 	check_contains 'Query OK, 1 row affected'

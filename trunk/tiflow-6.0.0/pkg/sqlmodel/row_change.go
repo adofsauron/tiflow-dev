@@ -22,11 +22,11 @@ import (
 	"github.com/pingcap/tidb/sessionctx"
 	"go.uber.org/zap"
 
-	cdcmodel "github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/schema"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/pkg/quotes"
+	cdcmodel "sdbflow/cdc/model"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/schema"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/pkg/quotes"
 )
 
 // RowChangeType is the type of row change.

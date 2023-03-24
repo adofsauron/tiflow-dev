@@ -26,9 +26,9 @@ import (
 	"github.com/go-mysql-org/go-mysql/replication"
 	. "github.com/pingcap/check"
 
-	"github.com/pingcap/tiflow/dm/pkg/binlog/event"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/pkg/binlog/event"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
 )
 
 var _ = Suite(&testPosFinderSuite{})

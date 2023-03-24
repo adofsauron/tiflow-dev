@@ -25,8 +25,8 @@ import (
 	"github.com/pingcap/check"
 	"go.etcd.io/etcd/server/v3/embed"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
 )
 
 var _ = check.Suite(&testConfigSuite{})

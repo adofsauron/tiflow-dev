@@ -23,20 +23,20 @@ import (
 	"github.com/google/uuid"
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink"
-	cmdcontext "github.com/pingcap/tiflow/pkg/cmd/context"
-	"github.com/pingcap/tiflow/pkg/cmd/factory"
-	"github.com/pingcap/tiflow/pkg/cmd/util"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/cyclic"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/filter"
-	"github.com/pingcap/tiflow/pkg/security"
-	"github.com/pingcap/tiflow/pkg/txnutil/gc"
-	ticdcutil "github.com/pingcap/tiflow/pkg/util"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink"
+	cmdcontext "sdbflow/pkg/cmd/context"
+	"sdbflow/pkg/cmd/factory"
+	"sdbflow/pkg/cmd/util"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/cyclic"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/filter"
+	"sdbflow/pkg/security"
+	"sdbflow/pkg/txnutil/gc"
+	ticdcutil "sdbflow/pkg/util"
+	"sdbflow/pkg/version"
 	"github.com/spf13/cobra"
 	"github.com/tikv/client-go/v2/oracle"
 	pd "github.com/tikv/pd/client"
@@ -189,7 +189,7 @@ func (o *createChangefeedOptions) completeCfg(
 
 	if !cdcClusterVer.ShouldEnableOldValueByDefault() {
 		cfg.EnableOldValue = false
-		log.Warn("The TiCDC cluster is built from an older version, disabling old value by default.",
+		log.Warn("The SDBCDC cluster is built from an older version, disabling old value by default.",
 			zap.String("version", cdcClusterVer.String()))
 	}
 
@@ -240,7 +240,7 @@ func (o *createChangefeedOptions) completeCfg(
 
 	if o.commonChangefeedOptions.sortEngine == model.SortUnified && !cdcClusterVer.ShouldEnableUnifiedSorterByDefault() {
 		o.commonChangefeedOptions.sortEngine = model.SortInMemory
-		log.Warn("The TiCDC cluster is built from an older version, disabling Unified Sorter by default",
+		log.Warn("The SDBCDC cluster is built from an older version, disabling Unified Sorter by default",
 			zap.String("version", cdcClusterVer.String()))
 	}
 

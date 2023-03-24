@@ -20,9 +20,9 @@ import (
 	. "github.com/pingcap/check"
 	"github.com/stretchr/testify/require"
 
-	cdcmodel "github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/pkg/sqlmodel"
+	cdcmodel "sdbflow/cdc/model"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/pkg/sqlmodel"
 
 	tiddl "github.com/pingcap/tidb/ddl"
 	"github.com/pingcap/tidb/parser"

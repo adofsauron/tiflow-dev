@@ -14,7 +14,7 @@
 package ha
 
 import (
-	"github.com/pingcap/tiflow/dm/dm/config"
+	"sdbflow/dm/dm/config"
 
 	. "github.com/pingcap/check"
 )

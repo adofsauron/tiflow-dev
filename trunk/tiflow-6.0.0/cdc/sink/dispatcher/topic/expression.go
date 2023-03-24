@@ -17,7 +17,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/errors"
 )
 
 var (

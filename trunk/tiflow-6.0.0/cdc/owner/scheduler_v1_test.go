@@ -18,9 +18,9 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/orchestrator"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/orchestrator"
 	"github.com/stretchr/testify/require"
 )
 

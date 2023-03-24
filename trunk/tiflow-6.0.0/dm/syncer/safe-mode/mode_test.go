@@ -19,7 +19,7 @@ import (
 	. "github.com/pingcap/check"
 	"github.com/pingcap/tidb-tools/pkg/filter"
 
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
+	tcontext "sdbflow/dm/pkg/context"
 )
 
 var _ = Suite(&testModeSuite{})

@@ -26,9 +26,9 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/pingcap/kvproto/pkg/metapb"
 	"github.com/pingcap/log"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/httputil"
-	"github.com/pingcap/tiflow/pkg/security"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/httputil"
+	"sdbflow/pkg/security"
 	pd "github.com/tikv/pd/client"
 	"go.uber.org/zap"
 )
@@ -187,7 +187,7 @@ func CheckStoreVersion(ctx context.Context, client pd.Client, storeID uint64) er
 	return nil
 }
 
-// TiCDCClusterVersion is the version of TiCDC cluster
+// TiCDCClusterVersion is the version of SDBCDC cluster
 type TiCDCClusterVersion struct {
 	*semver.Version
 }
@@ -229,7 +229,7 @@ func (v *TiCDCClusterVersion) ShouldRunCliWithAPIClientByDefault() bool {
 // TiCDCClusterVersionUnknown is a read-only variable to represent the unknown cluster version
 var TiCDCClusterVersionUnknown = TiCDCClusterVersion{}
 
-// GetTiCDCClusterVersion returns the version of ticdc cluster
+// GetTiCDCClusterVersion returns the version of SDBCDC cluster
 func GetTiCDCClusterVersion(captureVersion []string) (TiCDCClusterVersion, error) {
 	if len(captureVersion) == 0 {
 		return TiCDCClusterVersionUnknown, nil
@@ -254,7 +254,7 @@ func GetTiCDCClusterVersion(captureVersion []string) (TiCDCClusterVersion, error
 	return TiCDCClusterVersion{minVer}, nil
 }
 
-// CheckTiCDCClusterVersion returns the version of ticdc cluster
+// CheckTiCDCClusterVersion returns the version of SDBCDC cluster
 func CheckTiCDCClusterVersion(cdcClusterVer TiCDCClusterVersion) (unknown bool, err error) {
 	if cdcClusterVer.Version == nil {
 		return true, nil

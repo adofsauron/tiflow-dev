@@ -14,7 +14,7 @@
 package config
 
 import (
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	cerror "sdbflow/pkg/errors"
 )
 
 // DBConfig represents leveldb sorter config.

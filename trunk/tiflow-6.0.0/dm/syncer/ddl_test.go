@@ -26,15 +26,15 @@ import (
 	"github.com/pingcap/tidb/parser/ast"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	parserpkg "github.com/pingcap/tiflow/dm/pkg/parser"
-	"github.com/pingcap/tiflow/dm/pkg/router"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	onlineddl "github.com/pingcap/tiflow/dm/syncer/online-ddl-tools"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/pkg/conn"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/log"
+	parserpkg "sdbflow/dm/pkg/parser"
+	"sdbflow/dm/pkg/router"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
+	onlineddl "sdbflow/dm/syncer/online-ddl-tools"
 )
 
 var _ = Suite(&testDDLSuite{})

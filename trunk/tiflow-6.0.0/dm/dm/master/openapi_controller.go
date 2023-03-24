@@ -11,7 +11,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// MVC for dm-master's openapi server
+// MVC for SDM-master's openapi server
 // Model(data in etcd): source of truth
 // View(openapi_view): do some inner work such as validate, filter, prepare parameters/response and call controller to update model.
 // Controller(openapi_controller): call model func to update data.
@@ -22,14 +22,14 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/pingcap/tiflow/dm/checker"
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/dm/master/workerrpc"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/openapi"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/checker"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/ctl/common"
+	"sdbflow/dm/dm/master/workerrpc"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/openapi"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
 	"go.uber.org/zap"
 )
 
@@ -86,7 +86,7 @@ func (s *Server) createSource(ctx context.Context, req openapi.CreateSourceReque
 	if err != nil {
 		return nil, err
 	}
-	// TODO: refine relay logic https://github.com/pingcap/tiflow/issues/4985
+	// TODO: refine relay logic https://sdbflow/issues/4985
 	if cfg.EnableRelay {
 		return &req.Source, s.enableRelay(ctx, req.Source.SourceName, openapi.EnableRelayRequest{})
 	}
@@ -617,7 +617,7 @@ func (s *Server) startTask(ctx context.Context, taskName string, req openapi.Sta
 		return nil
 	}
 
-	// TODO(ehco) support other start args after https://github.com/pingcap/tiflow/pull/4601 merged
+	// TODO(ehco) support other start args after https://sdbflow/pull/4601 merged
 	if req.RemoveMeta != nil && *req.RemoveMeta {
 		// use same latch for remove-meta and start-task
 		release, err := s.scheduler.AcquireSubtaskLatch(taskName)
@@ -643,7 +643,7 @@ func (s *Server) stopTask(ctx context.Context, taskName string, req openapi.Stop
 		sourceNameList := openapi.SourceNameList(s.getTaskSourceNameList(taskName))
 		req.SourceNameList = &sourceNameList
 	}
-	// TODO(ehco): support stop req after https://github.com/pingcap/tiflow/pull/4601 merged
+	// TODO(ehco): support stop req after https://sdbflow/pull/4601 merged
 	return s.scheduler.UpdateExpectSubTaskStage(pb.Stage_Stopped, taskName, *req.SourceNameList...)
 }
 

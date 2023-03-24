@@ -20,17 +20,17 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
 	tidbkv "github.com/pingcap/tidb/kv"
-	"github.com/pingcap/tiflow/cdc/capture"
-	"github.com/pingcap/tiflow/cdc/entry"
-	"github.com/pingcap/tiflow/cdc/kv"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/filter"
-	"github.com/pingcap/tiflow/pkg/txnutil/gc"
-	"github.com/pingcap/tiflow/pkg/util"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/cdc/capture"
+	"sdbflow/cdc/entry"
+	"sdbflow/cdc/kv"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/filter"
+	"sdbflow/pkg/txnutil/gc"
+	"sdbflow/pkg/util"
+	"sdbflow/pkg/version"
 	"github.com/r3labs/diff"
 	"github.com/tikv/client-go/v2/oracle"
 )
@@ -111,7 +111,7 @@ func verifyCreateChangefeedConfig(
 	sortEngine := model.SortUnified
 	if !cdcClusterVer.ShouldEnableOldValueByDefault() {
 		replicaConfig.EnableOldValue = false
-		log.Warn("The TiCDC cluster is built from unknown branch or less than 5.0.0-rc, the old-value are disabled by default.")
+		log.Warn("The SDBCDC cluster is built from unknown branch or less than 5.0.0-rc, the old-value are disabled by default.")
 		if !cdcClusterVer.ShouldEnableUnifiedSorterByDefault() {
 			sortEngine = model.SortInMemory
 		}
@@ -225,7 +225,7 @@ func VerifyTables(replicaConfig *config.ReplicaConfig, storage tidbkv.Storage, s
 			continue
 		}
 		// Sequence is not supported yet, TiCDC needs to filter all sequence tables.
-		// See https://github.com/pingcap/tiflow/issues/4559
+		// See https://sdbflow/issues/4559
 		if tableInfo.IsSequence() {
 			continue
 		}

@@ -19,10 +19,10 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/orchestrator"
-	"github.com/pingcap/tiflow/pkg/orchestrator/util"
+	"sdbflow/cdc/model"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/orchestrator"
+	"sdbflow/pkg/orchestrator/util"
 	"go.uber.org/zap"
 )
 

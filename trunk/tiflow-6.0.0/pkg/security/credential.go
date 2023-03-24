@@ -20,7 +20,7 @@ import (
 	"os"
 
 	"github.com/pingcap/tidb-tools/pkg/utils"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	cerror "sdbflow/pkg/errors"
 	pd "github.com/tikv/pd/client"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"

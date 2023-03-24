@@ -18,11 +18,11 @@ import (
 
 	"github.com/pingcap/log"
 	filter "github.com/pingcap/tidb-tools/pkg/table-filter"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/dispatcher/partition"
-	"github.com/pingcap/tiflow/cdc/sink/dispatcher/topic"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/dispatcher/partition"
+	"sdbflow/cdc/sink/dispatcher/topic"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

@@ -22,9 +22,9 @@ import (
 	"github.com/pingcap/tidb/parser/model"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/shardddl/optimism"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/shardddl/optimism"
+	"sdbflow/dm/pkg/terror"
 )
 
 // initOptimisticShardDDL initializes the shard DDL support in the optimistic mode.

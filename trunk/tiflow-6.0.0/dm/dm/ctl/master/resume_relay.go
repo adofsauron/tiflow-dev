@@ -20,15 +20,15 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/pingcap/tiflow/dm/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/dm/pb"
+	"sdbflow/dm/dm/ctl/common"
+	"sdbflow/dm/dm/pb"
 )
 
 // NewResumeRelayCmd creates a ResumeRelay command.
 func NewResumeRelayCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "resume-relay <-s source ...>",
-		Short: "Resumes DM-worker's relay unit",
+		Short: "Resumes SDM-worker's relay unit",
 		RunE:  resumeRelayFunc,
 	}
 	return cmd

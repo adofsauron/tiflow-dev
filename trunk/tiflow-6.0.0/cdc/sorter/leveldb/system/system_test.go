@@ -18,11 +18,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pingcap/tiflow/cdc/sorter/leveldb"
-	"github.com/pingcap/tiflow/cdc/sorter/leveldb/message"
-	"github.com/pingcap/tiflow/pkg/actor"
-	actormsg "github.com/pingcap/tiflow/pkg/actor/message"
-	"github.com/pingcap/tiflow/pkg/config"
+	"sdbflow/cdc/sorter/leveldb"
+	"sdbflow/cdc/sorter/leveldb/message"
+	"sdbflow/pkg/actor"
+	actormsg "sdbflow/pkg/actor/message"
+	"sdbflow/pkg/config"
 	"github.com/stretchr/testify/require"
 )
 

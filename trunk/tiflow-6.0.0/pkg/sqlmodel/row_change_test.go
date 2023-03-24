@@ -24,9 +24,9 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 
-	cdcmodel "github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	cdcmodel "sdbflow/cdc/model"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/utils"
 )
 
 func mockTableInfo(t *testing.T, sql string) *timodel.TableInfo {

@@ -18,8 +18,8 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/scheduler/util"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/scheduler/util"
 	"go.uber.org/zap"
 )
 

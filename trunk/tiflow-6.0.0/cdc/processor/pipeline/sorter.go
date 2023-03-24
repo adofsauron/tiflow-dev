@@ -21,18 +21,18 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/entry"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/redo"
-	"github.com/pingcap/tiflow/cdc/sorter"
-	"github.com/pingcap/tiflow/cdc/sorter/leveldb"
-	"github.com/pingcap/tiflow/cdc/sorter/memory"
-	"github.com/pingcap/tiflow/cdc/sorter/unified"
-	"github.com/pingcap/tiflow/pkg/actor"
-	"github.com/pingcap/tiflow/pkg/actor/message"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/pipeline"
+	"sdbflow/cdc/entry"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/redo"
+	"sdbflow/cdc/sorter"
+	"sdbflow/cdc/sorter/leveldb"
+	"sdbflow/cdc/sorter/memory"
+	"sdbflow/cdc/sorter/unified"
+	"sdbflow/pkg/actor"
+	"sdbflow/pkg/actor/message"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/pipeline"
 	"go.uber.org/zap"
 	"golang.org/x/sync/errgroup"
 )
@@ -120,7 +120,7 @@ func (n *sorterNode) start(ctx pipeline.NodeContext, isTableActorMode bool, eg *
 			eventSorter = levelSorter
 		} else {
 			// Sorter dir has been set and checked when server starts.
-			// See https://github.com/pingcap/tiflow/blob/9dad09/cdc/server.go#L275
+			// See https://sdbflow/blob/9dad09/cdc/server.go#L275
 			sortDir := config.GetGlobalServerConfig().Sorter.SortDir
 			var err error
 			eventSorter, err = unified.NewUnifiedSorter(sortDir, ctx.ChangefeedVars().ID, n.tableName, n.tableID)

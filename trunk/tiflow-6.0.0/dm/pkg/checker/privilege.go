@@ -27,7 +27,7 @@ import (
 	_ "github.com/pingcap/tidb/types/parser_driver" // for parser driver
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/pkg/log"
 )
 
 // some privileges are only effective on global level. in other words, GRANT ALL ON test.* is not enough for them

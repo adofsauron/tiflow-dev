@@ -16,8 +16,8 @@ package relay
 import (
 	"encoding/json"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/pkg/log"
 )
 
 // Config is the configuration for Relay.

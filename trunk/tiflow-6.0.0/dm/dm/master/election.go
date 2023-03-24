@@ -23,9 +23,9 @@ import (
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 
-	"github.com/pingcap/tiflow/dm/dm/master/metrics"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/log"
+	"sdbflow/dm/dm/master/metrics"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/log"
 )
 
 const (

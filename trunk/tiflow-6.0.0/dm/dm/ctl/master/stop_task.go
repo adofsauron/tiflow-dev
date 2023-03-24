@@ -16,7 +16,7 @@ package master
 import (
 	"github.com/spf13/cobra"
 
-	"github.com/pingcap/tiflow/dm/dm/pb"
+	"sdbflow/dm/dm/pb"
 )
 
 // NewStopTaskCmd creates a StopTask command.

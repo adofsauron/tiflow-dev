@@ -16,7 +16,7 @@ package util
 import (
 	"sort"
 
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 )
 
 // SortTableIDs sorts a slice of table IDs in ascending order.

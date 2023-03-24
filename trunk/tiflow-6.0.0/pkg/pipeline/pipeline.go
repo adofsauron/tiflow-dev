@@ -19,8 +19,8 @@ import (
 
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/pkg/context"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/pkg/context"
+	cerror "sdbflow/pkg/errors"
 	"go.uber.org/zap"
 )
 

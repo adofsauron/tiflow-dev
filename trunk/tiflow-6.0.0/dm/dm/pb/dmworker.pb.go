@@ -454,7 +454,7 @@ func (m *CommonWorkerResponse) GetWorker() string {
 }
 
 // QueryStatusResponse represents status response for query on a dm-worker
-// status: dm-worker's current sub tasks' status
+// status: SDM-worker's current sub tasks' status
 type QueryStatusResponse struct {
 	Result        bool             `protobuf:"varint,1,opt,name=result,proto3" json:"result,omitempty"`
 	Msg           string           `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`

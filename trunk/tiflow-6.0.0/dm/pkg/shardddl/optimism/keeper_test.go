@@ -22,9 +22,9 @@ import (
 	"github.com/pingcap/tidb/util/mock"
 	"go.etcd.io/etcd/tests/v3/integration"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/conn"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/pkg/conn"
+	"sdbflow/dm/pkg/terror"
 )
 
 type testKeeper struct{}

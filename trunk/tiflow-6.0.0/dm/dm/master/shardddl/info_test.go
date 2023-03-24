@@ -18,7 +18,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/pingcap/tiflow/dm/pkg/shardddl/pessimism"
+	"sdbflow/dm/pkg/shardddl/pessimism"
 )
 
 func TestInfoSlice(t *testing.T) {

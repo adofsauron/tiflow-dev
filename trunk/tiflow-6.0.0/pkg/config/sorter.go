@@ -13,7 +13,7 @@
 
 package config
 
-import cerror "github.com/pingcap/tiflow/pkg/errors"
+import cerror "sdbflow/pkg/errors"
 
 // SorterConfig represents sorter config for a changefeed
 type SorterConfig struct {

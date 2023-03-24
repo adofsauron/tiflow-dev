@@ -19,9 +19,9 @@ import (
 	"github.com/stretchr/testify/require"
 	"go.etcd.io/etcd/tests/v3/integration"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/pkg/ha"
 )
 
 func TestGetExpectValidatorStage(t *testing.T) {

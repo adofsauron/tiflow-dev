@@ -22,12 +22,12 @@ import (
 	"time"
 
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/sorter/leveldb/message"
-	"github.com/pingcap/tiflow/pkg/actor"
-	actormsg "github.com/pingcap/tiflow/pkg/actor/message"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/db"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/sorter/leveldb/message"
+	"sdbflow/pkg/actor"
+	actormsg "sdbflow/pkg/actor/message"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/db"
+	cerrors "sdbflow/pkg/errors"
 	"github.com/prometheus/client_golang/prometheus"
 	"go.uber.org/zap"
 )

@@ -22,11 +22,11 @@ import (
 	tmysql "github.com/pingcap/tidb/parser/mysql"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/dm/unit"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/dm/unit"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
 )
 
 var _ = check.Suite(&testTaskCheckerSuite{})
@@ -39,13 +39,13 @@ var (
 )
 
 func (s *testTaskCheckerSuite) SetUpSuite(c *check.C) {
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/worker/MockGetSourceCfgFromETCD", `return(true)`), check.IsNil)
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/worker/SkipRefreshFromETCDInUT", `return()`), check.IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/dm/worker/MockGetSourceCfgFromETCD", `return(true)`), check.IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/dm/worker/SkipRefreshFromETCDInUT", `return()`), check.IsNil)
 }
 
 func (s *testTaskCheckerSuite) TearDownSuite(c *check.C) {
-	c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/dm/worker/MockGetSourceCfgFromETCD"), check.IsNil)
-	c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/dm/worker/SkipRefreshFromETCDInUT"), check.IsNil)
+	c.Assert(failpoint.Disable("sdbflow/dm/dm/worker/MockGetSourceCfgFromETCD"), check.IsNil)
+	c.Assert(failpoint.Disable("sdbflow/dm/dm/worker/SkipRefreshFromETCDInUT"), check.IsNil)
 }
 
 func (s *testTaskCheckerSuite) TestResumeStrategy(c *check.C) {

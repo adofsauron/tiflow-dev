@@ -20,7 +20,7 @@ log-level = "info"
 # gc-ttl = 86400
 
 # TiCDC 集群的时区，默认： "System"
-# the time zone of TiCDC cluster, default: "System"
+# the time zone of SDBCDC cluster, default: "System"
 # tz = "System"
 
 [log.file]

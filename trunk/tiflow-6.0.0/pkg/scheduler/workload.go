@@ -16,7 +16,7 @@ package scheduler
 import (
 	"math"
 
-	"github.com/pingcap/tiflow/cdc/model"
+	"sdbflow/cdc/model"
 )
 
 type workloads map[model.CaptureID]model.TaskWorkload

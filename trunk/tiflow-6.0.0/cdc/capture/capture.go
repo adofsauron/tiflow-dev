@@ -32,20 +32,20 @@ import (
 	"go.uber.org/zap"
 	"golang.org/x/time/rate"
 
-	"github.com/pingcap/tiflow/cdc/kv"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/owner"
-	"github.com/pingcap/tiflow/cdc/processor"
-	"github.com/pingcap/tiflow/cdc/processor/pipeline/system"
-	ssystem "github.com/pingcap/tiflow/cdc/sorter/leveldb/system"
-	"github.com/pingcap/tiflow/pkg/config"
-	cdcContext "github.com/pingcap/tiflow/pkg/context"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/etcd"
-	"github.com/pingcap/tiflow/pkg/orchestrator"
-	"github.com/pingcap/tiflow/pkg/p2p"
-	"github.com/pingcap/tiflow/pkg/pdtime"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/cdc/kv"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/owner"
+	"sdbflow/cdc/processor"
+	"sdbflow/cdc/processor/pipeline/system"
+	ssystem "sdbflow/cdc/sorter/leveldb/system"
+	"sdbflow/pkg/config"
+	cdcContext "sdbflow/pkg/context"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/etcd"
+	"sdbflow/pkg/orchestrator"
+	"sdbflow/pkg/p2p"
+	"sdbflow/pkg/pdtime"
+	"sdbflow/pkg/version"
 )
 
 // Capture represents a Capture server, it monitors the changefeed information in etcd and schedules Task on it.
@@ -170,7 +170,7 @@ func (c *Capture) reset(ctx context.Context) error {
 			}
 		}
 		// Sorter dir has been set and checked when server starts.
-		// See https://github.com/pingcap/tiflow/blob/9dad09/cdc/server.go#L275
+		// See https://sdbflow/blob/9dad09/cdc/server.go#L275
 		sortDir := config.GetGlobalServerConfig().Sorter.SortDir
 		memPercentage := float64(config.GetGlobalServerConfig().Sorter.MaxMemoryPercentage) / 100
 		c.sorterSystem = ssystem.NewSystem(sortDir, memPercentage, conf.Debug.DB)
@@ -610,7 +610,7 @@ func (c *Capture) IsOwner() bool {
 	return c.owner != nil
 }
 
-// GetOwnerCaptureInfo return the owner capture info of current TiCDC cluster
+// GetOwnerCaptureInfo return the owner capture info of current SDBCDC cluster
 func (c *Capture) GetOwnerCaptureInfo(ctx context.Context) (*model.CaptureInfo, error) {
 	_, captureInfos, err := c.EtcdClient.GetCaptures(ctx)
 	if err != nil {

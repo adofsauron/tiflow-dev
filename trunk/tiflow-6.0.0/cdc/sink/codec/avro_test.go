@@ -26,11 +26,11 @@ import (
 	"github.com/pingcap/tidb/parser/mysql"
 	"github.com/pingcap/tidb/types"
 	"github.com/pingcap/tidb/util/rowcodec"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/puller"
-	"github.com/pingcap/tiflow/pkg/regionspan"
-	"github.com/pingcap/tiflow/pkg/security"
-	"github.com/pingcap/tiflow/pkg/util/testleak"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/puller"
+	"sdbflow/pkg/regionspan"
+	"sdbflow/pkg/security"
+	"sdbflow/pkg/util/testleak"
 	"go.uber.org/zap"
 )
 

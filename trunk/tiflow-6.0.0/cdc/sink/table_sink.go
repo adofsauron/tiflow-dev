@@ -19,8 +19,8 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/redo"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/redo"
 	"go.uber.org/zap"
 )
 

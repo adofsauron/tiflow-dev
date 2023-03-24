@@ -30,11 +30,11 @@ GOTESTNORACE := CGO_ENABLED=1 $(GO) test -p $(P)
 # ARCH  := "$(shell uname -s)"
 # LINUX := "Linux"
 # MAC   := "Darwin"
-# CDC_PKG := github.com/pingcap/tiflow
-# DM_PKG := github.com/pingcap/tiflow/dm
+# CDC_PKG := sdbflow
+# DM_PKG := sdbflow/dm
 # PACKAGE_LIST := go list ./... | grep -vE 'vendor|proto|tiflow\/tests|integration|testing_utils|pb|pbmock|tiflow\/bin'
-# PACKAGE_LIST_WITHOUT_DM := $(PACKAGE_LIST) | grep -vE 'github.com/pingcap/tiflow/dm'
-# DM_PACKAGE_LIST := go list github.com/pingcap/tiflow/dm/... | grep -vE 'pb|pbmock|dm/cmd'
+# PACKAGE_LIST_WITHOUT_DM := $(PACKAGE_LIST) | grep -vE 'sdbflow/dm'
+# DM_PACKAGE_LIST := go list sdbflow/dm/... | grep -vE 'pb|pbmock|dm/cmd'
 # PACKAGES := $$($(PACKAGE_LIST))
 # PACKAGES_WITHOUT_DM := $$($(PACKAGE_LIST_WITHOUT_DM))
 # DM_PACKAGES := $$($(DM_PACKAGE_LIST))
@@ -98,18 +98,18 @@ test: unit_test dm_unit_test
 build: cdc dm
 
 bank:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/bank ./tests/bank/bank.go ./tests/bank/case.go
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sbank ./tests/bank/bank.go ./tests/bank/case.go
 
 build-failpoint: check_failpoint_ctl
 	$(FAILPOINT_ENABLE)
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/cdc ./cmd/cdc/main.go
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/scdc ./cmd/cdc/main.go
 	$(FAILPOINT_DISABLE)
 
 cdc:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/cdc ./cmd/cdc/main.go
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/scdc ./cmd/cdc/main.go
 
 kafka_consumer:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/cdc_kafka_consumer ./cmd/kafka-consumer/main.go
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/scdc_kafka_consumer ./cmd/kafka-consumer/main.go
 
 install:
 	go install ./...
@@ -154,8 +154,8 @@ check_third_party_binary:
 integration_test_build: check_failpoint_ctl
 	$(FAILPOINT_ENABLE)
 	$(GOTEST) -ldflags '$(LDFLAGS)' -c -cover -covermode=atomic \
-		-coverpkg=github.com/pingcap/tiflow/... \
-		-o bin/cdc.test github.com/pingcap/tiflow/cmd/cdc \
+		-coverpkg=sdbflow/... \
+		-o bin/cdc.test sdbflow/cmd/cdc \
 	|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/cdc ./cmd/cdc/main.go \
 	|| { $(FAILPOINT_DISABLE); exit 1; }
@@ -259,24 +259,24 @@ clean:
 dm: dm-master dm-worker dmctl dm-syncer
 
 dm-master:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/dm-master ./dm/cmd/dm-master
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdm-master ./dm/cmd/dm-master
 
 dm-master-with-webui:
 	@echo "build webui first"
 	cd dm/ui && yarn --ignore-scripts && yarn build
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -tags dm_webui -o bin/dm-master ./dm/cmd/dm-master
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -tags dm_webui -o bin/sdm-master ./dm/cmd/dm-master
 
 dm-worker:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/dm-worker ./dm/cmd/dm-worker
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdm-worker ./dm/cmd/dm-worker
 
 dmctl:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/dmctl ./dm/cmd/dm-ctl
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdmctl ./dm/cmd/dm-ctl
 
 dm-syncer:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/dm-syncer ./dm/cmd/dm-syncer
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdm-syncer ./dm/cmd/dm-syncer
 
 dm-chaos-case:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/dm-chaos-case ./dm/chaos/cases
+	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdm-chaos-case ./dm/chaos/cases
 
 dm_debug-tools:
 	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/binlog-event-blackhole ./dm/debug-tools/binlog-event-blackhole
@@ -306,7 +306,7 @@ endef
 dm_unit_test: check_failpoint_ctl
 	$(call run_dm_unit_test,$(DM_PACKAGES))
 
-# run unit test for the specified pkg only, like `make dm_unit_test_pkg PKG=github.com/pingcap/tiflow/dm/dm/master`
+# run unit test for the specified pkg only, like `make dm_unit_test_pkg PKG=sdbflow/dm/dm/master`
 dm_unit_test_pkg: check_failpoint_ctl
 	$(call run_dm_unit_test,$(PKG))
 
@@ -324,20 +324,20 @@ dm_unit_test_in_verify_ci: check_failpoint_ctl tools/bin/gotestsum tools/bin/goc
 dm_integration_test_build: check_failpoint_ctl
 	$(FAILPOINT_ENABLE)
 	$(GOTEST) -ldflags '$(LDFLAGS)' -c -cover -covermode=atomic \
-		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/dm-worker.test github.com/pingcap/tiflow/dm/cmd/dm-worker \
+		-coverpkg=sdbflow/dm/... \
+		-o bin/dm-worker.test sdbflow/dm/cmd/dm-worker \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(GOTEST) -ldflags '$(LDFLAGS)' -c -cover -covermode=atomic \
-		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/dm-master.test github.com/pingcap/tiflow/dm/cmd/dm-master \
+		-coverpkg=sdbflow/dm/... \
+		-o bin/dm-master.test sdbflow/dm/cmd/dm-master \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(GOTESTNORACE) -ldflags '$(LDFLAGS)' -c -cover -covermode=count \
-		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/dmctl.test github.com/pingcap/tiflow/dm/cmd/dm-ctl \
+		-coverpkg=sdbflow/dm/... \
+		-o bin/dmctl.test sdbflow/dm/cmd/dm-ctl \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(GOTEST) -ldflags '$(LDFLAGS)' -c -cover -covermode=atomic \
-		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/dm-syncer.test github.com/pingcap/tiflow/dm/cmd/dm-syncer \
+		-coverpkg=sdbflow/dm/... \
+		-o bin/dm-syncer.test sdbflow/dm/cmd/dm-syncer \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(FAILPOINT_DISABLE)
 	./dm/tests/prepare_tools.sh
@@ -345,8 +345,8 @@ dm_integration_test_build: check_failpoint_ctl
 dm_integration_test_build_worker: check_failpoint_ctl
 	$(FAILPOINT_ENABLE)
 	$(GOTEST) -ldflags '$(LDFLAGS)' -c -cover -covermode=atomic \
-		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/dm-worker.test github.com/pingcap/tiflow/dm/cmd/dm-worker \
+		-coverpkg=sdbflow/dm/... \
+		-o bin/dm-worker.test sdbflow/dm/cmd/dm-worker \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(FAILPOINT_DISABLE)
 	./dm/tests/prepare_tools.sh
@@ -354,8 +354,8 @@ dm_integration_test_build_worker: check_failpoint_ctl
 dm_integration_test_build_master: check_failpoint_ctl
 	$(FAILPOINT_ENABLE)
 	$(GOTEST) -ldflags '$(LDFLAGS)' -c -cover -covermode=atomic \
-		-coverpkg=github.com/pingcap/tiflow/dm/... \
-		-o bin/dm-master.test github.com/pingcap/tiflow/dm/cmd/dm-master \
+		-coverpkg=sdbflow/dm/... \
+		-o bin/dm-master.test sdbflow/dm/cmd/dm-master \
 		|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(FAILPOINT_DISABLE)
 	./dm/tests/prepare_tools.sh

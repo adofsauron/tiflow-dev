@@ -20,9 +20,9 @@ import (
 
 	"github.com/chzyer/readline"
 	"github.com/mattn/go-shellwords"
-	"github.com/pingcap/tiflow/pkg/cmd/factory"
-	"github.com/pingcap/tiflow/pkg/cmd/util"
-	"github.com/pingcap/tiflow/pkg/logutil"
+	"sdbflow/pkg/cmd/factory"
+	"sdbflow/pkg/cmd/util"
+	"sdbflow/pkg/logutil"
 	"github.com/spf13/cobra"
 )
 
@@ -54,7 +54,7 @@ func NewCmdCli() *cobra.Command {
 
 	cmds := &cobra.Command{
 		Use:   "cli",
-		Short: "Manage replication task and TiCDC cluster",
+		Short: "Manage replication task and SDBCDC cluster",
 		PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
 			// Here we will initialize the logging configuration and set the current default context.
 			util.InitCmd(cmd, &logutil.Config{Level: cf.GetLogLevel()})

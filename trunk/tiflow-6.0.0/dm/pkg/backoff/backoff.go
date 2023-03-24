@@ -18,7 +18,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/terror"
 )
 
 // Backoff is an exponential counter, it starts from `Min` duration, and after

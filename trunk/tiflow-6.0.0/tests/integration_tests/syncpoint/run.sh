@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # [DISCRIPTION]:
-#   This test is related to https://github.com/pingcap/tiflow/issues/658.
+#   This test is related to https://sdbflow/issues/658.
 #   It will record the syncpoint map of upstream and downstream to a table to achieve snapshot level consistency replication
 # [STEP]:
 #   1. Create changefeed with --sync-point --sync-interval=10s

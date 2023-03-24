@@ -29,10 +29,10 @@ import (
 	"go.etcd.io/etcd/server/v3/embed"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 const (
@@ -59,7 +59,7 @@ func NewConfig() *Config {
 	fs := cfg.flagSet
 
 	fs.BoolVar(&cfg.printVersion, "V", false, "prints version and exit")
-	fs.BoolVar(&cfg.printSampleConfig, "print-sample-config", false, "print sample config file of dm-worker")
+	fs.BoolVar(&cfg.printSampleConfig, "print-sample-config", false, "print sample config file of sdm-worker")
 	fs.BoolVar(&cfg.OpenAPI, "openapi", false, "enable openapi")
 	fs.StringVar(&cfg.ConfigFile, "config", "", "path to config file")
 	fs.StringVar(&cfg.MasterAddr, "master-addr", "", "master API server and status addr")
@@ -69,7 +69,7 @@ func NewConfig() *Config {
 	fs.StringVar(&cfg.LogFormat, "log-format", "text", `the format of the log, "text" or "json"`)
 	// fs.StringVar(&cfg.LogRotate, "log-rotate", "day", "log file rotate type, hour/day")
 
-	fs.StringVar(&cfg.Name, "name", "", "human-readable name for this DM-master member")
+	fs.StringVar(&cfg.Name, "name", "", "human-readable name for this SDM-master member")
 	fs.StringVar(&cfg.DataDir, "data-dir", "", `path to the data directory (default "default.${name}")`)
 	fs.StringVar(&cfg.InitialCluster, "initial-cluster", "", fmt.Sprintf("initial cluster configuration for bootstrapping, e.g. dm-master=%s", defaultPeerUrls))
 	fs.StringVar(&cfg.PeerUrls, "peer-urls", defaultPeerUrls, "URLs for peer traffic")

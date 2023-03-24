@@ -22,11 +22,11 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/cyclic/mark"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/cyclic/mark"
+	cerror "sdbflow/pkg/errors"
+	cerrors "sdbflow/pkg/errors"
+	"sdbflow/pkg/version"
 	"github.com/tikv/client-go/v2/oracle"
 	"go.uber.org/zap"
 )

@@ -13,7 +13,7 @@
 
 package scheduler
 
-import "github.com/pingcap/tiflow/cdc/model"
+import "sdbflow/cdc/model"
 
 // TableNumberScheduler provides a feature that scheduling by the table number
 type TableNumberScheduler struct {

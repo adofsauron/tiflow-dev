@@ -20,15 +20,15 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/pingcap/tiflow/dm/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/dm/pb"
+	"sdbflow/dm/dm/ctl/common"
+	"sdbflow/dm/dm/pb"
 )
 
 // NewPauseRelayCmd creates a PauseRelay command.
 func NewPauseRelayCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "pause-relay <-s source ...>",
-		Short: "Pauses DM-worker's relay unit",
+		Short: "Pauses SDM-worker's relay unit",
 		RunE:  pauseRelayFunc,
 	}
 	return cmd

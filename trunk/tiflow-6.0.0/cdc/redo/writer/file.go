@@ -35,8 +35,8 @@ import (
 	"go.uber.org/multierr"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/cdc/redo/common"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
+	"sdbflow/cdc/redo/common"
+	cerror "sdbflow/pkg/errors"
 )
 
 const (

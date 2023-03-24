@@ -31,7 +31,7 @@ function test_worker_restart() {
 		"Please check if the previous worker is online." 1
 
 	# worker1 online
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/loader/LoadDataSlowDownByTask=return(\"load_task1\")"
+	export GO_FAILPOINTS="sdbflow/dm/loader/LoadDataSlowDownByTask=return(\"load_task1\")"
 	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
 
@@ -80,7 +80,7 @@ function test_transfer_two_sources() {
 		"\"unit\": \"Load\"" 1
 
 	# worker2 online
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/loader/LoadDataSlowDown=sleep(15000)"
+	export GO_FAILPOINTS="sdbflow/dm/loader/LoadDataSlowDown=sleep(15000)"
 	run_dm_worker $WORK_DIR/worker2 $WORKER2_PORT $cur/conf/dm-worker2.toml
 	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER2_PORT
 
@@ -175,7 +175,7 @@ function stop_task_left_load() {
 	run_dm_master $WORK_DIR/master $MASTER_PORT1 $cur/conf/dm-master.toml
 	check_rpc_alive $cur/../bin/check_master_online 127.0.0.1:$MASTER_PORT1
 
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/loader/LoadDataSlowDownByTask=return(\"load_task1\")"
+	export GO_FAILPOINTS="sdbflow/dm/loader/LoadDataSlowDownByTask=return(\"load_task1\")"
 	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
 	cp $cur/conf/source1.yaml $WORK_DIR/source1.yaml
@@ -206,7 +206,7 @@ function stop_task_left_load() {
 		"\"unit\": \"Sync\"" 1
 
 	# after worker1 goes online, although it has unfinished load_task1, but load_task1 is stopped so should not rebound
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/loader/LoadDataSlowDownByTask=return(\"load_task1\")"
+	export GO_FAILPOINTS="sdbflow/dm/loader/LoadDataSlowDownByTask=return(\"load_task1\")"
 	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
 
@@ -263,7 +263,7 @@ function run() {
 	check_rpc_alive $cur/../bin/check_master_online 127.0.0.1:$MASTER_PORT1
 
 	# worker1 loading load_task1
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/loader/LoadDataSlowDownByTask=return(\"load_task1\")"
+	export GO_FAILPOINTS="sdbflow/dm/loader/LoadDataSlowDownByTask=return(\"load_task1\")"
 	run_dm_worker $WORK_DIR/worker1 $WORKER1_PORT $cur/conf/dm-worker1.toml
 	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER1_PORT
 	cp $cur/conf/source1.yaml $WORK_DIR/source1.yaml
@@ -271,7 +271,7 @@ function run() {
 	dmctl_operate_source create $WORK_DIR/source1.yaml $SOURCE_ID1
 
 	# worker2 loading load_task2
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/loader/LoadDataSlowDownByTask=return(\"load_task2\")"
+	export GO_FAILPOINTS="sdbflow/dm/loader/LoadDataSlowDownByTask=return(\"load_task2\")"
 	run_dm_worker $WORK_DIR/worker2 $WORKER2_PORT $cur/conf/dm-worker2.toml
 	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER2_PORT
 	cp $cur/conf/source2.yaml $WORK_DIR/source2.yaml
@@ -279,7 +279,7 @@ function run() {
 	dmctl_operate_source create $WORK_DIR/source2.yaml $SOURCE_ID2
 
 	# worker3 loading load_task3
-	export GO_FAILPOINTS="github.com/pingcap/tiflow/dm/loader/LoadDataSlowDownByTask=return(\"load_task3\")"
+	export GO_FAILPOINTS="sdbflow/dm/loader/LoadDataSlowDownByTask=return(\"load_task3\")"
 	run_dm_worker $WORK_DIR/worker3 $WORKER3_PORT $cur/conf/dm-worker3.toml
 	check_rpc_alive $cur/../bin/check_worker_online 127.0.0.1:$WORKER3_PORT
 

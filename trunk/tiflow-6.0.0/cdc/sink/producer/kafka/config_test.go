@@ -24,13 +24,13 @@ import (
 	"github.com/pingcap/check"
 	"github.com/pingcap/errors"
 	"github.com/pingcap/tidb/util/timeutil"
-	"github.com/pingcap/tiflow/cdc/sink/codec"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/kafka"
-	"github.com/pingcap/tiflow/pkg/security"
-	"github.com/pingcap/tiflow/pkg/util"
-	"github.com/pingcap/tiflow/pkg/util/testleak"
+	"sdbflow/cdc/sink/codec"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/kafka"
+	"sdbflow/pkg/security"
+	"sdbflow/pkg/util"
+	"sdbflow/pkg/util/testleak"
 )
 
 func (s *kafkaSuite) TestNewSaramaConfig(c *check.C) {

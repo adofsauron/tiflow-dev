@@ -19,10 +19,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/pingcap/tiflow/dm/dm/ctl/common"
-	"github.com/pingcap/tiflow/dm/dm/ctl/master"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/dm/ctl/common"
+	"sdbflow/dm/dm/ctl/master"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/utils"
 
 	"github.com/chzyer/readline"
 	"github.com/pingcap/errors"
@@ -46,8 +46,8 @@ func (c CommandMasterFlags) Reset() {
 // NewRootCmd generates a new rootCmd.
 func NewRootCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:           "dmctl",
-		Short:         "DM control",
+		Use:           "sdmctl",
+		Short:         "SDM control",
 		SilenceUsage:  true,
 		SilenceErrors: true,
 		CompletionOptions: cobra.CompletionOptions{

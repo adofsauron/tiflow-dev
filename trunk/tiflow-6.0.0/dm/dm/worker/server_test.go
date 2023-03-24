@@ -31,16 +31,16 @@ import (
 	"go.etcd.io/etcd/server/v3/embed"
 	"google.golang.org/grpc"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/dm/pb"
-	"github.com/pingcap/tiflow/dm/dm/unit"
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
-	"github.com/pingcap/tiflow/dm/pkg/ha"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	"github.com/pingcap/tiflow/dm/relay"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/dm/pb"
+	"sdbflow/dm/dm/unit"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/dm/pkg/gtid"
+	"sdbflow/dm/pkg/ha"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
+	"sdbflow/dm/relay"
 )
 
 // do not forget to update this path if the file removed/renamed.
@@ -315,7 +315,7 @@ func (t *testServer) TestHandleSourceBoundAfterError(c *C) {
 	}), IsTrue)
 
 	// enable failpoint
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/pkg/ha/FailToGetSourceCfg", `return(true)`), IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/pkg/ha/FailToGetSourceCfg", `return(true)`), IsNil)
 	sourceCfg := loadSourceConfigWithoutPassword(c)
 	sourceCfg.EnableRelay = false
 	_, err = ha.PutSourceCfg(etcdCli, sourceCfg)
@@ -351,7 +351,7 @@ func (t *testServer) TestHandleSourceBoundAfterError(c *C) {
 	// stop watching and disable failpoint
 	cancel()
 	wg.Wait()
-	c.Assert(failpoint.Disable("github.com/pingcap/tiflow/dm/pkg/ha/FailToGetSourceCfg"), IsNil)
+	c.Assert(failpoint.Disable("sdbflow/dm/pkg/ha/FailToGetSourceCfg"), IsNil)
 
 	_, err = ha.PutSourceBound(etcdCli, sourceBound)
 	c.Assert(err, IsNil)

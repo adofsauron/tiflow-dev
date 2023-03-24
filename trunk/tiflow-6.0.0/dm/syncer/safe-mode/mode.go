@@ -19,9 +19,9 @@ import (
 	"github.com/pingcap/tidb-tools/pkg/filter"
 	"go.uber.org/zap"
 
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
 // SafeMode controls whether enable safe-mode through a mechanism similar to reference-count

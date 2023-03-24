@@ -21,7 +21,7 @@ import (
 	"reflect"
 
 	. "github.com/pingcap/check"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/utils"
 )
 
 const (

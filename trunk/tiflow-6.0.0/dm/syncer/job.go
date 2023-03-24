@@ -21,8 +21,8 @@ import (
 	"github.com/go-mysql-org/go-mysql/replication"
 	"github.com/pingcap/tidb-tools/pkg/filter"
 
-	"github.com/pingcap/tiflow/dm/pkg/binlog"
-	"github.com/pingcap/tiflow/pkg/sqlmodel"
+	"sdbflow/dm/pkg/binlog"
+	"sdbflow/pkg/sqlmodel"
 )
 
 type opType byte

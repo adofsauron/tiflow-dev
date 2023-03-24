@@ -23,10 +23,10 @@ import (
 	"github.com/Shopify/sarama"
 	"github.com/pingcap/check"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tiflow/cdc/sink/codec"
-	"github.com/pingcap/tiflow/pkg/kafka"
-	"github.com/pingcap/tiflow/pkg/util"
-	"github.com/pingcap/tiflow/pkg/util/testleak"
+	"sdbflow/cdc/sink/codec"
+	"sdbflow/pkg/kafka"
+	"sdbflow/pkg/util"
+	"sdbflow/pkg/util/testleak"
 )
 
 type kafkaSuite struct{}

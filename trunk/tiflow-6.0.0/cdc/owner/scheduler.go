@@ -18,14 +18,14 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	pscheduler "github.com/pingcap/tiflow/cdc/scheduler"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/context"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/orchestrator"
-	"github.com/pingcap/tiflow/pkg/p2p"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/cdc/model"
+	pscheduler "sdbflow/cdc/scheduler"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/context"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/orchestrator"
+	"sdbflow/pkg/p2p"
+	"sdbflow/pkg/version"
 	"go.uber.org/zap"
 )
 

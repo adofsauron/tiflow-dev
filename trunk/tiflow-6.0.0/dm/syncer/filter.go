@@ -19,9 +19,9 @@ import (
 	"github.com/pingcap/tidb-tools/pkg/filter"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
-	onlineddl "github.com/pingcap/tiflow/dm/syncer/online-ddl-tools"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
+	onlineddl "sdbflow/dm/syncer/online-ddl-tools"
 )
 
 // skipQueryEvent if skip by binlog-filter:

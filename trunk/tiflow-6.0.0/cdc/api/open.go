@@ -21,14 +21,14 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/pingcap/log"
 	"github.com/pingcap/tidb/br/pkg/httputil"
-	"github.com/pingcap/tiflow/cdc/capture"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/owner"
-	"github.com/pingcap/tiflow/pkg/config"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/logutil"
-	"github.com/pingcap/tiflow/pkg/retry"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/cdc/capture"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/owner"
+	"sdbflow/pkg/config"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/logutil"
+	"sdbflow/pkg/retry"
+	"sdbflow/pkg/version"
 	"github.com/tikv/client-go/v2/oracle"
 	"go.uber.org/zap"
 )
@@ -651,9 +651,9 @@ func (h *openAPI) GetProcessor(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, &processorDetail)
 }
 
-// ListProcessor lists all processors in the TiCDC cluster
+// ListProcessor lists all processors in the SDBCDC cluster
 // @Summary List processors
-// @Description list all processors in the TiCDC cluster
+// @Description list all processors in the SDBCDC cluster
 // @Tags processor
 // @Accept json
 // @Produce json

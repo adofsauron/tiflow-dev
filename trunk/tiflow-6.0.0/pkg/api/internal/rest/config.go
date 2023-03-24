@@ -18,9 +18,9 @@ import (
 	"path"
 
 	"github.com/pingcap/errors"
-	cerrors "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/httputil"
-	"github.com/pingcap/tiflow/pkg/security"
+	cerrors "sdbflow/pkg/errors"
+	"sdbflow/pkg/httputil"
+	"sdbflow/pkg/security"
 )
 
 // Config holds the common attributes that can be passed to a cdc REST client

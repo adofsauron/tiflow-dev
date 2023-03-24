@@ -13,7 +13,7 @@
 
 package pipeline
 
-import "github.com/pingcap/tiflow/cdc/model"
+import "sdbflow/cdc/model"
 
 // MessageType is the type of Message
 type MessageType int

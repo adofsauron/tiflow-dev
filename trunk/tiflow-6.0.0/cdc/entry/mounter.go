@@ -31,9 +31,9 @@ import (
 	"github.com/pingcap/tidb/table"
 	"github.com/pingcap/tidb/tablecodec"
 	"github.com/pingcap/tidb/types"
-	"github.com/pingcap/tiflow/cdc/model"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/model"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/util"
 	"go.uber.org/zap"
 	"golang.org/x/sync/errgroup"
 )
@@ -516,7 +516,7 @@ func formatColVal(datum types.Datum, tp byte) (
 func getDefaultOrZeroValue(col *timodel.ColumnInfo) (interface{}, int, string, error) {
 	var d types.Datum
 	// NOTICE: SHOULD use OriginDefaultValue here, more info pls ref to
-	// https://github.com/pingcap/tiflow/issues/4048
+	// https://sdbflow/issues/4048
 	// FIXME: Too many corner cases may hit here, like type truncate, timezone
 	// (1) If this column is uk(no pk), will cause data inconsistency in Scenarios(2)
 	// (2) If not fix here, will cause data inconsistency in Scenarios(3) directly

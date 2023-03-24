@@ -32,9 +32,9 @@ import (
 	"github.com/pingcap/tidb/types"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/router"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/router"
+	"sdbflow/dm/pkg/terror"
 )
 
 func init() {

@@ -21,8 +21,8 @@ import (
 
 	"github.com/pingcap/tidb/sessionctx"
 
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/syncer/metrics"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/syncer/metrics"
 )
 
 // causality provides a simple mechanism to improve the concurrency of SQLs execution under the premise of ensuring correctness.

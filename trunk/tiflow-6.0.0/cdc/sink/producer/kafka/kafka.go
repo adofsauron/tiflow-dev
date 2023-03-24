@@ -26,11 +26,11 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/kafka"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/kafka"
+	"sdbflow/pkg/util"
 	"go.uber.org/zap"
 )
 

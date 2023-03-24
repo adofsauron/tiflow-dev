@@ -23,7 +23,7 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/tests/mq_protocol_tests/framework"
+	"sdbflow/tests/mq_protocol_tests/framework"
 	"go.uber.org/zap"
 )
 

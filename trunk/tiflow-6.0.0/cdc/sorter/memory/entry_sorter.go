@@ -22,10 +22,10 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/notify"
-	"github.com/pingcap/tiflow/pkg/util"
+	"sdbflow/cdc/model"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/notify"
+	"sdbflow/pkg/util"
 	"go.uber.org/zap"
 	"golang.org/x/sync/errgroup"
 )

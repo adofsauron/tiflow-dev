@@ -23,8 +23,8 @@ import (
 	"github.com/pingcap/failpoint"
 	"github.com/tikv/pd/pkg/tempurl"
 
-	"github.com/pingcap/tiflow/dm/pkg/etcdutil"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/pkg/etcdutil"
+	"sdbflow/dm/pkg/utils"
 )
 
 var _ = check.Suite(&testElectionSuite{})
@@ -93,9 +93,9 @@ func (t *testElectionSuite) TestFailToStartLeader(c *check.C) {
 	c.Assert(s2.ClusterID(), check.Equals, uint64(0))
 
 	// fail to start scheduler/pessimism/optimism
-	c.Assert(failpoint.Enable("github.com/pingcap/tiflow/dm/dm/master/FailToStartLeader", `return("dm-master-2")`), check.IsNil)
+	c.Assert(failpoint.Enable("sdbflow/dm/dm/master/FailToStartLeader", `return("dm-master-2")`), check.IsNil)
 	//nolint:errcheck
-	defer failpoint.Disable("github.com/pingcap/tiflow/dm/dm/master/FailToStartLeader")
+	defer failpoint.Disable("sdbflow/dm/dm/master/FailToStartLeader")
 
 	s1.election.Resign()
 	time.Sleep(1 * time.Second)
@@ -107,7 +107,7 @@ func (t *testElectionSuite) TestFailToStartLeader(c *check.C) {
 	clusterID := s1.ClusterID()
 
 	//nolint:errcheck
-	failpoint.Disable("github.com/pingcap/tiflow/dm/dm/master/FailToStartLeader")
+	failpoint.Disable("sdbflow/dm/dm/master/FailToStartLeader")
 	s1.election.Resign()
 	time.Sleep(1 * time.Second)
 

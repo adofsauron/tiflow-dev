@@ -5,7 +5,7 @@
 
 ## Background
 
-The main purpose of this change is to address the root cause of problems like [#3771](https://github.com/pingcap/tiflow/issues/3771), which are caused by the fact that commands about DM task do not distinguish between dynamic configuration and static resources, making it impossible for users to intuitively manage their tasks. For this reasons, we will attempt to redesign the state machine of DM task and optimize the dmctl interaction interface to provide a better user experience.
+The main purpose of this change is to address the root cause of problems like [#3771](https://sdbflow/issues/3771), which are caused by the fact that commands about DM task do not distinguish between dynamic configuration and static resources, making it impossible for users to intuitively manage their tasks. For this reasons, we will attempt to redesign the state machine of DM task and optimize the dmctl interaction interface to provide a better user experience.
 
 ### Current State machine of task
 
@@ -71,7 +71,7 @@ where `resource type`, `command`, `flags` and `arguments` are:
 |---------|-----------------------------------------------------------------------------------------------------|---------------|------------------------|------------------------------------------------------------------------------|
 | start   | `dmctl relay start --worker-name="worker1" source1`                                                 | --worker-name | source-name            | start relay for a source on a worker.                                        |
 | stop    | `dmctl relay stop --worker-name="worker1" source1`                                                  | --worker-name | source-name            | stop relay for a source on a worker.                                         |
-| purge   | `dmctl relay purge --sub-dir="2ae76434-f79f-11e8-bde2-024ac130008.000001" source1 mysql-bin.000006` | --sub-dir     | source-name, file-name | purges relay log files of the DM-worker according to the specified filename. |
+| purge   | `dmctl relay purge --sub-dir="2ae76434-f79f-11e8-bde2-024ac130008.000001" source1 mysql-bin.000006` | --sub-dir     | source-name, file-name | purges relay log files of the SDM-worker according to the specified filename. |
 
 ### dmctl commands for DDL-LOCK
 
@@ -112,7 +112,7 @@ Here is a simple prototype demo:
 
 This phase is mainly about implementing the DM-Master/DM-Worker internal logic.
 
-For tasks, the DM-Master's internal scheduling module needs to support the creation of a subtask in a stopped state, in addition to adapting additional parameters like `-start-time`,`--time-out` and so on. the DM-Worker need to watch the task stage from etcd and operate the subtask according the stage.
+For tasks, the SDM-master's internal scheduling module needs to support the creation of a subtask in a stopped state, in addition to adapting additional parameters like `-start-time`,`--time-out` and so on. the DM-Worker need to watch the task stage from etcd and operate the subtask according the stage.
 
 And for Sources, when the DM-Master receives a `disable source` request from a user, it will **synchronously** notify the DM-Worker and tell the DM-Worker to stop processing the subtask.
 

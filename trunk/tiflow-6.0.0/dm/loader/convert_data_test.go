@@ -16,8 +16,8 @@ package loader
 import (
 	cm "github.com/pingcap/tidb-tools/pkg/column-mapping"
 
-	tcontext "github.com/pingcap/tiflow/dm/pkg/context"
-	"github.com/pingcap/tiflow/dm/pkg/router"
+	tcontext "sdbflow/dm/pkg/context"
+	"sdbflow/dm/pkg/router"
 
 	. "github.com/pingcap/check"
 )

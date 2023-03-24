@@ -13,7 +13,7 @@
 
 package unified
 
-import "github.com/pingcap/tiflow/cdc/model"
+import "sdbflow/cdc/model"
 
 type sortItem struct {
 	entry *model.PolymorphicEvent

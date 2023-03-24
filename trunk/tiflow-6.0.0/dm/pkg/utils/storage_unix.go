@@ -21,7 +21,7 @@ import (
 
 	"golang.org/x/sys/unix"
 
-	"github.com/pingcap/tiflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/terror"
 )
 
 // GetStorageSize gets storage's capacity and available size.

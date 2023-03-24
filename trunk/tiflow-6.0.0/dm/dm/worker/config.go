@@ -25,13 +25,13 @@ import (
 	"github.com/BurntSushi/toml"
 	"github.com/pingcap/failpoint"
 
-	"github.com/pingcap/tiflow/dm/dm/config"
-	"github.com/pingcap/tiflow/dm/pkg/log"
-	"github.com/pingcap/tiflow/dm/pkg/terror"
-	"github.com/pingcap/tiflow/dm/pkg/utils"
+	"sdbflow/dm/dm/config"
+	"sdbflow/dm/pkg/log"
+	"sdbflow/dm/pkg/terror"
+	"sdbflow/dm/pkg/utils"
 )
 
-// SampleConfigFile is sample config file of dm-worker.
+// SampleConfigFile is sample config file of sdm-worker.
 //go:embed dm-worker.toml
 var SampleConfigFile string
 
@@ -58,7 +58,7 @@ func NewConfig() *Config {
 	fs := cfg.flagSet
 
 	fs.BoolVar(&cfg.printVersion, "V", false, "prints version and exit")
-	fs.BoolVar(&cfg.printSampleConfig, "print-sample-config", false, "print sample config file of dm-worker")
+	fs.BoolVar(&cfg.printSampleConfig, "print-sample-config", false, "print sample config file of sdm-worker")
 	fs.StringVar(&cfg.ConfigFile, "config", "", "path to config file")
 	fs.StringVar(&cfg.WorkerAddr, "worker-addr", "", "listen address for client traffic")
 	fs.StringVar(&cfg.AdvertiseAddr, "advertise-addr", "", `advertise address for client traffic (default "${worker-addr}")`)
@@ -68,9 +68,9 @@ func NewConfig() *Config {
 	// fs.StringVar(&cfg.LogRotate, "log-rotate", "day", "log file rotate type, hour/day")
 	// NOTE: add `advertise-addr` for dm-master if needed.
 	fs.StringVar(&cfg.Join, "join", "", `join to an existing cluster (usage: dm-master cluster's "${master-addr}")`)
-	fs.StringVar(&cfg.Name, "name", "", "human-readable name for DM-worker member")
-	fs.Int64Var(&cfg.KeepAliveTTL, "keepalive-ttl", defaultKeepAliveTTL, "dm-worker's TTL for keepalive with etcd (in seconds)")
-	fs.Int64Var(&cfg.RelayKeepAliveTTL, "relay-keepalive-ttl", defaultRelayKeepAliveTTL, "dm-worker's TTL for keepalive with etcd when handle relay enabled sources (in seconds)")
+	fs.StringVar(&cfg.Name, "name", "", "human-readable name for SDM-worker member")
+	fs.Int64Var(&cfg.KeepAliveTTL, "keepalive-ttl", defaultKeepAliveTTL, "SDM-worker's TTL for keepalive with etcd (in seconds)")
+	fs.Int64Var(&cfg.RelayKeepAliveTTL, "relay-keepalive-ttl", defaultRelayKeepAliveTTL, "SDM-worker's TTL for keepalive with etcd when handle relay enabled sources (in seconds)")
 
 	fs.StringVar(&cfg.SSLCA, "ssl-ca", "", "path of file that contains list of trusted SSL CAs for connection")
 	fs.StringVar(&cfg.SSLCert, "ssl-cert", "", "path of file that contains X509 certificate in PEM format for connection")

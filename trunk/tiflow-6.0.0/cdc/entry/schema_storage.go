@@ -24,10 +24,10 @@ import (
 	"github.com/pingcap/log"
 	timeta "github.com/pingcap/tidb/meta"
 	timodel "github.com/pingcap/tidb/parser/model"
-	"github.com/pingcap/tiflow/cdc/model"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/filter"
-	"github.com/pingcap/tiflow/pkg/retry"
+	"sdbflow/cdc/model"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/filter"
+	"sdbflow/pkg/retry"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
@@ -515,7 +515,7 @@ func (s *schemaSnapshot) createTable(table *model.TableInfo) error {
 	if !table.IsEligible(s.forceReplicate) {
 		// Sequence is not supported yet, and always ineligible.
 		// Skip Warn to avoid confusion.
-		// See https://github.com/pingcap/tiflow/issues/4559
+		// See https://sdbflow/issues/4559
 		if !table.IsSequence() {
 			log.Warn("this table is ineligible to replicate",
 				zap.String("tableName", table.Name.O), zap.Int64("tableID", table.ID))
@@ -546,7 +546,7 @@ func (s *schemaSnapshot) replaceTable(table *model.TableInfo) error {
 	if !table.IsEligible(s.forceReplicate) {
 		// Sequence is not supported yet, and always ineligible.
 		// Skip Warn to avoid confusion.
-		// See https://github.com/pingcap/tiflow/issues/4559
+		// See https://sdbflow/issues/4559
 		if !table.IsSequence() {
 			log.Warn("this table is ineligible to replicate",
 				zap.String("tableName", table.Name.O), zap.Int64("tableID", table.ID))

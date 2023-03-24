@@ -15,7 +15,7 @@ package main
 
 import (
 	_ "github.com/pingcap/tidb/types/parser_driver"
-	"github.com/pingcap/tiflow/pkg/cmd"
+	"sdbflow/pkg/cmd"
 )
 
 func main() {

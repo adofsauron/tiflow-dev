@@ -26,8 +26,8 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/pingcap/errors"
 	mockstorage "github.com/pingcap/tidb/br/pkg/mock/storage"
-	"github.com/pingcap/tiflow/cdc/redo/common"
-	"github.com/pingcap/tiflow/pkg/leakutil"
+	"sdbflow/cdc/redo/common"
+	"sdbflow/pkg/leakutil"
 	"github.com/stretchr/testify/require"
 	"github.com/uber-go/atomic"
 )

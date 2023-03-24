@@ -21,7 +21,7 @@ import (
 
 	"github.com/pingcap/kvproto/pkg/cdcpb"
 	"github.com/pingcap/kvproto/pkg/metapb"
-	"github.com/pingcap/tiflow/pkg/version"
+	"sdbflow/pkg/version"
 	pd "github.com/tikv/pd/client"
 )
 

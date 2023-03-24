@@ -20,10 +20,10 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/tidb/util/timeutil"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/sink/codec"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/security"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/sink/codec"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/security"
 	"github.com/stretchr/testify/require"
 )
 

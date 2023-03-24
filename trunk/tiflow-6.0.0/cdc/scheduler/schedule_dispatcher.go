@@ -19,9 +19,9 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/model"
-	"github.com/pingcap/tiflow/cdc/scheduler/util"
-	"github.com/pingcap/tiflow/pkg/context"
+	"sdbflow/cdc/model"
+	"sdbflow/cdc/scheduler/util"
+	"sdbflow/pkg/context"
 	"go.uber.org/zap"
 )
 

@@ -16,7 +16,7 @@ package config
 import (
 	"github.com/pingcap/check"
 
-	"github.com/pingcap/tiflow/dm/openapi/fixtures"
+	"sdbflow/dm/openapi/fixtures"
 )
 
 func (t *testConfig) TestConverterWithSourceAndOpenAPISource(c *check.C) {

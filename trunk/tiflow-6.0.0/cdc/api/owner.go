@@ -28,10 +28,10 @@ import (
 	"go.etcd.io/etcd/client/v3/concurrency"
 	"go.uber.org/zap"
 
-	"github.com/pingcap/tiflow/cdc/capture"
-	"github.com/pingcap/tiflow/cdc/model"
-	cerror "github.com/pingcap/tiflow/pkg/errors"
-	"github.com/pingcap/tiflow/pkg/logutil"
+	"sdbflow/cdc/capture"
+	"sdbflow/cdc/model"
+	cerror "sdbflow/pkg/errors"
+	"sdbflow/pkg/logutil"
 )
 
 const (

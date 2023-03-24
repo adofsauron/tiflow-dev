@@ -26,9 +26,9 @@ import (
 	"github.com/cockroachdb/pebble/bloom"
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
-	"github.com/pingcap/tiflow/cdc/sorter"
-	"github.com/pingcap/tiflow/pkg/config"
-	"github.com/pingcap/tiflow/pkg/retry"
+	"sdbflow/cdc/sorter"
+	"sdbflow/pkg/config"
+	"sdbflow/pkg/retry"
 	"go.uber.org/zap"
 )
 

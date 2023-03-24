@@ -27,8 +27,8 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/pingcap/tidb/parser"
 
-	"github.com/pingcap/tiflow/dm/pkg/binlog/event"
-	"github.com/pingcap/tiflow/dm/pkg/gtid"
+	"sdbflow/dm/pkg/binlog/event"
+	"sdbflow/dm/pkg/gtid"
 )
 
 var _ = check.Suite(&testFileUtilSuite{})
