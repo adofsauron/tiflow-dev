@@ -15,6 +15,3 @@ exec ./prometheus \
     --log.level="info" \
     --storage.tsdb.path="./data/" \
     --storage.tsdb.retention="30d" &
-
-
-wget http://localhost:8261/metrics
