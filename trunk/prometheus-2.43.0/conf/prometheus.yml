@@ -1,0 +1,84 @@
+---
+global:
+  scrape_interval: 15s # By default, scrape targets every 15 seconds.
+  evaluation_interval: 15s # By default, scrape targets every 15 seconds.
+  external_labels:
+    cluster: 'dm-sdm'
+    monitor: "prometheus"
+
+# Load and evaluate rules in this file every 'evaluation_interval' seconds.
+rule_files:
+  - 'dm_worker.rules.yml'
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      - '192.168.75.149:9093'
+
+scrape_configs:
+  - job_name: "overwritten-nodes"
+    honor_labels: true # don't overwrite job & instance labels
+    static_configs:
+    - targets:
+  - job_name: "tidb"
+    honor_labels: true # don't overwrite job & instance labels
+    static_configs:
+    - targets:
+  - job_name: "tikv"
+    honor_labels: true # don't overwrite job & instance labels
+    static_configs:
+    - targets:
+  - job_name: "pd"
+    honor_labels: true # don't overwrite job & instance labels
+    static_configs:
+    - targets:
+  - job_name: "tidb_port_probe"
+    scrape_interval: 30s
+    metrics_path: /probe
+    params:
+      module: [tcp_connect]
+    static_configs:
+    - targets:
+      labels:
+        group: 'tidb'
+    - targets:
+      labels:
+        group: 'tikv'
+    - targets:
+      labels:
+        group: 'pd'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: ''
+  - job_name: "monitor_port_probe"
+    scrape_interval: 30s
+    metrics_path: /probe
+    params:
+      module: [tcp_connect]
+    static_configs:
+    - targets:
+      - '192.168.75.149:3000'
+      labels:
+        group: 'grafana'
+    - targets:
+      labels:
+        group: 'node_exporter'
+    - targets:
+      labels:
+        group: 'blackbox_exporter'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: ''
+  - job_name: "sdm_master"
+    honor_labels: true # don't overwrite job & instance labels
+    static_configs:
+    - targets:
+      - '192.168.75.149:8261'
