@@ -1,14 +1,12 @@
 # Worker Configuration.
 
-name = "worker1"
+name = "sworker-192.168.75.149-8262"
 
-# 日志配置
-log-level = "info"
-log-file = "dm-worker.log"
+log-level = "debug"
+log-file = "./logs/dm-worker1.log"
 
-# DM-worker 的地址
-worker-addr = ":8262"
+worker-addr = "192.168.75.149:8262"
+advertise-addr= "192.168.75.149:8262"
 
-# 对应集群中 DM-master 配置中的 master-addr
-join = "127.0.0.1:8261"
+join = "localhost:8261"
 

@@ -82,3 +82,8 @@ scrape_configs:
     static_configs:
     - targets:
       - '192.168.75.149:8261'
+  - job_name: "sdm_worker"
+    honor_labels: true # don't overwrite job & instance labels
+    static_configs:
+    - targets:
+      - '192.168.75.149:8262'

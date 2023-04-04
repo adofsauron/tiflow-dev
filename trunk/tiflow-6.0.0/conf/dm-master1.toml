@@ -1,7 +1,9 @@
-# WARNING: This file is auto-generated. Do not edit! All your modification will be overwritten!
-# You can use 'tiup cluster edit-config' and 'tiup cluster reload' to update the configuration
-# All configuration items you want to change can be added to:
-# server_configs:
-#   dm-master:
-#     aa.b1.c3: value
-#     aa.b2.c4: value
+name = "smaster-192.168.75.149-8261"
+master-addr = "0.0.0.0:8261"
+advertise-addr = "192.168.75.149:8261"
+peer-urls = "http://192.168.75.149:8291"
+initial-cluster = "smaster-192.168.75.149-8261=http://192.168.75.149:8291"
+
+log-level = "debug"
+log-file = "./logs/dm-master1.log"
+data-dir = "./data/dm-master1"

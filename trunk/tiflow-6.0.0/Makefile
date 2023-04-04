@@ -84,6 +84,8 @@ GOTESTNORACE := CGO_ENABLED=1 $(GO) test -p $(P)
 
 LDFLAGS :=
 
+GGDB := -gcflags=all="-N -l"
+
 default: build buildsucc
 
 buildsucc:
@@ -98,18 +100,18 @@ test: unit_test dm_unit_test
 build: cdc dm
 
 bank:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sbank ./tests/bank/bank.go ./tests/bank/case.go
+	$(GOBUILD) -ldflags '$(LDFLAGS)' $(GGDB) -o bin/sbank ./tests/bank/bank.go ./tests/bank/case.go
 
 build-failpoint: check_failpoint_ctl
 	$(FAILPOINT_ENABLE)
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/scdc ./cmd/cdc/main.go
+	$(GOBUILD) -ldflags '$(LDFLAGS)' $(GGDB) -o bin/scdc ./cmd/cdc/main.go
 	$(FAILPOINT_DISABLE)
 
 cdc:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/scdc ./cmd/cdc/main.go
+	$(GOBUILD) -ldflags '$(LDFLAGS)' $(GGDB) -o bin/scdc ./cmd/cdc/main.go
 
 kafka_consumer:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/scdc_kafka_consumer ./cmd/kafka-consumer/main.go
+	$(GOBUILD) -ldflags '$(LDFLAGS)' $(GGDB) -o bin/scdc_kafka_consumer ./cmd/kafka-consumer/main.go
 
 install:
 	go install ./...
@@ -157,7 +159,7 @@ integration_test_build: check_failpoint_ctl
 		-coverpkg=sdbflow/... \
 		-o bin/cdc.test sdbflow/cmd/cdc \
 	|| { $(FAILPOINT_DISABLE); exit 1; }
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/cdc ./cmd/cdc/main.go \
+	$(GOBUILD) -ldflags '$(LDFLAGS)'  $(GGDB) -o bin/cdc ./cmd/cdc/main.go \
 	|| { $(FAILPOINT_DISABLE); exit 1; }
 	$(FAILPOINT_DISABLE)
 
@@ -259,7 +261,7 @@ clean:
 dm: dm-master dm-worker dmctl dm-syncer
 
 dm-master:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdm-master ./dm/cmd/dm-master
+	$(GOBUILD) -ldflags '$(LDFLAGS)'  $(GGDB) -o bin/sdm-master ./dm/cmd/dm-master
 
 dm-master-with-webui:
 	@echo "build webui first"
@@ -267,19 +269,19 @@ dm-master-with-webui:
 	$(GOBUILD) -ldflags '$(LDFLAGS)' -tags dm_webui -o bin/sdm-master ./dm/cmd/dm-master
 
 dm-worker:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdm-worker ./dm/cmd/dm-worker
+	$(GOBUILD) -ldflags '$(LDFLAGS)'  $(GGDB) -o bin/sdm-worker ./dm/cmd/dm-worker
 
 dmctl:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdmctl ./dm/cmd/dm-ctl
+	$(GOBUILD) -ldflags '$(LDFLAGS)'  $(GGDB) -o bin/sdmctl ./dm/cmd/dm-ctl
 
 dm-syncer:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdm-syncer ./dm/cmd/dm-syncer
+	$(GOBUILD) -ldflags '$(LDFLAGS)'  $(GGDB) -o bin/sdm-syncer ./dm/cmd/dm-syncer
 
 dm-chaos-case:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/sdm-chaos-case ./dm/chaos/cases
+	$(GOBUILD) -ldflags '$(LDFLAGS)'  $(GGDB) -o bin/sdm-chaos-case ./dm/chaos/cases
 
 dm_debug-tools:
-	$(GOBUILD) -ldflags '$(LDFLAGS)' -o bin/binlog-event-blackhole ./dm/debug-tools/binlog-event-blackhole
+	$(GOBUILD) -ldflags '$(LDFLAGS)'  $(GGDB) -o bin/binlog-event-blackhole ./dm/debug-tools/binlog-event-blackhole
 
 dm_generate_proto: tools/bin/protoc-gen-gogofaster tools/bin/protoc-gen-grpc-gateway
 	./dm/generate-dm.sh
