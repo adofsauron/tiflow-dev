@@ -222,14 +222,19 @@ func (s *Server) Start(ctx context.Context) (err error) {
 		return
 	}
 
+	log.L().Info("start leader election")
+
 	// start leader election
 	// TODO: s.cfg.Name -> address
 	s.election, err = election.NewElection(ctx, s.etcdClient, electionTTL, electionKey, s.cfg.Name, s.cfg.AdvertiseAddr, getLeaderBlockTime)
 	if err != nil {
+		log.L().Error("election.NewElection")
 		return
 	}
 
 	s.closed.Store(false) // the server started now.
+
+	log.L().Info("s.ap.Start")
 
 	s.bgFunWg.Add(1)
 	go func() {
@@ -237,11 +242,15 @@ func (s *Server) Start(ctx context.Context) (err error) {
 		s.ap.Start(ctx)
 	}()
 
+	log.L().Info("s.electionNotify")
+
 	s.bgFunWg.Add(1)
 	go func() {
 		defer s.bgFunWg.Done()
 		s.electionNotify(ctx)
 	}()
+
+	log.L().Info("metrics.RunBackgroundJob")
 
 	runBackgroundOnce.Do(func() {
 		s.bgFunWg.Add(1)
@@ -250,6 +259,8 @@ func (s *Server) Start(ctx context.Context) (err error) {
 			metrics.RunBackgroundJob(ctx)
 		}()
 	})
+
+	log.L().Info("failpoint.Inject")
 
 	failpoint.Inject("FailToElect", func(val failpoint.Value) {
 		masterStrings := val.(string)

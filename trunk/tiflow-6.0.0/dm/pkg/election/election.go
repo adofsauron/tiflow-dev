@@ -112,6 +112,7 @@ type Election struct {
 
 // NewElection creates a new etcd leader Election instance and starts the campaign loop.
 func NewElection(ctx context.Context, cli *clientv3.Client, sessionTTL int, key, id, addr string, notifyBlockTime time.Duration) (*Election, error) {
+
 	ctx2, cancel2 := context.WithCancel(ctx)
 	e := &Election{
 		cli:        cli,
@@ -129,13 +130,18 @@ func NewElection(ctx context.Context, cli *clientv3.Client, sessionTTL int, key,
 	}
 	e.infoStr = e.info.String()
 
+	e.l.Info("NewElection")
+
 	// try create a session before enter the campaign loop.
 	// so we can detect potential error earlier.
 	session, err := e.newSession(ctx, newSessionDefaultRetryCnt)
 	if err != nil {
+		e.l.Error("e.newSession")
 		cancel2()
 		return nil, terror.ErrElectionCampaignFail.Delegate(err, "create the initial session")
 	}
+
+	e.l.Info("ready campaignLoop")
 
 	e.bgWg.Add(1)
 	go func() {
@@ -199,6 +205,9 @@ func (e *Election) Close() {
 }
 
 func (e *Election) campaignLoop(ctx context.Context, session *concurrency.Session) {
+
+	e.l.Info("campaignLoop")
+
 	closeSession := func(se *concurrency.Session) {
 		err2 := se.Close() // only log this error
 		if err2 != nil {
@@ -455,6 +464,9 @@ func (e *Election) CancelEvictLeader() {
 }
 
 func (e *Election) newSession(ctx context.Context, retryCnt int) (*concurrency.Session, error) {
+
+	e.l.Info("newSession", zap.Int("retryCnt", retryCnt))
+
 	var (
 		err     error
 		session *concurrency.Session
@@ -482,7 +494,11 @@ forLoop:
 		if err == nil || errors.Cause(err) == e.cli.Ctx().Err() {
 			break forLoop
 		}
+
+		e.l.Info("newSession forLoop", zap.Int("retry", i))
 	}
+
+	e.l.Info("newSession over")
 	return session, err
 }
 

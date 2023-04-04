@@ -5,7 +5,7 @@ name = "sworker-192.168.75.149-8262"
 log-level = "debug"
 log-file = "./logs/dm-worker1.log"
 
-worker-addr = "192.168.75.149:8262"
+worker-addr = "0.0.0.0:8262"
 advertise-addr= "192.168.75.149:8262"
 
 join = "localhost:8261"

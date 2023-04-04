@@ -34,6 +34,9 @@ const (
 )
 
 func (s *Server) electionNotify(ctx context.Context) {
+
+	log.L().Info("electionNotify")
+
 	for {
 		select {
 		case <-ctx.Done():
@@ -162,6 +165,8 @@ func (s *Server) isLeaderAndNeedForward(ctx context.Context) (isLeader bool, nee
 	s.RLock()
 	defer s.RUnlock()
 
+	log.L().Info("s.leader: ", zap.String("leader", s.leader.Load()))
+
 	isLeader = s.leader.Load() == oneselfLeader
 	needForward = s.leaderGrpcConn != nil
 	return
@@ -209,6 +214,8 @@ func (s *Server) retireLeader() {
 	s.pessimist.Close()
 	s.optimist.Close()
 	s.scheduler.Close()
+
+	log.L().Info("retireLeader")
 
 	s.Lock()
 	s.leader.Store("")
