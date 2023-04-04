@@ -140,7 +140,6 @@ func NewServer(cfg *Config) *Server {
 	server.pessimist = shardddl.NewPessimist(&logger, server.getTaskSourceNameList)
 	server.optimist = shardddl.NewOptimist(&logger, server.scheduler.GetDownstreamMetaByTask)
 	server.closed.Store(true)
-	server.leader.Store(oneselfLeader)
 	setUseTLS(&cfg.Security)
 
 	return &server
