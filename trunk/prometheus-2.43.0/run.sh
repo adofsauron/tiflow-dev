@@ -2,7 +2,7 @@
 
 pkill prometheus
 
-sleep 1s 
+sleep 3s 
 
 exec > >(tee -i -a "./logs/prometheus.log")
 exec 2>&1
