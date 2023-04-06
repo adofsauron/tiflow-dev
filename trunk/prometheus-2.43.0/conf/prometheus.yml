@@ -13,7 +13,7 @@ rule_files:
 #   alertmanagers:
 #   - static_configs:
 #     - targets:
-#       - '192.168.75.149:9093'
+#       - '192.168.64.19:9093'
 
 scrape_configs:
   - job_name: "monitor_port_probe"
@@ -23,7 +23,7 @@ scrape_configs:
       module: [tcp_connect]
     static_configs:
     - targets:
-      - '192.168.75.149:3000'
+      - '192.168.64.19:3000'
       labels:
         group: 'grafana'
     - targets:
@@ -43,4 +43,4 @@ scrape_configs:
     honor_labels: true # don't overwrite job & instance labels
     static_configs:
     - targets:
-      - '192.168.75.149:8261'
+      - '192.168.64.19:8261'
