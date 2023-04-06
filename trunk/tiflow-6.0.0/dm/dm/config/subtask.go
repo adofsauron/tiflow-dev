@@ -172,7 +172,7 @@ func (db *DBConfig) Clone() *DBConfig {
 
 // GetDBConfigForTest is a helper function to get db config for unit test .
 func GetDBConfigForTest() DBConfig {
-	return DBConfig{Host: "localhost", User: "root", Password: "not a real password", Port: 3306}
+	return DBConfig{Host: "localhost", User: "root", Password: "", Port: 3306}
 }
 
 // SubTaskConfig is the configuration for SubTask.
@@ -272,6 +272,7 @@ type SubTaskConfig struct {
 }
 
 // SampleSubtaskConfig is the content of subtask.toml in current folder.
+//
 //go:embed subtask.toml
 var SampleSubtaskConfig string
 

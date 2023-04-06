@@ -26,17 +26,18 @@ import (
 	"github.com/pingcap/tidb/dumpling/export"
 	"github.com/prometheus/client_golang/prometheus"
 
-	. "github.com/pingcap/check"
 	"sdbflow/dm/dm/config"
 	"sdbflow/dm/dm/pb"
 	"sdbflow/dm/pkg/conn"
 	"sdbflow/dm/pkg/log"
+
+	. "github.com/pingcap/check"
 )
 
 var _ = Suite(&testDumplingSuite{})
 
 const (
-	testDumplingSchemaName = "INFORMATION_SCHEMA"
+	testDumplingSchemaName = "information_schema"
 	testDumplingTableName  = "TABLES"
 )
 
