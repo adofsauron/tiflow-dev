@@ -24,7 +24,3 @@ go mod vendor
 make npm_licenses
 
 make build
-
-# make prometheus
-
-# make promtool
