@@ -1,11 +1,10 @@
 #!/bin/bash
 
-go env -w GOPROXY=https://goproxy.cn,direct
-
-
 chmod +x scripts/*.sh
 
-yarn install --pure-lockfile
+yarn install 
+
+go env -w GOPROXY=https://goproxy.cn,direct
 
 go mod tidy
 go mod download
