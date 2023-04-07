@@ -1,0 +1,8 @@
+source-id: "mysql-01"
+
+from:
+  host: "127.0.0.1"
+  user: "root"
+  password: "mysql123" 
+  port: 3306
+
